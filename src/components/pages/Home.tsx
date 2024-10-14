@@ -3,7 +3,7 @@ import Icon from '@/components/features/Icon'
 export default function Home() {
   return (
     <div>
-      <p className='flex items-center gap-2 text-red-500'>
+      <p className='flex items-center gap-2 text-violet-600'>
         hello
         <Icon
           id='icon-fire'

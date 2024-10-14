@@ -18,16 +18,13 @@
   "settings": {
     "react": {
       "version": "detect"
-    },
-    "tailwindcss": {
-      "callees": ["cn"]
     }
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks"],
   "rules": {
     "tailwindcss/migration-from-tailwind-2": 0,
     "tailwindcss/no-custom-classname": [
-      "warn",
+      "error",
       { "whitelist": ["shadow-none"] }
     ],
     "@typescript-eslint/no-unused-vars": "error",
