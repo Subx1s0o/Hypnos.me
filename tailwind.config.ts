@@ -1,8 +1,9 @@
-/** @type {import('tailwindcss').Config} */
+import tailwindcssAnimate from 'tailwindcss-animate'
+
 export default {
   mode: 'jit',
-  darkMode: 'class',
-  content: ['./src/components/**/*.{js,ts,jsx,tsx}'],
+  darkMode: ['class'],
+  content: ['./src/components/**/*.tsx'],
   theme: {
     extend: {
       screens: {
@@ -10,8 +11,8 @@ export default {
         lg: '1024px',
         md: '768px',
         sm: '480px'
-      },
-      colors: {}
+      }
     }
-  }
+  },
+  plugins: [tailwindcssAnimate]
 }
