@@ -11,6 +11,16 @@ export default {
         lg: '1024px',
         md: '768px',
         sm: '480px'
+      },
+      fontFamily: {
+        manrope: ['Manrope', 'sans-serif'],
+        cormorant: ['Cormorant Garamond', 'serif']
+      },
+      colors: {
+        grey: '#4E453E',
+        black: '#1B1716',
+        'light-grey': '#F3F1EF',
+        cream: '#E5DCD4'
       }
     }
   },
