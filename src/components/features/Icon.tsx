@@ -7,11 +7,12 @@ interface IconProps {
 
 export default function Icon({ id, w, h, className }: IconProps) {
   return (
-    <svg
-      width={w}
-      height={h}
-      className={className || ''}>
-      <use href={`/sprite.svg#${id}`} />
-    </svg>
+    <div className={className || ''}>
+      <svg
+        width={w}
+        height={h}>
+        <use href={`/sprite.svg#${id}`} />
+      </svg>
+    </div>
   )
 }

@@ -4,7 +4,7 @@ import Icon from '../features/Icon'
 
 export default function MobileNavigation() {
   return (
-    <nav className='fixed bottom-0 w-full px-4 pb-8 pt-6 md:hidden'>
+    <nav className='fixed bottom-0 w-full px-4 pb-8 pt-6'>
       <ul className='flex w-full items-center justify-between'>
         <li>
           <button className='p-4'>

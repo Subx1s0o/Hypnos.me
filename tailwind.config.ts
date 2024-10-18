@@ -20,7 +20,9 @@ export default {
         grey: '#4E453E',
         black: '#1B1716',
         'light-grey': '#F3F1EF',
-        cream: '#E5DCD4'
+        cream: '#E5DCD4',
+        primary: '#CCC0B180',
+        brown: '#B99376'
       },
       fontSize: {
         xxl: [
@@ -48,6 +50,13 @@ export default {
           '40px',
           {
             fontWeight: 700,
+            lineHeight: '48px'
+          }
+        ],
+        'md-thin': [
+          '40px',
+          {
+            fontWeight: 400,
             lineHeight: '48px'
           }
         ],
