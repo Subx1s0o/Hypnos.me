@@ -40,7 +40,9 @@ export default function HomeHeader() {
           </address>
         </div>
 
-        <div className='absolute left-1/2 top-[30px] flex -translate-x-1/2 items-center gap-3'>
+        <Link
+          to='/'
+          className='absolute left-1/2 top-[30px] flex -translate-x-1/2 items-center gap-3'>
           <h3 className='text-md-thin font-cormorant'>HYPNOS</h3>
           <Icon
             id='icon-logo'
@@ -48,7 +50,7 @@ export default function HomeHeader() {
             w={32}
             h={32}
           />
-        </div>
+        </Link>
 
         <div>
           <ul
