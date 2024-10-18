@@ -36,7 +36,7 @@ export default function HomeHeader() {
             </li>
           </ul>
           <address className='text-xs not-italic'>
-            <a href='tel:38008888588'>+38008888588</a>
+            <a href='tel:12155550199'>+1 215-555-0199</a>
           </address>
         </div>
 
