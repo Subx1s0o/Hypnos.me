@@ -14,7 +14,8 @@ export default {
       },
       fontFamily: {
         manrope: ['Manrope', 'sans-serif'],
-        cormorant: ['Cormorant Garamond', 'serif']
+        cormorant: ['Cormorant Garamond', 'serif'],
+        moniqa: ['Moniqa', 'serif']
       },
       colors: {
         grey: '#4E453E',
