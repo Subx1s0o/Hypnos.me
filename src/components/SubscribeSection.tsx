@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react'
 
 import Icon from './features/Icon'
 
-export default function SubscribeSection0() {
+export default function SubscribeSection() {
   const [email, setEmail] = useState('')
   const [isChecked, setIsChecked] = useState(false)
 
@@ -33,28 +33,33 @@ export default function SubscribeSection0() {
   return (
     <section
       id='subscribe'
-      className='mx-4 bg-black px-5 py-12 text-brown'>
-      <div className='mb-6 flex justify-center'>
+      className='mx-4 bg-black px-5 py-12 text-brown md:grid md:grid-cols-2 md:grid-rows-2
+        md:gap-8 md:px-16 md:py-24'>
+      {/* 1 */}
+      <div className='mb-6 flex flex-col items-center md:col-span-2 md:mb-0'>
         <Icon
           id='icon-burger'
           w={16}
           h={16}
           className='bg-dark-grey rounded-full p-4 text-white'></Icon>
+        <h2 className='mt-4 text-center font-serif text-3xl text-white'>
+          Get exclusive news
+        </h2>
       </div>
 
-      <h2 className='mb-4 text-center font-serif text-3xl text-white'>
-        Get exclusive news
-      </h2>
+      {/* 2 */}
+      <div className='md:col-start-1 md:row-start-2 md:flex md:items-center'>
+        <p className='text-center md:text-left'>
+          By subscribing to our newsletter, you will be the first to know about
+          promotions, raffles, and auctions held exclusively for our
+          subscribers.
+        </p>
+      </div>
 
-      <p className='mb-8 text-center'>
-        By subscribing to our newsletter, you will be the first to know about
-        promotions, raffles and auctions that we hold only among our
-        subscribers.
-      </p>
-
+      {/* 3 */}
       <form
         onSubmit={handleSubmit}
-        className='space-y-4'>
+        className='space-y-4 md:col-start-2 md:row-start-2 md:flex md:flex-col md:justify-center'>
         <div>
           <input
             type='email'
@@ -65,16 +70,14 @@ export default function SubscribeSection0() {
             placeholder='EMAIL'
             className={`bg-dark-grey w-full rounded border p-3 text-white transition-colors
               focus:outline-none ${
-              email && !isEmailValid
-                  ? 'border-red-500'
-                  : isEmailValid
-                    ? 'border-green-500'
-                    : 'border-zinc-700 focus:border-zinc-500'
+              isEmailValid
+                  ? 'border-green-500'
+                  : 'border-zinc-700 focus:border-zinc-500'
               }`}
           />
         </div>
 
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between md:justify-start md:space-x-4'>
           <label className='flex cursor-pointer items-center space-x-2'>
             <input
               type='checkbox'
