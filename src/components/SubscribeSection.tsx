@@ -93,7 +93,7 @@ export default function SubscribeSection() {
                 bg-transparent checked:bg-primary'
             />
             <span className='text-sm'>
-              I agree with the{' '}
+              * I agree with the{' '}
               <a
                 href='/policy'
                 className='text-white hover:underline'>
