@@ -23,6 +23,7 @@ export default {
         'light-grey': '#F3F1EF',
         cream: '#E5DCD4',
         primary: '#CCC0B180',
+        primary100: '#CCC0B1',
         brown: '#B99376'
       },
       fontSize: {
