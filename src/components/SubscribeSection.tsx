@@ -33,10 +33,9 @@ export default function SubscribeSection() {
   return (
     <section
       id='subscribe'
-      className='mx-4 bg-black text-brown md:mx-10 md:grid md:grid-cols-2
-        md:grid-rows-[auto,1px,auto]'>
+      className='mx-4 my-12 bg-black text-brown md:mx-10 md:grid md:grid-cols-2'>
       {/* 1 - Top section */}
-      <div className='flex flex-col items-center px-5 py-14 md:col-span-2 md:px-16 md:py-20'>
+      <div className='flex flex-col items-center py-14 md:col-span-2 md:px-16 md:py-20'>
         <Icon
           id='icon-letter'
           w={32}
@@ -49,30 +48,24 @@ export default function SubscribeSection() {
       </div>
 
       {/* Horizontal divider */}
-      <div className='hidden md:col-span-2 md:block md:h-px md:w-full md:bg-light-grey' />
+      <div className='md:col-span-2 md:h-px md:bg-light-grey' />
 
       {/* 2 - Bottom left */}
-      <div
-        className='relative mb-8 px-5 md:col-start-1 md:row-start-3 md:mb-0 md:items-center md:p-20
-          xl:pl-[200px]'>
+      <div className='relative mb-8 px-5 md:mb-0 md:p-20 xl:pl-[200px]'>
         <p className='text-center md:text-left'>
           By subscribing to our newsletter, you will be the first to know about
           promotions, raffles, and auctions held exclusively for our
           subscribers.
         </p>
         {/* Vertical divider */}
-        <div
-          className='hidden md:absolute md:right-0 md:top-0 md:block md:h-full md:w-px
-            md:bg-light-grey'
-        />
+        <div className='md:absolute md:right-0 md:top-0 md:h-full md:w-px md:bg-light-grey' />
       </div>
 
       {/* 3 - Bottom right */}
       <form
         onSubmit={handleSubmit}
-        className='px-5 pb-16 md:col-start-2 md:row-start-3 md:flex md:flex-col md:justify-center
-          md:p-20 xl:pr-[200px]'>
-        <div className='mb-5 md:mb-4'>
+        className='px-5 pb-16 md:col-start-2 md:p-20 xl:pr-[200px]'>
+        <div className='mb-5'>
           <input
             type='email'
             id='email'
@@ -80,18 +73,17 @@ export default function SubscribeSection() {
             value={email}
             onChange={handleEmailChange}
             placeholder='EMAIL'
-            className={`bg-dark-grey w-full rounded border p-3 text-white transition-colors
-              focus:outline-none ${
+            className={`bg-dark-grey w-full rounded border p-3 text-white transition-colors ${
               email.length > 0
-                  ? isEmailValid
-                    ? 'border-green-500'
-                    : 'border-zinc-700'
-                  : 'border-transparent'
+                ? isEmailValid
+                  ? 'border-green-500 focus:outline-none'
+                  : 'border-grey focus:outline-none'
+                : 'border-transparent'
               }`}
           />
         </div>
 
-        <div className='flex items-center justify-between'>
+        <div className='flex justify-between'>
           <label className='flex cursor-pointer items-center space-x-3'>
             <input
               type='checkbox'
