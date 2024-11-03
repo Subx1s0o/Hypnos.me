@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Manrope:wght@400;500;600&display=swap');
 
-@font-face {
-  font-family: 'Moniqa';
-  src: url('/public/fonts/Moniqa-BoldHeading.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,12 +7,4 @@
 body {
   color: #4e453e;
   font-family: 'Manrope', sans-serif;
-}
-
-.thin-underline:hover {
-  text-decoration-thickness: 1px;
-}
-
-.rotate-135 {
-  transform: rotate(-135deg);
 }

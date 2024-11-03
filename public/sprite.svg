@@ -39,7 +39,7 @@
 </symbol>
 
 <symbol id="icon-arrow" viewBox="0 0 32 32">
-<path fill="currentColor" stroke="currentColor" d="M31.238 16l-2.686-2.686-10.648 10.629v-23.181h-3.809v23.181l-10.648-10.629-2.686 2.686 15.238 15.238 15.238-15.238z"></path>
+<path fill="currentColor" stroke="currentColor" d="M0 15.238l2.686 2.686 10.648-10.629v23.181h3.81v-23.181l10.648 10.629 2.686-2.686-15.238-15.238-15.238 15.238z"></path>
 </symbol>
 
 <symbol id="icon-facebook" viewBox="0 0 32 32">
