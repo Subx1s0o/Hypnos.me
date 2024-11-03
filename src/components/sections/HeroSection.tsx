@@ -1,48 +1,53 @@
 import scrollToSection from '@/lib/ScrollToSection'
 import { Link } from 'react-router-dom'
 
+import useMedia from '@/hooks/useMedia'
+
 import Icon from '../features/Icon'
 
 export default function HeroSection() {
+  const isDesktop = useMedia('(min-width: 768px)')
   return (
     <section
       id='hero'
       className='py-12 pb-28 md:px-10'>
-      <div className='mb-6 hidden md:flex'>
-        <a
-          href='https://www.instagram.com'
-          target='_blank'
-          rel='noopener noreferrer'>
-          <Icon
-            className='rounded-full bg-cream p-3'
-            id='icon-instagram'
-            w={16}
-            h={16}
-          />
-        </a>
-        <a
-          href='https://www.fb.com/'
-          target='_blank'
-          rel='noopener noreferrer'>
-          <Icon
-            className='ml-4 rounded-full bg-cream p-3'
-            id='icon-facebook'
-            w={16}
-            h={16}
-          />
-        </a>
-        <button
-          className='ml-auto'
-          onClick={() => scrollToSection('footer')}>
-          <Icon
-            className='rotate-180 rounded-full bg-cream p-3'
-            id='icon-arrow'
-            w={16}
-            h={16}
-          />
-        </button>
-      </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 md:gap-5'>
+      {isDesktop && (
+        <div className='mb-6 flex'>
+          <a
+            href='https://www.instagram.com'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <Icon
+              className='rounded-full bg-cream p-3'
+              id='icon-instagram'
+              w={16}
+              h={16}
+            />
+          </a>
+          <a
+            href='https://www.fb.com/'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <Icon
+              className='ml-4 rounded-full bg-cream p-3'
+              id='icon-facebook'
+              w={16}
+              h={16}
+            />
+          </a>
+          <button
+            className='ml-auto'
+            onClick={() => scrollToSection('footer')}>
+            <Icon
+              className='rotate-180 rounded-full bg-cream p-3'
+              id='icon-arrow'
+              w={16}
+              h={16}
+            />
+          </button>
+        </div>
+      )}
+      <div className='grid md:grid-cols-2 md:gap-5'>
         <Link
           to='/catalog'
           className='relative aspect-[4/5] sm:aspect-[3/2]'>
@@ -91,13 +96,15 @@ export default function HeroSection() {
               Exclusive custom jewelry
             </p>
           </div>
-          <Icon
-            className='absolute bottom-10 right-10 hidden rotate-45 rounded-full bg-brown p-6
-              text-white md:block'
-            id='icon-arrow'
-            w={20}
-            h={20}
-          />
+          {isDesktop && (
+            <Icon
+              className='absolute bottom-10 right-10 hidden rotate-45 rounded-full bg-brown p-6
+                text-white md:block'
+              id='icon-arrow'
+              w={20}
+              h={20}
+            />
+          )}
         </Link>
       </div>
     </section>
