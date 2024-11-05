@@ -1,10 +1,14 @@
 {
   "version": 2,
   "name": "Krist",
-  "builds": [
+  "builds": [{ "src": "dist/index.html", "use": "@vercel/static-build" }],
+  "routes": [
     {
-      "src": "build/**/*",
-      "use": "@vercel/static"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  ]
+  ],
+  "static": {
+    "directory": "dist"
+  }
 }
