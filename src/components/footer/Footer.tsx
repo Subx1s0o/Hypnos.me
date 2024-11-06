@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
             <FooterInfoList infoList={serviceList} title='Service' /> 
             <FooterContactList />
             <FooterInfoList infoList={loewHelpsList} title='Loe info' /></div>
-             <div className="text-center bg-black text-white">
+             <div className="text-center bg-black text-white w-[1392px] h-[291px]">
                 <h3 className="">Stay in touch</h3>
                 <p className="">Sign up for our newsletter to receive 500 points on your first order, which you can use immediately.</p>
                 <form 
