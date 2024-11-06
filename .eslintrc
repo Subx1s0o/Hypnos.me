@@ -37,18 +37,6 @@
       {
         "selector": "typeLike",
         "format": ["PascalCase"]
-      },
-      {
-        "selector": "variableLike",
-        "format": ["camelCase"],
-        "filter": {
-          "regex": "^[A-Z]",
-          "match": false
-        }
-      },
-      {
-        "selector": "function",
-        "format": ["PascalCase"]
       }
     ],
     "react/boolean-prop-naming": [
