@@ -1,35 +1,12 @@
 [
   {
     "id": 1, 
-    "text": "Sale"
+    "text": "Monday-Friday"
   } ,
   {
     "id": 2, 
-    "text": "New items"
-  } , 
-  {
-    "id": 3, 
-    "text": "Decorations"
-  } , 
-  {
-    "id": 4, 
-    "text": "Designers"
-  } , 
-  {
-    "id": 5, 
-    "text": "Inspiration"
-  } , 
-  {
-    "id": 6, 
-    "text": "Certificates"
-  },
-  {
-    "id": 7, 
-    "text": "Contscts"
-  },
-  {
-    "id": 8, 
-    "text": "About us"
-  }
+    "text": "Saturday-Sunday"
+  }  
+  
 ] 
 
