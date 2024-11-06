@@ -1,7 +1,7 @@
 const FooterContactList = () => {
     return (
         <div className="bg-black text-white w-[330px] h-[400px] p-[15px]">
-            <h4 className="text-center">Contacts</h4>
+            <h4 className="text-center text-[24px] font-bold leading-[29.06px] tracking-[0.03em]">Contacts</h4>
             <ul className="">
                 <li className="text-right"><p className="">Telephone</p> 
             <a href='tel:12155550199'>+1 215-555-0199</a>
