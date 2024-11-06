@@ -3,10 +3,10 @@ const FooterContactList = () => {
         <div className="bg-black text-white w-[330px] h-[400px] p-[15px]">
             <h4 className="text-center text-[24px] font-bold leading-[29.06px] tracking-[0.03em]">Contacts</h4>
             <ul className="">
-                <li className="text-right"><p className="">Telephone</p> 
+                <li className="text-right gap-3"><p className="">Telephone</p> 
             <a href='tel:12155550199'>+1 215-555-0199</a>
           </li>
-                <li className="text-right"><p className="">Email</p> 
+                <li className="text-right gap-3"><p className="">Email</p> 
             <a href='mailto:cs@hypnos.store'>cs@hypnos.store</a></li>
                 <li className="text-right"><p className="">Monday-Friday</p> <p className="">10:00-19:00</p> </li>
                 <li className="text-right"><p className="">Saturday-Sunday</p> <p className="">Pre-registration</p></li>
@@ -15,11 +15,11 @@ const FooterContactList = () => {
                 <p className="">Office/Showroom address</p> <p className="">street Elektrozavodskaya 21</p>
             </div>
             <div className="">
-                <ul className="">
-                    <li className="text-right">
+                <ul className="flex justify-between w-full">
+                    <li className="text-left">
                         <a href='#'>facebook</a> 
                     </li>
-                    <li className="text-right">
+                    <li className="text-center">
                          <a href='#'>instagram</a> 
                     </li>
                     <li className="text-right">

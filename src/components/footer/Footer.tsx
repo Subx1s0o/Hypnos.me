@@ -8,7 +8,7 @@ import FooterContactList from "./components/FooterContactList";
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-gray-900">
+        <footer className="bg-[#1C1D25]">
             <h3 className='text-md font-cormorant text-center'>HYPNOS</h3>
             <div className="flex gap-4 justify-around items-start p-4">
             <FooterInfoList infoList={siteMapList} title='Site map' />
