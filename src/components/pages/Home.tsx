@@ -6,6 +6,7 @@ import Footer  from '../footer/Footer'
 
 export default function Home() {
   const isDesktop = useMedia('(min-width: 768px)')
+
   return (
     <>
       {isDesktop ? <HomeHeader /> : <MobileNavigation />}
