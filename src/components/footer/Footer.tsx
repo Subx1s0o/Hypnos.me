@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
             <FooterInfoList infoList={loewHelpsList} title='Loe info' /></div>
              <div className="text-center bg-black text-white w-[1392px] h-[291px]">
                 <h3 className="">Stay in touch</h3>
-                <p className="text-center max-w-md">Sign up for our newsletter to receive 500 points on your first order, which you can use immediately.</p>
+                <p className="text-center max-w-md mx-auto">Sign up for our newsletter to receive 500 points on your first order, which you can use immediately.</p>
                 <form 
     className="flex flex-col items-center space-y-4" 
     // style="width: 396px; height: 166px; position: absolute; top: 40px; left: 498px;"
