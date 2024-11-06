@@ -35,7 +35,11 @@
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        "selector": ["variableLike", "function"],
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "variableLike",
         "format": ["camelCase"],
         "filter": {
           "regex": "^[A-Z]",
@@ -43,7 +47,15 @@
         }
       },
       {
-        "selector": ["class", "functionDeclaration", "typeLike"],
+        "selector": "function",
+        "format": ["camelCase"]
+      },
+      {
+        "selector": "functionDeclaration",
+        "format": ["camelCase"]
+      },
+      {
+        "selector": "class",
         "format": ["PascalCase"]
       }
     ],
