@@ -48,14 +48,6 @@
       },
       {
         "selector": "function",
-        "format": ["camelCase"]
-      },
-      {
-        "selector": "functionDeclaration",
-        "format": ["camelCase"]
-      },
-      {
-        "selector": "class",
         "format": ["PascalCase"]
       }
     ],

@@ -5,7 +5,8 @@ import MobileNavigation from '../common/MobileNavigation'
 
 export default function Home() {
   const isDesktop = useMedia('(min-width: 768px)')
-  return (
+  
+return (
     <>
       {isDesktop ? <HomeHeader /> : <MobileNavigation />}
       <main></main>
