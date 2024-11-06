@@ -11,12 +11,12 @@ const Footer: React.FC = () => {
         <footer className="bg-gray-900">
 
            
-            <h3 className='text-md-thin font-cormorant'>HYPNOS</h3>
+            <h3 className='text-md-thin font-cormorant text-center'>HYPNOS</h3>
             <div className="flex gap-4 justify-around items-start p-4">
-            <FooterInfoList infoList={siteMapList} title='site map' />
-            <FooterInfoList infoList={serviceList} title='service' /> 
+            <FooterInfoList infoList={siteMapList} title='Site map' />
+            <FooterInfoList infoList={serviceList} title='Service' /> 
             <FooterContactList />
-            <FooterInfoList infoList={loewHelpsList} title='loe info' /></div>
+            <FooterInfoList infoList={loewHelpsList} title='Loe info' /></div>
              <div className="text-center bg-black text-white">
                 <h3 className="">Stay in touch</h3>
                 <p className="">Sign up for our newsletter to receive 500 points on your first order, which you can use immediately.</p>
