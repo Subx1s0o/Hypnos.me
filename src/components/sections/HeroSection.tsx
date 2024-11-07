@@ -7,39 +7,38 @@ import Icon from '../features/Icon'
 
 export default function HeroSection() {
   const isDesktop = useMedia('(min-width: 768px)')
+
   return (
-    <section
-      id='hero'
-      className='py-12 pb-28 md:px-10'>
+    <section className='py-12 pb-28 md:px-10'>
       {isDesktop && (
-        <div className='mb-6 flex'>
-          <a
-            href='https://www.instagram.com'
-            target='_blank'
-            rel='noopener noreferrer'>
+        <div className='mb-6 flex justify-between'>
+          <div className='flex gap-4'>
+            <a
+              href='https://www.instagram.com'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Icon
+                className='rounded-full bg-cream p-3 duration-300 hover:bg-brown/50'
+                id='icon-instagram'
+                w={16}
+                h={16}
+              />
+            </a>
+            <a
+              href='https://www.fb.com/'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Icon
+                className='rounded-full bg-cream p-3 duration-300 hover:bg-brown/50'
+                id='icon-facebook'
+                w={16}
+                h={16}
+              />
+            </a>
+          </div>
+          <button onClick={() => scrollToSection('footer')}>
             <Icon
-              className='rounded-full bg-cream p-3'
-              id='icon-instagram'
-              w={16}
-              h={16}
-            />
-          </a>
-          <a
-            href='https://www.fb.com/'
-            target='_blank'
-            rel='noopener noreferrer'>
-            <Icon
-              className='ml-4 rounded-full bg-cream p-3'
-              id='icon-facebook'
-              w={16}
-              h={16}
-            />
-          </a>
-          <button
-            className='ml-auto'
-            onClick={() => scrollToSection('footer')}>
-            <Icon
-              className='rotate-180 rounded-full bg-cream p-3'
+              className='rotate-180 rounded-full bg-cream p-3 duration-300 hover:bg-brown/50'
               id='icon-arrow'
               w={16}
               h={16}
@@ -65,9 +64,11 @@ export default function HeroSection() {
             </picture>
           </div>
           <div
-            className='absolute inset-0 flex items-center justify-center bg-black/25 p-8 transition-all
-              duration-300 hover:bg-transparent'>
-            <p className='text-center font-cormorant text-md text-white hover:underline'>
+            className='absolute inset-0 flex items-center justify-center bg-black/25 p-8 duration-300
+              hover:bg-transparent'>
+            <p
+              className='max-w-xs text-center font-cormorant text-md text-white hover:underline
+                lg:max-w-none'>
               Wedding rings catalog
             </p>
           </div>
@@ -90,21 +91,21 @@ export default function HeroSection() {
             </picture>
           </div>
           <div
-            className='absolute inset-0 flex items-center justify-center bg-black/25 p-8 transition-all
-              duration-300 hover:bg-transparent'>
-            <p className='text-center font-cormorant text-md text-white hover:underline'>
+            className='absolute inset-0 flex items-center justify-center bg-black/25 duration-300
+              hover:bg-transparent'>
+            <p
+              className='max-w-xs text-center font-cormorant text-md text-white hover:underline
+                lg:max-w-none'>
               Exclusive custom jewelry
             </p>
           </div>
-          {isDesktop && (
-            <Icon
-              className='absolute bottom-10 right-10 hidden rotate-45 rounded-full bg-brown p-6
-                text-white md:block'
-              id='icon-arrow'
-              w={20}
-              h={20}
-            />
-          )}
+          <Icon
+            className='absolute bottom-10 right-10 hidden rotate-45 rounded-full bg-brown p-6
+              text-white lg:block'
+            id='icon-arrow'
+            w={20}
+            h={20}
+          />
         </Link>
       </div>
     </section>
