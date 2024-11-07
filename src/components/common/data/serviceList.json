@@ -1,0 +1,31 @@
+[
+    {
+    "id": 1, 
+    "text": "Jewelry trade-in"
+  } ,
+  {
+    "id": 2, 
+    "text": "Custom jewelry"
+  } , 
+  {
+    "id": 3, 
+    "text": "Test drive jewerly"
+  } , 
+  {
+    "id": 4, 
+    "text": "How to choose your size"
+  } , 
+  {
+    "id": 5, 
+    "text": "Loyalty program"
+  } , 
+  {
+    "id": 6, 
+    "text": "Delivery and payment"
+  },
+  {
+    "id": 7, 
+    "text": "Return and exchange"
+  }
+    
+]
