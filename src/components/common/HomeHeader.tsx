@@ -8,7 +8,7 @@ export default function HomeHeader() {
       <div className='flex justify-between px-10'>
         <div>
           <ul
-            className='border-primary mb-5 inline-flex max-w-[308px] items-center border-b-2
+            className='mb-5 inline-flex max-w-[308px] items-center border-b-2 border-primary
               lg:inline-grid lg:grid-cols-2'>
             <li>
               <Link
@@ -31,7 +31,7 @@ export default function HomeHeader() {
               <input
                 type='text'
                 placeholder='Search'
-                className='placeholder:text-grey text-xs outline-none'
+                className='text-xs outline-none placeholder:text-grey'
               />
             </li>
           </ul>
@@ -43,7 +43,7 @@ export default function HomeHeader() {
         <Link
           to='/'
           className='absolute left-1/2 top-[30px] flex -translate-x-1/2 items-center gap-3'>
-          <h3 className='text-md-thin font-cormorant'>HYPNOS</h3>
+          <h3 className='font-cormorant text-md-thin'>HYPNOS</h3>
           <Icon
             id='icon-logo'
             className='text-brown'
@@ -54,7 +54,7 @@ export default function HomeHeader() {
 
         <div>
           <ul
-            className='border-primary mb-5 inline-flex items-center border-b-2 lg:inline-grid
+            className='mb-5 inline-flex items-center border-b-2 border-primary lg:inline-grid
               lg:grid-cols-2'>
             <li>
               <button className='flex items-center gap-3 py-5 pr-[90px] text-xs'>
