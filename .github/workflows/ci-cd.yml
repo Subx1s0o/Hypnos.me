@@ -25,6 +25,3 @@ jobs:
 
       - name: Lint code with Prettier
         run: npm run lint
-
-      - name: Run prettier
-        run: npm run prettify

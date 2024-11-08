@@ -17,7 +17,10 @@ export default {
         cormorant: ['Cormorant Garamond', 'serif']
       },
       colors: {
-        grey: '#4E453E',
+        grey: {
+          '200': '#E8E6E5',
+          '400': '#4E453E'
+        },
         black: '#1B1716',
         'light-grey': '#F3F1EF',
         cream: '#E5DCD4',
@@ -79,6 +82,13 @@ export default {
           {
             fontWeight: 500,
             lineHeight: '21px'
+          }
+        ],
+        'xs-heavy': [
+          '12px',
+          {
+            fontWeight: 600,
+            lineHeight: '16px'
           }
         ],
         xs: [
