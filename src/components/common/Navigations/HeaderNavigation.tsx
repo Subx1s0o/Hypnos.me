@@ -6,7 +6,7 @@ import { Tooltip } from '@/components/ui/Tooltip'
 export default function HeaderNavigation() {
   return (
     <nav className='absolute left-1/2 -translate-x-1/2'>
-      <ul className='flex items-center'>
+      <ul className='flex items-center gap-2'>
         <li>
           <Tooltip content='Your Cart'>
             <button className='p-3'>

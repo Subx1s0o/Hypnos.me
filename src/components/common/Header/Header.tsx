@@ -7,7 +7,7 @@ import HeaderNavigation from '../Navigations/HeaderNavigation'
 export default function HomeHeader() {
   return (
     <header className='px-10'>
-      <div className='border-b-grey-200 flex items-center justify-between border-b py-3'>
+      <div className='border-b-grey-200 flex items-center justify-between border-b py-5'>
         <Link
           to='/'
           className=''>
