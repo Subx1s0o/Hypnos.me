@@ -1,14 +1,14 @@
 import useMedia from '@/hooks/useMedia'
 
-import HomeHeader from '../common/HomeHeader'
-import MobileNavigation from '../common/MobileNavigation'
+import Header from '../common/Header/Header'
+import MobileNavigation from '../common/Navigations/MobileNavigation'
 
 export default function Home() {
   const isDesktop = useMedia('(min-width: 768px)')
 
   return (
     <>
-      {isDesktop ? <HomeHeader /> : <MobileNavigation />}
+      {isDesktop ? <Header /> : <MobileNavigation />}
       <main></main>
     </>
   )
