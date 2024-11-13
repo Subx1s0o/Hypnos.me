@@ -1,6 +1,6 @@
 import useMedia from '@/hooks/useMedia'
 
-import Icon from '../features/Icon'
+import Icon from '../ui/Icon'
 import ScrollToSectionButton from '../ui/SectionScrollButton'
 import ImageLinkCard from './HeroSection/ImageLinkCard'
 import SocialIcons from './HeroSection/SocialIcons'
