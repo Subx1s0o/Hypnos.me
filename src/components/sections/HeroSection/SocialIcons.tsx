@@ -1,4 +1,4 @@
-import Icon from '@/components/features/Icon'
+import Icon from '@/components/ui/Icon'
 
 export default function SocialIcons() {
   return (

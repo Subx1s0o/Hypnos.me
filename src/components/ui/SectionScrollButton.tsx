@@ -1,4 +1,4 @@
-import Icon from '@/components/features/Icon'
+import Icon from './Icon'
 
 interface SectionScrollButtonProps {
   id: string
