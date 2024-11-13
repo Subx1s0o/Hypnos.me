@@ -1,11 +1,13 @@
-import React from 'react'
+import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import MobileNavigation from '@/components/common/MobileNavigation'
+import MobileNavigation from '@/components/common/Navigations/MobileNavigation'
 import Home from '@/components/pages/Home'
 
 import './index.css'
+
+import Providers from '@/providers/Providers'
 
 const routes = createBrowserRouter([
   {
@@ -23,7 +25,9 @@ const routes = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <RouterProvider router={routes} />
-  </React.StrictMode>
+  <StrictMode>
+    <Providers>
+      <RouterProvider router={routes} />
+    </Providers>
+  </StrictMode>
 )

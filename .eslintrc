@@ -18,6 +18,9 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "tailwindcss": {
+      "callees": ["cn"]
     }
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks"],
@@ -26,6 +29,29 @@
     "tailwindcss/classnames-order": "off",
     "tailwindcss/no-custom-classname": ["error"],
     "@typescript-eslint/no-unused-vars": "error",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": 0,
+    "newline-before-return": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      }
+    ],
+    "react/boolean-prop-naming": [
+      "error",
+      {
+        "rule": "^is[A-Z]([A-Za-z0-9]?)+",
+        "validateNested": true
+      }
+    ],
+    "react/destructuring-assignment": [
+      "error",
+      "always",
+      {
+        "destructureInSignature": "always"
+      }
+    ]
   }
 }
