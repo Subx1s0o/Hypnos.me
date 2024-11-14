@@ -1,23 +1,22 @@
-import React, { ReactNode } from 'react'
+import { PropsWithChildren } from 'react'
 import { Link } from 'react-router-dom'
 
-interface ImageLinkCardProps {
+type ImageLinkCardProps = PropsWithChildren & {
   to: string
   imageSrc: string
   imageSrcSet: string
   imageAlt: string
   text: string
-  children?: ReactNode
 }
 
-const ImageLinkCard: React.FC<ImageLinkCardProps> = ({
+export default function ImageLinkCard({
   to,
   imageSrc,
   imageSrcSet,
   imageAlt,
   text,
   children
-}) => {
+}: ImageLinkCardProps) {
   return (
     <Link
       to={to}
@@ -48,5 +47,3 @@ const ImageLinkCard: React.FC<ImageLinkCardProps> = ({
     </Link>
   )
 }
-
-export default ImageLinkCard

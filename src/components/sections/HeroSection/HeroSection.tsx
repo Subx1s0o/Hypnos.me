@@ -1,9 +1,9 @@
 import useMedia from '@/hooks/useMedia'
 
-import Icon from '../ui/Icon'
-import ScrollToSectionButton from '../ui/SectionScrollButton'
-import ImageLinkCard from './HeroSection/ImageLinkCard'
-import SocialIcons from './HeroSection/SocialIcons'
+import Icon from '../../ui/Icon'
+import ScrollButton from '../../ui/ScrollButton'
+import ImageLinkCard from './components/ImageLinkCard'
+import SocialIcons from './components/SocialIcons'
 
 export default function HeroSection() {
   const isDesktop = useMedia('(min-width: 768px)')
@@ -13,10 +13,14 @@ export default function HeroSection() {
       {isDesktop && (
         <div className='mb-6 flex justify-between'>
           <SocialIcons />
-          <ScrollToSectionButton
-            id='footer'
-            className='rotate-180 rounded-full bg-cream p-3 duration-300 hover:bg-brown/50'
-          />
+          <ScrollButton id='products'>
+            <Icon
+              className='rotate-180 rounded-full bg-cream p-3 duration-300 hover:bg-brown/50'
+              id='icon-arrow'
+              w={16}
+              h={16}
+            />
+          </ScrollButton>
         </div>
       )}
 
