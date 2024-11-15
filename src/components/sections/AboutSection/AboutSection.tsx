@@ -1,10 +1,13 @@
 import useMedia from '@/hooks/useMedia'
 
+import SvgCristall from './SvgCristall'
+
 export default function AboutSection() {
   const isDesktop = useMedia('(min-width: 768px)')
 
   return (
-    <section className='py-12 pb-28 md:px-10'>
+    <section className='relative py-12 pb-32 md:px-10'>
+      <SvgCristall />
       {isDesktop ? (
         <div className='mx-auto max-w-4xl'>
           <p
