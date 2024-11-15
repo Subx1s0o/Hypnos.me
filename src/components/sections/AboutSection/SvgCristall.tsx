@@ -2,11 +2,11 @@ export default function SvgCristall() {
   return (
     <svg
       className='absolute'
-      width='100%'
-      height='100%'
+      viewBox='0 0 1282 1004'
       preserveAspectRatio='xMidYMin slice'>
       <svg
-        viewBox='0 0 1282 1004'
+        width='100%'
+        height='100%'
         xmlns='http://www.w3.org/2000/svg'
         fill='none'>
         <path
