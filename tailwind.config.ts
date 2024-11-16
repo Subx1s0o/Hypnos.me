@@ -1,9 +1,10 @@
-import tailwindcssAnimate from 'tailwindcss-animate'
+import type { Config } from 'tailwindcss'
 
 export default {
-  mode: 'jit',
-  darkMode: ['class'],
-  content: ['./src/components/**/*.tsx'],
+  content: [
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}'
+  ],
   theme: {
     extend: {
       screens: {
@@ -13,8 +14,8 @@ export default {
         sm: '480px'
       },
       fontFamily: {
-        manrope: ['Manrope', 'sans-serif'],
-        cormorant: ['Cormorant Garamond', 'serif']
+        manrope: ['var(--font-manrope)', 'serif'],
+        cormorant: ['var(--font-cormorant)', 'serif']
       },
       colors: {
         grey: {
@@ -101,5 +102,5 @@ export default {
       }
     }
   },
-  plugins: [tailwindcssAnimate]
-}
+  plugins: []
+} satisfies Config

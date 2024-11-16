@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 import Icon from '@/components/ui/Icon'
 
-import HeaderNavigation from '../Navigations/HeaderNavigation'
+import HeaderNavigation from './HeaderNavigation'
 
-export default function HomeHeader() {
+export default function HeaderDesktop() {
   return (
     <header className='px-10'>
-      <div className='border-b-grey-200 flex items-center justify-between border-b py-5'>
+      <div className='flex items-center justify-between border-b border-b-grey-200 py-5'>
         <Link
-          to='/'
+          href='/'
           className=''>
           <Icon
             id='icon-logo'

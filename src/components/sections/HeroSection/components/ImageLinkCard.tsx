@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import { PropsWithChildren } from 'react'
-import { Link } from 'react-router-dom'
 
 type ImageLinkCardProps = PropsWithChildren & {
   to: string
@@ -19,7 +19,7 @@ export default function ImageLinkCard({
 }: ImageLinkCardProps) {
   return (
     <Link
-      to={to}
+      href={to}
       className='relative aspect-[4/5] sm:aspect-[3/2]'>
       <div className='absolute inset-0'>
         <picture>

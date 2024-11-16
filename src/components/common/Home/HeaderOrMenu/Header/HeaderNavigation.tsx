@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+
+import Link from 'next/link'
 
 import Icon from '@/components/ui/Icon'
 import { Tooltip } from '@/components/ui/Tooltip'
@@ -22,7 +23,7 @@ export default function HeaderNavigation() {
           <Tooltip content='Your Favourites'>
             <Link
               className='block p-3'
-              to='/favourites'>
+              href='/favourites'>
               <Icon
                 id='icon-heart'
                 w={18}
@@ -35,7 +36,7 @@ export default function HeaderNavigation() {
           <Tooltip content='Your Profile'>
             <Link
               className='block p-3'
-              to='/profile'>
+              href='/profile'>
               <Icon
                 id='icon-profile'
                 w={18}
