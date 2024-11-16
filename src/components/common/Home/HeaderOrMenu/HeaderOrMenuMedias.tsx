@@ -8,10 +8,10 @@ import MobileMenu from './MobileMenu/MobileMenu'
 export default function HeaderOrMenuMedias() {
   return (
     <MediaContextProvider>
-      <Media greaterThanOrEqual='sm'>
+      <Media greaterThanOrEqual='md'>
         <HeaderDesktop />
       </Media>
-      <Media lessThan='sm'>
+      <Media lessThan='md'>
         <MobileMenu />
       </Media>
     </MediaContextProvider>

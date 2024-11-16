@@ -1,11 +1,8 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "next/typescript",
-    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:tailwindcss/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -21,15 +18,14 @@
       "callees": ["cn"]
     }
   },
-  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "plugins": ["@typescript-eslint", "react"],
   "rules": {
-    "tailwindcss/migration-from-tailwind-2": 0,
-    "tailwindcss/classnames-order": "off",
-    "tailwindcss/no-custom-classname": ["error"],
     "@typescript-eslint/no-unused-vars": "error",
+    "tailwindcss/classnames-order": "off",
+    "@next/next/no-head-element": "off",
     "react/react-in-jsx-scope": "off",
-    "react/display-name": 0,
     "newline-before-return": "error",
+    "tailwindcss/no-custom-classname": "error",
     "@typescript-eslint/naming-convention": [
       "error",
       {
