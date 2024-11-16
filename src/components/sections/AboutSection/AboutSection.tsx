@@ -14,8 +14,9 @@ export default function AboutSection() {
           FULFILLING THE MOST DARING JEWELLERY DREAMS.
         </h2>
         <div className='px-2 sm:grid sm:grid-cols-2'>
-          <div className=''></div>
-          <div className='relative mb-48 font-manrope font-medium not-italic leading-7 text-black md:w-80'>
+          <div
+            className='relative col-start-2 mb-48 font-manrope font-medium not-italic leading-7
+              text-black md:w-80'>
             <p className='pb-4 text-justify md:pb-11'>
               Our online shop features the works of talented Ukrainian designers
               creating jewellery made of silver, gold, brass, steel and
