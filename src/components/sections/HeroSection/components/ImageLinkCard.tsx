@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import { PropsWithChildren } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 type ImageLinkCardProps = PropsWithChildren & {
   to: string
@@ -27,10 +28,12 @@ export default function ImageLinkCard({
             srcSet={imageSrcSet}
             media='(min-width: 480px)'
           />
-          <img
+          <Image
+            className='object-cover'
             src={imageSrc}
             alt={imageAlt}
-            className='size-full object-cover'
+            fill
+            priority
           />
         </picture>
       </div>
