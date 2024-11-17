@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import { PropsWithChildren } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 type ImageLinkCardProps = PropsWithChildren & {
   to: string
@@ -21,19 +22,20 @@ export default function ImageLinkCard({
     <Link
       href={to}
       className='relative aspect-[4/5] sm:aspect-[3/2]'>
-      <div className='absolute inset-0'>
-        <picture>
-          <source
-            srcSet={imageSrcSet}
-            media='(min-width: 480px)'
-          />
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            className='size-full object-cover'
-          />
-        </picture>
-      </div>
+      <picture>
+        <source
+          srcSet={imageSrcSet}
+          media='(min-width: 480px)'
+        />
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          sizes='(min-width: 480px) 50vw, 100vw'
+          fill
+          priority
+        />
+      </picture>
+
       <div
         className='absolute inset-0 flex items-center justify-center bg-black/25 duration-300
           md:hover:bg-transparent'>
