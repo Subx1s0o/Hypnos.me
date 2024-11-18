@@ -4,3 +4,4 @@ export type ProductCategories =
   | 'geometrical'
   | 'symbolical'
   | 'futuristic'
+  | 'conceptual'
