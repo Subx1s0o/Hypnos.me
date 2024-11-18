@@ -3,6 +3,7 @@
 import { PropsWithChildren } from 'react'
 import { Provider as TooltipProvider } from '@radix-ui/react-tooltip'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 export default function Providers({ children }: PropsWithChildren) {
   const queryClient = new QueryClient()
@@ -14,6 +15,7 @@ export default function Providers({ children }: PropsWithChildren) {
         skipDelayDuration={0}>
         {children}
       </TooltipProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )
 }

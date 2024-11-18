@@ -11,6 +11,7 @@ export default {
         xl: '1280px',
         lg: '1024px',
         md: '768px',
+        smd: '640px',
         sm: '480px'
       },
       fontFamily: {
@@ -20,6 +21,7 @@ export default {
       colors: {
         grey: {
           '200': '#E8E6E5',
+          '300': '#393939',
           '400': '#4E453E'
         },
         black: '#1B1716',
@@ -64,17 +66,17 @@ export default {
             lineHeight: '48px'
           }
         ],
-        smd: [
-          '16px',
-          {
-            fontWeight: 700,
-            lineHeight: '22px'
-          }
-        ],
         base: [
           '18px',
           {
             fontWeight: 500,
+            lineHeight: '22px'
+          }
+        ],
+        smd: [
+          '16px',
+          {
+            fontWeight: 700,
             lineHeight: '22px'
           }
         ],
