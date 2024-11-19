@@ -7,15 +7,15 @@ import Icon from '@/components/ui/Icon'
 import MobileModal from './MobileModal'
 
 export default function BurgerBtn() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [isMenuOpen, setMenuOpen] = useState(false)
 
   return (
     <div>
-      <MobileModal open={menuOpen} />
+      <MobileModal isOpen={isMenuOpen} />
       <button
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => setMenuOpen(!isMenuOpen)}
         className='p-4'>
-        {menuOpen ? (
+        {isMenuOpen ? (
           <Icon
             id='icon-x-altx-alt'
             h={24}
