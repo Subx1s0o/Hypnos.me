@@ -1,6 +1,6 @@
 import HeaderOrMenu from '@/components/common/Home/HeaderOrMenu/HeaderOrMenu'
 import AboutSection from '@/components/sections/AboutSection/AboutSection'
-import HeroSection from '@/components/sections/HeroSection/HeroSection'
+import HeroSection from '@/components/sections/Home/HeroSection/HeroSection'
 import ProductSection from '@/components/sections/Home/Products/ProductSection'
 
 export default function HomePage() {

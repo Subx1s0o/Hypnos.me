@@ -3,11 +3,12 @@ import Image from 'next/image'
 
 interface ProductItemProps {
   products: any
+  className: string
 }
 
-export default function ProductItem({ products }: ProductItemProps) {
+export default function ProductItem({ products , className}: ProductItemProps) {
   return (
-    <div>
+    <div className={className}>
       <div className='mb-3 bg-light-grey py-[115px]'>
         {products.media.main.status !== 'rejected' ? (
           <Image
