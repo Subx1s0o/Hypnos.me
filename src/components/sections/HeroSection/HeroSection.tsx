@@ -19,7 +19,7 @@ export default function HeroSection() {
         </ScrollButton>
       </div>
 
-      <div className='grid sm:gap-5 md:grid-cols-2'>
+      <div className='grid gap-5 md:grid-cols-2'>
         <ImageLinkCard
           to='/custom'
           imageSrc='/images/HeroSection/make-order-d.avif'
