@@ -72,7 +72,7 @@ export default {
           }
         ],
         base: [
-          '18px',
+          '16px',
           {
             fontWeight: 500,
             lineHeight: '22px'
