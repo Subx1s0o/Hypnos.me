@@ -29,7 +29,7 @@ export default function HeroSection() {
         />
         <ImageLinkCard
           to='/custom'
-          imageSrc='/images/HeroSection/make-order.avif'
+          imageSrc='/images/HeroSection/make-order-d.avif'
           imageSrcSet='/images/HeroSection/make-order-d.avif'
           imageAlt='Custom jewelry'
           text='Exclusive custom jewelry'>
