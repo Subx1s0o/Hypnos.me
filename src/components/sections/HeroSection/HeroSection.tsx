@@ -21,18 +21,18 @@ export default function HeroSection() {
 
       <div className='grid sm:gap-5 md:grid-cols-2'>
         <ImageLinkCard
-          to='/catalog'
-          imageSrc='/images/HeroSection/catalog.avif'
-          imageSrcSet='/images/HeroSection/catalog-d.avif'
-          imageAlt='Catalog'
-          text='Wedding rings catalog'
-        />
-        <ImageLinkCard
           to='/custom'
           imageSrc='/images/HeroSection/make-order-d.avif'
           imageSrcSet='/images/HeroSection/make-order-d.avif'
           imageAlt='Custom jewelry'
-          text='Exclusive custom jewelry'>
+          text='Exclusive custom jewelry'
+        />
+        <ImageLinkCard
+          to='/catalog'
+          imageSrc='/images/HeroSection/catalog.avif'
+          imageSrcSet='/images/HeroSection/catalog-d.avif'
+          imageAlt='Catalog'
+          text='Wedding rings catalog'>
           <Icon
             className='pointer-events-none absolute bottom-10 right-10 hidden rotate-45 rounded-full
               bg-brown p-6 text-white lg:block'
