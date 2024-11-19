@@ -26,7 +26,8 @@ export default {
         'light-grey': '#F3F1EF',
         cream: '#E5DCD4',
         primary: '#CCC0B180',
-        brown: '#B99376'
+        brown: '#B99376',
+        spanishGray: '#A69E97'
       },
       fontSize: {
         xxl: [

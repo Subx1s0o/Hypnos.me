@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import BurgerBtn from '@/components/common/MobileModal/BurgerBtn'
 import Icon from '@/components/ui/Icon'
 
 interface NavItem {
@@ -12,8 +13,7 @@ const navItems: NavItem[] = [
   { type: 'button', iconId: 'icon-cart' },
   { type: 'button', iconId: 'icon-heart' },
   { type: 'link', iconId: 'icon-profile', to: '/profile' },
-  { type: 'button', iconId: 'icon-search' },
-  { type: 'button', iconId: 'icon-burger' }
+  { type: 'button', iconId: 'icon-search' }
 ]
 
 export default function MobileMenu() {
@@ -43,6 +43,9 @@ export default function MobileMenu() {
             )}
           </li>
         ))}
+        <li>
+          <BurgerBtn />
+        </li>
       </ul>
     </nav>
   )
