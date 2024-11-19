@@ -10,7 +10,10 @@ export default async function getProducts({ category }: GetProductsProps) {
   if (category) {
     try {
       const products = await fetch(`${base_url}?category=${category}`, {
-        cache: 'no-cache'
+        cache: 'no-cache',
+        headers: {
+          'Accept': 'application/json'
+      }
       })
 
       return products.json()

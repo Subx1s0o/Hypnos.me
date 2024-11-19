@@ -3,6 +3,7 @@
 import getProducts from '@/actions/getProducts'
 import { ProductCategories } from '@/types/product-categories.type'
 import { useQuery } from '@tanstack/react-query'
+import ProductItem from './ProductItem'
 
 interface ProductListProps {
   category: ProductCategories
@@ -27,12 +28,10 @@ export default function ProductList({ category }: ProductListProps) {
   }
 
   return (
-    <ul className='px-4 md:px-10'>
+    <ul className='px-4 md:px-10 flex gap-4'>
       {data?.data.map(
-        (product: { id: string; title: string; category: string }) => (
-          <li key={product.id}>
-            {product.title}, {product.category}
-          </li>
+        (product: any) => (
+          <ProductItem key={product.id} products={product}/>
         )
       )}
     </ul>
