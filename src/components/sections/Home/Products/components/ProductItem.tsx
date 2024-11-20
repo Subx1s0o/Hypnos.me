@@ -19,7 +19,7 @@ export default function ProductItem({ product }: ProductItemProps) {
     : price
 
   return (
-    <li className="flex-1 sm:flex-1/2 lg:flex-1/4 pl-4">
+    <li className="flex-1 sm:flex-1/2 lg:flex-1/4 pl-4 aspect-square">
       <div className="relative mb-3 bg-light-grey max-h-[460px]">
         {status !== 'rejected' ? (
           <Image
