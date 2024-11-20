@@ -11,7 +11,13 @@ interface ProductListProps {
 }
 
 export default function ProductList({ category }: ProductListProps) {
-  const [emblaRef] = useEmblaCarousel()
+  const [emblaRef] = useEmblaCarousel({
+    breakpoints: {
+    "(min-width: 1024px)": { dragFree: true },
+    "(min-width: 768px)": { slidesToScroll: 2 },
+    "(min-width: 0px)": { slidesToScroll: "auto" },
+  },
+    })
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ['products', category],
     queryFn: async () => getProducts({ category }),
@@ -34,8 +40,8 @@ export default function ProductList({ category }: ProductListProps) {
   }
 
   return (
-    <div className="overflow-x-auto px-4 md:px-10" ref={emblaRef}>
-      <ul className="embla__container flex gap-4">
+    <div className=" space-x-4 px-4 md:px-10 overflow-hidden" ref={emblaRef}>
+      <ul className=" flex -ml-4">
         {data?.data.map((product: any) => (
      
             <ProductItem products={product} key={product.id} />

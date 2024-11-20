@@ -27,7 +27,7 @@ export default async function ProductSection({
   })
 
   return (
-    <section className='py-[60px] lg:py-[70px]'>
+    <section className='py-[60px] lg:py-[70px] overflow-hidden'>
       <DescriptionHeader
         title={category.charAt(0).toUpperCase() + category.slice(1)}>
         {children}

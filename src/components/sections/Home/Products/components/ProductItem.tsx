@@ -7,8 +7,8 @@ interface ProductItemProps {
 
 export default function ProductItem({ products }: ProductItemProps) {
   return (
-    <li className='embla__slide '>
-      <div className='mb-3 bg-light-grey py-[115px]'>
+    <li className='flex-1 sm:flex-1/2 lg:flex-1/4 pl-4'>
+      <div className='mb-3 bg-light-grey py-[115px] max-h-[460px]'>
         {products.media.main.status !== 'rejected' ? (
           <Image
             alt={products.title}

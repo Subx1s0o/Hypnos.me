@@ -18,6 +18,15 @@ export default {
         manrope: ['var(--font-manrope)', 'serif'],
         cormorant: ['var(--font-cormorant)', 'serif']
       },
+      spacing: {
+        'slide-small': '16px',
+        'slide-large': '32px',
+      },
+      flex: {
+        "1": "0 0 100%",
+        '1/2': '0 0 50%',
+        '1/4': '0 0 25%',
+      },
       colors: {
         grey: {
           '200': '#E8E6E5',
