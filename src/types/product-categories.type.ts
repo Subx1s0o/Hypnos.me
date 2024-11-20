@@ -1,6 +1,6 @@
 export type ProductCategories =
   | 'classic'
-  | 'neo_classic'
+  | 'neoclassic'
   | 'geometrical'
   | 'symbolical'
   | 'futuristic'

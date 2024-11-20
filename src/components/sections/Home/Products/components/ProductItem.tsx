@@ -3,12 +3,11 @@ import Image from 'next/image'
 
 interface ProductItemProps {
   products: any
-  className: string
 }
 
-export default function ProductItem({ products , className}: ProductItemProps) {
+export default function ProductItem({ products }: ProductItemProps) {
   return (
-    <div className={className}>
+    <li className='embla__slide '>
       <div className='mb-3 bg-light-grey py-[115px]'>
         {products.media.main.status !== 'rejected' ? (
           <Image
@@ -29,6 +28,6 @@ export default function ProductItem({ products , className}: ProductItemProps) {
         })}>
         ${products.price}
       </p>
-    </div>
+    </li >
   )
 }

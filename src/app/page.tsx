@@ -13,7 +13,7 @@ export default function HomePage() {
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
         </ProductSection>
-        <ProductSection category='neo_classic'>
+        <ProductSection category='neoclassic'>
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
         </ProductSection>
