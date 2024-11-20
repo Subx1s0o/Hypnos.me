@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 import getProducts from '@/actions/getProducts'
-import { ProductCategories } from '@/types/product-categories.type'
+import { ProductCategories } from '@/types'
 import {
   dehydrate,
   HydrationBoundary,
@@ -27,7 +27,7 @@ export default async function ProductSection({
   })
 
   return (
-    <section className='py-[60px] lg:py-[70px] overflow-hidden'>
+    <section className='overflow-hidden py-[60px] lg:py-[70px]'>
       <DescriptionHeader
         title={category.charAt(0).toUpperCase() + category.slice(1)}>
         {children}

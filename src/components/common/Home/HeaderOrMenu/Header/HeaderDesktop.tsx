@@ -23,7 +23,7 @@ export default function HeaderDesktop() {
           <address className='relative flex gap-6 text-xs not-italic'>
             <a
               href='tel:12155550199'
-              className='text-xs-heavy'>
+              className='text-xs font-semibold'>
               +1 215-555-0199
             </a>
 
@@ -31,7 +31,7 @@ export default function HeaderDesktop() {
               href='https://maps.app.goo.gl/B9Yav26Ua82HB1vS9'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-xs-heavy'>
+              className='text-xs font-semibold'>
               123 Walnut Street
             </a>
           </address>

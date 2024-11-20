@@ -3,8 +3,10 @@
 import getProducts from '@/actions/getProducts'
 import { ProductCategories } from '@/types/product-categories.type'
 import { useQuery } from '@tanstack/react-query'
-import ProductItem from './ProductItem'
 import useEmblaCarousel from 'embla-carousel-react'
+
+import ProductItem from './ProductItem'
+import { Product } from '@/types'
 
 interface ProductListProps {
   category: ProductCategories
@@ -13,14 +15,14 @@ interface ProductListProps {
 export default function ProductList({ category }: ProductListProps) {
   const [emblaRef] = useEmblaCarousel({
     breakpoints: {
-    "(min-width: 1024px)": { dragFree: true },
-    "(min-width: 768px)": { slidesToScroll: 2 },
-    "(min-width: 0px)": { slidesToScroll: "auto" },
-  },
-    })
-  const { data, isLoading, isError, error } = useQuery({
+      '(min-width: 1024px)': { dragFree: true },
+      '(min-width: 768px)': { slidesToScroll: 2 },
+      '(min-width: 0px)': { slidesToScroll: 'auto' }
+    }
+  })
+  const { data, isLoading, isError, error } = useQuery<{data: Product[], totalPages: number}>({
     queryKey: ['products', category],
-    queryFn: async () => getProducts({ category }),
+    queryFn: async () => getProducts({ category })
   })
 
   if (isError) {
@@ -35,17 +37,18 @@ export default function ProductList({ category }: ProductListProps) {
     return <p>Loading...</p>
   }
 
-  if (data?.statusCode === 500) {
-    return <p>Error 500</p>
-  }
+  if (isError) return <p>Error loading products</p>
 
   return (
-    <div className=" space-x-4 px-4 md:px-10 overflow-hidden" ref={emblaRef}>
-      <ul className=" flex -ml-4">
-        {data?.data.map((product: any) => (
-     
-            <ProductItem product={product} key={product.id} />
-       
+    <div
+      className='space-x-4 overflow-hidden px-4 md:px-10'
+      ref={emblaRef}>
+      <ul className='-ml-4 flex'>
+        {data?.data.map((product: Product) => (
+          <ProductItem
+            product={product}
+            key={product.id}
+          />
         ))}
       </ul>
     </div>

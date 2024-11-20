@@ -9,12 +9,15 @@ export default async function getProducts({ category }: GetProductsProps) {
   const base_url = `${env.NEXT_PUBLIC_API_URL}/goods`
   if (category) {
     try {
-      const products = await fetch(`${base_url}?limit=15&category=${category}`, {
-        cache: 'no-cache',
-        headers: {
-          'Accept': 'application/json'
-      }
-      })
+      const products = await fetch(
+        `${base_url}?limit=15&category=${category}`,
+        {
+          cache: 'no-cache',
+          headers: {
+            Accept: 'application/json'
+          }
+        }
+      )
 
       return products.json()
     } catch (error) {

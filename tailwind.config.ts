@@ -96,13 +96,6 @@ export default {
             lineHeight: '21px'
           }
         ],
-        'xs-heavy': [
-          '12px',
-          {
-            fontWeight: 600,
-            lineHeight: '16px'
-          }
-        ],
         xs: [
           '12px',
           {

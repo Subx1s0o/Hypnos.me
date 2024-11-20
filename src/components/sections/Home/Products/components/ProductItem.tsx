@@ -1,18 +1,30 @@
 import { cn } from '@/lib/cn'
+import { Product } from '@/types'
 import Image from 'next/image'
 
 interface ProductItemProps {
-  product: any
+  product: Product
 }
 
-export default function ProductItem({ product}: ProductItemProps) {
+export default function ProductItem({ product }: ProductItemProps) {
+  const {
+    title,
+    discountPercent,
+    price,
+    media: { main: { url, status } }
+  } = product
+
+  const finalPrice = discountPercent
+    ? price - (price * discountPercent) / 100
+    : price
+
   return (
-    <li className='flex-1 sm:flex-1/2 lg:flex-1/4 pl-4'>
-      <div className='mb-3 bg-light-grey py-[115px] max-h-[460px]'>
-        {product.media.main.status !== 'rejected' ? (
+    <li className="flex-1 sm:flex-1/2 lg:flex-1/4 pl-4">
+      <div className="relative mb-3 bg-light-grey max-h-[460px]">
+        {status !== 'rejected' ? (
           <Image
-            alt={product.title}
-            src={product.media.main.url}
+            alt={title}
+            src={url}
             width={308}
             height={230}
             style={{ width: '100%', height: 'auto' }}
@@ -20,15 +32,26 @@ export default function ProductItem({ product}: ProductItemProps) {
         ) : (
           <div>No image</div>
         )}
-        {<span className='bg-black text-white'></span>}
+        {discountPercent && (
+          <span className="absolute bottom-[14px] left-[14px] bg-black py-[10px] px-5 text-white rounded-full">
+            -{discountPercent}%
+          </span>
+        )}
       </div>
-      <h3 className='mb-2 text-black'>{product.title}</h3>
-      <p
-        className={cn('text-xs-heavy text-brown', {
-          'text-xs text-light-grey line-through': product.discountPrice
-        })}>
-        ${product.price}
-      </p>
-    </li >
+      <h3 className="text-smd font-medium mb-2 text-black">{title}</h3>
+      <div className='flex gap-2'>
+        <p
+          className={cn('text-sm text-brown', {
+            'text-sm text-grey-200 line-through': discountPercent
+          })}>
+          ${price}
+        </p>
+        {discountPercent && (
+          <p className="text-sm font-semibold text-brown">
+           ${finalPrice.toFixed(2)}
+          </p>
+        )}
+      </div>
+    </li>
   )
 }
