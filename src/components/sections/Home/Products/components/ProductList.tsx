@@ -44,7 +44,7 @@ export default function ProductList({ category }: ProductListProps) {
       <ul className=" flex -ml-4">
         {data?.data.map((product: any) => (
      
-            <ProductItem products={product} key={product.id} />
+            <ProductItem product={product} key={product.id} />
        
         ))}
       </ul>
