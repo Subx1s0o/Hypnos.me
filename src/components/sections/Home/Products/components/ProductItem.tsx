@@ -12,7 +12,9 @@ export default function ProductItem({ product }: ProductItemProps) {
     title,
     discountPercent,
     price,
-    media: { main: { url, status } }
+    media: {
+      main: { url, status }
+    }
   } = product
 
   const finalPrice = discountPercent
@@ -20,9 +22,9 @@ export default function ProductItem({ product }: ProductItemProps) {
     : price
 
   return (
-    <li className="flex-1 sm:flex-1/2 lg:flex-1/4 pl-4 aspect-square">
-      <Link href={`catalog/${title.toLowerCase().split(" ").join("-")}`}>
-        <div className="relative mb-3 bg-light-grey max-h-[460px]">
+    <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
+      <Link href={`catalog/${title.toLowerCase().split(' ').join('-')}`}>
+        <div className='relative mb-3 max-h-[460px] bg-light-grey'>
           {status !== 'rejected' ? (
             <Image
               alt={title}
@@ -35,12 +37,14 @@ export default function ProductItem({ product }: ProductItemProps) {
             <div>No image</div>
           )}
           {discountPercent && (
-            <span className="absolute bottom-[14px] left-[14px] bg-black py-[10px] px-5 text-white rounded-full">
+            <span
+              className='absolute bottom-[14px] left-[14px] rounded-full bg-black px-5 py-[10px]
+                text-white'>
               -{discountPercent}%
             </span>
           )}
         </div>
-        <h3 className="text-smd font-medium mb-2 text-black">{title}</h3>
+        <h3 className='mb-2 text-smd font-medium text-black'>{title}</h3>
         <div className='flex gap-2'>
           <p
             className={cn('text-sm text-brown', {
@@ -49,8 +53,8 @@ export default function ProductItem({ product }: ProductItemProps) {
             ${price}
           </p>
           {discountPercent && (
-            <p className="text-sm font-semibold text-brown">
-             ${finalPrice.toFixed(2)}
+            <p className='text-sm font-semibold text-brown'>
+              ${finalPrice.toFixed(2)}
             </p>
           )}
         </div>

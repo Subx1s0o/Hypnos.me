@@ -1,27 +1,33 @@
 'use client'
 
 import getProducts from '@/actions/getProducts'
+import { Product } from '@/types'
 import { ProductCategories } from '@/types/product-categories.type'
 import { useQuery } from '@tanstack/react-query'
 import useEmblaCarousel from 'embla-carousel-react'
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
+
 import ProductItem from './ProductItem'
-import { Product } from '@/types'
 
 interface ProductListProps {
   category: ProductCategories
 }
 
 export default function ProductList({ category }: ProductListProps) {
-  const [emblaRef] = useEmblaCarousel({
-    breakpoints: {
-      '(min-width: 1024px)': { dragFree: true },
-      '(min-width: 768px)': { slidesToScroll: 2 },
-      '(min-width: 0px)': { slidesToScroll: 'auto' }
+  const [emblaRef] = useEmblaCarousel(
+    {
+      breakpoints: {
+        '(min-width: 1024px)': { dragFree: true },
+        '(min-width: 768px)': { slidesToScroll: 2 },
+        '(min-width: 0px)': { slidesToScroll: 'auto' }
+      }
     },
-   
-  }, [WheelGesturesPlugin()])
-  const { data, isLoading, isError, error } = useQuery<{data: Product[], totalPages: number}>({
+    [WheelGesturesPlugin()]
+  )
+  const { data, isLoading, isError, error } = useQuery<{
+    data: Product[]
+    totalPages: number
+  }>({
     queryKey: ['products', category],
     queryFn: async () => getProducts({ category })
   })
@@ -44,7 +50,7 @@ export default function ProductList({ category }: ProductListProps) {
     <div
       className='space-x-4 overflow-hidden px-4 md:px-10'
       ref={emblaRef}>
-      <ul className='-ml-4 flex '>
+      <ul className='-ml-4 flex'>
         {data?.data.map((product: Product) => (
           <ProductItem
             product={product}
