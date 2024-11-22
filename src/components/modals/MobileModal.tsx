@@ -6,9 +6,8 @@ type Menu = { isOpen: boolean }
 export default function MobileModal({ isOpen }: Menu) {
   return (
     <div
-      className={`bg-spanishGray fixed bottom-28 left-0 z-50 h-screen w-full transition-all
-        ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
-    >
+      className={`fixed bottom-28 left-0 z-50 h-screen w-full bg-spanishGray transition-all
+        ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
       <div className='flex flex-col items-center gap-12 pt-40 text-white'>
         <NavList />
         <button
