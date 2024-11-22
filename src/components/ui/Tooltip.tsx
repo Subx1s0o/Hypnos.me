@@ -15,7 +15,7 @@ export function Tooltip({ children, content, className = '' }: TooltipProps) {
       <RadixTooltip.Portal>
         <RadixTooltip.Content
           className={cn(
-            'rounded-lg bg-white px-3 py-2 text-xs-heavy shadow-lg',
+            'rounded-lg bg-white px-3 py-2 text-xs font-semibold shadow-lg',
             className
           )}>
           {content}
