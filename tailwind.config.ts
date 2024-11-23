@@ -20,25 +20,25 @@ export default {
       },
       spacing: {
         'slide-small': '16px',
-        'slide-large': '32px',
+        'slide-large': '32px'
       },
       flex: {
-        "1": "0 0 100%",
+        '1': '0 0 100%',
         '1/2': '0 0 50%',
-        '1/4': '0 0 25%',
+        '1/4': '0 0 25%'
       },
       colors: {
         grey: {
           '200': '#E8E6E5',
           '300': '#393939',
-          '400': '#4E453E'
+          '400': '#4E453E',
+          spanish: '#A69E97'
         },
         black: '#1B1716',
         'light-grey': '#F3F1EF',
         cream: '#E5DCD4',
         primary: '#CCC0B180',
-        brown: '#B99376',
-        spanishGray: '#A69E97'
+        brown: '#B99376'
       },
       fontSize: {
         xxl: [

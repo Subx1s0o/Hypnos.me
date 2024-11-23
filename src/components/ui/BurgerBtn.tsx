@@ -1,31 +1,34 @@
 'use client'
 
-import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
+import React from 'react'
 
-import Icon from '@/components/ui/Icon'
 
-interface BurgerBtnProps
-  extends DetailedHTMLProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
+interface ButtonProps
+  extends React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  id: string
-  w: number
-  h: number
-  className?: string
-  onClick?: () => void
+  onClick: () => void
+  children: React.ReactNode
+  className: string
 }
 
-export default function BurgerBtn({ id, w, h, className }: BurgerBtnProps) {
+export default function BurgerBtn({
+  children,
+  className,
+  onClick,
+  ...props
+}: ButtonProps): JSX.Element {
   return (
     <div>
-      <button className={className || ''}>
-        <Icon
-          id={id}
-          h={w}
-          w={h}
-        />
+      <button
+        onClick={onClick}
+        type='button'
+        className={className || ''}
+        {...props}>
+        {children}
       </button>
     </div>
   )
 }
+

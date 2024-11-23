@@ -52,8 +52,8 @@
 </symbol>
 
 
-<symbol id="icon-x-altx-alt" viewBox="0 0 32 32">
-<path d="M16 0c-8.836 0-16 7.164-16 16s7.164 16 16 16 16-7.164 16-16-7.164-16-16-16zM23.914 21.086l-2.828 2.828-5.086-5.086-5.086 5.086-2.828-2.828 5.086-5.086-5.086-5.086 2.828-2.828 5.086 5.086 5.086-5.086 2.828 2.828-5.086 5.086 5.086 5.086z"></path>
+<symbol id="icon-x-altx-alt" viewBox="0 0 24 24">
+<path stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M19 5 5 19M5 5l14 14"></path>
 </symbol>
 
 <symbol id="icon-crystal" viewBox="0 0 871 682">
