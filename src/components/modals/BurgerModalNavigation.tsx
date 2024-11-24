@@ -2,19 +2,16 @@ import Link from 'next/link'
 
 import Icon from '@/components/ui/Icon'
 
-interface MobileItem {
-  title?: string
-  to: string
-}
-const navItems: MobileItem[] = [
+import MenuItem from '../common/NavMenuItem'
+
+const navItems = [
   { to: '/', title: 'Home' },
   { to: '/news', title: 'News' },
   { to: '/aboutus', title: 'About us' },
   { to: '/cataloge', title: 'Rings' },
   { to: '/contacts', title: 'Contacts' }
 ]
-
-const addressItems: MobileItem[] = [
+const addressItems = [
   { to: 'mailto:webmaster@example.com', title: '123 Walnut Street, USA' },
   { to: 'mailto:webmaster@example.com', title: 'webmaster@example.com' },
   { to: 'tel:+12155550199', title: '+12155550199' }
@@ -73,12 +70,15 @@ function NavList() {
       {navItems.map((item, index) => (
         <li key={index}>
           {
-            <Link
-              key={index}
-              className='font-cormorant text-2xl uppercase not-italic tracking-wider'
-              href={item.to}>
-              {item.title}
-            </Link>
+            <MenuItem
+              menuLink={{
+                href: item.to,
+                title: item.title,
+                className:
+                  'font-cormorant text-2xl uppercase not-italic tracking-wider'
+              }}>
+              <MenuItem.ItemLink />
+            </MenuItem>
           }
         </li>
       ))}
@@ -91,11 +91,15 @@ function AddressList() {
       {addressItems.map((item, index) => (
         <li key={index}>
           {
-            <Link
-              className='font-manrope text-base uppercase not-italic tracking-wider'
-              href={item.to}>
-              {item.title}
-            </Link>
+            <MenuItem
+              menuLink={{
+                href: item.to,
+                title: item.title,
+                className:
+                  'font-manrope text-base uppercase not-italic tracking-wider'
+              }}>
+              <MenuItem.ItemLink />
+            </MenuItem>
           }
         </li>
       ))}

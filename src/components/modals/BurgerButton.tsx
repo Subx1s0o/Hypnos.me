@@ -1,14 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 
 import BurgerBtn from '../ui/BurgerBtn'
 import Icon from '../ui/Icon'
-import BurgerModalNavigation from './BurgerModalNavigation'
+
+const BurgerModalNavigation = dynamic(() => import('./BurgerModalNavigation'), {
+  ssr: false
+})
 
 export default function BurgerButton() {
   const [isMenuOpen, setMenuOpen] = useState(false)
   const toggle = () => setMenuOpen(isMenuOpen => !isMenuOpen)
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset'
+  }, [isMenuOpen])
 
   return (
     <>

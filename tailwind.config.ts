@@ -31,8 +31,7 @@ export default {
         grey: {
           '200': '#E8E6E5',
           '300': '#393939',
-          '400': '#4E453E',
-          spanish: '#A69E97'
+          '400': '#4E453E'
         },
         black: '#1B1716',
         'light-grey': '#F3F1EF',
