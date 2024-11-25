@@ -3,10 +3,9 @@
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 
-import BurgerBtn from '../ui/BurgerBtn'
-import Icon from '../ui/Icon'
+import Icon from './Icon'
 
-const BurgerModalNavigation = dynamic(() => import('./BurgerModalNavigation'), {
+const BurgerModal = dynamic(() => import('../modals/BurgerModal/BurgerModal'), {
   ssr: false
 })
 
@@ -20,17 +19,18 @@ export default function BurgerButton() {
 
   return (
     <>
-      {isMenuOpen && <BurgerModalNavigation />}
-      <BurgerBtn
+      {isMenuOpen && <BurgerModal />}
+
+      <button
         type='button'
         onClick={toggle}
-        className={'p-4'}>
+        className='p-4'>
         <Icon
           h={24}
           w={24}
           id={isMenuOpen ? 'icon-x-altx-alt' : 'icon-burger'}
         />
-      </BurgerBtn>
+      </button>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import BurgerButton from '@/components/modals/BurgerButton'
+import BurgerButton from '@/components/ui/BurgerButton'
 import Icon from '@/components/ui/Icon'
 
 interface NavItem {
