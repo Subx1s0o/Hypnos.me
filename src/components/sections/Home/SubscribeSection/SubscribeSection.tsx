@@ -43,7 +43,7 @@ export default function SubscribeSection() {
           id='icon-letter'
           w={32}
           h={32}
-          className='bg-dark-grey text-primary100 rounded-full p-4'
+          className='rounded-full bg-grey-400 p-4 text-grey-200'
         />
         <h2 className='mt-4 text-center font-serif text-3xl text-white'>
           Get exclusive news
@@ -76,11 +76,11 @@ export default function SubscribeSection() {
             value={email}
             onChange={handleEmailChange}
             placeholder='EMAIL'
-            className={`bg-dark-grey w-full rounded border p-3 text-white transition-colors ${
+            className={`w-full rounded border bg-grey-400 p-3 text-white transition-colors ${
               email.length > 0
                 ? isEmailValid
                   ? 'border-green-500 focus:outline-none'
-                  : 'border-grey focus:outline-none'
+                  : 'border-grey-200 focus:outline-none'
                 : 'border-transparent'
               }`}
           />
@@ -92,7 +92,7 @@ export default function SubscribeSection() {
               type='checkbox'
               checked={isChecked}
               onChange={e => setIsChecked(e.target.checked)}
-              className='border-primary100 size-5 cursor-pointer appearance-none rounded-[4px] border-2
+              className='size-5 cursor-pointer appearance-none rounded-[4px] border-2 border-primary
                 bg-transparent checked:bg-primary'
             />
             <span className='text-sm'>
