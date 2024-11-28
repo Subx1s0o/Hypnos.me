@@ -2,7 +2,7 @@ import { addressItems } from './data/burger-data'
 
 export default function BurgerModalAddress() {
   return (
-    <address className='m-auto mb-12 min-w-80'>
+    <address className='m-auto min-w-80'>
       <ul className='flex flex-col items-center gap-4'>
         {addressItems.map((item, index) => (
           <li key={index}>

@@ -1,7 +1,15 @@
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
-import BurgerButton from '@/components/ui/BurgerButton'
+import { useModal } from '@/components/helpers/ModalContext'
 import Icon from '@/components/ui/Icon'
+
+const BurgerModal = dynamic(
+  () => import('@/components/modals/BurgerModal/BurgerModal'),
+  {
+    ssr: false
+  }
+)
 
 interface NavItem {
   type: 'button' | 'link'
@@ -17,36 +25,50 @@ const navItems: NavItem[] = [
 ]
 
 export default function MobileMenu() {
+  const { isModalOpen, toggleModal } = useModal()
+
   return (
-    <nav className='fixed bottom-0 z-50 w-full bg-white px-4 pb-8 pt-6'>
-      <ul className='flex w-full items-center justify-between'>
-        {navItems.map((item, index) => (
-          <li key={index}>
-            {item.type === 'link' && item.to ? (
-              <Link
-                className='block p-4'
-                href={item.to}>
-                <Icon
-                  id={item.iconId}
-                  h={24}
-                  w={24}
-                />
-              </Link>
-            ) : (
-              <button className='p-4'>
-                <Icon
-                  id={item.iconId}
-                  h={24}
-                  w={24}
-                />
-              </button>
-            )}
+    <>
+      <BurgerModal />
+      <nav className='fixed bottom-0 z-50 w-full bg-white px-4 pb-8 pt-6'>
+        <ul className='flex w-full items-center justify-between'>
+          {navItems.map((item, index) => (
+            <li key={index}>
+              {item.type === 'link' && item.to ? (
+                <Link
+                  className='block p-4'
+                  href={item.to}>
+                  <Icon
+                    id={item.iconId}
+                    h={24}
+                    w={24}
+                  />
+                </Link>
+              ) : (
+                <button className='p-4'>
+                  <Icon
+                    id={item.iconId}
+                    h={24}
+                    w={24}
+                  />
+                </button>
+              )}
+            </li>
+          ))}
+          <li>
+            <button
+              type='button'
+              onClick={toggleModal}
+              className='p-4'>
+              <Icon
+                h={24}
+                w={24}
+                id={isModalOpen ? 'icon-x-altx-alt' : 'icon-burger'}
+              />
+            </button>
           </li>
-        ))}
-        <li>
-          <BurgerButton />
-        </li>
-      </ul>
-    </nav>
+        </ul>
+      </nav>
+    </>
   )
 }
