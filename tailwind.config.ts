@@ -20,12 +20,12 @@ export default {
       },
       spacing: {
         'slide-small': '16px',
-        'slide-large': '32px',
+        'slide-large': '32px'
       },
       flex: {
-        "1": "0 0 100%",
+        '1': '0 0 100%',
         '1/2': '0 0 50%',
-        '1/4': '0 0 25%',
+        '1/4': '0 0 25%'
       },
       colors: {
         grey: {
