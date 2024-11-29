@@ -10,10 +10,9 @@ import BurgerModalSocialLinks from './BurgerModalSocialLinks'
 export default function BurgerModal() {
   const { isModalOpen, toggleModal } = useModal()
   const transitions = useTransition(isModalOpen, {
-    from: { transform: 'translateX(100%)' },
-    enter: { transform: 'translateX(0%)' },
-    leave: { transform: 'translateX(100%)' },
-    config: { tension: 200, friction: 20 }
+    from: { transform: 'translateX(100%)', opacity: 0 },
+    enter: { transform: 'translateX(0%)', opacity: 1 },
+    leave: { transform: 'translateX(100%)', opacity: 0 }
   })
 
   return (
