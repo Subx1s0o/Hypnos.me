@@ -27,6 +27,8 @@ export default function SubscribeSection() {
 
     // fetch logic
     console.log('Form submitted:', { email, isChecked })
+    setEmail('')
+    setIsChecked(false)
   }
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -87,13 +89,21 @@ export default function SubscribeSection() {
         </div>
 
         <div className='flex justify-between'>
-          <label className='flex cursor-pointer items-center space-x-3'>
+          <label className='relative flex cursor-pointer items-center space-x-3'>
             <input
               type='checkbox'
               checked={isChecked}
               onChange={e => setIsChecked(e.target.checked)}
               className='size-5 cursor-pointer appearance-none rounded-[4px] border-2 border-primary
                 bg-transparent checked:bg-primary'
+            />
+
+            <Icon
+              id='icon-heart'
+              w={10}
+              h={10}
+              className={`absolute left-[-2px] top-1/2 -translate-x-1/2 -translate-y-1/2 text-white
+                transition-transform duration-300 ${isChecked ? 'block' : 'hidden'}`}
             />
             <span className='text-sm'>
               * I agree with the{' '}
@@ -114,10 +124,10 @@ export default function SubscribeSection() {
                 : 'cursor-not-allowed bg-zinc-700'
               }`}>
             <Icon
-              id='icon-burger'
+              id='icon-arrow'
               w={16}
               h={16}
-              className='p-1 text-white'
+              className='rotate-90 p-1 text-white'
             />
           </button>
         </div>
