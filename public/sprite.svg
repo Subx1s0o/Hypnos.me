@@ -51,9 +51,15 @@
 <path fill="currentColor" stroke="currentColor" d="M22.685 6.556c-0.602 0-1.111 0.509-1.111 1.111s0.509 1.111 1.111 1.111c0.602 0 1.111-0.509 1.111-1.111s-0.463-1.111-1.111-1.111z"></path>
 </symbol>
 
+
+<symbol id="icon-x-altx-alt" viewBox="0 0 24 24">
+<path stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M19 5 5 19M5 5l14 14"></path>
+</symbol>
+
 <symbol id="icon-crystal" viewBox="0 0 871 682">
 <path fill="currentColor" stroke="currentColor" d="M1 193.8 130.43 1M1 193.8 429.72 681M1 193.8h255.38m613.62 0L733.64 1M870 193.8 429.72 681M870 193.8H603.06M733.64 1H429.72m303.92 0L603.06 193.8M130.43 1l125.95 192.8M130.43 1h299.3m0 680 173.33-487.2M429.72 681 256.38 193.8m0 0L429.72 1M256.38 193.8h346.68M429.72 1l173.34 192.8"></path>
 </symbol>
+
 
 </svg>
 

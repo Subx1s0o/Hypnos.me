@@ -42,7 +42,7 @@ export default function SubscribeSection() {
       {/* 1 - Top section */}
       <div className='flex flex-col items-center py-14 md:col-span-2 md:px-16 md:py-20'>
         <Icon
-          id='icon-letter'
+          id='icon-heart'
           w={32}
           h={32}
           className='rounded-full bg-grey-400 p-4 text-grey-200'
