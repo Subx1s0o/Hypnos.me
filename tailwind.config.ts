@@ -37,7 +37,8 @@ export default {
         'light-grey': '#F3F1EF',
         cream: '#E5DCD4',
         primary: '#CCC0B180',
-        brown: '#B99376'
+        brown: '#B99376',
+        'choco': '#3C3C3C'
       },
       fontSize: {
         xxl: [

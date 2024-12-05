@@ -6,6 +6,7 @@ import { Cormorant, Manrope } from 'next/font/google'
 import RootHead from '@/components/helpers/RootHead'
 
 import './globals.css'
+import './embla.css'
 
 const CormorantFont = Cormorant({
   variable: '--font-cormorant',
