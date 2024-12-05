@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import Button from '@/components/ui/Button'
+
 import { navItems } from './data/burger-data'
 
 export default function BurgerModalNavigation() {
@@ -16,11 +18,11 @@ export default function BurgerModalNavigation() {
           </li>
         ))}
       </ul>
-      <button
-        className='flex items-center rounded bg-black px-20 py-4 font-manrope uppercase'
-        type='button'>
+      <Button
+        className='bg-black px-20 py-4'
+        onClick={() => console.log('Order clicked')}>
         Order
-      </button>
+      </Button>
     </>
   )
 }
