@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+import Breadcrumb from '@/components/features/BreadCrumb'
 import Icon from '@/components/ui/Icon'
 
 import HeaderPageNavigation from './Header/HeaderPageNavigation'
@@ -12,7 +13,7 @@ export default function HeaderDesktop() {
 
   return (
     <>
-      <header className='mb-5 px-10'>
+      <header className='px-10'>
         <div className='flex items-center justify-between border-b border-b-grey-200 py-5'>
           <Link
             href='/'
@@ -44,7 +45,14 @@ export default function HeaderDesktop() {
           </div>
         </div>
       </header>
-      {shouldRenderPageNavigation && <HeaderPageNavigation />}
+      {shouldRenderPageNavigation && (
+        <div className='relative flex items-center justify-between px-10 py-5'>
+          <Breadcrumb />
+          <div className='lg:left-1/2 xl:absolute xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2'>
+            <HeaderPageNavigation />
+          </div>
+        </div>
+      )}
     </>
   )
 }
