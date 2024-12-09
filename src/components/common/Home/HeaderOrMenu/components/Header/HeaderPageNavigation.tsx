@@ -3,10 +3,10 @@
 import HeaderPageNavigationLink from './HeaderPageNavigationLink'
 
 const navLinks = [
-  { href: '#catalogue', label: 'Catalogue' },
-  { href: '#products', label: 'New products' },
-  { href: '#about', label: 'About us' },
-  { href: '#contacts', label: 'Contacts' }
+  { href: '/catalogue', label: 'Catalogue' },
+  { href: '/new-products', label: 'New products' },
+  { href: '/about-us', label: 'About us' },
+  { href: '/contacts', label: 'Contacts' }
 ]
 
 export default function HeaderPageNavigation() {

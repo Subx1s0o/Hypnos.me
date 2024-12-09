@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function TitleNavigationLink({
+export default function HeaderPageNavigationLink({
   href,
   label
 }: {
