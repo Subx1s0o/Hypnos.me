@@ -40,8 +40,8 @@ export default function AboutSection() {
               href='custom'
               className='flex justify-center text-white md:justify-start'>
               <Icon
-                className='shrink-0 rotate-45 rounded-full bg-brown p-5 transition-all hover:bg-red-800
-                  lg:block'
+                className='lg:hover:bg-brown-active shrink-0 rotate-45 rounded-full bg-brown p-5
+                  transition-all lg:block'
                 id='icon-arrow'
                 w={16}
                 h={16}
