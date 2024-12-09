@@ -1,7 +1,7 @@
 'use client'
 
-import HeaderOrMenu from './HeaderOrMenuMedias'
+import HeaderOrMenuMedias from './HeaderOrMenuMedias'
 
-export default function Home() {
-  return <HeaderOrMenu />
+export default function HeaderOrMenu() {
+  return <HeaderOrMenuMedias />
 }
