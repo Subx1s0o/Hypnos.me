@@ -1,4 +1,3 @@
-import HeaderOrMenu from '@/components/common/Home/HeaderOrMenu/HeaderOrMenu'
 import AboutSection from '@/components/sections/Home/AboutSection/AboutSection'
 import HeroSection from '@/components/sections/Home/HeroSection/HeroSection'
 import ProductSection from '@/components/sections/Home/Products/ProductSection'
@@ -7,7 +6,6 @@ import TitleSection from '@/components/sections/Home/TitleSection/TitleSection'
 export default function HomePage() {
   return (
     <>
-      <HeaderOrMenu />
       <main>
         <TitleSection />
         <HeroSection />
