@@ -21,12 +21,14 @@ export default function FormInput({
 
   return (
     <div className='flex flex-col'>
-      {label && <label className='mb-4 text-xs'>{label}</label>}
+      {label && (
+        <label className='mb-4 text-xs font-bold uppercase'>{label}</label>
+      )}
       <input
         {...control.register(name)}
         {...inputProps}
         className={cn(
-          `h-[48px] w-full rounded-xl border border-grey-200 bg-white px-[14px] py-4
+          `h-[48px] w-full rounded-[4px] border border-grey-200 bg-white px-[14px] py-4
           text-sm outline-none transition-colors focus-visible:border-black ${className}`,
           {
             'border-error': errors?.[name]

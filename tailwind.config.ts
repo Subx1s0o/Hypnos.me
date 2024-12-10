@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        xxl: '1440px',
         xl: '1280px',
         lg: '1024px',
         md: '768px',
@@ -77,17 +78,17 @@ export default {
             lineHeight: '48px'
           }
         ],
+        smd: [
+          '32px',
+          {
+            fontWeight: 400,
+            lineHeight: 'normal'
+          }
+        ],
         base: [
           '16px',
           {
             fontWeight: 500,
-            lineHeight: '22px'
-          }
-        ],
-        smd: [
-          '16px',
-          {
-            fontWeight: 700,
             lineHeight: '22px'
           }
         ],
