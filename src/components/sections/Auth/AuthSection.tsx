@@ -25,7 +25,7 @@ export default function AuthSection({ children }: PropsWithChildren) {
       <div
         className='mx-auto flex h-full max-w-[1500px] items-center justify-center xl:grid
           xl:grid-cols-2 xl:items-center'>
-        <div className='flex justify-start'>
+        <div className='flex justify-center'>
           <MediaContextProvider>
             <Media greaterThanOrEqual='xl'>
               <Image
