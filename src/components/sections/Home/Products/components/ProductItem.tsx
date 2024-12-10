@@ -3,6 +3,8 @@ import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import BlackBadge from '@/components/ui/BlackBadge'
+
 interface ProductItemProps {
   product: Product
 }
@@ -37,11 +39,9 @@ export default function ProductItem({ product }: ProductItemProps) {
             <div>No image</div>
           )}
           {discountPercent && (
-            <span
-              className='absolute bottom-[14px] left-[14px] rounded-full bg-black px-5 py-[10px]
-                text-white'>
+            <BlackBadge className='absolute bottom-[14px] left-[14px] px-5 py-[10px]'>
               -{discountPercent}%
-            </span>
+            </BlackBadge>
           )}
         </div>
         <h3 className='mb-2 text-smd font-medium text-black'>{title}</h3>

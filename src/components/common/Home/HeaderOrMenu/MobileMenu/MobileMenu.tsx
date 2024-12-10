@@ -36,7 +36,7 @@ export default function MobileMenu() {
               <Icon
                 h={24}
                 w={24}
-                id={isModalOpen('burger') ? 'icon-burger' : 'icon-x-altx-alt'}
+                id={isModalOpen('burger') ? 'icon-x-altx-alt' : 'icon-burger'}
               />
             </button>
           </li>

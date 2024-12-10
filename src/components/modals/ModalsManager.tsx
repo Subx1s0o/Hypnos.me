@@ -48,24 +48,26 @@ export default function ModalManager() {
       <MediaContextProvider>
         <Media greaterThanOrEqual='md'>
           {transitions((style, modal) => (
-            <div
-              className='fixed inset-0 z-50 flex justify-end bg-grey-400/75'
-              onClick={() => toggleModal(modal.name)}>
-              <animated.div
-                onClick={e => e.stopPropagation()}
-                key={modal.name}
-                style={style}
-                className={modal.className}>
-                {modal.name === 'cart' && <CartModal />}
-                {modal.name === 'favorites' && (
-                  <p>Your favorite items will appear here!</p>
-                )}
-                {modal.name === 'profile' && (
-                  <p>Profile settings and info go here.</p>
-                )}
-                {modal.name === 'search' && <p>Search</p>}
-              </animated.div>
-            </div>
+            <>
+              <div
+                className='fixed inset-0 z-50 flex justify-end bg-grey-400/75'
+                onClick={() => toggleModal(modal.name)}>
+                <animated.div
+                  onClick={e => e.stopPropagation()}
+                  key={modal.name}
+                  style={style}
+                  className={modal.className}>
+                  {modal.name === 'cart' && <CartModal />}
+                  {modal.name === 'favorites' && (
+                    <p>Your favorite items will appear here!</p>
+                  )}
+                  {modal.name === 'profile' && (
+                    <p>Profile settings and info go here.</p>
+                  )}
+                  {modal.name === 'search' && <p>Search</p>}
+                </animated.div>
+              </div>
+            </>
           ))}
         </Media>
         <Media lessThan='md'>

@@ -1,5 +1,5 @@
+import BlackBadge from '@/components/ui/BlackBadge'
 import Button from '@/components/ui/Button'
-import SpanBtn from '@/components/ui/SpanBtn'
 
 import CartItems from './CartItems'
 
@@ -12,7 +12,7 @@ export default function CartModal() {
             text-black'>
           The cart
         </h1>
-        <SpanBtn className='w-6'>4</SpanBtn>
+        <BlackBadge className='w-6'>4</BlackBadge>
       </div>
       <CartItems />
       <div className='flex flex-col gap-4 pb-20 md:pb-0'>

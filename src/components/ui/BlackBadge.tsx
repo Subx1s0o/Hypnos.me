@@ -4,7 +4,7 @@ interface SpanBtnProps {
   children: React.ReactNode
   className?: string
 }
-const SpanBtn: React.FC<SpanBtnProps> = ({ children, className = '' }) => {
+const BlackBadge: React.FC<SpanBtnProps> = ({ children, className = '' }) => {
   return (
     <div
       className={`flex h-6 items-center justify-center rounded-full bg-black font-manrope text-xs
@@ -14,4 +14,4 @@ const SpanBtn: React.FC<SpanBtnProps> = ({ children, className = '' }) => {
   )
 }
 
-export default SpanBtn
+export default BlackBadge
