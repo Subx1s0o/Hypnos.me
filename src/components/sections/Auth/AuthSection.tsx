@@ -17,8 +17,8 @@ export default function AuthSection({ children }: PropsWithChildren) {
         onClick={() => router.back()}>
         <Icon
           id='icon-arrow'
-          w={32}
-          h={32}
+          w={28}
+          h={28}
           className='-rotate-90 p-5'
         />
       </button>

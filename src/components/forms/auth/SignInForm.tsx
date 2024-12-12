@@ -49,8 +49,8 @@ export default function SignInForm() {
         </div>
         <button
           type='submit'
-          className='w-full rounded-[4px] bg-black py-5 text-xs font-bold text-white
-            transition-colors lg:hover:bg-grey-300'>
+          className='w-full rounded bg-black py-5 text-xs font-bold text-white transition-colors
+            lg:hover:bg-grey-300'>
           LOGIN IN
         </button>
         <div className='flex justify-between'>
