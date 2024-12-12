@@ -12,19 +12,23 @@ export default function AuthSection({ children }: PropsWithChildren) {
 
   return (
     <section className='relative h-[calc(100vh-140px)] gap-[50px] xl:pl-[105px] xl:pr-[155px]'>
-      <button
-        className='absolute left-6 top-[50px]'
-        onClick={() => router.back()}>
-        <Icon
-          id='icon-arrow'
-          w={28}
-          h={28}
-          className='-rotate-90 p-5'
-        />
-      </button>
+      <MediaContextProvider>
+        <Media greaterThanOrEqual='sm'>
+          <button
+            className='absolute top-[50px] sm:left-4 md:left-6'
+            onClick={() => router.back()}>
+            <Icon
+              id='icon-arrow'
+              w={28}
+              h={28}
+              className='-rotate-90 p-5'
+            />
+          </button>
+        </Media>
+      </MediaContextProvider>
       <div
-        className='mx-auto flex h-full max-w-[1500px] items-center justify-center xl:grid
-          xl:grid-cols-2 xl:items-center'>
+        className='mx-auto flex h-full max-w-[1500px] items-center justify-center px-4 lg:px-10
+          xl:grid xl:grid-cols-2 xl:items-center'>
         <div className='flex justify-center'>
           <MediaContextProvider>
             <Media greaterThanOrEqual='xl'>

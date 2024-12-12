@@ -15,7 +15,7 @@ export default function SignInForm() {
   const onSubmit = () => {}
 
   return (
-    <div className='w-[370px] xxl:w-[450px]'>
+    <div className='w-full sm:w-[370px] xxl:w-[450px]'>
       <h1 className='mb-6 text-center font-cormorant text-smd font-bold'>
         SIGN IN
       </h1>
