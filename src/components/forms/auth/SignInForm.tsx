@@ -16,7 +16,7 @@ export default function SignInForm() {
 
   return (
     <div className='w-full sm:w-[370px] xxl:w-[450px]'>
-      <h1 className='mb-6 text-center font-cormorant text-smd font-bold'>
+      <h1 className='mb-5 text-center font-cormorant text-smd font-bold'>
         SIGN IN
       </h1>
       <form
@@ -27,11 +27,13 @@ export default function SignInForm() {
             control={control}
             label='email'
             name='email'
+            placeholder='johnuk21@gmail.com'
           />
           <FormInput
             control={control}
             label='password'
             name='password'
+            placeholder='*********'
             type='password'
           />
         </div>

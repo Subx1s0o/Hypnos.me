@@ -30,12 +30,13 @@ export default {
       },
       colors: {
         grey: {
+          light: '#F3F1EF',
           '200': '#E8E6E5',
+          normal: '#555555',
           '300': '#393939',
           '400': '#4E453E'
         },
         black: '#1B1716',
-        'light-grey': '#F3F1EF',
         cream: '#E5DCD4',
         primary: '#CCC0B180',
         brown: '#B99376',

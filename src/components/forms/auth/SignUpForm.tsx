@@ -17,7 +17,7 @@ export default function SignUpForm() {
 
   return (
     <div className='w-full sm:w-[370px] xxl:w-[450px]'>
-      <h1 className='mb-6 text-center font-cormorant text-smd font-bold'>
+      <h1 className='mb-5 text-center font-cormorant text-smd font-bold'>
         SIGN UP
       </h1>
       <form
