@@ -27,17 +27,20 @@ export default function SignUpForm() {
           <FormInput
             control={control}
             label='name'
+            placeholder='John Conan'
             name='name'
           />
           <FormInput
             control={control}
             label='email'
+            placeholder='johnuk21@gmail.com'
             name='email'
           />
           <FormInput
             control={control}
             label='password'
             name='password'
+            placeholder='*********'
             type='password'
           />
         </div>
@@ -65,8 +68,8 @@ export default function SignUpForm() {
               <Icon
                 className='text-black'
                 id='icon-check'
-                w={12}
-                h={12}
+                w={16}
+                h={16}
               />
             </Checkbox.Indicator>
           </Checkbox.Root>

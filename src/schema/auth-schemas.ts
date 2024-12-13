@@ -1,7 +1,12 @@
 import { z } from 'zod'
 
 export const SignInSchema = z.object({
-  email: z.string().email().min(1, "This field can't be empty"),
+  email: z
+    .string()
+    .email(
+      "Invalid email format. The email must include a valid domain, an '@' symbol, and a subdomain."
+    )
+    .min(1, "This field can't be empty"),
   password: z.string().min(1, "This field can't be empty")
 })
 
