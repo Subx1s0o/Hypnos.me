@@ -2,8 +2,8 @@
 
 import { Media, MediaContextProvider } from '@/components/helpers/Media'
 
-import HeaderDesktop from './Header/HeaderDesktop'
-import MobileMenu from './MobileMenu/MobileMenu'
+import HeaderDesktop from './components/HeaderDesktop'
+import MobileMenu from './components/MobileMenu'
 
 export default function HeaderOrMenuMedias() {
   return (
