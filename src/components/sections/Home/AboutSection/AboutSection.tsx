@@ -6,7 +6,7 @@ export default function AboutSection() {
   return (
     <section className='relative flex justify-center overflow-hidden px-4 py-12 pb-32 md:px-10'>
       <Icon
-        className='absolute -top-16 left-[50.5%] -z-10 -translate-x-1/2 scale-75 text-light-grey
+        className='absolute -top-16 left-[50.5%] -z-10 -translate-x-1/2 scale-75 text-grey-light
           lg:top-48 lg:scale-[1.55]'
         id='icon-crystal'
         w={871}
@@ -40,8 +40,8 @@ export default function AboutSection() {
               href='custom'
               className='flex justify-center text-white md:justify-start'>
               <Icon
-                className='lg:hover:bg-brown-active shrink-0 rotate-45 rounded-full bg-brown p-5
-                  transition-all lg:block'
+                className='shrink-0 rotate-45 rounded-full bg-brown p-5 transition-all lg:block
+                  lg:hover:bg-brown-active'
                 id='icon-arrow'
                 w={16}
                 h={16}
