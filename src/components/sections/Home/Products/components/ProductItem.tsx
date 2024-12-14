@@ -23,7 +23,7 @@ export default function ProductItem({ product }: ProductItemProps) {
 
   return (
     <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
-      <Link href={`catalog/${title.toLowerCase().split(' ').join('-')}`}>
+      <Link href={`catalogue/${title.toLowerCase().split(' ').join('-')}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
           {status !== 'rejected' ? (
             <Image

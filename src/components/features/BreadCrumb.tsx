@@ -8,6 +8,14 @@ export default function Breadcrumb() {
   const paths = usePathname()
   const pathNames = paths.split('/').filter(path => path)
 
+  const selectPathName = (link: string) => {
+    const name = (link[0].toUpperCase() + link.slice(1, link.length))
+      .split('-')
+      .join(' ')
+
+    return name
+  }
+
   return (
     <div>
       <ul className='flex gap-3'>
@@ -27,7 +35,7 @@ export default function Breadcrumb() {
             paths === href
               ? 'font-bold'
               : 'relative duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-grey-400 after:duration-300 lg:hover:after:w-full'
-          const itemLink = link[0].toUpperCase() + link.slice(1, link.length)
+          const itemLink = selectPathName(link)
 
           return (
             <Fragment key={index}>
