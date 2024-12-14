@@ -18,19 +18,19 @@ export default function ModalManager() {
     },
     {
       name: 'profile',
-      className: 'relative  w-96  bg-white p-6 shadow-lg'
+      className: 'relative  md:w-[30rem] w-96 bg-white shadow-lg'
     },
     {
       name: 'cart',
-      className: 'relative w-96  bg-white p-6 shadow-lg'
+      className: 'relative md:w-[30rem] w-96 bg-white  shadow-lg'
     },
     {
       name: 'favorites',
-      className: 'relative w-96  bg-white p-6 shadow-lg'
+      className: 'relative md:w-[30rem] w-96 bg-white  shadow-lg'
     },
     {
       name: 'search',
-      className: 'relative w-96  bg-white p-6 shadow-lg'
+      className: 'relative md:w-[30rem] w-96 bg-white  shadow-lg'
     }
   ]
   const transitions = useTransition(
