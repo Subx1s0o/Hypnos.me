@@ -17,15 +17,7 @@ export default function ModalManager() {
         'flex h-full flex-col items-center gap-12 bg-grey-400 p-12 text-white'
     },
     {
-      name: 'profile',
-      className: 'relative  md:w-[30rem] w-96 bg-white shadow-lg'
-    },
-    {
       name: 'cart',
-      className: 'relative md:w-[30rem] w-96 bg-white  shadow-lg'
-    },
-    {
-      name: 'favorites',
       className: 'relative md:w-[30rem] w-96 bg-white  shadow-lg'
     },
     {
@@ -58,12 +50,6 @@ export default function ModalManager() {
                   style={style}
                   className={modal.className}>
                   {modal.name === 'cart' && <CartModal />}
-                  {modal.name === 'favorites' && (
-                    <p>Your favorite items will appear here!</p>
-                  )}
-                  {modal.name === 'profile' && (
-                    <p>Profile settings and info go here.</p>
-                  )}
                   {modal.name === 'search' && <p>Search</p>}
                 </animated.div>
               </div>
@@ -82,12 +68,6 @@ export default function ModalManager() {
                 className={modal.className}>
                 {modal.name === 'burger' && <BurgerModal />}
                 {modal.name === 'cart' && <CartModal />}
-                {modal.name === 'favorites' && (
-                  <p>Your favorite items will appear here!</p>
-                )}
-                {modal.name === 'profile' && (
-                  <p>Profile settings and info go here.</p>
-                )}
                 {modal.name === 'search' && <p>Search</p>}
               </animated.div>
             </div>
