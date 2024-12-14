@@ -34,7 +34,7 @@ export default function CartModal() {
           Place an order
         </Button>
         <Button
-          className='w-full bg-light-grey py-5 text-black'
+          className='w-full bg-grey-light py-5 text-black'
           onClick={handleCloseModal}>
           Continue shopping
         </Button>
