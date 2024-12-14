@@ -1,10 +1,10 @@
-import TitleNavigation from './components/TitleNavigation'
+import HeaderPageNavigation from '@/components/common/Home/HeaderOrMenu/components/Header/HeaderPageNavigation'
 
 export default function TitleSection() {
   return (
     <section>
-      <div className='px-[24px] pb-[80px] pt-[75px] md:px-[43px] md:pb-[27px] md:pt-[53px]'>
-        <TitleNavigation />
+      <div className='pb-[140px] pt-[100px] md:px-[43px] md:pb-[27px] md:pt-[53px]'>
+        <HeaderPageNavigation />
 
         <h1
           className='mx-auto max-w-[327px] text-center font-cormorant text-lg md:max-w-[510px]

@@ -26,5 +26,5 @@ jobs:
       - name: Lint code
         run: npm run lint
 
-      - name: Prettify
-        run: npm run prettify
+      - name: Formatting
+        run: npm run format
