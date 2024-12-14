@@ -10,13 +10,9 @@ export default async function getProducts({ category }: GetProductsProps) {
   const base_url = `${env.NEXT_PUBLIC_API_URL}/goods`
 
   try {
-    const response = category
-      ? await axios.get(`${base_url}?limit=15&category=${category}`, {
-          headers: {
-            Accept: 'application/json'
-          }
-        })
-      : await axios.get(base_url)
+    const response = await axios.get(
+      `${base_url}?limit=10&category=${category}`
+    )
 
     return response.data
   } catch (error) {
