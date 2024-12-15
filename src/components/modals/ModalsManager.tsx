@@ -31,16 +31,17 @@ export default function ModalManager() {
     },
     {
       name: 'searchD',
-      className: 'w-[490px] m-auto',
-      backdrop: 'fixed inset-0 z-50 bg-white mt-40 h-[320px]'
+      className: 'bg-white h-[320px] flex justify-center',
+      backdrop: 'fixed inset-0 z-50 bg-grey-400/75 mt-[130px] '
     }
   ]
+
   const transitions = useTransition(
     modals.filter(modal => isModalOpen(modal.name)),
     {
       from: modal =>
         modal.name === 'searchD'
-          ? { transform: 'translateY(-100%)', opacity: 0 }
+          ? { transform: 'translateY(-10%)', opacity: 0 }
           : { transform: 'translateX(100%)', opacity: 0 },
 
       enter: modal =>
@@ -49,8 +50,13 @@ export default function ModalManager() {
           : { transform: 'translateX(0%)', opacity: 1 },
       leave: modal =>
         modal.name === 'searchD'
-          ? { transform: 'translateY(-100%)', opacity: 0 }
+          ? { transform: 'translateY(-10%)', opacity: 0 }
           : { transform: 'translateX(100%)', opacity: 0 },
+      config: {
+        tension: 200,
+        friction: 30,
+        clamp: true
+      },
       keys: modal => modal.name
     }
 
