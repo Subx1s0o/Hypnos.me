@@ -1,69 +1,68 @@
-import dynamic from 'next/dynamic'
+import React from 'react'
 import Link from 'next/link'
 
+import { navigationData as data } from '@/components/common/Home/HeaderOrMenu/components/data/navigation-data'
 import { useModal } from '@/components/helpers/ModalContext'
 import Icon from '@/components/ui/Icon'
-
-const BurgerModal = dynamic(
-  () => import('@/components/modals/BurgerModal/BurgerModal'),
-  {
-    ssr: false
-  }
-)
-
-interface NavItem {
-  type: 'button' | 'link'
-  iconId: string
-  to?: string
-}
-
-const navItems: NavItem[] = [
-  { type: 'button', iconId: 'icon-cart' },
-  { type: 'button', iconId: 'icon-heart' },
-  { type: 'link', iconId: 'icon-profile', to: '/profile' },
-  { type: 'button', iconId: 'icon-search' }
-]
 
 export default function MobileMenu() {
   const { isModalOpen, toggleModal } = useModal()
 
   return (
     <>
-      <BurgerModal />
       <nav className='fixed bottom-0 z-50 w-full bg-white px-4 pb-8 pt-6'>
         <ul className='flex w-full items-center justify-between'>
-          {navItems.map((item, index) => (
-            <li key={index}>
-              {item.type === 'link' && item.to ? (
+          {data.map(item => (
+            <li
+              key={item.id}
+              className='relative'>
+              {item.id === 'favorites' || item.id === 'profile' ? (
                 <Link
-                  className='block p-4'
-                  href={item.to}>
+                  className='block p-3'
+                  href={item.id === 'favorites' ? '/favorites' : '/profile'}>
                   <Icon
-                    id={item.iconId}
-                    h={24}
-                    w={24}
+                    id={item.iconDefault}
+                    w={18}
+                    h={18}
                   />
                 </Link>
               ) : (
-                <button className='p-4'>
+                <button
+                  className='p-3'
+                  onClick={() => toggleModal(item.id)}
+                  type='button'>
                   <Icon
-                    id={item.iconId}
-                    h={24}
-                    w={24}
+                    id={
+                      isModalOpen(item.id) ? item.iconActive : item.iconDefault
+                    }
+                    w={18}
+                    h={18}
                   />
                 </button>
               )}
             </li>
           ))}
-          <li>
+          <li className='relative'>
             <button
               type='button'
-              onClick={toggleModal}
+              onClick={() => toggleModal('search')}
               className='p-4'>
               <Icon
-                h={24}
-                w={24}
-                id={isModalOpen ? 'icon-x-altx-alt' : 'icon-burger'}
+                w={18}
+                h={18}
+                id={'icon-search'}
+              />
+            </button>
+          </li>
+          <li className='relative'>
+            <button
+              type='button'
+              onClick={() => toggleModal('burger')}
+              className='p-4'>
+              <Icon
+                w={18}
+                h={18}
+                id={isModalOpen('burger') ? 'icon-x-altx-alt' : 'icon-burger'}
               />
             </button>
           </li>

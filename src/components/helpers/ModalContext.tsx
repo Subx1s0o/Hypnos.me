@@ -6,42 +6,68 @@ import React, {
   useState
 } from 'react'
 
-interface ModalContextType {
-  isModalOpen: boolean
-  toggleModal: () => void
+type ModalState = {
+  [key: string]: boolean
+}
+
+type ModalContextType = {
+  modals: ModalState
+  openModal: (name: string) => void
+  closeModal: (name: string) => void
+  toggleModal: (name: string) => void
+  isModalOpen: (name: string) => boolean
 }
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined)
 
-interface ModalProviderProps {
+type ModalProviderProps = {
   children: ReactNode
 }
 
 export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modals, setModals] = useState<ModalState>({})
+
+  const openModal = (name: string) => {
+    setModals({ [name]: true })
+  }
+
+  const closeModal = (name: string) => {
+    setModals(prev => ({ ...prev, [name]: false }))
+  }
+
+  const toggleModal = (name: string) => {
+    setModals(prev => {
+      const isCurrentlyOpen = prev[name]
+
+      return isCurrentlyOpen ? {} : { [name]: true }
+    })
+  }
+
+  const isModalOpen = (name: string) => !!modals[name]
 
   useEffect(() => {
-    if (isModalOpen) {
-      document.body.classList.add('overflow-hidden')
+    const hasOpenModal = Object.values(modals).some(isOpen => isOpen)
+
+    if (hasOpenModal) {
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.classList.remove('overflow-hidden')
+      document.body.style.overflow = ''
     }
 
     return () => {
-      document.body.classList.remove('overflow-hidden')
+      document.body.style.overflow = ''
     }
-  }, [isModalOpen])
-
-  const toggleModal = () => setIsModalOpen(prev => !prev)
+  }, [modals])
 
   return (
-    <ModalContext.Provider value={{ isModalOpen, toggleModal }}>
+    <ModalContext.Provider
+      value={{ modals, openModal, closeModal, toggleModal, isModalOpen }}>
       {children}
     </ModalContext.Provider>
   )
 }
 
-export const useModal = (): ModalContextType => {
+export const useModal = () => {
   const context = useContext(ModalContext)
   if (!context) {
     throw new Error('useModal must be used within a ModalProvider')
