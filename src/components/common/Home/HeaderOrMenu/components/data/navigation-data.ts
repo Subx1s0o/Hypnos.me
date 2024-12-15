@@ -19,10 +19,4 @@ export const navigationData = [
     iconDefault: 'icon-profile',
     iconActive: 'icon-profile'
   },
-  {
-    id: 'search',
-    label: 'Search...',
-    iconDefault: 'icon-search',
-    iconActive: 'icon-search'
-  }
 ]

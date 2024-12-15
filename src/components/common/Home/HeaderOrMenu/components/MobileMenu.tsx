@@ -13,7 +13,9 @@ export default function MobileMenu() {
       <nav className='fixed bottom-0 z-50 w-full bg-white px-4 pb-8 pt-6'>
         <ul className='flex w-full items-center justify-between'>
           {data.map(item => (
-            <>
+            <li
+              key={item.id}
+              className='relative'>
               {item.id === 'favorites' || item.id === 'profile' ? (
                 <Link
                   className='block p-3'
@@ -38,16 +40,28 @@ export default function MobileMenu() {
                   />
                 </button>
               )}
-            </>
+            </li>
           ))}
+          <li className='relative'>
+            <button
+              type='button'
+              onClick={() => toggleModal('search')}
+              className='p-4'>
+              <Icon
+                w={18}
+                h={18}
+                id={'icon-search'}
+              />
+            </button>
+          </li>
           <li className='relative'>
             <button
               type='button'
               onClick={() => toggleModal('burger')}
               className='p-4'>
               <Icon
-                h={24}
-                w={24}
+                w={18}
+                h={18}
                 id={isModalOpen('burger') ? 'icon-x-altx-alt' : 'icon-burger'}
               />
             </button>

@@ -14,33 +14,46 @@ export default function HeaderNavigation() {
         {data.map(({ id, label, iconActive, iconDefault }) => (
           <li key={id}>
             <Tooltip content={label}>
-              <>
-                {id === 'favorites' || id === 'profile' ? (
-                  <Link
-                    className='block p-3'
-                    href={id === 'favorites' ? '/favorites' : '/profile'}>
-                    <Icon
-                      id={iconDefault}
-                      w={18}
-                      h={18}
-                    />
-                  </Link>
-                ) : (
-                  <button
-                    className='p-3'
-                    onClick={() => toggleModal(id)}
-                    type='button'>
-                    <Icon
-                      id={isModalOpen(id) ? iconActive : iconDefault}
-                      w={18}
-                      h={18}
-                    />
-                  </button>
-                )}
-              </>
+              {id === 'favorites' || id === 'profile' ? (
+                <Link
+                  className='block p-3'
+                  href={id === 'favorites' ? '/favorites' : '/profile'}>
+                  <Icon
+                    id={iconDefault}
+                    w={18}
+                    h={18}
+                  />
+                </Link>
+              ) : (
+                <button
+                  className='p-3'
+                  onClick={() => toggleModal(id)}
+                  type='button'>
+                  <Icon
+                    id={isModalOpen(id) ? iconActive : iconDefault}
+                    w={18}
+                    h={18}
+                  />
+                </button>
+              )}
             </Tooltip>
           </li>
         ))}
+
+        <li>
+          <Tooltip content='Search...'>
+            <button
+              className='p-3'
+              onClick={() => toggleModal('searchD')}
+              type='button'>
+              <Icon
+                id='icon-search'
+                w={18}
+                h={18}
+              />
+            </button>
+          </Tooltip>
+        </li>
       </ul>
     </nav>
   )

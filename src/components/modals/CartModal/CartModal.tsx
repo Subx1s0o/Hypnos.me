@@ -19,11 +19,11 @@ export default function CartModal() {
   return (
     <div className='flex flex-col justify-between gap-12 px-8 py-2 md:gap-20 md:p-8'>
       <div className='flex flex-col items-center'>
-        <h1
+        <h2
           className='text-center font-cormorant text-2xl font-bold uppercase leading-normal
             text-black'>
           Your cart
-        </h1>
+        </h2>
         <BlackBadge className='w-6'>4</BlackBadge>
       </div>
       <CartItems />
@@ -34,7 +34,7 @@ export default function CartModal() {
           Place an order
         </Button>
         <Button
-          className='w-full bg-grey-light py-5 text-black'
+          className='w-full bg-grey-light py-5 text-black '
           onClick={handleCloseModal}>
           Continue shopping
         </Button>

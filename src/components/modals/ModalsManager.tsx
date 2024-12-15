@@ -6,6 +6,8 @@ import { useModal } from '@/components/helpers/ModalContext'
 
 import BurgerModal from './BurgerModal/BurgerModal'
 import CartModal from './CartModal/CartModal'
+import SearchModal from './SearchModal/SearchModal'
+import SearchModalDesktop from './SearchModal/SearchModalDesktop'
 
 export default function ModalManager() {
   const { isModalOpen, toggleModal } = useModal()
@@ -14,25 +16,50 @@ export default function ModalManager() {
     {
       name: 'burger',
       className:
-        'flex h-full flex-col items-center gap-12 bg-grey-400 p-12 text-white'
+        'flex h-full flex-col items-center gap-12 bg-grey-400 p-12 text-white',
+      backdrop: 'fixed inset-0 z-50 flex justify-end bg-grey-400/75'
     },
     {
       name: 'cart',
-      className: 'relative md:w-[30rem] w-96 bg-white  shadow-lg'
+      className: 'relative md:w-[30rem] w-96 bg-white  shadow-lg',
+      backdrop: 'fixed inset-0 z-50 flex justify-end bg-grey-400/75'
     },
     {
       name: 'search',
-      className: 'relative md:w-[30rem] w-96 bg-white  shadow-lg'
+      className: 'relative w-96 bg-white  shadow-lg',
+      backdrop: 'fixed inset-0 z-50 flex justify-end bg-grey-400/75'
+    },
+    {
+      name: 'searchD',
+      className: 'w-[490px] m-auto',
+      backdrop: 'fixed inset-0 z-50 bg-white mt-40 h-[320px]'
     }
   ]
   const transitions = useTransition(
     modals.filter(modal => isModalOpen(modal.name)),
     {
-      from: { transform: 'translateX(100%)', opacity: 0 },
-      enter: { transform: 'translateX(0%)', opacity: 1 },
-      leave: { transform: 'translateX(100%)', opacity: 0 },
+      from: modal =>
+        modal.name === 'searchD'
+          ? { transform: 'translateY(-100%)', opacity: 0 }
+          : { transform: 'translateX(100%)', opacity: 0 },
+
+      enter: modal =>
+        modal.name === 'searchD'
+          ? { transform: 'translateY(0%)', opacity: 1 }
+          : { transform: 'translateX(0%)', opacity: 1 },
+      leave: modal =>
+        modal.name === 'searchD'
+          ? { transform: 'translateY(-100%)', opacity: 0 }
+          : { transform: 'translateX(100%)', opacity: 0 },
       keys: modal => modal.name
     }
+
+    // {
+    //   from: { transform: 'translateX(100%)', opacity: 0 },
+    //   enter: { transform: 'translateX(0%)', opacity: 1 },
+    //   leave: { transform: 'translateX(100%)', opacity: 0 },
+    //   keys: modal => modal.name
+    // }
   )
 
   return (
@@ -42,7 +69,7 @@ export default function ModalManager() {
           {transitions((style, modal) => (
             <>
               <div
-                className='fixed inset-0 z-50 flex justify-end bg-grey-400/75'
+                className={modal.backdrop}
                 onClick={() => toggleModal(modal.name)}>
                 <animated.div
                   onClick={e => e.stopPropagation()}
@@ -50,7 +77,7 @@ export default function ModalManager() {
                   style={style}
                   className={modal.className}>
                   {modal.name === 'cart' && <CartModal />}
-                  {modal.name === 'search' && <p>Search</p>}
+                  {modal.name === 'searchD' && <SearchModalDesktop />}
                 </animated.div>
               </div>
             </>
@@ -68,7 +95,7 @@ export default function ModalManager() {
                 className={modal.className}>
                 {modal.name === 'burger' && <BurgerModal />}
                 {modal.name === 'cart' && <CartModal />}
-                {modal.name === 'search' && <p>Search</p>}
+                {modal.name === 'search' && <SearchModal />}
               </animated.div>
             </div>
           ))}
