@@ -18,7 +18,7 @@ export default function Breadcrumb() {
 
   return (
     <div>
-      <ul className='flex gap-3'>
+      <ul className='xmd:max-w-[400px] flex gap-3 md:max-w-[270px] lg:max-w-[500px] xl:max-w-[400px]'>
         <li className='relative'>
           <Link
             className='duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px]
@@ -33,7 +33,7 @@ export default function Breadcrumb() {
           const href = `/${pathNames.slice(0, index + 1).join('/')}`
           const itemClasses =
             paths === href
-              ? 'font-bold'
+              ? 'font-bold truncate'
               : 'relative duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-grey-400 after:duration-300 lg:hover:after:w-full'
           const itemLink = selectPathName(link)
 
