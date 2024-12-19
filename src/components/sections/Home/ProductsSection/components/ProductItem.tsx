@@ -13,6 +13,7 @@ export default function ProductItem({ product }: ProductItemProps) {
     slug,
     discountPercent,
     price,
+    category,
     media: {
       main: { url, status }
     }
@@ -24,7 +25,7 @@ export default function ProductItem({ product }: ProductItemProps) {
 
   return (
     <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
-      <Link href={`catalogue/${slug}`}>
+      <Link href={`products/${category}/${slug}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
           {status !== 'rejected' ? (
             <Image

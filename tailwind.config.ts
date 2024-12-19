@@ -19,11 +19,6 @@ export default {
         xs: '425px',
         xxs: '375px'
       },
-
-      backgroundImage: {
-        'custom-gradient':
-          'linear-gradient(201deg, rgba(243, 241, 239, 0.00) 28.5%, #F3F1EF 100%)'
-      },
       fontFamily: {
         manrope: ['var(--font-manrope)', 'serif'],
         cormorant: ['var(--font-cormorant)', 'serif']
@@ -71,13 +66,6 @@ export default {
           '56px',
           {
             fontWeight: 300,
-            lineHeight: '68px'
-          }
-        ],
-        slg: [
-          '48px',
-          {
-            fontWeight: 400,
             lineHeight: '68px'
           }
         ],
