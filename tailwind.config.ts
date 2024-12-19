@@ -14,7 +14,9 @@ export default {
         xmd: '900px',
         md: '768px',
         smd: '640px',
-        sm: '480px'
+        sm: '480px',
+        xs: '425px',
+        xxs: '375px'
       },
       fontFamily: {
         manrope: ['var(--font-manrope)', 'serif'],

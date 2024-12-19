@@ -5,7 +5,7 @@ import {
   QueryClient
 } from '@tanstack/react-query'
 
-import CurrentProductSection from '@/components/sections/CurrentProductSection/CurrentProductSection'
+import CurrentProductSection from '@/components/sections/Catalogue/CurrentProductSection/CurrentProductSection'
 
 export default async function CataloguePage({
   params: { slug }
