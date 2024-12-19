@@ -8,16 +8,16 @@ export default function ProductDescription({ product }: { product?: Product }) {
 
   return (
     <div>
-      <h1 className='text-slg mb-8 font-cormorant font-medium md:text-xl'>
+      <h1 className='text-slg mb-8 font-cormorant font-medium xxl:text-xl'>
         {product?.title}
       </h1>
       <hr className='mb-6 border-brown' />
       {!product?.discountPercent ? (
-        <h3 className=''>{product?.price}</h3>
+        <h2 className=''>{product?.price}</h2>
       ) : (
         <div>
           <h3>{product.price}</h3>
-          <h3>{finalPrice}</h3>
+          <h2>{finalPrice}</h2>
         </div>
       )}
     </div>

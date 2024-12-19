@@ -22,12 +22,10 @@
     "axios": "^1.7.7",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.4.0",
-    "embla-carousel-wheel-gestures": "^8.0.1",
     "next": "^14.2.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",
-    "react-simple-animate": "^3.5.2",
     "tailwind-merge": "^2.5.4",
     "zod": "^3.24.0",
     "zustand": "^5.0.0-rc.2"

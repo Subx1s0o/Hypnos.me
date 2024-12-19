@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        '3xl': '1920px',
         xxl: '1440px',
         xl: '1280px',
         lg: '1024px',
@@ -17,6 +18,11 @@ export default {
         sm: '480px',
         xs: '425px',
         xxs: '375px'
+      },
+
+      backgroundImage: {
+        'custom-gradient':
+          'linear-gradient(201deg, rgba(243, 241, 239, 0.00) 28.5%, #F3F1EF 100%)'
       },
       fontFamily: {
         manrope: ['var(--font-manrope)', 'serif'],

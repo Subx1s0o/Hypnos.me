@@ -6,7 +6,7 @@ import TitleSection from '@/components/sections/Home/TitleSection/TitleSection'
 export default function HomePage() {
   return (
     <>
-      <main className='mx-auto max-w-screen-xxl'>
+      <main className='max-w-screen-3xl mx-auto'>
         <TitleSection />
         <HeroSection />
         <ProductSection category='classic'>

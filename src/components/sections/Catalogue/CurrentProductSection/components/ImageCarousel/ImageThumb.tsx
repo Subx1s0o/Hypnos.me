@@ -17,8 +17,8 @@ export default function ImageThumb({ isSelected, src, onClick }: PropType) {
           type='button'
           className={cn(
             `xxs:h-20 relative h-16 w-full rounded-lg border-2 border-gray-300 bg-white
-            hover:bg-gray-50 sm:h-24 smd:h-28 md:h-24 lg:h-28 xl:h-32`,
-            isSelected && 'border-brown'
+            transition-colors sm:h-24 smd:h-28 md:h-24 lg:h-28 xl:h-32`,
+            { 'border-brown': isSelected, 'lg:hover:bg-gray-50': !isSelected }
           )}>
           <div className='relative size-full'>
             <Image

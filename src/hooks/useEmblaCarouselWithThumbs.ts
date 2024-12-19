@@ -15,18 +15,20 @@ export function useEmblaCarouselWithThumbs() {
 
   const onThumbClick = useCallback(
     (index: number) => {
-      if (emblaMainApi && emblaThumbsApi) {
+      if (emblaMainApi) {
         emblaMainApi.scrollTo(index)
       }
     },
-    [emblaMainApi, emblaThumbsApi]
+    [emblaMainApi]
   )
 
   const onSelect = useCallback(() => {
-    if (emblaMainApi && emblaThumbsApi) {
-      const snapIndex = emblaMainApi.selectedScrollSnap()
-      if (snapIndex !== selectedIndex) {
-        setSelectedIndex(snapIndex)
+    if (!emblaMainApi) return
+
+    const snapIndex = emblaMainApi.selectedScrollSnap()
+    if (snapIndex !== selectedIndex) {
+      setSelectedIndex(snapIndex)
+      if (emblaThumbsApi) {
         emblaThumbsApi.scrollTo(snapIndex)
       }
     }
@@ -34,14 +36,20 @@ export function useEmblaCarouselWithThumbs() {
 
   useEffect(() => {
     if (emblaMainApi) {
-      onSelect()
       emblaMainApi.on('select', onSelect).on('reInit', onSelect)
-
-      return () => {
+    }
+    return () => {
+      if (emblaMainApi) {
         emblaMainApi.off('select', onSelect).off('reInit', onSelect)
       }
     }
   }, [emblaMainApi, onSelect])
+
+  useEffect(() => {
+    if (emblaThumbsApi) {
+      emblaThumbsApi.scrollTo(selectedIndex)
+    }
+  }, [selectedIndex, emblaThumbsApi])
 
   return {
     emblaMainRef,
