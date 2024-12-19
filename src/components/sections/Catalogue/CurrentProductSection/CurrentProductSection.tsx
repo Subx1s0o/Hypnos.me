@@ -4,10 +4,8 @@ import getProductBySlug from '@/actions/getProductBySlug'
 import { Product } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 
-import { useEmblaCarouselWithThumbs } from '@/hooks/useEmblaCarouselWithThumbs'
-
-import MainImageList from './components/ImageCarousel/MainImageList'
-import ThumbnailList from './components/ImageCarousel/ThubnailList'
+import ProductDescription from './components/Articles/ProductDescription'
+import ProductImages from './components/Articles/ProductImages'
 
 interface CurrentProductSectionProps {
   slug: string
@@ -16,32 +14,20 @@ interface CurrentProductSectionProps {
 export default function CurrentProductSection({
   slug
 }: CurrentProductSectionProps) {
-  const { data, error } = useQuery<Product>({
+  const { data, error, isLoading } = useQuery<Product>({
     queryKey: ['products', slug],
     staleTime: 1000 * 60 * 60 * 24 * 3,
     queryFn: async () => await getProductBySlug(slug)
   })
 
-  const { emblaMainRef, emblaThumbsRef, selectedIndex, onThumbClick } =
-    useEmblaCarouselWithThumbs()
-
   if (error) return <p>Error loading product data.</p>
+  if (isLoading) return <p>loading</p>
 
   return (
-    <section className='px-3'>
-      <article
-        className='mb-4 overflow-hidden'
-        ref={emblaMainRef}>
-        {data?.media && <MainImageList media={data.media} />}
-      </article>
-      <div ref={emblaThumbsRef}>
-        {data?.media && (
-          <ThumbnailList
-            media={data.media}
-            selectedIndex={selectedIndex}
-            onThumbClick={onThumbClick}
-          />
-        )}
+    <section className='px-3 md:px-10'>
+      <div className='flex flex-col gap-4 md:grid md:grid-cols-2'>
+        <ProductImages media={data?.media} />
+        <ProductDescription product={data} />
       </div>
     </section>
   )

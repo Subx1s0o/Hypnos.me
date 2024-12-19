@@ -21,8 +21,10 @@ export default async function CataloguePage({
   })
 
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
-      <CurrentProductSection slug={slug} />
-    </HydrationBoundary>
+    <main className='mx-auto max-w-screen-xxl'>
+      <HydrationBoundary state={dehydrate(queryClient)}>
+        <CurrentProductSection slug={slug} />
+      </HydrationBoundary>
+    </main>
   )
 }

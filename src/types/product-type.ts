@@ -15,19 +15,21 @@ export type Product = {
   views: number
   createdAt: Date
   updatedAt: Date
-  media: {
-    main: Media
-    media_1: Media
-    media_2: Media
-    media_3: Media
-    media_4: Media
-  }
+  media: MediaObject
   goldSamples: GoldSample[]
 }
 
-type Media = {
+export type Media = {
   url: string
   status: 'pending' | 'fulfilled' | 'rejected' | 'not_uploaded'
+}
+
+export type MediaObject = {
+  main: Media
+  media_1: Media
+  media_2: Media
+  media_3: Media
+  media_4: Media
 }
 
 type GoldSample = {

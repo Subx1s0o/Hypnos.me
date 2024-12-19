@@ -68,6 +68,13 @@ export default {
             lineHeight: '68px'
           }
         ],
+        slg: [
+          '48px',
+          {
+            fontWeight: 400,
+            lineHeight: '68px'
+          }
+        ],
         md: [
           '40px',
           {
@@ -75,13 +82,7 @@ export default {
             lineHeight: '48px'
           }
         ],
-        'md-thin': [
-          '40px',
-          {
-            fontWeight: 400,
-            lineHeight: '48px'
-          }
-        ],
+
         smd: [
           '32px',
           {
