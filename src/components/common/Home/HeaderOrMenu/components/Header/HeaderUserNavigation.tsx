@@ -1,61 +1,82 @@
 import Link from 'next/link'
 
+import { Media, MediaContextProvider } from '@/components/helpers/Media'
 import Icon from '@/components/ui/Icon'
 import { Tooltip } from '@/components/ui/Tooltip'
+
+const navItems = [
+  { type: 'button', tooltip: 'Your Cart', iconId: 'icon-cart', href: '' },
+  {
+    type: 'link',
+    tooltip: 'Your Favourites',
+    iconId: 'icon-heart',
+    href: '/favourites'
+  },
+  {
+    type: 'link',
+    tooltip: 'Your Profile',
+    iconId: 'icon-profile',
+    href: '/profile'
+  },
+  { type: 'button', tooltip: 'Search...', iconId: 'icon-search', href: '' }
+]
 
 export default function HeaderNavigation() {
   return (
     <nav className='absolute left-1/2 -translate-x-1/2'>
-      <ul className='flex items-center gap-2'>
-        <li>
-          <Tooltip content='Your Cart'>
-            <button className='p-3'>
-              <Icon
-                id='icon-cart'
-                w={18}
-                h={18}
-              />
-            </button>
-          </Tooltip>
-        </li>
-        <li>
-          <Tooltip content='Your Favourites'>
-            <Link
-              className='block p-3'
-              href='/favourites'>
-              <Icon
-                id='icon-heart'
-                w={18}
-                h={18}
-              />
-            </Link>
-          </Tooltip>
-        </li>
-        <li>
-          <Tooltip content='Your Profile'>
-            <Link
-              className='block p-3'
-              href='/profile'>
-              <Icon
-                id='icon-profile'
-                w={18}
-                h={18}
-              />
-            </Link>
-          </Tooltip>
-        </li>
-        <li>
-          <Tooltip content='Search...'>
-            <button className='p-3'>
-              <Icon
-                id='icon-search'
-                w={18}
-                h={18}
-              />
-            </button>
-          </Tooltip>
-        </li>
-      </ul>
+      <MediaContextProvider>
+        <ul className='flex items-center gap-2'>
+          {navItems.map(({ type, tooltip, iconId, href }, index) => (
+            <li key={index}>
+              <Media greaterThanOrEqual='lg'>
+                <Tooltip content={tooltip}>
+                  {type === 'link' ? (
+                    <Link
+                      className='block p-3'
+                      href={href}>
+                      <Icon
+                        id={iconId}
+                        w={18}
+                        h={18}
+                      />
+                    </Link>
+                  ) : (
+                    <button className='p-3'>
+                      <Icon
+                        id={iconId}
+                        w={18}
+                        h={18}
+                      />
+                    </button>
+                  )}
+                </Tooltip>
+              </Media>
+
+              <Media lessThan='lg'>
+                {type === 'link' ? (
+                  <Link
+                    className='block p-3'
+                    href={href}>
+                    <Icon
+                      id={iconId}
+                      w={18}
+                      h={18}
+                    />
+                  </Link>
+                ) : (
+                  <button className='p-3'>
+                    <Icon
+                      id={iconId}
+                      w={18}
+                      h={18}
+                    />
+                  </button>
+                )}
+              </Media>
+            </li>
+          ))}
+        </ul>
+      </MediaContextProvider>
     </nav>
   )
 }

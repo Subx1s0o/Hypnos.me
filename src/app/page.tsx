@@ -1,12 +1,12 @@
 import AboutSection from '@/components/sections/Home/AboutSection/AboutSection'
 import HeroSection from '@/components/sections/Home/HeroSection/HeroSection'
-import ProductSection from '@/components/sections/Home/Products/ProductSection'
+import ProductSection from '@/components/sections/Home/ProductsSection/ProductSection'
 import TitleSection from '@/components/sections/Home/TitleSection/TitleSection'
 
 export default function HomePage() {
   return (
     <>
-      <main>
+      <main className='mx-auto max-w-screen-xxl'>
         <TitleSection />
         <HeroSection />
         <ProductSection category='classic'>
