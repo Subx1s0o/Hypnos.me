@@ -1,4 +1,5 @@
 import { cn } from '@/lib/cn'
+import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,8 +11,10 @@ interface ProductItemProps {
 export default function ProductItem({ product }: ProductItemProps) {
   const {
     title,
+    slug,
     discountPercent,
     price,
+    category,
     media: {
       main: { url, status }
     }
@@ -23,7 +26,7 @@ export default function ProductItem({ product }: ProductItemProps) {
 
   return (
     <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
-      <Link href={`catalog/${title.toLowerCase().split(' ').join('-')}`}>
+      <Link href={`products/${category}/${slug}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
           {status !== 'rejected' ? (
             <Image
@@ -50,11 +53,11 @@ export default function ProductItem({ product }: ProductItemProps) {
             className={cn('text-sm text-brown', {
               'text-sm text-grey-200 line-through': discountPercent
             })}>
-            ${price}
+            ${formatPrice(price)}
           </p>
           {discountPercent && (
             <p className='text-sm font-semibold text-brown'>
-              ${finalPrice.toFixed(2)}
+              ${formatPrice(finalPrice)}
             </p>
           )}
         </div>
