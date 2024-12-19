@@ -12,11 +12,13 @@ import ProductList from './components/ProductList'
 
 type ProductSectionProps = PropsWithChildren & {
   category: ProductCategories
+  id?: string
 }
 
 export default async function ProductSection({
   category,
-  children
+  children,
+  id
 }: ProductSectionProps) {
   const queryClient = new QueryClient()
 
@@ -27,7 +29,9 @@ export default async function ProductSection({
   })
 
   return (
-    <section className='overflow-hidden py-[60px] lg:py-[70px]'>
+    <section
+      id={id}
+      className='overflow-hidden py-[60px] lg:py-[70px]'>
       <DescriptionHeader
         title={category.charAt(0).toUpperCase() + category.slice(1)}>
         {children}

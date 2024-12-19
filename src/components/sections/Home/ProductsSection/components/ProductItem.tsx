@@ -1,4 +1,5 @@
 import { cn } from '@/lib/cn'
+import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,7 +23,7 @@ export default function ProductItem({ product }: ProductItemProps) {
   const finalPrice = discountPercent
     ? price - (price * discountPercent) / 100
     : price
-
+  console.log(finalPrice)
   return (
     <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
       <Link href={`products/${category}/${slug}`}>
@@ -52,11 +53,11 @@ export default function ProductItem({ product }: ProductItemProps) {
             className={cn('text-sm text-brown', {
               'text-sm text-grey-200 line-through': discountPercent
             })}>
-            ${price}
+            ${formatPrice(price)}
           </p>
           {discountPercent && (
             <p className='text-sm font-semibold text-brown'>
-              ${finalPrice.toFixed(2)}
+              ${formatPrice(finalPrice)}
             </p>
           )}
         </div>

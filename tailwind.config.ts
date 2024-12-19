@@ -84,6 +84,13 @@ export default {
             lineHeight: 'normal'
           }
         ],
+        'base-big': [
+          '24px',
+          {
+            fontWeight: 500,
+            lineHeight: '22px'
+          }
+        ],
         base: [
           '16px',
           {

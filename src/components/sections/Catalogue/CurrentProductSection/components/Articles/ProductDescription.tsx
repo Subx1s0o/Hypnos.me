@@ -1,3 +1,4 @@
+import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
 
 export default function ProductDescription({ product }: { product?: Product }) {
@@ -13,13 +14,16 @@ export default function ProductDescription({ product }: { product?: Product }) {
       </h1>
       <hr className='mb-6 border-brown' />
       {!product?.discountPercent ? (
-        <h2 className=''>{product?.price}</h2>
+        <h2 className='mb-16'>{formatPrice(product?.price)}</h2>
       ) : (
-        <div>
-          <h3>{product.price}</h3>
-          <h2>{finalPrice}</h2>
+        <div className='mb-16 flex items-center gap-3'>
+          <h3 className='text-base-big text-grey-200 line-through'>
+            {formatPrice(product.price)}$
+          </h3>
+          <h2 className='text-smd'>{formatPrice(finalPrice)}$</h2>
         </div>
       )}
+      <p className='mb-8 text-sm text-grey-400'>{product?.description}</p>
     </div>
   )
 }

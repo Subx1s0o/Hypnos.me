@@ -1,7 +1,7 @@
-export default function CataloguePage() {
+export default function ProductsPage() {
   return (
     <main className='mx-auto max-w-screen-xxl'>
-      <div>CataloguePage</div>
+      <div>ProductsPage</div>
     </main>
   )
 }

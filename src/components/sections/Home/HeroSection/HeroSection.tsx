@@ -28,7 +28,7 @@ export default function HeroSection() {
           text='Exclusive custom jewelry'
         />
         <ImageLinkCard
-          to='/catalogue'
+          to='/products'
           imageSrc='/images/HeroSection/catalog.avif'
           imageSrcSet='/images/HeroSection/catalog-d.avif'
           imageAlt='Catalog'

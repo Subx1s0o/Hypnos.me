@@ -9,7 +9,9 @@ export default function HomePage() {
       <main className='max-w-screen-3xl mx-auto'>
         <TitleSection />
         <HeroSection />
-        <ProductSection category='classic'>
+        <ProductSection
+          id='products'
+          category='classic'>
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
         </ProductSection>
