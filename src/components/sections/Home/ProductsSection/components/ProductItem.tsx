@@ -23,7 +23,7 @@ export default function ProductItem({ product }: ProductItemProps) {
   const finalPrice = discountPercent
     ? price - (price * discountPercent) / 100
     : price
-  console.log(finalPrice)
+
   return (
     <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
       <Link href={`products/${category}/${slug}`}>
