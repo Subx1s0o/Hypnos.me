@@ -11,7 +11,8 @@ export default function HeroSection() {
         <HeroSocialIcons />
         <ScrollButton id='products'>
           <Icon
-            className='rotate-180 rounded-full bg-cream p-3 duration-300 hover:bg-brown/50'
+            className='rotate-180 rounded-full bg-cream p-3 duration-300 lg:hover:bg-brown
+              lg:hover:text-white'
             id='icon-arrow'
             w={16}
             h={16}

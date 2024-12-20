@@ -1,9 +1,8 @@
-import React from 'react'
 import { SpriteTypes } from '@/types'
 
 import Icon from '@/components/ui/Icon'
 
-interface SocialLinkProps {
+interface OutLinkLinkProps {
   href: string
   iconId: SpriteTypes
   iconWidth: number
@@ -11,13 +10,13 @@ interface SocialLinkProps {
   className?: string
 }
 
-const SocialLink: React.FC<SocialLinkProps> = ({
+export default function OutLink({
   href,
   iconId,
   iconHeight,
   iconWidth,
   className = ''
-}) => {
+}: OutLinkLinkProps) {
   return (
     <a
       href={href}
@@ -34,5 +33,3 @@ const SocialLink: React.FC<SocialLinkProps> = ({
     </a>
   )
 }
-
-export default SocialLink

@@ -1,17 +1,17 @@
 import React from 'react'
 
-import SocialLink from '@/components/ui/SocialLink'
+import OutLink from '@/components/ui/OutLink'
 
 export default function HeroSocialIcons() {
   return (
     <div className='flex gap-4'>
-      <SocialLink
+      <OutLink
         href='https://www.instagram.com'
         iconId='icon-instagram'
         iconHeight={16}
         iconWidth={16}
       />
-      <SocialLink
+      <OutLink
         href='https://www.fb.com/'
         iconId='icon-facebook'
         iconHeight={16}
