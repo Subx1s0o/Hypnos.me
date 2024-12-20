@@ -10,22 +10,21 @@ export default function ImagesArticle({ media }: { media?: MediaObject }) {
     useEmblaCarouselWithThumbs()
 
   return (
-    <div>
-      <div className='overflow-hidden rounded-md border p-2 lg:max-w-screen-sm'>
-        <div
-          className='mb-4 overflow-hidden'
-          ref={emblaMainRef}>
-          {media && <MainImageList media={media} />}
-        </div>
-        <div ref={emblaThumbsRef}>
-          {media && (
-            <ThumbnailList
-              media={media}
-              selectedIndex={selectedIndex}
-              onThumbClick={onThumbClick}
-            />
-          )}
-        </div>
+    <div className='w-full overflow-hidden rounded-md border p-2 lg:max-w-screen-sm'>
+      <div
+        className='mb-4 overflow-hidden'
+        ref={emblaMainRef}>
+        {media && <MainImageList media={media} />}
+      </div>
+
+      <div ref={emblaThumbsRef}>
+        {media && (
+          <ThumbnailList
+            media={media}
+            selectedIndex={selectedIndex}
+            onThumbClick={onThumbClick}
+          />
+        )}
       </div>
     </div>
   )
