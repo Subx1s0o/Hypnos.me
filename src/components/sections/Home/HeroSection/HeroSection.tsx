@@ -6,7 +6,7 @@ import ImageLinkCard from './components/ImageLinkCard'
 
 export default function HeroSection() {
   return (
-    <section className='pb-[60px] sm:px-4 md:px-10'>
+    <section className='pb-10 sm:px-4 md:px-10 md:pb-[60px]'>
       <div className='mb-6 flex justify-between px-4 sm:px-0'>
         <HeroSocialIcons />
         <ScrollButton id='products'>
@@ -28,11 +28,11 @@ export default function HeroSection() {
           text='Exclusive custom jewelry'
         />
         <ImageLinkCard
-          to='/products'
+          to='/catalogue'
           imageSrc='/images/HeroSection/catalog.avif'
           imageSrcSet='/images/HeroSection/catalog-d.avif'
           imageAlt='Catalog'
-          text='Wedding rings catalog'>
+          text='Wedding rings catalogue'>
           <Icon
             className='pointer-events-none absolute bottom-10 right-10 hidden rotate-45 rounded-full
               bg-brown p-6 text-white lg:block'
