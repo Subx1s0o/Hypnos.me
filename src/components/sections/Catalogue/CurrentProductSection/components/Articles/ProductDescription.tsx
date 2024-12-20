@@ -9,7 +9,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
 
   return (
     <div>
-      <h1 className='mb-8 font-cormorant text-smd font-medium smd:text-lg xxl:text-xl'>
+      <h1 className='mb-8 font-cormorant text-base-big font-medium sm:text-smd lg:text-md xxl:text-lg'>
         {product?.title}
       </h1>
       <hr className='mb-6 border-brown' />
@@ -20,7 +20,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
           <h3 className='text-base-big text-grey-200 line-through'>
             {formatPrice(product.price)}$
           </h3>
-          <h2 className='text-smd'>{formatPrice(finalPrice)}$</h2>
+          <h2 className='text-smd text-brown'>{formatPrice(finalPrice)}$</h2>
         </div>
       )}
       <p className='mb-8 text-sm text-grey-400'>{product?.description}</p>

@@ -33,8 +33,8 @@ export default function Breadcrumb() {
             href={'/'}>
             <Icon
               id='icon-home'
-              w={20}
-              h={20}
+              w={18}
+              h={18}
               className='text-black'
             />
           </Link>
@@ -44,8 +44,8 @@ export default function Breadcrumb() {
           const href = `/${pathNames.slice(0, index + 1).join('/')}`
           const itemClasses =
             paths === href
-              ? 'font-bold whitespace-nowrap'
-              : 'relative duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-grey-400 after:duration-300 lg:hover:after:w-full'
+              ? '!font-bold whitespace-nowrap text-xs lg:text-sm'
+              : 'relative text-xs lg:text-sm duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-grey-400 after:duration-300 lg:hover:after:w-full'
           const itemLink = selectPathName(link)
 
           return (
