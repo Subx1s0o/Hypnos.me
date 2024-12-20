@@ -12,7 +12,10 @@ export default function MainImageList({ media }: MainImageListProps) {
   const [isImageLoaded, setIsImageLoaded] = useState(false)
 
   return (
-    <ul className='flex'>
+    <ul
+      className={cn('flex', {
+        'cursor-not-allowed': !isImageLoaded
+      })}>
       {Object.entries(media).map(([key, value]) => {
         if (value.status !== 'not_uploaded') {
           return (
