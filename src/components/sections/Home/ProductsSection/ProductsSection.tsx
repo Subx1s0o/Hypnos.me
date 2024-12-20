@@ -28,11 +28,11 @@ export default async function ProductSection({
   })
 
   return (
-    <section
-      id={id}
-      className='overflow-hidden py-10 md:py-[60px] lg:py-[70px]'>
+    <section>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <ProductsMainComponent category={category}>
+        <ProductsMainComponent
+          id={id}
+          category={category}>
           {children}
         </ProductsMainComponent>
       </HydrationBoundary>

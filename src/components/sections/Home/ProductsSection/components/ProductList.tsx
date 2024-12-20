@@ -1,7 +1,7 @@
 import { Product } from '@/types'
 import useEmblaCarousel from 'embla-carousel-react'
 
-import ProductItem from './ProductItem'
+import ProductCard from '@/components/ui/ProductCard'
 
 interface ProductListProps {
   products: Product[] | undefined
@@ -21,12 +21,7 @@ export default function ProductList({ products }: ProductListProps) {
       className='space-x-4 overflow-hidden px-4 md:px-10'
       ref={emblaRef}>
       <ul className='-ml-4 flex'>
-        {products?.map((product: Product) => (
-          <ProductItem
-            product={product}
-            key={product.id}
-          />
-        ))}
+        {products?.map((product: Product) => <ProductCard product={product} />)}
       </ul>
     </div>
   )

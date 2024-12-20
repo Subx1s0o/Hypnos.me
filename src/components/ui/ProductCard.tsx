@@ -4,11 +4,11 @@ import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface ProductItemProps {
+interface ProductCardProps {
   product: Product
 }
 
-export default function ProductItem({ product }: ProductItemProps) {
+export default function ProductCard({ product }: ProductCardProps) {
   const {
     title,
     slug,
@@ -25,7 +25,7 @@ export default function ProductItem({ product }: ProductItemProps) {
     : price
 
   return (
-    <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
+    <div className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
       <Link href={`products/${category}/${slug}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
           {status !== 'rejected' ? (
@@ -62,6 +62,6 @@ export default function ProductItem({ product }: ProductItemProps) {
           )}
         </div>
       </Link>
-    </li>
+    </div>
   )
 }

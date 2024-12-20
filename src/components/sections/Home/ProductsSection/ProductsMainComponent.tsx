@@ -10,8 +10,10 @@ import ProductsDescriptionHeader from './components/ProductsDescriptionHeader'
 
 export default function ProductMainComponent({
   category,
-  children
+  children,
+  id
 }: {
+  id?: string
   children: ReactNode
   category: ProductCategories
 }) {
@@ -34,12 +36,14 @@ export default function ProductMainComponent({
   if (isError) return <p>Error loading {category} products</p>
 
   return data?.data && data?.data.length > 1 ? (
-    <>
+    <div
+      id={id}
+      className='overflow-hidden py-10 md:py-[60px] lg:py-[70px]'>
       <ProductsDescriptionHeader
         title={category.charAt(0).toUpperCase() + category.slice(1)}>
         {children}
       </ProductsDescriptionHeader>
       <ProductList products={data?.data} />
-    </>
+    </div>
   ) : null
 }
