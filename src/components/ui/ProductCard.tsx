@@ -25,8 +25,8 @@ export default function ProductCard({ product }: ProductCardProps) {
     : price
 
   return (
-    <div className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
-      <Link href={`products/${category}/${slug}`}>
+    <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
+      <Link href={`catalogue/${category}/${slug}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
           {status !== 'rejected' ? (
             <Image
@@ -39,6 +39,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           ) : (
             <div>No image</div>
           )}
+
           {discountPercent && (
             <span
               className='absolute bottom-[14px] left-[14px] rounded-full bg-black px-5 py-[10px]
@@ -62,6 +63,6 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
       </Link>
-    </div>
+    </li>
   )
 }

@@ -19,7 +19,7 @@ export default function ImageThumb({ isSelected, src, onClick }: PropType) {
       {!isImageLoaded && (
         <SkeletonLoader
           count={1}
-          className='absolute inset-0 z-50 size-full'
+          className='absolute inset-0 z-50 size-full px-1'
         />
       )}
       <div className={'mb-2 flex w-full flex-[0_0_23%] px-1 md:flex-[0_0_30%]'}>

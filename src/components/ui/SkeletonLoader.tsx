@@ -1,5 +1,5 @@
 import React from 'react'
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton'
 
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -19,14 +19,14 @@ export default function SkeletonLoader({
   duration = 1
 }: SkeletonLoaderProps) {
   return (
-    <SkeletonTheme
-      baseColor={baseColor}
-      highlightColor={highlightColor}
-      duration={duration}>
+    <div className={className}>
       <Skeleton
+        baseColor={baseColor}
+        highlightColor={highlightColor}
+        duration={duration}
         count={count}
         className={className}
       />
-    </SkeletonTheme>
+    </div>
   )
 }

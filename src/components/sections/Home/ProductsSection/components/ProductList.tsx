@@ -21,7 +21,12 @@ export default function ProductList({ products }: ProductListProps) {
       className='space-x-4 overflow-hidden px-4 md:px-10'
       ref={emblaRef}>
       <ul className='-ml-4 flex'>
-        {products?.map((product: Product) => <ProductCard product={product} />)}
+        {products?.map((product: Product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))}
       </ul>
     </div>
   )
