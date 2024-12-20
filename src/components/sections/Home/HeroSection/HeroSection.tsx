@@ -1,14 +1,14 @@
 import Icon from '@/components/ui/Icon'
 import ScrollButton from '@/components/ui/ScrollButton'
 
+import HeroSocialIcons from './components/HeroSocialIcons'
 import ImageLinkCard from './components/ImageLinkCard'
-import SocialIcons from './components/SocialIcons'
 
 export default function HeroSection() {
   return (
     <section className='pb-[60px] sm:px-4 md:px-10'>
       <div className='mb-6 flex justify-between px-4 sm:px-0'>
-        <SocialIcons />
+        <HeroSocialIcons />
         <ScrollButton id='products'>
           <Icon
             className='rotate-180 rounded-full bg-cream p-3 duration-300 hover:bg-brown/50'
