@@ -13,3 +13,6 @@ export type SpriteTypes =
   | 'icon-google'
   | 'icon-check'
   | 'icon-home'
+  | 'icon-information'
+  | 'icon-medal-star'
+  | 'icon-diamant'
