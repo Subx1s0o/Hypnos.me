@@ -1,9 +1,8 @@
 import React from 'react'
-import Link from 'next/link'
-
-import { navigationData as data } from '@/components/common/Home/HeaderOrMenu/components/data/navigation-data'
 import { useModal } from '@/components/helpers/ModalContext'
 import Icon from '@/components/ui/Icon'
+
+import NavItemsList from './Header/NavItemsList'
 
 export default function MobileMenu() {
   const { isModalOpen, toggleModal } = useModal()
@@ -12,48 +11,7 @@ export default function MobileMenu() {
     <>
       <nav className='fixed bottom-0 z-50 w-full bg-white px-4 pb-8 pt-6'>
         <ul className='flex w-full items-center justify-between'>
-          {data.map(item => (
-            <li
-              key={item.id}
-              className='relative'>
-              {item.id === 'favorites' || item.id === 'profile' ? (
-                <Link
-                  className='block p-3'
-                  href={item.id === 'favorites' ? '/favorites' : '/profile'}>
-                  <Icon
-                    id={item.iconDefault}
-                    w={18}
-                    h={18}
-                  />
-                </Link>
-              ) : (
-                <button
-                  className='p-3'
-                  onClick={() => toggleModal(item.id)}
-                  type='button'>
-                  <Icon
-                    id={
-                      isModalOpen(item.id) ? item.iconActive : item.iconDefault
-                    }
-                    w={18}
-                    h={18}
-                  />
-                </button>
-              )}
-            </li>
-          ))}
-          <li className='relative'>
-            <button
-              type='button'
-              onClick={() => toggleModal('search')}
-              className='p-4'>
-              <Icon
-                w={18}
-                h={18}
-                id={'icon-search'}
-              />
-            </button>
-          </li>
+          <NavItemsList />
           <li className='relative'>
             <button
               type='button'
