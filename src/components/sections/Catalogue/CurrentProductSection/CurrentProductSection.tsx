@@ -8,7 +8,7 @@ import Breadcrumb from '@/components/features/BreadCrumb'
 import { Media, MediaContextProvider } from '@/components/helpers/Media'
 
 import BannerSection from './BannerSection'
-import ProductDescription from './components/Articles/ProductDescription'
+import ProductDescription from './components/Articles/ProductDescription/ProductDescription'
 import ProductImages from './components/Articles/ProductImages'
 
 interface CurrentProductSectionProps {

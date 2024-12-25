@@ -4,6 +4,9 @@ import * as Accordion from '@radix-ui/react-accordion'
 
 import Icon from '@/components/ui/Icon'
 
+import AddToCartButton from './AddToCartButton'
+import ProductAvailableSizes from './ProductAvailableSizes'
+
 export default function ProductDescription({ product }: { product?: Product }) {
   console.log(product)
   const finalPrice = product?.discountPercent
@@ -19,13 +22,22 @@ export default function ProductDescription({ product }: { product?: Product }) {
       {!product?.discountPercent ? (
         <h2 className='mb-4'>{formatPrice(product?.price)}</h2>
       ) : (
-        <div className='mb-4 flex items-center gap-3'>
-          <h3 className='text-base-big text-grey-200 line-through'>
-            {formatPrice(product.price)}$
-          </h3>
-          <h2 className='text-smd text-brown'>{formatPrice(finalPrice)}$</h2>
+        <div className='mb-6 flex items-center justify-between'>
+          <div className='flex items-center gap-3'>
+            <h3 className='text-base-big text-grey-200 line-through'>
+              {formatPrice(product.price)}$
+            </h3>
+            <h2 className='text-smd text-brown'>{formatPrice(finalPrice)}$</h2>
+          </div>
+          <AddToCartButton />
         </div>
       )}
+
+      {product?.sizeDetails && (
+        <ProductAvailableSizes sizes={product.sizeDetails} />
+      )}
+      <hr className='mb-4 border-brown' />
+
       <p className='mb-8 text-sm text-grey-400'>{product?.description}</p>
 
       <Accordion.Root
