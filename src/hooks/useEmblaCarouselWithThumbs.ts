@@ -10,7 +10,7 @@ export function useEmblaCarouselWithThumbs() {
   })
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     containScroll: 'trimSnaps',
-    dragFree: false
+    dragFree: true
   })
 
   const onThumbClick = useCallback(

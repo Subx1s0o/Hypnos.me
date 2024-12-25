@@ -2,20 +2,27 @@ import { useState } from 'react'
 import { cn } from '@/lib/cn'
 import Image from 'next/image'
 
+import ImageWithFallback from '@/components/ui/ImageWithFallback'
 import SkeletonLoader from '@/components/ui/SkeletonLoader'
 
 type PropType = {
   isSelected: boolean
   index: number
+  status: 'not_uploaded' | 'fulfilled' | 'rejected'
   onClick: () => void
   src: string
 }
 
-export default function ImageThumb({ isSelected, src, onClick }: PropType) {
+export default function ImageThumb({
+  isSelected,
+  status,
+  src,
+  onClick
+}: PropType) {
   const [isImageLoaded, setIsImageLoaded] = useState(false)
 
   return (
-    <article className='relative flex w-full flex-col items-center'>
+    <li className='relative flex aspect-square flex-col items-center'>
       {!isImageLoaded && (
         <SkeletonLoader
           count={1}
@@ -28,7 +35,7 @@ export default function ImageThumb({ isSelected, src, onClick }: PropType) {
           type='button'
           className={cn(
             `relative h-16 w-full cursor-not-allowed bg-grey-200 transition-colors xxs:h-20
-            sm:h-24 smd:h-28 md:h-24 lg:h-28 xl:h-32`,
+            sm:h-24 smd:h-[107px] md:h-24 lg:h-28`,
             {
               'cursor-pointer rounded-lg border-2 border-gray-300 bg-white':
                 isImageLoaded,
@@ -37,15 +44,27 @@ export default function ImageThumb({ isSelected, src, onClick }: PropType) {
             }
           )}>
           <div className='relative size-full'>
-            <Image
-              onLoad={() => setIsImageLoaded(true)}
-              src={src}
-              alt='Image Thumbnail'
-              fill
-              className={cn('invisible rounded-lg object-cover', {
-                visible: isImageLoaded
-              })}
-            />
+            {status !== 'fulfilled' ? (
+              <Image
+                onLoad={() => setIsImageLoaded(true)}
+                alt='image fallback'
+                src='/images/products/decorative/fallback.png'
+                fill
+                className={cn('invisible rounded-lg object-cover', {
+                  visible: isImageLoaded
+                })}
+              />
+            ) : (
+              <ImageWithFallback
+                onLoad={() => setIsImageLoaded(true)}
+                src={src}
+                alt='Image Thumbnail'
+                fill
+                className={cn('invisible rounded-lg object-cover', {
+                  visible: isImageLoaded
+                })}
+              />
+            )}
             {isImageLoaded && !isSelected && (
               <div className='absolute inset-0 rounded-md bg-black opacity-10'></div>
             )}
@@ -62,6 +81,6 @@ export default function ImageThumb({ isSelected, src, onClick }: PropType) {
           )}
         />
       )}
-    </article>
+    </li>
   )
 }

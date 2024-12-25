@@ -1,46 +1,30 @@
-import { useState } from 'react'
 import { cn } from '@/lib/cn'
-import Image from 'next/image'
 
-import SkeletonLoader from '@/components/ui/SkeletonLoader'
+import MainImageItem from './MainImageItem'
 
 interface MainImageListProps {
-  media: { [key: string]: { url: string; status: string } }
+  media: {
+    [key: string]: {
+      url: string
+      status: 'fulfilled' | 'rejected' | 'not_uploaded'
+    }
+  }
 }
 
 export default function MainImageList({ media }: MainImageListProps) {
-  const [isImageLoaded, setIsImageLoaded] = useState(false)
-
   return (
-    <ul
-      className={cn('flex', {
-        'cursor-not-allowed': !isImageLoaded
-      })}>
+    <ul className={cn('flex')}>
       {Object.entries(media).map(([key, value]) => {
         if (value.status !== 'not_uploaded') {
           return (
-            <li
+            <MainImageItem
               key={key}
-              className='relative min-w-full'>
-              {!isImageLoaded && (
-                <div className='absolute inset-0 size-full'>
-                  <SkeletonLoader
-                    count={1}
-                    className='h-full'
-                  />
-                </div>
-              )}
-              <Image
-                onLoad={() => setIsImageLoaded(true)}
-                alt='photo'
-                src={value.url}
-                width={800}
-                height={500}
-                className={cn('invisible w-full object-cover', {
-                  visible: isImageLoaded
-                })}
-              />
-            </li>
+              status={value.status}
+              src={value.url}
+              alt={`photo of product ${key}`}
+              width={800}
+              height={500}
+            />
           )
         }
       })}

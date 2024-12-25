@@ -9,6 +9,7 @@ interface ProductListProps {
 
 export default function ProductList({ products }: ProductListProps) {
   const [emblaRef] = useEmblaCarousel({
+    containScroll: 'keepSnaps',
     breakpoints: {
       '(min-width: 1024px)': { dragFree: true },
       '(min-width: 768px)': { slidesToScroll: 2 },

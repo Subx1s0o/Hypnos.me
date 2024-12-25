@@ -4,6 +4,8 @@ import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import ImageWithFallback from './ImageWithFallback'
+
 interface ProductCardProps {
   product: Product
 }
@@ -29,7 +31,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <Link href={`catalogue/${category}/${slug}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
           {status !== 'rejected' ? (
-            <Image
+            <ImageWithFallback
               alt={title}
               src={url}
               width={308}
@@ -37,7 +39,13 @@ export default function ProductCard({ product }: ProductCardProps) {
               style={{ width: '100%', height: 'auto' }}
             />
           ) : (
-            <div>No image</div>
+            <Image
+              alt={title}
+              src='/images/products/decorative/fallback.png'
+              width={308}
+              height={230}
+              style={{ width: '100%', height: 'auto' }}
+            />
           )}
 
           {discountPercent && (

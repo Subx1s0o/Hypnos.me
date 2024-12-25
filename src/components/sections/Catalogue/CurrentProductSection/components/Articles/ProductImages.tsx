@@ -17,7 +17,9 @@ export default function ImagesArticle({ media }: { media?: MediaObject }) {
         {media && <MainImageList media={media} />}
       </div>
 
-      <div ref={emblaThumbsRef}>
+      <div
+        className='flex overflow-hidden'
+        ref={emblaThumbsRef}>
         {media && (
           <ThumbnailList
             media={media}

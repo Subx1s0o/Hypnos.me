@@ -86,20 +86,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
                   <h3 className='mb-1 text-sm text-grey-400'>Width</h3>
                   <p className='text-base-big'>{product?.width} mm</p>
                 </div>
-                <div>
-                  <h3 className='mb-1 text-sm text-grey-400'>
-                    {product?.pairWeight ? 'Weight for pair' : 'Weight'}
-                  </h3>
-                  <p className='text-base-big'>
-                    {product?.goldSamples.map(sample => sample.sampleValue)}
-                    sample
-                  </p>
-                  <p>{product?.goldSamples.map(sample => sample.weightMale)}</p>
-                  <p>
-                    {product?.goldSamples.map(sample => sample.weightFemale)}
-                  </p>
-                  <p>{product?.pairWeight}</p>
-                </div>
+                <div></div>
               </div>
               <div className='flex flex-col gap-6'>
                 <div>
