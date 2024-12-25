@@ -48,7 +48,7 @@ export default function ImageThumb({
               <Image
                 onLoad={() => setIsImageLoaded(true)}
                 alt='image fallback'
-                src='/images/products/decorative/fallback.png'
+                src='/images/products/decorative/fallback.avif'
                 fill
                 className={cn('invisible rounded-lg object-cover', {
                   visible: isImageLoaded

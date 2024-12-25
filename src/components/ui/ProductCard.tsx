@@ -30,23 +30,23 @@ export default function ProductCard({ product }: ProductCardProps) {
     <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
       <Link href={`catalogue/${category}/${slug}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
-          {status !== 'rejected' ? (
-            <ImageWithFallback
-              alt={title}
-              src={url}
-              width={308}
-              height={230}
-              style={{ width: '100%', height: 'auto' }}
-            />
-          ) : (
-            <Image
-              alt={title}
-              src='/images/products/decorative/fallback.png'
-              width={308}
-              height={230}
-              style={{ width: '100%', height: 'auto' }}
-            />
-          )}
+          <div className='relative aspect-[1]'>
+            {status !== 'rejected' ? (
+              <ImageWithFallback
+                alt={title}
+                src={url}
+                fill
+                className='object-cover'
+              />
+            ) : (
+              <Image
+                alt={title}
+                src='/images/products/decorative/fallback.avif'
+                fill
+                className='object-cover'
+              />
+            )}
+          </div>
 
           {discountPercent && (
             <span
@@ -56,7 +56,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </span>
           )}
         </div>
-        <h3 className='mb-2 text-smd font-medium text-black'>{title}</h3>
+        <h3 className='mb-2 text-base-big font-medium text-black'>{title}</h3>
         <div className='flex gap-2'>
           <p
             className={cn('text-sm text-brown', {

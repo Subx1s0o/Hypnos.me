@@ -33,7 +33,7 @@ export default function ImageWithFallback({
       height={height}
       alt={alt}
       onError={handleError}
-      src={error ? '/images/products/decorative/fallback.png' : src}
+      src={error ? '/images/products/decorative/fallback.avif' : src}
       {...props}
     />
   )

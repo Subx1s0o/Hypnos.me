@@ -36,7 +36,7 @@ export default function MainImageItem({
         <Image
           onLoad={() => setIsImageLoaded(true)}
           alt='image fallback'
-          src='/images/products/decorative/fallback.png'
+          src='/images/products/decorative/fallback.avif'
           width={width}
           height={height}
           className={cn('invisible rounded-lg object-cover', {
