@@ -6,12 +6,14 @@ export default function ProductAvailableSizes({
   sizes
 }: ProductAvailableSizesProps) {
   return (
-    <div className='flex items-center justify-between'>
-      <h3 className='mb-4 text-base-big font-normal'>Available Sizes: </h3>
-      <ul className='mb-4 flex gap-4'>
+    <div className='flex flex-col justify-between md:flex-row md:items-center'>
+      <h3 className='mb-4 text-base font-normal md:text-base-big'>
+        Available Sizes:
+      </h3>
+      <ul className='mb-4 flex gap-2 md:gap-4'>
         {sizes.map((size, index) => (
           <li
-            className='rounded-lg bg-brown px-4 py-2 text-white'
+            className='rounded-lg bg-brown px-3 py-1 text-white md:px-4 md:py-2'
             key={index}>
             {size}
           </li>

@@ -22,8 +22,8 @@ export default function ProductDescription({ product }: { product?: Product }) {
       {!product?.discountPercent ? (
         <h2 className='mb-4'>{formatPrice(product?.price)}</h2>
       ) : (
-        <div className='mb-6 flex items-center justify-between'>
-          <div className='flex items-center gap-3'>
+        <div className='mb-6 flex flex-col md:flex-row md:items-center md:justify-between'>
+          <div className='mb-3 flex items-center gap-3 md:mb-0'>
             <h3 className='text-base-big text-grey-200 line-through'>
               {formatPrice(product.price)}$
             </h3>
