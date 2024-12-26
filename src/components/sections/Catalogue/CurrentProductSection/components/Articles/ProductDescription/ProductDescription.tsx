@@ -115,7 +115,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
                         <h3 className='mb-3 text-base-big text-grey-400'>
                           {detail.purityValue} purity
                         </h3>
-                        <div className='flex flex-col gap-1'>
+                        <div className='mb-1 flex flex-col gap-1'>
                           <p className='text-sm'>M - {detail.maleWeight} gr</p>
                           <p className='text-sm'>
                             F - {detail.femaleWeight} gr
@@ -124,6 +124,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
                             Together - {detail?.pairWeight ?? 'N/A'} gr
                           </p>
                         </div>
+                        <hr className='h-[2px] w-full bg-gray-300' />
                       </div>
                     ))}
                 </div>
@@ -134,7 +135,9 @@ export default function ProductDescription({ product }: { product?: Product }) {
                   <h3 className='mb-1 text-sm text-grey-400'>Thickness</h3>
                   <p className='text-base-big'>{product?.thickness} mm</p>
                 </div>
+
                 <div>
+                  <h3 className='mb-3 text-transparent'>Pair weight</h3>
                   {product?.ringDetails
                     ?.slice(Math.ceil(product.ringDetails.length / 2))
                     .map((detail, index) => (
@@ -144,7 +147,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
                         <h3 className='mb-3 text-base-big text-grey-400'>
                           {detail.purityValue} purity
                         </h3>
-                        <div className='flex flex-col gap-1'>
+                        <div className='mb-1 flex flex-col gap-1'>
                           <p className='text-sm'>M - {detail.maleWeight} gr</p>
                           <p className='text-sm'>
                             F - {detail.femaleWeight} gr
@@ -153,6 +156,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
                             Together - {detail.pairWeight ?? 'N/A'} gr
                           </p>
                         </div>
+                        <hr className='h-[2px] w-full bg-gray-300' />
                       </div>
                     ))}
                 </div>
@@ -161,10 +165,8 @@ export default function ProductDescription({ product }: { product?: Product }) {
           </Accordion.Content>
         </Accordion.Item>
 
-        <Accordion.Item
-          className='bg-grey-200 p-4'
-          value='item-3'>
-          <Accordion.Trigger className='flex items-center gap-3 border-b'>
+        <Accordion.Item value='item-3'>
+          <Accordion.Trigger className='flex w-full items-center gap-3 border-b bg-grey-200 p-4'>
             <div className='rounded-full bg-brown p-[7px]'>
               <Icon
                 w={18}
@@ -175,7 +177,22 @@ export default function ProductDescription({ product }: { product?: Product }) {
             </div>
             <p className='text-base'>About guarantee</p>
           </Accordion.Trigger>
-          <Accordion.Content></Accordion.Content>
+          <Accordion.Content>
+            <div className='border-t border-gray-300 bg-grey-200 px-4 py-8'>
+              <p className='text-sm text-grey-400'>
+                You receive a lifetime warranty on engagement rings purchased
+                from our gallery. The warranty covers polishing, grinding, and
+                resizing of the rings (where resizing is possible). For more
+                details, please contact our gallery manager by phone or place an
+                order on our website. Additionally, we offer complimentary
+                annual inspections to ensure the integrity and brilliance of
+                your ring. Our expert jewelers will check for loose stones, wear
+                and tear, and provide professional cleaning services. We are
+                committed to maintaining the beauty and quality of your precious
+                jewelry for a lifetime.
+              </p>
+            </div>
+          </Accordion.Content>
         </Accordion.Item>
       </Accordion.Root>
     </div>
