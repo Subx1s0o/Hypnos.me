@@ -17,7 +17,7 @@ export default function ThumbnailList({
   onThumbClick
 }: ThumbnailListProps) {
   return (
-    <ul className='flex flex-1 justify-start smd:justify-center'>
+    <ul className='flex flex-1 justify-start smd:justify-center md:justify-start'>
       {Object.entries(media).map(([key, value], index) => {
         return (
           <ImageThumb

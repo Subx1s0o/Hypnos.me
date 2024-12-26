@@ -24,6 +24,7 @@ export default function ProductMainComponent({
     queryKey: ['products', category],
     queryFn: async () => getProducts({ category })
   })
+  console.log(data)
 
   if (isError) {
     return (

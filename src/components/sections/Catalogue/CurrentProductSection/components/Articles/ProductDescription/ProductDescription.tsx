@@ -5,7 +5,6 @@ import * as Accordion from '@radix-ui/react-accordion'
 import Icon from '@/components/ui/Icon'
 
 import AddToCartButton from './AddToCartButton'
-import ProductAvailableSizes from './ProductAvailableSizes'
 
 export default function ProductDescription({ product }: { product?: Product }) {
   console.log(product)
@@ -18,7 +17,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
       <h1 className='mb-4 font-cormorant text-base-big font-medium sm:text-smd lg:text-md xxl:text-lg'>
         {product?.title}
       </h1>
-      <hr className='mb-4 border-brown' />
+      <hr className='mb-5 border-brown' />
       {!product?.discountPercent ? (
         <h2 className='mb-4'>{formatPrice(product?.price)}</h2>
       ) : (
@@ -33,23 +32,14 @@ export default function ProductDescription({ product }: { product?: Product }) {
         </div>
       )}
 
-      {product?.sizeDetails && (
-        <ProductAvailableSizes sizes={product.sizeDetails} />
-      )}
-      <hr className='mb-4 border-brown' />
-
       <p className='mb-8 text-sm text-grey-400'>{product?.description}</p>
 
       <Accordion.Root
         collapsible
         type='single'
         className='flex flex-col gap-3'>
-        {/* Треба переписати бекенд для каменів */}
-
-        {/* <Accordion.Item
-          className='bg-grey-200 p-4'
-          value='item-1'>
-          <Accordion.Trigger className='flex items-center gap-3 border-b'>
+        <Accordion.Item value='item-1'>
+          <Accordion.Trigger className='flex w-full items-center gap-3 border-b bg-grey-200 p-4'>
             <div className='rounded-full bg-brown p-[7px]'>
               <Icon
                 w={18}
@@ -60,27 +50,42 @@ export default function ProductDescription({ product }: { product?: Product }) {
             </div>
             <p className='text-base'>Characteristics of gemstones</p>
           </Accordion.Trigger>
-          <Accordion.Content className='grid grid-cols-2'>
-            <div className='mt-8 flex flex-col gap-6'>
-              <div>
-                <h3 className='mb-1 text-sm text-grey-400'>Quantity</h3>
-                <p className='text-base-big'>{product?.quantity}</p>
+          <Accordion.Content>
+            <div className='grid grid-cols-2 gap-8 border-t border-gray-300 bg-grey-200 px-4 py-8'>
+              <div className='flex flex-col gap-6'>
+                <div>
+                  <h3 className='mb-1 text-sm text-grey-400'>Quantity</h3>
+                  <p className='text-base-big'>
+                    {product?.diamondDetails.quantity}
+                  </p>
+                </div>
+                <div>
+                  <h3 className='mb-1 text-sm text-grey-400'>Total weight</h3>
+                  <p className='text-base-big'>
+                    {product?.diamondDetails.weight} ct
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className='mb-1 text-sm text-grey-400'>Weight</h3>
-                <p className='text-base-big'>
-                  {product?.goldSamples.map(sample => sample.sampleValue)}
-                </p>
+              <div className='flex flex-col gap-6'>
+                <div>
+                  <h3 className='mb-1 text-sm text-grey-400'>Diameter</h3>
+                  <p className='text-base-big'>
+                    {product?.diamondDetails.diameter} mm
+                  </p>
+                </div>
+                <div>
+                  <h3 className='mb-1 text-sm text-grey-400'>Сolor</h3>
+                  <p className='text-base-big'>
+                    {product?.diamondDetails.color}
+                  </p>
+                </div>
               </div>
             </div>
-            <div className='flex flex-col gap-6'></div>
           </Accordion.Content>
-        </Accordion.Item> */}
+        </Accordion.Item>
 
-        <Accordion.Item
-          value='item-2'
-          className='bg-grey-200 p-4'>
-          <Accordion.Trigger className='flex items-center gap-3 border-b'>
+        <Accordion.Item value='item-2'>
+          <Accordion.Trigger className='flex w-full items-center gap-3 border-b bg-grey-200 p-4'>
             <div className='rounded-full bg-brown p-[7px]'>
               <Icon
                 w={18}
@@ -92,18 +97,64 @@ export default function ProductDescription({ product }: { product?: Product }) {
             <p className='text-base'>About Ring</p>
           </Accordion.Trigger>
           <Accordion.Content>
-            <div className='mt-8 grid grid-cols-2 items-center gap-8'>
+            <div className='grid grid-cols-2 gap-8 border-t border-gray-300 bg-grey-200 px-4 py-8'>
+              {/* Перша колонка */}
               <div className='flex flex-col gap-6'>
                 <div>
                   <h3 className='mb-1 text-sm text-grey-400'>Width</h3>
                   <p className='text-base-big'>{product?.width} mm</p>
                 </div>
-                <div></div>
+                <div>
+                  <h3 className='mb-3 text-sm text-grey-400'>Pair weight</h3>
+                  {product?.ringDetails
+                    ?.slice(0, Math.ceil(product.ringDetails.length / 2))
+                    .map((detail, index) => (
+                      <div
+                        key={index}
+                        className='mb-4'>
+                        <h3 className='mb-3 text-base-big text-grey-400'>
+                          {detail.purityValue} purity
+                        </h3>
+                        <div className='flex flex-col gap-1'>
+                          <p className='text-sm'>M - {detail.maleWeight} gr</p>
+                          <p className='text-sm'>
+                            F - {detail.femaleWeight} gr
+                          </p>
+                          <p className='text-sm'>
+                            Together - {detail?.pairWeight ?? 'N/A'} gr
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                </div>
               </div>
+              {/* Друга колонка */}
               <div className='flex flex-col gap-6'>
                 <div>
                   <h3 className='mb-1 text-sm text-grey-400'>Thickness</h3>
                   <p className='text-base-big'>{product?.thickness} mm</p>
+                </div>
+                <div>
+                  {product?.ringDetails
+                    ?.slice(Math.ceil(product.ringDetails.length / 2))
+                    .map((detail, index) => (
+                      <div
+                        key={index}
+                        className='mb-4'>
+                        <h3 className='mb-3 text-base-big text-grey-400'>
+                          {detail.purityValue} purity
+                        </h3>
+                        <div className='flex flex-col gap-1'>
+                          <p className='text-sm'>M - {detail.maleWeight} gr</p>
+                          <p className='text-sm'>
+                            F - {detail.femaleWeight} gr
+                          </p>
+                          <p className='text-sm'>
+                            Together - {detail.pairWeight ?? 'N/A'} gr
+                          </p>
+                        </div>
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
