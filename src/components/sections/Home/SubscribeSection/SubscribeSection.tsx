@@ -53,7 +53,7 @@ export default function SubscribeSection() {
       </div>
 
       {/* Horizontal divider */}
-      <div className='md:col-span-2 md:h-px md:bg-light-grey' />
+      <div className='md:col-span-2 md:h-px md:bg-grey-light' />
 
       {/* 2 - Bottom left */}
       <div className='relative mb-8 px-5 md:mb-0 md:p-20 xl:pl-[200px]'>
@@ -63,7 +63,7 @@ export default function SubscribeSection() {
           subscribers.
         </p>
         {/* Vertical divider */}
-        <div className='md:absolute md:right-0 md:top-0 md:h-full md:w-px md:bg-light-grey' />
+        <div className='md:absolute md:right-0 md:top-0 md:h-full md:w-px md:bg-grey-light' />
       </div>
 
       {/* 3 - Bottom right */}
