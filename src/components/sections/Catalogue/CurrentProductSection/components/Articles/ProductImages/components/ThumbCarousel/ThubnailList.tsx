@@ -19,7 +19,7 @@ export default function ThumbnailList({
   return (
     <ul className='flex flex-1 justify-start smd:justify-center md:justify-start'>
       {Object.entries(media).map(([key, value], index) => {
-        if (value.status === 'fulfilled')
+        if (value.status !== 'not_uploaded')
           return (
             <ImageThumb
               status={value.status}

@@ -3,9 +3,11 @@
 import getProductBySlug from '@/actions/getProductBySlug'
 import { Product } from '@/types'
 import { useQuery } from '@tanstack/react-query'
+import { notFound } from 'next/navigation'
 
 import Breadcrumb from '@/components/features/BreadCrumb'
 import { Media, MediaContextProvider } from '@/components/helpers/Media'
+import Loader from '@/components/ui/Loader'
 
 import BannerSection from './BannerSection'
 import ProductDescription from './components/Articles/ProductDescription/ProductDescription'
@@ -24,8 +26,8 @@ export default function CurrentProductSection({
     queryFn: async () => await getProductBySlug(slug)
   })
 
-  if (error) return <p>Error loading product data.</p>
-  if (isLoading) return <p>loading</p>
+  if (error) notFound()
+  if (isLoading) return <Loader />
 
   return (
     <section className='px-3 md:px-10'>
