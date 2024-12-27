@@ -33,7 +33,7 @@ export default function BannerSection({
       <span className='mb-14 rounded-full border px-[30px] py-3 text-xs'>
         {spanText}
       </span>
-      <p className='max-w-[200px] text-center text-xs xxl:text-sm'>
+      <p className='mb-[94px] max-w-[200px] text-center text-xs xxl:text-sm'>
         {description}
       </p>
       <Link

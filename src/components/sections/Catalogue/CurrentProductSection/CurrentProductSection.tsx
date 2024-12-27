@@ -29,7 +29,7 @@ export default function CurrentProductSection({
 
   return (
     <section className='px-3 md:px-10'>
-      <div className='flex flex-col gap-4 md:grid md:grid-cols-2'>
+      <div className='flex flex-col items-start gap-4 md:grid md:grid-cols-2'>
         <div className='flex flex-col gap-4 md:flex-row'>
           <MediaContextProvider>
             <Media

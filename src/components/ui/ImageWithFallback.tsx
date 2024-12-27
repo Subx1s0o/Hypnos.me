@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 type ImageWithFallbackProps = ComponentProps<typeof Image> & {
   alt: string
-  src: string
+  src: string | undefined
   width?: number
   height?: number
 }
@@ -33,7 +33,7 @@ export default function ImageWithFallback({
       height={height}
       alt={alt}
       onError={handleError}
-      src={error ? '/images/products/decorative/fallback.avif' : src}
+      src={error ? '/images/products/decorative/fallback.avif' : (src ?? '')}
       {...props}
     />
   )

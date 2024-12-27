@@ -31,7 +31,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <Link href={`catalogue/${category}/${slug}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
           <div className='relative aspect-[1]'>
-            {status !== 'rejected' ? (
+            {status !== 'rejected' && url ? (
               <ImageWithFallback
                 alt={title}
                 src={url}
