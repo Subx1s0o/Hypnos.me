@@ -5,7 +5,6 @@ import { Product } from '@/types'
 import { ProductCategories } from '@/types/product-categories.type'
 import { useQuery } from '@tanstack/react-query'
 import useEmblaCarousel from 'embla-carousel-react'
-import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 
 import ProductItem from './ProductItem'
 
@@ -14,16 +13,13 @@ interface ProductListProps {
 }
 
 export default function ProductList({ category }: ProductListProps) {
-  const [emblaRef] = useEmblaCarousel(
-    {
-      breakpoints: {
-        '(min-width: 1024px)': { dragFree: true },
-        '(min-width: 768px)': { slidesToScroll: 2 },
-        '(min-width: 0px)': { slidesToScroll: 'auto' }
-      }
-    },
-    [WheelGesturesPlugin()]
-  )
+  const [emblaRef] = useEmblaCarousel({
+    breakpoints: {
+      '(min-width: 1024px)': { dragFree: true },
+      '(min-width: 768px)': { slidesToScroll: 2 },
+      '(min-width: 0px)': { slidesToScroll: 'auto' }
+    }
+  })
   const { data, isLoading, isError, error } = useQuery<{
     data: Product[]
     totalPages: number

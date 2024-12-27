@@ -1,5 +1,7 @@
+import { SpriteTypes } from '@/types'
+
 interface IconProps {
-  id: string
+  id: SpriteTypes
   w: number
   h: number
   className?: string

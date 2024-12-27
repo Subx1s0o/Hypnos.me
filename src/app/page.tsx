@@ -1,14 +1,13 @@
-import HeaderOrMenu from '@/components/common/Home/HeaderOrMenu/HeaderOrMenu'
 import AboutSection from '@/components/sections/Home/AboutSection/AboutSection'
 import HeroSection from '@/components/sections/Home/HeroSection/HeroSection'
 import ProductSection from '@/components/sections/Home/Products/ProductSection'
+import SubscribeSection from '@/components/sections/Home/SubscribeSection/SubscribeSection'
 import TitleSection from '@/components/sections/Home/TitleSection/TitleSection'
 import ReviewsSection from '@/components/sections/ReviewsSection/ReviewsSection'
 
 export default function HomePage() {
   return (
     <>
-      <HeaderOrMenu />
       <main>
         <TitleSection />
         <HeroSection />
@@ -36,6 +35,7 @@ export default function HomePage() {
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
         </ProductSection>
+        <SubscribeSection />
         <ReviewsSection />
         <AboutSection />
       </main>
