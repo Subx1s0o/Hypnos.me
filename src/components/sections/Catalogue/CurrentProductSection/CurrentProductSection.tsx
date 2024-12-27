@@ -9,7 +9,7 @@ import { Media, MediaContextProvider } from '@/components/helpers/Media'
 
 import BannerSection from './BannerSection'
 import ProductDescription from './components/Articles/ProductDescription/ProductDescription'
-import ProductImages from './components/Articles/ProductImages'
+import ProductImages from './components/Articles/ProductImages/ProductImages'
 
 interface CurrentProductSectionProps {
   slug: string

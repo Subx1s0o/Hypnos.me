@@ -1,25 +1,23 @@
 import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
-import * as Accordion from '@radix-ui/react-accordion'
 
-import Icon from '@/components/ui/Icon'
-
-import AddToCartButton from './AddToCartButton'
+import AddToCartButton from './components/AddToCartButton'
+import ProductDescriptionAccordion from './components/ProductDescriptionAccordion/ProductDescriptionAccordeon'
 
 export default function ProductDescription({ product }: { product?: Product }) {
-  console.log(product)
-  const finalPrice = product?.discountPercent
-    ? product?.price - (product?.price * product?.discountPercent) / 100
-    : product?.price
+  if (!product) return null
+  const finalPrice = product.discountPercent
+    ? product.price - (product.price * product.discountPercent) / 100
+    : product.price
 
   return (
     <div>
-      <h1 className='mb-4 font-cormorant text-base-big font-medium sm:text-smd lg:text-md xxl:text-lg'>
-        {product?.title}
+      <h1 className='text-base-big mb-4 font-cormorant font-medium sm:text-smd lg:text-md xxl:text-lg'>
+        {product.title}
       </h1>
       <hr className='mb-5 border-brown' />
-      {!product?.discountPercent ? (
-        <h2 className='mb-4'>{formatPrice(product?.price)}</h2>
+      {!product.discountPercent ? (
+        <h2 className='mb-4'>{formatPrice(product.price)}</h2>
       ) : (
         <div className='mb-6 flex flex-col md:flex-row md:items-center md:justify-between'>
           <div className='mb-3 flex items-center gap-3 md:mb-0'>
@@ -31,170 +29,8 @@ export default function ProductDescription({ product }: { product?: Product }) {
           <AddToCartButton />
         </div>
       )}
-
-      <p className='mb-8 text-sm text-grey-400'>{product?.description}</p>
-
-      <Accordion.Root
-        collapsible
-        type='single'
-        className='flex flex-col gap-3'>
-        <Accordion.Item value='item-1'>
-          <Accordion.Trigger className='flex w-full items-center gap-3 border-b bg-grey-200 p-4'>
-            <div className='rounded-full bg-brown p-[7px]'>
-              <Icon
-                w={18}
-                h={18}
-                id='icon-diamant'
-                className='text-white'
-              />
-            </div>
-            <p className='text-base'>Characteristics of gemstones</p>
-          </Accordion.Trigger>
-          <Accordion.Content>
-            <div className='grid grid-cols-2 gap-8 border-t border-gray-300 bg-grey-200 px-4 py-8'>
-              <div className='flex flex-col gap-6'>
-                <div>
-                  <h3 className='mb-1 text-sm text-grey-400'>Quantity</h3>
-                  <p className='text-base-big'>
-                    {product?.diamondDetails.quantity}
-                  </p>
-                </div>
-                <div>
-                  <h3 className='mb-1 text-sm text-grey-400'>Total weight</h3>
-                  <p className='text-base-big'>
-                    {product?.diamondDetails.weight} ct
-                  </p>
-                </div>
-              </div>
-              <div className='flex flex-col gap-6'>
-                <div>
-                  <h3 className='mb-1 text-sm text-grey-400'>Diameter</h3>
-                  <p className='text-base-big'>
-                    {product?.diamondDetails.diameter} mm
-                  </p>
-                </div>
-                <div>
-                  <h3 className='mb-1 text-sm text-grey-400'>Сolor</h3>
-                  <p className='text-base-big'>
-                    {product?.diamondDetails.color}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Accordion.Content>
-        </Accordion.Item>
-
-        <Accordion.Item value='item-2'>
-          <Accordion.Trigger className='flex w-full items-center gap-3 border-b bg-grey-200 p-4'>
-            <div className='rounded-full bg-brown p-[7px]'>
-              <Icon
-                w={18}
-                h={18}
-                id='icon-information'
-                className='text-white'
-              />
-            </div>
-            <p className='text-base'>About Ring</p>
-          </Accordion.Trigger>
-          <Accordion.Content>
-            <div className='grid grid-cols-2 gap-8 border-t border-gray-300 bg-grey-200 px-4 py-8'>
-              {/* Перша колонка */}
-              <div className='flex flex-col gap-6'>
-                <div>
-                  <h3 className='mb-1 text-sm text-grey-400'>Width</h3>
-                  <p className='text-base-big'>{product?.width} mm</p>
-                </div>
-                <div>
-                  <h3 className='mb-3 text-sm text-grey-400'>Pair weight</h3>
-                  {product?.ringDetails
-                    ?.slice(0, Math.ceil(product.ringDetails.length / 2))
-                    .map((detail, index) => (
-                      <div
-                        key={index}
-                        className='mb-4'>
-                        <h3 className='mb-3 text-base-big text-grey-400'>
-                          {detail.purityValue} purity
-                        </h3>
-                        <div className='mb-1 flex flex-col gap-1'>
-                          <p className='text-sm'>M - {detail.maleWeight} gr</p>
-                          <p className='text-sm'>
-                            F - {detail.femaleWeight} gr
-                          </p>
-                          <p className='text-sm'>
-                            Together - {detail?.pairWeight ?? 'N/A'} gr
-                          </p>
-                        </div>
-                        <hr className='h-[2px] w-full bg-gray-300' />
-                      </div>
-                    ))}
-                </div>
-              </div>
-              {/* Друга колонка */}
-              <div className='flex flex-col gap-6'>
-                <div>
-                  <h3 className='mb-1 text-sm text-grey-400'>Thickness</h3>
-                  <p className='text-base-big'>{product?.thickness} mm</p>
-                </div>
-
-                <div>
-                  <h3 className='mb-3 text-transparent'>Pair weight</h3>
-                  {product?.ringDetails
-                    ?.slice(Math.ceil(product.ringDetails.length / 2))
-                    .map((detail, index) => (
-                      <div
-                        key={index}
-                        className='mb-4'>
-                        <h3 className='mb-3 text-base-big text-grey-400'>
-                          {detail.purityValue} purity
-                        </h3>
-                        <div className='mb-1 flex flex-col gap-1'>
-                          <p className='text-sm'>M - {detail.maleWeight} gr</p>
-                          <p className='text-sm'>
-                            F - {detail.femaleWeight} gr
-                          </p>
-                          <p className='text-sm'>
-                            Together - {detail.pairWeight ?? 'N/A'} gr
-                          </p>
-                        </div>
-                        <hr className='h-[2px] w-full bg-gray-300' />
-                      </div>
-                    ))}
-                </div>
-              </div>
-            </div>
-          </Accordion.Content>
-        </Accordion.Item>
-
-        <Accordion.Item value='item-3'>
-          <Accordion.Trigger className='flex w-full items-center gap-3 border-b bg-grey-200 p-4'>
-            <div className='rounded-full bg-brown p-[7px]'>
-              <Icon
-                w={18}
-                h={18}
-                id='icon-medal-star'
-                className='text-white'
-              />
-            </div>
-            <p className='text-base'>About guarantee</p>
-          </Accordion.Trigger>
-          <Accordion.Content>
-            <div className='border-t border-gray-300 bg-grey-200 px-4 py-8'>
-              <p className='text-sm text-grey-400'>
-                You receive a lifetime warranty on engagement rings purchased
-                from our gallery. The warranty covers polishing, grinding, and
-                resizing of the rings (where resizing is possible). For more
-                details, please contact our gallery manager by phone or place an
-                order on our website. Additionally, we offer complimentary
-                annual inspections to ensure the integrity and brilliance of
-                your ring. Our expert jewelers will check for loose stones, wear
-                and tear, and provide professional cleaning services. We are
-                committed to maintaining the beauty and quality of your precious
-                jewelry for a lifetime.
-              </p>
-            </div>
-          </Accordion.Content>
-        </Accordion.Item>
-      </Accordion.Root>
+      <p className='mb-8 text-sm text-grey-400'>{product.description}</p>
+      <ProductDescriptionAccordion product={product} />
     </div>
   )
 }

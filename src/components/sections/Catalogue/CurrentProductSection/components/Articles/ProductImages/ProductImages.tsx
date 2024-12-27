@@ -2,8 +2,8 @@ import { MediaObject } from '@/types'
 
 import { useEmblaCarouselWithThumbs } from '@/hooks/useEmblaCarouselWithThumbs'
 
-import MainImageList from '../ImageCarousels/Main/MainImageList'
-import ThumbnailList from '../ImageCarousels/Thumb/ThubnailList'
+import MainImageList from './components/MainCarousel/MainImageList'
+import ThumbnailList from './components/ThumbCarousel/ThubnailList'
 
 export default function ImagesArticle({ media }: { media?: MediaObject }) {
   const { emblaMainRef, emblaThumbsRef, selectedIndex, onThumbClick } =
