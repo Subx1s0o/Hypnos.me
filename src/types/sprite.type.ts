@@ -12,4 +12,4 @@ export type SpriteTypes =
   | 'icon-crystal'
   | 'icon-google'
   | 'icon-check'
-  | string
+  | 'icon-email'

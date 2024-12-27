@@ -1,48 +1,16 @@
-'use client'
+import React from 'react'
 
-import React, { useMemo, useState } from 'react'
-
+import SubscribeForm from '@/components/forms/SubscribeForm'
 import Icon from '@/components/ui/Icon'
 
 export default function SubscribeSection() {
-  const [email, setEmail] = useState('')
-  const [isChecked, setIsChecked] = useState(false)
-
-  const validateEmail = (email: string) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-    return regex.test(email)
-  }
-
-  const isEmailValid = useMemo(() => {
-    return email.length > 0 && validateEmail(email)
-  }, [email])
-
-  const isSubmitEnabled = useMemo(() => {
-    return isEmailValid && isChecked
-  }, [isEmailValid, isChecked])
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-
-    // fetch logic
-    console.log('Form submitted:', { email, isChecked })
-    setEmail('')
-    setIsChecked(false)
-  }
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value)
-  }
-
   return (
     <section
       id='subscribe'
       className='mx-4 my-12 bg-black text-brown md:mx-10 md:grid md:grid-cols-2'>
-      {/* 1 - Top section */}
       <div className='flex flex-col items-center py-14 md:col-span-2 md:px-16 md:py-20'>
         <Icon
-          id='icon-heart'
+          id='icon-email'
           w={32}
           h={32}
           className='rounded-full bg-grey-400 p-4 text-grey-200'
@@ -52,86 +20,19 @@ export default function SubscribeSection() {
         </h2>
       </div>
 
-      {/* Horizontal divider */}
       <div className='md:col-span-2 md:h-px md:bg-grey-light' />
 
-      {/* 2 - Bottom left */}
       <div className='relative mb-8 px-5 md:mb-0 md:p-20 xl:pl-[200px]'>
         <p className='text-center md:text-left'>
           By subscribing to our newsletter, you will be the first to know about
           promotions, raffles, and auctions held exclusively for our
           subscribers.
         </p>
-        {/* Vertical divider */}
+
         <div className='md:absolute md:right-0 md:top-0 md:h-full md:w-px md:bg-grey-light' />
       </div>
 
-      {/* 3 - Bottom right */}
-      <form
-        onSubmit={handleSubmit}
-        className='px-5 pb-16 md:col-start-2 md:p-20 xl:pr-[200px]'>
-        <div className='mb-5'>
-          <input
-            type='email'
-            id='email'
-            name='email'
-            value={email}
-            onChange={handleEmailChange}
-            placeholder='EMAIL'
-            className={`w-full rounded border bg-grey-400 p-3 text-white transition-colors ${
-              email.length > 0
-                ? isEmailValid
-                  ? 'border-green-500 focus:outline-none'
-                  : 'border-grey-200 focus:outline-none'
-                : 'border-transparent'
-              }`}
-          />
-        </div>
-
-        <div className='flex justify-between'>
-          <label className='relative flex cursor-pointer items-center space-x-3'>
-            <input
-              type='checkbox'
-              checked={isChecked}
-              onChange={e => setIsChecked(e.target.checked)}
-              className='size-5 cursor-pointer appearance-none rounded-[4px] border-2 border-primary
-                bg-transparent checked:bg-primary'
-            />
-
-            <Icon
-              id='icon-heart'
-              w={10}
-              h={10}
-              className={`absolute left-[-2px] top-1/2 -translate-x-1/2 -translate-y-1/2 text-white
-                transition-transform duration-300 ${isChecked ? 'block' : 'hidden'}`}
-            />
-            <span className='text-sm'>
-              * I agree with the{' '}
-              <a
-                href='/policy'
-                className='text-white hover:underline'>
-                policy
-              </a>
-            </span>
-          </label>
-
-          <button
-            type='submit'
-            disabled={!isSubmitEnabled}
-            className={`rounded-full p-3 transition-colors ${
-              isSubmitEnabled
-                ? 'cursor-pointer bg-brown hover:bg-brown/75'
-                : 'cursor-not-allowed bg-zinc-700'
-              }`}>
-            <Icon
-              id='icon-arrow'
-              w={16}
-              h={16}
-              className='rotate-90 p-1 text-white'
-            />
-          </button>
-        </div>
-      </form>
+      <SubscribeForm />
     </section>
   )
 }
