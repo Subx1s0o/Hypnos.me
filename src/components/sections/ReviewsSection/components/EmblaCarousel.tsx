@@ -10,8 +10,16 @@ import {
 import useEmblaCarousel from 'embla-carousel-react'
 import ReviewCard from './ReviewCard'
 
-type PropType = {
-  slides: number[]
+
+type ReviewData = { 
+  text: string,
+  altText: string,
+  imageUrl: string,
+  author: string,
+  date: string,  
+}
+type PropType = { 
+  slides: ReviewData[],  
   options?: EmblaOptionsType
 }
 
@@ -39,13 +47,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         
       </div>
       <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <div ><ReviewCard></ReviewCard></div>
-            </div>
+        <ul className="embla__container">
+          {slides.map((slide, index) => (
+            <li className="embla__slide" key={index}>
+              <ReviewCard {...slide} key={index}></ReviewCard>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
     </section>
