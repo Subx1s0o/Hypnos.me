@@ -6,7 +6,7 @@ export const navigationData = [
     iconActive: 'icon-cart',
     showBadge: true,
     getBadgeValue: (itemCount: number) => itemCount,
-    isLink: true
+    isLink: false
   },
   {
     id: 'favorites',

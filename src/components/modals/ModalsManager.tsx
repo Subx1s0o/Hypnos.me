@@ -6,9 +6,15 @@ import { Media, MediaContextProvider } from '@/components/helpers/Media'
 import { useModal } from '@/components/helpers/ModalContext'
 
 import BurgerModal from './BurgerModal/BurgerModal'
+import CartModal from './CartModal/CartModal'
 import SearchModal from './SearchModal/SearchModal'
 
 const modals = [
+  {
+    name: 'cart',
+    className: 'relative size-full bg-white p-6 shadow-lg md:w-[30rem]',
+    backdrop: 'fixed inset-0 z-20 flex items-center justify-end bg-grey-400/75'
+  },
   {
     name: 'burger',
     className:
@@ -81,6 +87,7 @@ export default function ModalManager() {
                   key={modal.name}
                   style={style}
                   className={modal.className}>
+                  {modal.name === 'cart' && <CartModal />}
                   {modal.name === 'search' && <SearchModal />}
                 </animated.div>
               </div>
@@ -98,6 +105,7 @@ export default function ModalManager() {
                 style={style}
                 className={modal.className}>
                 {modal.name === 'burger' && <BurgerModal />}
+                {modal.name === 'cart' && <CartModal />}
                 {modal.name === 'search' && <SearchModal />}
               </animated.div>
             </div>

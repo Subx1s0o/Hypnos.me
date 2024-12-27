@@ -1,15 +1,18 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 
+import { useModal } from '@/components/helpers/ModalContext'
 import BlackBadge from '@/components/ui/BlackBadge'
 import Button from '@/components/ui/Button'
 
 import CartItems from './CartItems'
 
 export default function CartModal() {
+  const { closeModal } = useModal()
   const handleContinueShopping = () => {
-    // продовжити покупки переходимо куди?
+    closeModal('cart')
   }
 
   return (
@@ -25,15 +28,17 @@ export default function CartModal() {
         </div>
         <CartItems />
         <div className='flex flex-col gap-4 pb-20 md:pb-0'>
-          <Button
-            className='w-full bg-black py-5 text-white'
-            onClick={handleContinueShopping}>
-            Place an order
-          </Button>
+          <Link
+            href='/cart'
+            passHref>
+            <Button className='w-full bg-black py-5 text-white'>
+              Place an order
+            </Button>
+          </Link>
+
           <Button
             className='w-full bg-grey-light py-5 text-black'
-            // onClick={onClick}
-          >
+            onClick={handleContinueShopping}>
             Continue shopping
           </Button>
         </div>

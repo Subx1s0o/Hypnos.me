@@ -27,8 +27,7 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
-  modal
+  children
 }: Readonly<{
   children: React.ReactNode
   modal: React.ReactNode
@@ -42,7 +41,6 @@ export default function RootLayout({
         <Providers>
           <HeaderOrMenu />
           {children}
-          {modal}
         </Providers>
       </body>
     </html>
