@@ -8,8 +8,8 @@ export type SpriteTypes =
   | 'icon-arrow'
   | 'icon-facebook'
   | 'icon-instagram'
-  | 'icon-x-alt'
+  | 'icon-x-altx-alt'
   | 'icon-crystal'
   | 'icon-google'
   | 'icon-check'
-  | string
+  | 'icon-email'

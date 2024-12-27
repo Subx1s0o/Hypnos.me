@@ -1,9 +1,12 @@
 'use client'
 
-import { ForgotPasswordSchema, ForgotPasswordType } from '@/schema/auth-schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
+import {
+  ForgotPasswordSchema,
+  ForgotPasswordType
+} from '@/components/forms/schema/auth-schemas'
 import FormInput from '@/components/ui/FormInput'
 
 export default function ForgotPasswordForm() {
@@ -18,7 +21,7 @@ export default function ForgotPasswordForm() {
         forgot password
       </h1>
       <div className='mb-5 flex justify-center'>
-        <p className='text-grey-normal max-w-80 text-center text-sm'>
+        <p className='max-w-80 text-center text-sm text-grey-normal'>
           Write here the email from which you registered so that we can{' '}
           <span className='font-bold text-black'>send you a letter</span> to
           recover your password
