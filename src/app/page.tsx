@@ -1,6 +1,7 @@
 import AboutSection from '@/components/sections/Home/AboutSection/AboutSection'
 import HeroSection from '@/components/sections/Home/HeroSection/HeroSection'
 import ProductSection from '@/components/sections/Home/Products/ProductSection'
+import SubscribeSection from '@/components/sections/Home/SubscribeSection/SubscribeSection'
 import TitleSection from '@/components/sections/Home/TitleSection/TitleSection'
 
 export default function HomePage() {
@@ -33,6 +34,7 @@ export default function HomePage() {
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
         </ProductSection>
+        <SubscribeSection />
         <AboutSection />
       </main>
     </>

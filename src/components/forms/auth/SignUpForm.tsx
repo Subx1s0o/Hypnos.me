@@ -1,11 +1,14 @@
 'use client'
 
-import { SignUpSchema, SignUpType } from '@/schema/auth-schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as Checkbox from '@radix-ui/react-checkbox'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 
+import {
+  SignUpSchema,
+  SignUpType
+} from '@/components/forms/schema/auth-schemas'
 import FormInput from '@/components/ui/FormInput'
 import Icon from '@/components/ui/Icon'
 

@@ -1,3 +1,4 @@
+import { SpriteTypes } from '@/types'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
@@ -13,7 +14,7 @@ const BurgerModal = dynamic(
 
 interface NavItem {
   type: 'button' | 'link'
-  iconId: string
+  iconId: SpriteTypes
   to?: string
 }
 
