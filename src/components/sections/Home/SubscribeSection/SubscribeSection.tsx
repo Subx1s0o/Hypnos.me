@@ -13,7 +13,7 @@ export default function SubscribeSection() {
           id='icon-email'
           w={32}
           h={32}
-          className='rounded-full bg-grey-400 p-4 text-grey-200'
+          className='rounded-full bg-grey-400 p-4 text-brown'
         />
         <h2 className='mt-4 text-center font-serif text-3xl text-white'>
           Get exclusive news
