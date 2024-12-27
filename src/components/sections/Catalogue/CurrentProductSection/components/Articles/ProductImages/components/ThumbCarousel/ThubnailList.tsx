@@ -19,16 +19,17 @@ export default function ThumbnailList({
   return (
     <ul className='flex flex-1 justify-start smd:justify-center md:justify-start'>
       {Object.entries(media).map(([key, value], index) => {
-        return (
-          <ImageThumb
-            status={value.status}
-            key={key}
-            onClick={() => onThumbClick(index)}
-            isSelected={index === selectedIndex}
-            index={index}
-            src={value.url}
-          />
-        )
+        if (value.status === 'fulfilled')
+          return (
+            <ImageThumb
+              status={value.status}
+              key={key}
+              onClick={() => onThumbClick(index)}
+              isSelected={index === selectedIndex}
+              index={index}
+              src={value.url}
+            />
+          )
       })}
     </ul>
   )
