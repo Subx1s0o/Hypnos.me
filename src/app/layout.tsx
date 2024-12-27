@@ -6,7 +6,7 @@ import { Cormorant, Manrope } from 'next/font/google'
 import RootHead from '@/components/helpers/RootHead'
 
 import './globals.css'
-import './embla.css'
+
 
 import HeaderOrMenu from '@/components/common/Home/HeaderOrMenu/HeaderOrMenu'
 
