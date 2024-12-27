@@ -1,12 +1,13 @@
 import AboutSection from '@/components/sections/Home/AboutSection/AboutSection'
 import HeroSection from '@/components/sections/Home/HeroSection/HeroSection'
 import ProductsSection from '@/components/sections/Home/ProductsSection/ProductsSection'
+import SubscribeSection from '@/components/sections/Home/SubscribeSection/SubscribeSection'
 import TitleSection from '@/components/sections/Home/TitleSection/TitleSection'
 
 export default function HomePage() {
   return (
     <>
-      <main className='mx-auto max-w-screen-3xl'>
+      <main className='max-w-screen-3xl mx-auto'>
         <TitleSection />
         <HeroSection />
         <ProductsSection
@@ -35,6 +36,8 @@ export default function HomePage() {
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
         </ProductsSection>
+
+        <SubscribeSection />
         <AboutSection />
       </main>
     </>
