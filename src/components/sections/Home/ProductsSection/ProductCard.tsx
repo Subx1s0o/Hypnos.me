@@ -4,7 +4,7 @@ import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import ImageWithFallback from './ImageWithFallback'
+import ImageWithFallback from '@/components/ui/ImageWithFallback'
 
 interface ProductCardProps {
   product: Product

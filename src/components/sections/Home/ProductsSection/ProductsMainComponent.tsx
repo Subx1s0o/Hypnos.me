@@ -44,7 +44,10 @@ export default function ProductMainComponent({
         title={category.charAt(0).toUpperCase() + category.slice(1)}>
         {children}
       </ProductsDescriptionHeader>
-      <ProductList products={data?.data} />
+      <ProductList
+        products={data?.data}
+        category={category}
+      />
     </div>
   ) : null
 }
