@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                 </form>
                 </div>
                
-                    <span className="mr-[52px] ">Credentials</span>
+                    <span className="mr-[52px] ml-[43px]">Credentials</span>
                     <span className="mr-[52px]">Customer Agreement</span>
                     <span className="mr-[237px]">Data processing policy</span>
                 
