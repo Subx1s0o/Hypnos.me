@@ -13,7 +13,7 @@ import FooterSubscribeList from './components/FooterSubscribeList'
 
 const Footer: React.FC = () => {
   return (
-    <footer className='bg-black pb-[24px] pt-[62px] text-white'>
+    <footer className='bg-black pb-[24px] pt-[40px] text-white'>
       <div className='mx-auto my-0 w-[1280px] px-[43px] py-0'>
         <div>
           <Link
