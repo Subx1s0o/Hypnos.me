@@ -8,8 +8,11 @@ import { useForm } from 'react-hook-form'
 import FormInput from '../ui/FormInput'
 import Icon from '../ui/Icon'
 import { SubscribeSchema, SubscribeType } from './schema/subscribe-schema'
+interface IProps {
+  className?: string;
 
-export default function SubscribeForm() {
+}
+export default function SubscribeForm({className}: IProps) {
   const {
     handleSubmit,
     control,
@@ -28,7 +31,7 @@ export default function SubscribeForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='px-5 pb-16 md:col-start-2 md:p-20 xl:pr-[200px]'>
+      className={className}>
       <div className='mb-5'>
         <FormInput
           type='email'
@@ -60,12 +63,12 @@ export default function SubscribeForm() {
               />
             </Checkbox.Indicator>
           </Checkbox.Root>
-          <span className='text-sm'>
+          <span className='text-sm ' >
             * I agree with the{' '}
             <a
               href='/policy'
-              className='text-white hover:underline'>
-              policy
+              className='text-[#C3AD9C] hover:underline'>
+              site policy
             </a>
           </span>
         </label>
@@ -73,9 +76,9 @@ export default function SubscribeForm() {
         <button
           type='submit'
           disabled={!isValid}
-          className={`rounded-full p-3 transition-colors ${
+          className={`rounded-full p-3   transition-colors ${
             isValid
-              ? 'cursor-pointer bg-brown hover:bg-brown/75'
+              ? 'cursor-pointer  bg-brown hover:bg-brown/75'
               : 'cursor-not-allowed bg-zinc-700'
             }`}>
           <Icon
