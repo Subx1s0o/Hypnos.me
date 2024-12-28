@@ -6,7 +6,7 @@ function FooterContactList() {
           leading-[16.39px] tracking-[0.01em] text-brown'>
         Schedule
       </h4>
-      <div className='flex gap-16'>
+      <div className='flex gap-16 text-[16px]'>
         <p>Mon—Fri</p>
         <p>10:00 — 19:00</p>
       </div>
