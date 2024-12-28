@@ -1,56 +1,65 @@
-'use client';
-import React from "react";
-import FooterInfoList from "./components/FooterInfoList";
-import serviceList from "./components/common/data/serviceList.json";
-import FooterSubscribeList from "./components/FooterSubscribeList";
-import FooterContactList from "./components/FooterContactList";
-import SubscribeForm from "../forms/SubscribeForm";
-import Icon from '@/components/ui/Icon'
+'use client'
+
+import React from 'react'
 import Link from 'next/link'
 
+import Icon from '@/components/ui/Icon'
 
+import SubscribeForm from '../forms/SubscribeForm'
+import serviceList from './components/common/data/serviceList.json'
+import FooterContactList from './components/FooterContactList'
+import FooterInfoList from './components/FooterInfoList'
+import FooterSubscribeList from './components/FooterSubscribeList'
 
-const Footer: React.FC = () => {
-
-    return (
-        <footer className="bg-black text-white pb-[24px] pt-[62px]">
-            <div className="w-[1280px] py-0 px-[43px] my-0 mx-auto">
-                <div>
-                <Link
+function Footer() {
+  return (
+    <footer className='bg-black pb-[24px] pt-[62px] text-white'>
+      <div className='mx-auto w-[1280px] px-[43px]'>
+        <div>
+          <Link
             href='/'
-            className='my-0 mx-auto block '>
+            className='mx-auto block'>
             <Icon
               id='icon-logo'
               className='text-brown'
               w={150}
               h={35}
             />
-                    </Link>
-                    </div>
-            <div className="flex gap-4 justify-between items-start p-4 bg-black">
-                <FooterContactList />
-                <FooterInfoList infoList={serviceList} title="Services" />
-                <FooterSubscribeList />
-            </div>
-            <div className="flex justify-end bg-black text-white  py-12 items-start border-y border-white mb-[24px]">
-                <p className="text-left max-w-[290px] mr-8 font-manrope leading-[21px] text-brown text-[14px]
-  ">
-                   Be the first to know about promotions, raffles and auctions for exclusive jewellery, which we hold only among the site&apos;s audience.
-                </p>
-                    <SubscribeForm className=' pb-16 md:col-start-2 '/>  
-                </div>
-               
-                    <span className="mr-[52px] text-[12px]">Credentials</span>
-                    <span className="mr-[52px] text-[12px]">Customer Agreement</span>
-                    <span className="mr-[170px] text-[12px]">Data processing policy</span>
-                
-                    <span className="mr-[24px] text-brown text-[12px]">2024 © Hypnos</span>
-                    <span className="text-brown text-[12px]">All rights reserved</span>
-               
-                    
-                </div>
-        </footer>
-    );
-};
+          </Link>
+        </div>
 
-export default Footer;
+        <div className='flex items-start justify-between gap-4 p-4'>
+          <FooterContactList />
+          <FooterInfoList
+            infoList={serviceList}
+            title='Services'
+          />
+          <FooterSubscribeList />
+        </div>
+
+        <div className='mb-[24px] flex items-start justify-end border-y border-white py-12'>
+          <p className='mr-8 max-w-[290px] text-left font-manrope text-[14px] leading-[21px] text-brown'>
+            Be the first to know about promotions, raffles and auctions for
+            exclusive jewellery, which we hold only among the site&apos;s
+            audience.
+          </p>
+          <SubscribeForm className='pb-16 md:col-start-2' />
+        </div>
+
+        <div className='flex flex-wrap items-center justify-between text-[12px]'>
+          <div className='flex gap-[52px]'>
+            <span>Credentials</span>
+            <span>Customer Agreement</span>
+            <span>Data Processing Policy</span>
+          </div>
+          <div className='flex gap-[24px] text-brown'>
+            <span>2024 © Hypnos</span>
+            <span>All rights reserved</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer

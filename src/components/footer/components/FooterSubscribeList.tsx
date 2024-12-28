@@ -1,4 +1,4 @@
-const FooterContactList = () => {
+function FooterContactList() {
   return (
     <div className='h-[400px] bg-black p-[15px] text-white'>
       <h4
