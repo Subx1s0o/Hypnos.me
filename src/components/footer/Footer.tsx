@@ -11,14 +11,14 @@ import FooterContactList from './components/FooterContactList'
 import FooterInfoList from './components/FooterInfoList'
 import FooterSubscribeList from './components/FooterSubscribeList'
 
-function Footer() {
+const Footer: React.FC = () => {
   return (
     <footer className='bg-black pb-[24px] pt-[62px] text-white'>
-      <div className='mx-auto w-[1280px] px-[43px]'>
+      <div className='mx-auto my-0 w-[1280px] px-[43px] py-0'>
         <div>
           <Link
             href='/'
-            className='mx-auto block'>
+            className='mx-auto my-0 block'>
             <Icon
               id='icon-logo'
               className='text-brown'
@@ -27,8 +27,7 @@ function Footer() {
             />
           </Link>
         </div>
-
-        <div className='flex items-start justify-between gap-4 p-4'>
+        <div className='flex items-start justify-between gap-4 bg-black p-4'>
           <FooterContactList />
           <FooterInfoList
             infoList={serviceList}
@@ -36,8 +35,9 @@ function Footer() {
           />
           <FooterSubscribeList />
         </div>
-
-        <div className='mb-[24px] flex items-start justify-end border-y border-white py-12'>
+        <div
+          className='mb-[24px] flex items-start justify-end border-y border-white bg-black py-12
+            text-white'>
           <p className='mr-8 max-w-[290px] text-left font-manrope text-[14px] leading-[21px] text-brown'>
             Be the first to know about promotions, raffles and auctions for
             exclusive jewellery, which we hold only among the site&apos;s
@@ -46,17 +46,12 @@ function Footer() {
           <SubscribeForm className='pb-16 md:col-start-2' />
         </div>
 
-        <div className='flex flex-wrap items-center justify-between text-[12px]'>
-          <div className='flex gap-[52px]'>
-            <span>Credentials</span>
-            <span>Customer Agreement</span>
-            <span>Data Processing Policy</span>
-          </div>
-          <div className='flex gap-[24px] text-brown'>
-            <span>2024 © Hypnos</span>
-            <span>All rights reserved</span>
-          </div>
-        </div>
+        <span className='mr-[52px] text-[12px]'>Credentials</span>
+        <span className='mr-[52px] text-[12px]'>Customer Agreement</span>
+        <span className='mr-[170px] text-[12px]'>Data processing policy</span>
+
+        <span className='mr-[24px] text-[12px] text-brown'>2024 © Hypnos</span>
+        <span className='text-[12px] text-brown'>All rights reserved</span>
       </div>
     </footer>
   )
