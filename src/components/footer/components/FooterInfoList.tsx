@@ -12,7 +12,7 @@ const FooterInfoList = ({ title, infoList }:IProps) => {
     return (
         <div className="bg-black text-white h-[400px] p-[15px]">
             
-            <h4 className="text-left text-[12px] font-manrope font-semibold leading-[16.39px] tracking-[0.01em] mb-slide-large text-[#C3AD9C]">
+            <h4 className="text-left text-[12px] font-manrope font-semibold leading-[16.39px] tracking-[0.01em] mb-slide-large text-brown">
     {title}
 </h4>
             <ul className="flex flex-col gap-3">

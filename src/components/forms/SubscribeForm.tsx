@@ -67,7 +67,7 @@ export default function SubscribeForm({className}: IProps) {
             * I agree with the{' '}
             <a
               href='/policy'
-              className='text-[#C3AD9C] hover:underline'>
+              className='text-brown hover:underline'>
               site policy
             </a>
           </span>
