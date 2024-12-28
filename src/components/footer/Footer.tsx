@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
                 <FooterInfoList infoList={serviceList} title="Services" />
                 <FooterSubscribeList />
             </div>
-            <div className="flex justify-end bg-black text-white  py-12 items-start border-t border-b border-white mb-[24px]">
+            <div className="flex justify-end bg-black text-white  py-12 items-start border-y border-white mb-[24px]">
                 <p className="text-left max-w-[290px] mr-8 font-manrope leading-[21px] text-[#C3AD9C] text-[14px]
   ">
                    Be the first to know about promotions, raffles and auctions for exclusive jewellery, which we hold only among the site's audience.
