@@ -40,8 +40,8 @@ const Footer: React.FC = () => {
           <FooterSubscribeList />
         </div>
         <div
-          className='mb-[24px] flex border-y border-grey-normal bg-black py-12 text-white md:flex-col
-            md:items-center md:justify-center xl:flex-row xl:items-start xl:justify-end'>
+          className='mb-[24px] flex border-y border-grey-normal bg-black py-12 text-white sm:flex-col
+            sm:items-center sm:justify-center xl:flex-row xl:items-start xl:justify-end'>
           <p className='mr-8 max-w-[290px] text-left font-manrope text-[14px] leading-[21px] text-brown'>
             Be the first to know about promotions, raffles and auctions for
             exclusive jewellery, which we hold only among the site&apos;s
@@ -49,13 +49,16 @@ const Footer: React.FC = () => {
           </p>
           <SubscribeForm className='pb-16 md:col-start-2' />
         </div>
+        <div className='sm:flexsm:flex-col sm:items-center sm:justify-center xl:block'>
+          <span className='mr-[52px] text-[12px]'>Credentials</span>
+          <span className='mr-[52px] text-[12px]'>Customer Agreement</span>
+          <span className='mr-[170px] text-[12px]'>Data processing policy</span>
 
-        <span className='mr-[52px] text-[12px]'>Credentials</span>
-        <span className='mr-[52px] text-[12px]'>Customer Agreement</span>
-        <span className='mr-[170px] text-[12px]'>Data processing policy</span>
-
-        <span className='mr-[24px] text-[12px] text-brown'>2024 © Hypnos</span>
-        <span className='text-[12px] text-brown'>All rights reserved</span>
+          <span className='mr-[24px] text-[12px] text-brown'>
+            2024 © Hypnos
+          </span>
+          <span className='text-[12px] text-brown'>All rights reserved</span>
+        </div>
       </div>
     </footer>
   )
