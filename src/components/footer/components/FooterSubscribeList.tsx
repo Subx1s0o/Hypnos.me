@@ -33,6 +33,7 @@ function FooterContactList() {
                   rx='2'
                   fill='#C3AD9C'
                 />
+                {/* <use href='/sprite.svg#icon-instagram' /> */}
               </svg>
               <span className='text-[16px] text-white'>Instagram</span>
             </a>

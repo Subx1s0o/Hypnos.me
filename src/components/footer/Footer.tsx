@@ -13,8 +13,10 @@ import FooterSubscribeList from './components/FooterSubscribeList'
 
 const Footer: React.FC = () => {
   return (
-    <footer className='bg-black pb-[24px] pt-[40px] text-white'>
-      <div className='mx-auto my-0 w-[1280px] px-[43px] py-0'>
+    <footer className='flex-col justify-center bg-black pb-[24px] pt-[40px] text-white'>
+      <div
+        className='mx-auto my-0 w-[1280px] px-[43px] py-0 sm:flex sm:flex-col sm:items-center
+          sm:justify-center xl:block'>
         <div>
           <Link
             href='/'
@@ -27,7 +29,9 @@ const Footer: React.FC = () => {
             />
           </Link>
         </div>
-        <div className='flex items-start justify-between gap-4 bg-black p-4'>
+        <div
+          className='flex gap-4 bg-black p-4 sm:flex-col sm:items-center sm:justify-center
+            xl:flex-row xl:items-start xl:justify-between'>
           <FooterContactList />
           <FooterInfoList
             infoList={serviceList}
