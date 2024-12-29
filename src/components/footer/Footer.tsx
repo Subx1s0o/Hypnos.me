@@ -13,7 +13,7 @@ import FooterSubscribeList from './components/FooterSubscribeList'
 
 const Footer: React.FC = () => {
   return (
-    <footer className='flex-col justify-center bg-black pb-[24px] pt-[40px] text-white'>
+    <footer className='bg-black pb-[24px] pt-[40px] text-white'>
       <div
         className='mx-auto my-0 px-[43px] py-0 sm:flex sm:w-[480px] sm:flex-col sm:items-center
           sm:justify-center xl:block xl:w-[1280px]'>
@@ -40,14 +40,15 @@ const Footer: React.FC = () => {
           <FooterSubscribeList />
         </div>
         <div
-          className='mb-[24px] flex border-y border-grey-normal bg-black py-12 text-white sm:flex-col
-            sm:items-center sm:justify-center xl:flex-row xl:items-start xl:justify-end'>
+          className='ms:py-0 mb-[24px] flex border-y border-grey-normal bg-black py-12 text-white
+            sm:mb-0 sm:flex-col sm:items-center sm:justify-center xl:mb-0 xl:flex-row
+            xl:items-start xl:justify-end xl:py-0'>
           <p className='mr-8 max-w-[290px] text-left font-manrope text-[14px] leading-[21px] text-brown'>
             Be the first to know about promotions, raffles and auctions for
             exclusive jewellery, which we hold only among the site&apos;s
             audience.
           </p>
-          <SubscribeForm className='pb-16 md:col-start-2' />
+          <SubscribeForm className='pb-16 sm:pb-0 md:col-start-2 xl:pb-0' />
         </div>
         <div className='sm:flex sm:flex-col sm:items-center sm:justify-center xl:block'>
           <span className='mr-[52px] text-[12px]'>Credentials</span>
