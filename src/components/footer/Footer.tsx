@@ -40,8 +40,8 @@ const Footer: React.FC = () => {
           <FooterSubscribeList />
         </div>
         <div
-          className='mb-[24px] flex items-start justify-end border-y border-grey-normal bg-black
-            py-12 text-white'>
+          className='mb-[24px] flex border-y border-grey-normal bg-black py-12 text-white md:flex-col
+            md:items-center md:justify-center xl:flex-row xl:items-start xl:justify-end'>
           <p className='mr-8 max-w-[290px] text-left font-manrope text-[14px] leading-[21px] text-brown'>
             Be the first to know about promotions, raffles and auctions for
             exclusive jewellery, which we hold only among the site&apos;s
