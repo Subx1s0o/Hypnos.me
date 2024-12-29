@@ -15,8 +15,8 @@ const Footer: React.FC = () => {
   return (
     <footer className='flex-col justify-center bg-black pb-[24px] pt-[40px] text-white'>
       <div
-        className='mx-auto my-0 w-[1280px] px-[43px] py-0 sm:flex sm:flex-col sm:items-center
-          sm:justify-center xl:block'>
+        className='mx-auto my-0 px-[43px] py-0 sm:flex sm:w-[480px] sm:flex-col sm:items-center
+          sm:justify-center xl:block xl:w-[1280px]'>
         <div>
           <Link
             href='/'
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
           </p>
           <SubscribeForm className='pb-16 md:col-start-2' />
         </div>
-        <div className='sm:flexsm:flex-col sm:items-center sm:justify-center xl:block'>
+        <div className='sm:flex sm:flex-col sm:items-center sm:justify-center xl:block'>
           <span className='mr-[52px] text-[12px]'>Credentials</span>
           <span className='mr-[52px] text-[12px]'>Customer Agreement</span>
           <span className='mr-[170px] text-[12px]'>Data processing policy</span>
