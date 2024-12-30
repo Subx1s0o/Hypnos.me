@@ -1,36 +1,50 @@
+import { ProductCategories } from './product-categories.type'
+
+export type MediaObject = {
+  main: Media
+  media_1?: Media
+  media_2?: Media
+  media_3?: Media
+  media_4?: Media
+}
+
+export type RingDetails = {
+  purityValue: number
+  maleWeight: number
+  femaleWeight: number
+  pairWeight?: number
+}
+
+export type DiamondDetails = {
+  quantity: number
+  weight: number
+  diameter: number
+  purity: number
+  color: string
+}
+
 export type Product = {
   id: string
   title: string
-  description: string
-  category: string
-  price: number
-  discountPercent: number
-  isPriceForPair: boolean
-  quantity: number
-  weight: number
-  pairWeight: number
-  width: number
-  thickness: number
-  views: number
+  slug: string
   createdAt: Date
   updatedAt: Date
-  media: {
-    main: Media
-    media_1: Media
-    media_2: Media
-    media_3: Media
-    media_4: Media
-  }
-  goldSamples: GoldSample[]
+  media: MediaObject
+  price: number
+  discountPercent?: number
+  isPriceForPair: boolean
+  description: string
+  category: ProductCategories
+  width?: number
+  thickness?: number
+  views: number
+  quantity: number
+  ringDetails: RingDetails[]
+  diamondDetails: DiamondDetails
+  sizeDetails: number[]
 }
 
-type Media = {
+export type Media = {
   url: string
-  status: 'pending' | 'fulfilled' | 'rejected' | 'not_uploaded'
-}
-
-type GoldSample = {
-  sampleValue: string
-  weightMale: number
-  weightFemale: number
+  status: 'fulfilled' | 'rejected' | 'not_uploaded'
 }

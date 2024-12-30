@@ -1,39 +1,42 @@
 import AboutSection from '@/components/sections/Home/AboutSection/AboutSection'
 import HeroSection from '@/components/sections/Home/HeroSection/HeroSection'
-import ProductSection from '@/components/sections/Home/Products/ProductSection'
+import ProductsSection from '@/components/sections/Home/ProductsSection/ProductsSection'
 import SubscribeSection from '@/components/sections/Home/SubscribeSection/SubscribeSection'
 import TitleSection from '@/components/sections/Home/TitleSection/TitleSection'
 
 export default function HomePage() {
   return (
     <>
-      <main>
+      <main className='max-w-screen-3xl mx-auto'>
         <TitleSection />
         <HeroSection />
-        <ProductSection category='classic'>
+        <ProductsSection
+          id='products'
+          category='classic'>
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
-        </ProductSection>
-        <ProductSection category='neoclassic'>
+        </ProductsSection>
+        <ProductsSection category='neoclassic'>
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
-        </ProductSection>
-        <ProductSection category='conceptual'>
+        </ProductsSection>
+        <ProductsSection category='conceptual'>
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
-        </ProductSection>
-        <ProductSection category='geometrical'>
+        </ProductsSection>
+        <ProductsSection category='geometrical'>
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
-        </ProductSection>
-        <ProductSection category='symbolical'>
+        </ProductsSection>
+        <ProductsSection category='symbolical'>
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
-        </ProductSection>
-        <ProductSection category='futuristic'>
+        </ProductsSection>
+        <ProductsSection category='futuristic'>
           A variety of housing options tailored to fit your needs. Choose from
           multiple designs, each offering distinct features and benefits.
-        </ProductSection>
+        </ProductsSection>
+
         <SubscribeSection />
         <AboutSection />
       </main>
