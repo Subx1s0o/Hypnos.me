@@ -4,7 +4,14 @@ import { Media, MediaContextProvider } from '@/components/helpers/Media'
 import Icon from '@/components/ui/Icon'
 import { Tooltip } from '@/components/ui/Tooltip'
 
-const navItems = [
+type SpriteTypes = 'icon-cart' | 'icon-heart' | 'icon-profile' | 'icon-search'
+
+const navItems: {
+  type: 'button' | 'link'
+  tooltip: string
+  iconId: SpriteTypes
+  href: string
+}[] = [
   { type: 'button', tooltip: 'Your Cart', iconId: 'icon-cart', href: '' },
   {
     type: 'link',
