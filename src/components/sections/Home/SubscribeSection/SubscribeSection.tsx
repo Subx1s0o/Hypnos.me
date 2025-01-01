@@ -32,7 +32,7 @@ export default function SubscribeSection() {
         <div className='md:absolute md:right-0 md:top-0 md:h-full md:w-px md:bg-grey-light' />
       </div>
 
-      <SubscribeForm />
+      <SubscribeForm className='px-5 pb-16 md:col-start-2 md:p-20 xl:pr-[200px]' />
     </section>
   )
 }
