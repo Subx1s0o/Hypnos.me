@@ -13,7 +13,7 @@ export default function SubscribeSection() {
           id='icon-email'
           w={32}
           h={32}
-          className='rounded-full bg-grey-400 p-4 text-brown'
+          className='rounded-full bg-grey-400 p-4 text-gray-100'
         />
         <h2 className='mt-4 text-center font-serif text-3xl text-white'>
           Get exclusive news
@@ -23,7 +23,7 @@ export default function SubscribeSection() {
       <div className='md:col-span-2 md:h-px md:bg-grey-light' />
 
       <div className='relative mb-8 px-5 md:mb-0 md:p-20 xl:pl-[200px]'>
-        <p className='text-center md:text-left'>
+        <p className='text-center text-base md:text-left'>
           By subscribing to our newsletter, you will be the first to know about
           promotions, raffles, and auctions held exclusively for our
           subscribers.

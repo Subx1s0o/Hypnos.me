@@ -41,14 +41,14 @@ const Footer: React.FC = () => {
         </div>
         <div
           className='ms:py-0 mb-[24px] flex border-y border-grey-normal bg-black py-12 text-white
-            sm:mb-0 sm:flex-col sm:items-center sm:justify-center xl:mb-0 xl:flex-row
-            xl:items-start xl:justify-end xl:py-0'>
+            sm:flex-col sm:items-center sm:justify-center xl:flex-row xl:items-start
+            xl:justify-end'>
           <p className='mr-8 max-w-[290px] text-left font-manrope text-[14px] leading-[21px] text-brown'>
             Be the first to know about promotions, raffles and auctions for
             exclusive jewellery, which we hold only among the site&apos;s
             audience.
           </p>
-          <SubscribeForm className='pb-16 sm:pb-0 md:col-start-2 xl:pb-0' />
+          <SubscribeForm className='pb-16 md:col-start-2' />
         </div>
         <div className='sm:flex sm:flex-col sm:items-center sm:justify-center xl:block'>
           <span className='mr-[52px] text-[12px]'>Credentials</span>
