@@ -1,4 +1,5 @@
 import { SpriteTypes } from '@/types'
+import { SpriteTypes } from '@/types'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 

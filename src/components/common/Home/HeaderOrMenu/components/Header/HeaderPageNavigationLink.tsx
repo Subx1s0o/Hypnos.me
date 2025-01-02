@@ -13,9 +13,9 @@ export default function HeaderPageNavigationLink({
       key={href}>
       <Link
         href={href}
-        className='duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px]
-          after:w-0 after:-translate-x-1/2 after:bg-grey-400 after:duration-300
-          lg:hover:after:w-full'>
+        className='text-xs duration-300 after:absolute after:bottom-[-5px] after:left-1/2
+          after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-grey-400
+          after:duration-300 lg:text-sm lg:hover:after:w-full'>
         {label}
       </Link>
     </li>
