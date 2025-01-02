@@ -1,11 +1,22 @@
-export const navigationData = [
+import { SpriteTypes } from '@/types'
+
+interface NavItem {
+  isLink: boolean
+  iconDefault: SpriteTypes
+  iconActive: SpriteTypes
+  to?: string
+  id: string
+  label: string
+}
+
+export const navigationData: NavItem[] = [
   {
     id: 'cart',
     label: 'Your Cart',
     iconDefault: 'icon-cart',
     iconActive: 'icon-cart',
-    showBadge: true,
-    getBadgeValue: (itemCount: number) => itemCount,
+    // showBadge: true,
+    // getBadgeValue: (itemCount: number) => itemCount,
     isLink: false
   },
   {
