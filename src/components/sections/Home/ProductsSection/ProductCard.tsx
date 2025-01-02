@@ -4,15 +4,10 @@ import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
-<<<<<<< HEAD:src/components/sections/Home/Products/components/ProductItem.tsx
 import BlackBadge from '@/components/ui/BlackBadge'
-
-interface ProductItemProps {
-=======
 import ImageWithFallback from '@/components/ui/ImageWithFallback'
 
 interface ProductCardProps {
->>>>>>> 8c49285936392121ebe198f6ddb083bb6d798f90:src/components/sections/Home/ProductsSection/ProductCard.tsx
   product: Product
 }
 
