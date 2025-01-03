@@ -6,6 +6,7 @@ interface TooltipProps {
   children: React.ReactNode
   content: string | React.ReactNode
   className?: string
+
 }
 
 export function Tooltip({ children, content, className = '' }: TooltipProps) {
