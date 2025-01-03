@@ -28,7 +28,7 @@ export default function SubscribeForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='px-5 pb-16 md:col-start-2 md:p-20 xl:pr-[200px]'>
+      className='w-full px-5 pb-16 sm:max-w-md md:col-start-2 md:max-w-full md:p-20 xl:pr-[200px]'>
       <div className='mb-5'>
         <FormInput
           type='email'
@@ -60,7 +60,7 @@ export default function SubscribeForm() {
               />
             </Checkbox.Indicator>
           </Checkbox.Root>
-          <span className='text-sm'>
+          <span className='text-sm text-brown'>
             * I agree with the{' '}
             <a
               href='/policy'

@@ -27,7 +27,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     : price
 
   return (
-    <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
+    <li className='md:flex-1/3 aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
       <Link href={`catalogue/${category}/${slug}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
           <div className='relative aspect-[1]'>
