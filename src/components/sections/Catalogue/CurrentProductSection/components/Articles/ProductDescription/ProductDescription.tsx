@@ -1,8 +1,10 @@
 import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
 
-import AddToCartButton from './components/AddToCartButton'
+
+import ButtonsBlock from './components/ButtonsBlock'
 import ProductDescriptionAccordion from './components/ProductDescriptionAccordion/ProductDescriptionAccordeon'
+import SizeSelector from './components/SizeSelector'
 
 export default function ProductDescription({ product }: { product?: Product }) {
   if (!product) return null
@@ -10,9 +12,11 @@ export default function ProductDescription({ product }: { product?: Product }) {
     ? product.price - (product.price * product.discountPercent) / 100
     : product.price
 
+
+
   return (
     <div>
-      <h1 className='text-base-big mb-4 font-cormorant font-medium sm:text-smd lg:text-md xxl:text-lg'>
+      <h1 className='mb-4 font-cormorant text-base-big font-medium sm:text-smd lg:text-md xxl:text-lg'>
         {product.title}
       </h1>
       <hr className='mb-5 border-brown' />
@@ -26,10 +30,11 @@ export default function ProductDescription({ product }: { product?: Product }) {
             </h3>
             <h2 className='text-smd text-brown'>{formatPrice(finalPrice)}$</h2>
           </div>
-          <AddToCartButton />
         </div>
       )}
       <p className='mb-8 text-sm text-grey-400'>{product.description}</p>
+      <SizeSelector/>
+      <ButtonsBlock />
       <ProductDescriptionAccordion product={product} />
     </div>
   )

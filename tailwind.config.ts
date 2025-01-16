@@ -45,6 +45,7 @@ export default {
         primary: '#CCC0B180',
         brown: '#B99376',
         'brown-active': '#a68b77',
+        'brown-hover': '#3A312A',
         error: '#bf2313'
       },
       fontSize: {

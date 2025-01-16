@@ -37,8 +37,8 @@ export default function ImageLinkCard({
       </picture>
 
       <div
-        className='absolute inset-0 flex items-center justify-center bg-black/25 duration-300
-          md:hover:bg-transparent'>
+        className='md:hover:bg-brown-hover/50 absolute inset-0 flex items-center justify-center
+          bg-transparent duration-300'>
         <p className='max-w-xs text-center font-cormorant text-md text-white lg:max-w-none'>
           {text}
         </p>
