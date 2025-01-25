@@ -23,12 +23,12 @@ export default function SubscribeSection() {
 
         <div className='md:col-span-2 md:h-px md:bg-grey-light' />
 
-        <div className='relative mb-8 px-5 md:mb-0 md:p-20 xl:pl-[200px]'>
-          <p className='text-center text-base md:text-left'>
-            By subscribing to our newsletter, you will be the first to know
-            about promotions, raffles, and auctions held exclusively for our
-            subscribers.
-          </p>
+      <div className='relative mb-8 px-5 md:mb-0 md:p-20 xl:pl-[200px]'>
+        <p className='text-center text-base md:text-left'>
+          By subscribing to our newsletter, you will be the first to know about
+          promotions, raffles, and auctions held exclusively for our
+          subscribers.
+        </p>
 
           <div className='md:absolute md:right-0 md:top-0 md:h-full md:w-px md:bg-grey-light' />
         </div>
