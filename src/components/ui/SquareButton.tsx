@@ -7,7 +7,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
 }
 
-const Button: React.FC<ButtonProps> = ({
+const SquareButton: React.FC<ButtonProps> = ({
   children,
   onClick,
   className = '',
@@ -15,7 +15,8 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`flex items-center justify-center rounded font-manrope uppercase ${className}`}
+      className={`flex items-center justify-center rounded font-manrope uppercase transition-all
+        duration-200 ${className}`}
       type={type}
       onClick={onClick}>
       {children}
@@ -23,4 +24,4 @@ const Button: React.FC<ButtonProps> = ({
   )
 }
 
-export default Button
+export default SquareButton

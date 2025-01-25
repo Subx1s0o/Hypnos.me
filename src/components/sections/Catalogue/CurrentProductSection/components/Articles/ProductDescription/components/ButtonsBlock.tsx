@@ -1,5 +1,5 @@
-import Button from '@/components/ui/Button'
 import Icon from '@/components/ui/Icon'
+import SquareButton from '@/components/ui/SquareButton'
 
 export default function ButtonsBlock() {
   const handlerAddToCard = () => {
@@ -11,8 +11,9 @@ export default function ButtonsBlock() {
 
   return (
     <div className='flex gap-1 py-3'>
-      <Button
-        className='flex w-1/2 justify-center gap-2 rounded-sm bg-black py-4 text-white'
+      <SquareButton
+        className='flex w-60 justify-center gap-2 rounded-sm bg-black py-4 text-white
+          hover:bg-grey-400'
         onClick={handlerAddToCard}
         type='button'>
         <Icon
@@ -24,11 +25,11 @@ export default function ButtonsBlock() {
         <span className='font-manrope text-base font-semibold capitalize tracking-wide'>
           Add to Cart
         </span>
-      </Button>
+      </SquareButton>
 
-      <Button
-        className='flex w-1/2 justify-center gap-2 rounded-sm border-2 border-solid border-brown
-          bg-white py-4'
+      <SquareButton
+        className='flex w-60 justify-center gap-2 rounded-sm border-2 border-solid
+          border-brown-accent bg-white py-4 hover:bg-brown-accent'
         onClick={handlerAddToWishlist}
         type='button'>
         <Icon
@@ -40,8 +41,8 @@ export default function ButtonsBlock() {
         <span className='font-manrope text-base font-semibold capitalize tracking-wide text-grey-300'>
           Add to Wishlist
         </span>
-      </Button>
+      </SquareButton>
     </div>
   )
 }
-// border: 2px solid #E7BF8E
+

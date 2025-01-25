@@ -22,7 +22,7 @@ export default function ProductList({ products, category }: ProductListProps) {
 
   return (
     <div
-      className='space-x-4 overflow-hidden px-4 md:px-10'
+      className='space-x-4 overflow-hidden '
       ref={emblaRef}>
       <ul className='-ml-4 flex'>
         {products?.map((product: Product) => (
