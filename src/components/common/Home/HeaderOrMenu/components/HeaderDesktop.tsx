@@ -13,7 +13,7 @@ export default function HeaderDesktop() {
 
   return (
     <>
-      <header className='px-10'>
+      <header className='mx-auto max-w-screen-xxl px-10'>
         <div className='flex items-center justify-between border-b border-b-grey-200 py-5'>
           <Link
             href='/'
@@ -45,7 +45,7 @@ export default function HeaderDesktop() {
         </div>
       </header>
       {shouldRenderPageNavigation && (
-        <div className='relative flex items-center justify-between px-10 py-5'>
+        <div className='relative mx-auto flex max-w-screen-xxl items-center justify-between px-10 py-5'>
           <Breadcrumb />
           <div className='lg:left-1/2 xl:absolute xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2'>
             <HeaderPageNavigation />

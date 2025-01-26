@@ -30,6 +30,7 @@ export default {
       flex: {
         '1': '0 0 100%',
         '1/2': '0 0 50%',
+        '1/3': '0 0 33%',
         '1/4': '0 0 25%'
       },
       colors: {
@@ -45,6 +46,9 @@ export default {
         primary: '#CCC0B180',
         brown: '#B99376',
         'brown-active': '#a68b77',
+        'brown-hover': '#3A312A',
+        'brown-light': '#D9AF7C',
+        'brown-accent': '#E7BF8E',
         error: '#bf2313'
       },
       fontSize: {

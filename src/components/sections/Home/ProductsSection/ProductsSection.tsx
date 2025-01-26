@@ -28,7 +28,7 @@ export default async function ProductSection({
   })
 
   return (
-    <section>
+    <section className='mx-auto max-w-screen-xxl '>
       <HydrationBoundary state={dehydrate(queryClient)}>
         <ProductsMainComponent
           id={id}
