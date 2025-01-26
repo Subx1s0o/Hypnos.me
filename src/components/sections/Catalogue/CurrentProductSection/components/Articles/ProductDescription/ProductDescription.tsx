@@ -1,8 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
+
+import { useLocalStorage } from '@/hooks/useLocalStorage'
 
 import ButtonsBlock from './components/ButtonsBlock'
 import ProductDescriptionAccordion from './components/ProductDescriptionAccordion/ProductDescriptionAccordeon'
@@ -10,14 +11,12 @@ import RadioBtnGroup from './components/RadioBtnGroup'
 import SizeSelector from './components/SizeSelector'
 
 export default function ProductDescription({ product }: { product?: Product }) {
-  const [selectedSize, setSelectedSize] = useState<number | null>(() => {
-    const storedSize = window.localStorage.getItem('selectedSize')
-
-    return storedSize ? JSON.parse(storedSize) : product?.sizeDetails[0]
-  })
-  useEffect(() => {
-    window.localStorage.setItem('selectedSize', JSON.stringify(selectedSize))
-  }, [selectedSize])
+  const defaultSize: string =
+    product?.sizeDetails[0].toString() ?? 'The item is out of stock'
+  const [selectedSize, setSelectedSize] = useLocalStorage(
+    'selectedSize',
+    defaultSize
+  )
 
   if (!product) return null
   const finalPrice = product.discountPercent
@@ -26,7 +25,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
   const sizes = product.sizeDetails
 
   const handleSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedSize(Number(event.target.value))
+    setSelectedSize(event.target.value)
   }
 
   return (

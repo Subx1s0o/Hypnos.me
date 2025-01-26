@@ -5,7 +5,7 @@ interface RadioButtonProps {
   value: string | number
   name: string
 
-  selected: string | number | null
+  selected: string | number
   classNameLabel?: string
   classNameInput?: string
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
