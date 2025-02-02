@@ -3,6 +3,7 @@ import HeroSection from '@/components/sections/Home/HeroSection/HeroSection'
 import ProductsSection from '@/components/sections/Home/ProductsSection/ProductsSection'
 import SubscribeSection from '@/components/sections/Home/SubscribeSection/SubscribeSection'
 import TitleSection from '@/components/sections/Home/TitleSection/TitleSection'
+import ReviewsSection from '@/components/sections/ReviewsSection/ReviewsSection'
 
 export default function HomePage() {
   return (
@@ -38,6 +39,7 @@ export default function HomePage() {
         </ProductsSection>
 
         <SubscribeSection />
+        <ReviewsSection />
         <AboutSection />
       </main>
     </>
