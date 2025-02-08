@@ -1,17 +1,22 @@
 import { cn } from '@/lib/cn'
+import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface ProductItemProps {
+import ImageWithFallback from '@/components/ui/ImageWithFallback'
+
+interface ProductCardProps {
   product: Product
 }
 
-export default function ProductItem({ product }: ProductItemProps) {
+export default function ProductCard({ product }: ProductCardProps) {
   const {
     title,
+    slug,
     discountPercent,
     price,
+    category,
     media: {
       main: { url, status }
     }
@@ -23,19 +28,26 @@ export default function ProductItem({ product }: ProductItemProps) {
 
   return (
     <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
-      <Link href={`catalog/${title.toLowerCase().split(' ').join('-')}`}>
+      <Link href={`catalogue/${category}/${slug}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
-          {status !== 'rejected' ? (
-            <Image
-              alt={title}
-              src={url}
-              width={308}
-              height={230}
-              style={{ width: '100%', height: 'auto' }}
-            />
-          ) : (
-            <div>No image</div>
-          )}
+          <div className='relative aspect-[1]'>
+            {status !== 'rejected' && url ? (
+              <ImageWithFallback
+                alt={title}
+                src={url}
+                fill
+                className='object-cover'
+              />
+            ) : (
+              <Image
+                alt={title}
+                src='/images/products/decorative/fallback.avif'
+                fill
+                className='object-cover'
+              />
+            )}
+          </div>
+
           {discountPercent && (
             <span
               className='absolute bottom-[14px] left-[14px] rounded-full bg-black px-5 py-[10px]
@@ -44,17 +56,17 @@ export default function ProductItem({ product }: ProductItemProps) {
             </span>
           )}
         </div>
-        <h3 className='mb-2 text-smd font-medium text-black'>{title}</h3>
+        <h3 className='mb-2 text-base-big font-medium text-black'>{title}</h3>
         <div className='flex gap-2'>
           <p
             className={cn('text-sm text-brown', {
               'text-sm text-grey-200 line-through': discountPercent
             })}>
-            ${price}
+            ${formatPrice(price)}
           </p>
           {discountPercent && (
             <p className='text-sm font-semibold text-brown'>
-              ${finalPrice.toFixed(2)}
+              ${formatPrice(finalPrice)}
             </p>
           )}
         </div>

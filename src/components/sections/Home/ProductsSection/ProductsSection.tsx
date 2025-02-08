@@ -7,16 +7,17 @@ import {
   QueryClient
 } from '@tanstack/react-query'
 
-import DescriptionHeader from './components/DescriptionHeader'
-import ProductList from './components/ProductList'
+import ProductsMainComponent from './ProductsMainComponent'
 
 type ProductSectionProps = PropsWithChildren & {
   category: ProductCategories
+  id?: string
 }
 
 export default async function ProductSection({
   category,
-  children
+  children,
+  id
 }: ProductSectionProps) {
   const queryClient = new QueryClient()
 
@@ -27,13 +28,13 @@ export default async function ProductSection({
   })
 
   return (
-    <section className='overflow-hidden py-[60px] lg:py-[70px]'>
-      <DescriptionHeader
-        title={category.charAt(0).toUpperCase() + category.slice(1)}>
-        {children}
-      </DescriptionHeader>
+    <section>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <ProductList category={category} />
+        <ProductsMainComponent
+          id={id}
+          category={category}>
+          {children}
+        </ProductsMainComponent>
       </HydrationBoundary>
     </section>
   )

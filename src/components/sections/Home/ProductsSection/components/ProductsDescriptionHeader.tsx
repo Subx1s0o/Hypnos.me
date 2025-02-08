@@ -4,7 +4,7 @@ type DescriptionHeaderProps = PropsWithChildren & {
   title: string
 }
 
-export default function DescriptionHeader({
+export default function ProductsDescriptionHeader({
   title,
   children
 }: DescriptionHeaderProps) {

@@ -26,23 +26,22 @@ export default function HeaderDesktop() {
             />
           </Link>
           <HeaderUserNavigation />
-          <div>
-            <address className='relative flex gap-6 text-xs not-italic'>
-              <a
-                href='tel:12155550199'
-                className='text-xs font-semibold'>
-                +1 215-555-0199
-              </a>
 
-              <a
-                href='https://maps.app.goo.gl/B9Yav26Ua82HB1vS9'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='text-xs font-semibold'>
-                123 Walnut Street
-              </a>
-            </address>
-          </div>
+          <address className='relative flex flex-col gap-1 text-xs not-italic lg:flex-row lg:gap-6'>
+            <a
+              href='tel:12155550199'
+              className='text-xs font-semibold'>
+              +1 215-555-0199
+            </a>
+
+            <a
+              href='https://maps.app.goo.gl/B9Yav26Ua82HB1vS9'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-xs font-semibold'>
+              123 Walnut Street
+            </a>
+          </address>
         </div>
       </header>
       {shouldRenderPageNavigation && (
