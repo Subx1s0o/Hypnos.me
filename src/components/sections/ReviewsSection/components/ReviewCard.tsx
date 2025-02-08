@@ -1,28 +1,44 @@
+import Icon from '@/components/ui/Icon'
 
+type ReviewData = {
+  text: string
+  altText: string
+  imageUrl: string
+  author: string
+  date: string
+}
 
-type props = { 
-    text: string,
-    altText: string,
-    imageUrl: string,
-    author: string,
-    date: string,  
-  } 
-export default function ReviewCard (props:props, key:number)  {
- 
-   
-    return (
-        <><div key={key}>
-                    <p>{props.text}</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="292" height="33" viewBox="0 0 292 33" fill="none">
-                        <path d="M0 1H86C87.1046 1 88 1.89543 88 3V31.3062C88 32.0674 88.8166 32.5495 89.4831 32.1818L145.549 1.24884C145.845 1.08561 146.177 1 146.515 1H292" stroke="#D9CABF" stroke-miterlimit="3.8637" stroke-linejoin="round" />
-                    </svg>
-                    <div>
-                        <img src={props.imageUrl} alt={props.altText}className="rounded-[64px] w-16 h-16"/>
-                        <h3>{props.author}</h3>
-                        <p>{props.date}</p>
-                    </div>
-                </div> 
-            
-        </>
-    );
+type ReviewCardProps = {
+  slide: ReviewData
+  key: number
+}
+export default function ReviewCard({ slide, key }: ReviewCardProps) {
+  return (
+    <>
+      <div
+        key={key}
+        className='pr-4'>
+        <div className='mb-8 h-[88px] w-[292px] overflow-hidden font-manrope text-base'>
+          <p className='line-clamp-4'>{slide.text}</p>
+        </div>
+        <Icon
+          id='icon-Vector-180'
+          w={292}
+          h={32}
+          className='fill-transparent stroke-[#D9CABF]'
+        />
+        <div className='flex items-end gap-6'>
+          <img
+            src={slide.imageUrl}
+            alt={slide.altText}
+            className='size-16 rounded-full'
+          />
+          <div className='flex flex-col gap-1 font-manrope'>
+            <h3 className='text-base leading-[19.2px]'>{slide.author}</h3>
+            <p className='text-xs font-semibold text-brown'>{slide.date}</p>
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }

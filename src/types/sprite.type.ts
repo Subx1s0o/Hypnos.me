@@ -13,3 +13,4 @@ export type SpriteTypes =
   | 'icon-google'
   | 'icon-check'
   | 'icon-email'
+  | 'icon-Vector-180'

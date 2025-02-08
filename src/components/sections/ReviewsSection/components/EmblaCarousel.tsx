@@ -1,33 +1,34 @@
 'use client'
-import React, { use } from 'react'
+
 import { EmblaOptionsType } from 'embla-carousel'
+import useEmblaCarousel from 'embla-carousel-react'
 
 import {
-  PrevButton,
   NextButton,
+  PrevButton,
   usePrevNextButtons
 } from './EmblaCarouselArrowButtons'
-import useEmblaCarousel from 'embla-carousel-react'
 import ReviewCard from './ReviewCard'
 
-
-type ReviewData = { 
-  text: string,
-  altText: string,
-  imageUrl: string,
-  author: string,
-  date: string,  
+type ReviewData = {
+  text: string
+  altText: string
+  imageUrl: string
+  author: string
+  date: string
 }
-type PropType = { 
-  slides: ReviewData[],  
+type PropType = {
+  slides: ReviewData[]
   options?: EmblaOptionsType
 }
-
-const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props
-  const [emblaRef, emblaApi] = useEmblaCarousel(options)
-
-  
+export default function EmblaCarousel({ slides, options }: PropType) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    ...options,
+    align: 'start',
+    containScroll: 'trimSnaps',
+    dragFree: true,
+    skipSnaps: false
+  })
 
   const {
     prevBtnDisabled,
@@ -37,27 +38,38 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi)
 
   return (
-    <section className="embla">
-      <div className="embla__controls absolute top-0 right-0">
-        <div className="embla__buttons">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+    <div className='mx-auto max-w-6xl'>
+      {/* Controls */}
+      <div className='absolute right-4 top-0 z-10 flex gap-[10px]'>
+        <PrevButton
+          onClick={onPrevButtonClick}
+          disabled={prevBtnDisabled}
+        />
+        <NextButton
+          onClick={onNextButtonClick}
+          disabled={nextBtnDisabled}
+        />
+      </div>
+
+      {/* Carousel */}
+      <div
+        className='overflow-hidden'
+        ref={emblaRef}>
+        <div className=''>
+          <ul className='flex'>
+            {slides.map((slide, index) => (
+              <li
+                className='min-w-[320px] sm:min-w-[360px] lg:min-w-[400px]'
+                key={index}>
+                <ReviewCard
+                  slide={slide}
+                  key={index}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
-
-        
       </div>
-      <div className="embla__viewport" ref={emblaRef}>
-        <ul className="embla__container">
-          {slides.map((slide, index) => (
-            <li className="embla__slide" key={index}>
-              <ReviewCard {...slide} key={index}></ReviewCard>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-    </section>
+    </div>
   )
 }
-
-export default EmblaCarousel
