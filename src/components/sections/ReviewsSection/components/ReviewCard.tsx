@@ -10,13 +10,11 @@ type ReviewData = {
 
 type ReviewCardProps = {
   slide: ReviewData
-  key: number
 }
-export default function ReviewCard({ slide, key }: ReviewCardProps) {
+export default function ReviewCard({ slide }: ReviewCardProps) {
   return (
     <>
       <div
-        key={key}
         className='pr-4'>
         <div className='mb-8 h-[88px] w-[292px] overflow-hidden font-manrope text-base'>
           <p className='line-clamp-4'>{slide.text}</p>

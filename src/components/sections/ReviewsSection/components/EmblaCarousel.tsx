@@ -52,19 +52,16 @@ export default function EmblaCarousel({ slides, options }: PropType) {
       </div>
 
       {/* Carousel */}
-      <div
-        className='overflow-hidden'
-        ref={emblaRef}>
-        <div className=''>
-          <ul className='flex'>
+      <div className='mx-auto max-w-[375px]'>
+        <div
+          className='overflow-hidden'
+          ref={emblaRef}>
+          <ul className='-ml-8 flex touch-pan-y'>
             {slides.map((slide, index) => (
               <li
-                className='min-w-[320px] sm:min-w-[360px] lg:min-w-[400px]'
+                className='min-w-0 flex-[0_0_80%] transform-gpu pl-8'
                 key={index}>
-                <ReviewCard
-                  slide={slide}
-                  key={index}
-                />
+                <ReviewCard slide={slide} />
               </li>
             ))}
           </ul>
