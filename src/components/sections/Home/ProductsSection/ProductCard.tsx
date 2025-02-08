@@ -1,9 +1,11 @@
+import useCart from '@/app/(store)/store'
 import { cn } from '@/lib/cn'
 import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import Icon from '@/components/ui/Icon'
 import ImageWithFallback from '@/components/ui/ImageWithFallback'
 
 interface ProductCardProps {
@@ -21,10 +23,21 @@ export default function ProductCard({ product }: ProductCardProps) {
       main: { url, status }
     }
   } = product
-
+  const setProduct = useCart(state => state.setProduct)
   const finalPrice = discountPercent
     ? price - (price * discountPercent) / 100
     : price
+
+  const handlerProductClick = () => {
+    const newProduct = {
+      title,
+      slug,
+      price,
+      discountPercent,
+      category
+    }
+    setProduct({ newProduct })
+  }
 
   return (
     <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
@@ -71,6 +84,13 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
       </Link>
+      <button onClick={handlerProductClick}>
+        <Icon
+          w={16}
+          h={16}
+          id='icon-cart'
+        />
+      </button>
     </li>
   )
 }
