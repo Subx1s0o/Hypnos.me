@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 
@@ -26,8 +27,10 @@ export default function EmblaCarousel({ slides, options }: PropType) {
     ...options,
     align: 'start',
     containScroll: 'trimSnaps',
-    dragFree: true,
-    skipSnaps: false
+    loop: true,
+    dragFree: false,
+    skipSnaps: false,
+    slidesToScroll: 1
   })
 
   const {
@@ -38,7 +41,7 @@ export default function EmblaCarousel({ slides, options }: PropType) {
   } = usePrevNextButtons(emblaApi)
 
   return (
-    <div className='mx-auto max-w-6xl'>
+    <div className='max-w-full'>
       {/* Controls */}
       <div className='absolute right-4 top-0 z-10 flex gap-[10px]'>
         <PrevButton
@@ -52,14 +55,17 @@ export default function EmblaCarousel({ slides, options }: PropType) {
       </div>
 
       {/* Carousel */}
-      <div className='mx-auto max-w-[375px]'>
+      <div
+        className='max-w-[320px] sm:max-w-screen-sm smd:max-w-screen-smd md:max-w-screen-md
+          lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl'>
         <div
           className='overflow-hidden'
           ref={emblaRef}>
-          <ul className='-ml-8 flex touch-pan-y'>
+          <ul className='flex gap-4 sm:gap-8'>
             {slides.map((slide, index) => (
               <li
-                className='min-w-0 flex-[0_0_80%] transform-gpu pl-8'
+                className='sm:min-w-0 sm:flex-[0_0_80%] sm:transform-gpu md:flex-[0_0_50%]
+                  lg:flex-[0_0_33%] xl:flex-[0_0_23%]'
                 key={index}>
                 <ReviewCard slide={slide} />
               </li>
