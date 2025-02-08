@@ -36,18 +36,18 @@ export default function ReviewsSection() {
   ]
 
   return (
-    <section className='w-full px-4 py-24 md:px-10 md:pb-32'>
+    <section className='w-full px-1 py-[120px] md:px-10'>
       <div className='relative'>
-        <h2 className='mb-7 font-cormorant text-md text-[#3C3C3C]'>Reviews</h2>
+        <h2 className='mb-7 font-cormorant text-md text-[#3C3C3C] lg:mb-6 lg:text-xl'>
+          Reviews
+        </h2>
         <hr className='mb-8 border border-[#D9CABF]' />
-        <div className='mb-6 flex justify-between sm:px-0'>
+        <div className='sm:px-0'>
           <EmblaCarousel
             slides={SLIDES}
             options={OPTIONS}
           />
         </div>
-
-        {/* <div className='grid sm:gap-5 md:grid-cols-2'></div> */}
       </div>
     </section>
   )

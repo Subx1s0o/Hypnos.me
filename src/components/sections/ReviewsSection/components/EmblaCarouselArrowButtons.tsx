@@ -58,7 +58,9 @@ type PropType = ComponentPropsWithRef<'button'>
 export const PrevButton = ({ ...restProps }: PropType) => {
   return (
     <button
-      className='size-[56px] rounded-full border border-[#E8DDD2] md:w-[68px] md:rounded-[100px]'
+      className='size-[56px] cursor-pointer rounded-full border border-[#E8DDD2]
+        transition-colors hover:border-[#E7BF8E] disabled:cursor-not-allowed md:w-[68px]
+        md:rounded-[100px]'
       type='button'
       {...restProps}>
       <Icon
@@ -74,7 +76,9 @@ export const PrevButton = ({ ...restProps }: PropType) => {
 export const NextButton = ({ ...restProps }: PropType) => {
   return (
     <button
-      className='size-[56px] rounded-full border border-[#E8DDD2] md:w-[68px] md:rounded-[100px]'
+      className='size-[56px] cursor-pointer rounded-full border border-[#E8DDD2]
+        transition-colors hover:border-[#E7BF8E] disabled:cursor-not-allowed md:w-[68px]
+        md:rounded-[100px]'
       type='button'
       {...restProps}>
       <Icon
