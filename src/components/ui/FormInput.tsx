@@ -37,7 +37,9 @@ export default function FormInput({
         )}
       />
       {errors[name] && (
-        <p className='text-sm text-error'>{errors[name].message?.toString()}</p>
+        <p className='mt-1 text-sm text-error'>
+          {errors[name].message?.toString()}
+        </p>
       )}
     </div>
   )
