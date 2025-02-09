@@ -1,6 +1,8 @@
 'use client'
 
 import React from 'react'
+import useCart from '@/app/(store)/store'
+import { Product } from '@/types/product-type'
 import Link from 'next/link'
 
 import { useModal } from '@/components/helpers/ModalContext'
@@ -14,20 +16,43 @@ export default function CartModal() {
   const handleContinueShopping = () => {
     closeModal('cart')
   }
+  const cartItems: Product[] = useCart(state => state.cart)
+  const totalAmount: number = cartItems.reduce((totalAmount, product) => {
+    const { discountPercent, price } = product
+    const finalPrice = discountPercent
+      ? price - (price * discountPercent) / 100
+      : price
+    totalAmount += finalPrice
+
+    return totalAmount
+  }, 0)
 
   return (
     <>
-      <div className='flex flex-col justify-between gap-12 px-8 py-2 md:gap-20 md:p-8'>
+      <div className='flex max-h-svh flex-col justify-between gap-12 py-8 md:gap-20'>
         <div className='flex flex-col items-center'>
           <h2
             className='text-center font-cormorant text-2xl font-bold uppercase leading-normal
               text-black'>
             Your cart
           </h2>
-          <BlackBadge className='w-6'>4</BlackBadge>
+          <BlackBadge className='w-9'>{cartItems.length}</BlackBadge>
         </div>
-        <CartItems />
-        <div className='flex flex-col gap-4 pb-20 md:pb-0'>
+
+        {cartItems.length === 0 ? (
+          <p>There is nothing in your cart</p>
+        ) : (
+          <CartItems products={cartItems} />
+        )}
+        <div className='flex flex-col gap-4 pb-20'>
+          <div className='flex justify-between p-4'>
+            <h3
+              className='text-center font-cormorant text-base font-bold uppercase leading-normal
+                text-black'>
+              Total amount
+            </h3>
+            <p>{totalAmount} $</p>
+          </div>
           <Link
             href='/cart'
             passHref>

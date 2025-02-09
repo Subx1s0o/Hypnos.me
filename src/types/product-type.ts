@@ -27,21 +27,21 @@ export type Product = {
   id: string
   title: string
   slug: string
-  createdAt: Date
-  updatedAt: Date
+  createdAt?: Date
+  updatedAt?: Date
   media: MediaObject
   price: number
   discountPercent?: number
-  isPriceForPair: boolean
+  isPriceForPair?: boolean
   description: string
   category: ProductCategories
   width?: number
   thickness?: number
-  views: number
-  quantity: number
-  ringDetails: RingDetails[]
-  diamondDetails: DiamondDetails
-  sizeDetails: number[]
+  views?: number
+  quantity?: number
+  ringDetails?: RingDetails[]
+  diamondDetails?: DiamondDetails
+  sizeDetails?: number[]
 }
 
 export type Media = {

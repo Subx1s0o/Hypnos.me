@@ -1,4 +1,4 @@
-import useCart from '@/app/(store)/store'
+
 import { cn } from '@/lib/cn'
 import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
@@ -8,6 +8,7 @@ import Link from 'next/link'
 import BlackBadge from '@/components/ui/BlackBadge'
 import Icon from '@/components/ui/Icon'
 import ImageWithFallback from '@/components/ui/ImageWithFallback'
+import useCart from '@/app/(store)/store'
 
 interface ProductCardProps {
   product: Product
@@ -15,29 +16,39 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const {
+    id,
     title,
     slug,
     discountPercent,
     price,
     category,
+    description,
     media: {
       main: { url, status }
     }
   } = product
   const setProduct = useCart(state => state.setProduct)
+  const addItemToCart = useCart(state => state.addToCart)
   const finalPrice = discountPercent
     ? price - (price * discountPercent) / 100
     : price
 
   const handlerProductClick = () => {
-    const newProduct = {
+    const newProduct: Product = {
+      id,
       title,
       slug,
       price,
+      description,
       discountPercent,
-      category
+      category,
+      media: {
+        main: { url, status }
+      },
     }
     setProduct({ newProduct })
+
+    addItemToCart(newProduct)
   }
 
   return (
