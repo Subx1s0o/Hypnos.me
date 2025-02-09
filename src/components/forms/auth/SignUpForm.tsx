@@ -1,9 +1,11 @@
 'use client'
 
+import { register } from '@/actions'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as Checkbox from '@radix-ui/react-checkbox'
 import Link from 'next/link'
-import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/navigation'
+import { SubmitHandler, useForm } from 'react-hook-form'
 
 import {
   SignUpSchema,
@@ -16,7 +18,11 @@ export default function SignUpForm() {
   const { control, handleSubmit } = useForm<SignUpType>({
     resolver: zodResolver(SignUpSchema)
   })
-  const onSubmit = () => {}
+  const router = useRouter()
+  const onSubmit: SubmitHandler<SignUpType> = async data => {
+    await register(data)
+    router.back()
+  }
 
   return (
     <div className='w-full sm:w-[370px] xxl:w-[450px]'>
@@ -29,9 +35,15 @@ export default function SignUpForm() {
         <div className='flex flex-col gap-4'>
           <FormInput
             control={control}
-            label='name'
+            label='First name'
             placeholder='John Conan'
-            name='name'
+            name='firstName'
+          />
+          <FormInput
+            control={control}
+            label='Second name'
+            placeholder='John Conan'
+            name='secondName'
           />
           <FormInput
             control={control}

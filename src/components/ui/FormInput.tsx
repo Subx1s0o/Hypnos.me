@@ -25,6 +25,7 @@ export default function FormInput({
         <label className='mb-4 text-xs font-bold uppercase'>{label}</label>
       )}
       <input
+        autoComplete='on'
         {...control.register(name)}
         {...inputProps}
         className={cn(
