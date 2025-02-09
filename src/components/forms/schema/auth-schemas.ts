@@ -14,7 +14,8 @@ export const SignInSchema = z.object({
 
 export const SignUpSchema = SignInSchema.extend({
   firstName: z.string().min(1, "This field can't be empty"),
-  secondName: z.string().min(1, "This field can't be empty")
+  secondName: z.string().min(1, "This field can't be empty"),
+  subscribed: z.boolean().optional()
 })
 
 export const ForgotPasswordSchema = z.object({

@@ -14,13 +14,17 @@ import FormInput from '@/components/ui/FormInput'
 import Icon from '@/components/ui/Icon'
 
 export default function SignInForm() {
-  const { control, handleSubmit } = useForm<SignInType>({
+  const {
+    control,
+    handleSubmit,
+    formState: { isSubmitting }
+  } = useForm<SignInType>({
     resolver: zodResolver(SignInSchema)
   })
   const router = useRouter()
   const onSubmit: SubmitHandler<SignInType> = async data => {
     await login(data)
-    router.back()
+    router.replace('/')
   }
 
   return (
@@ -60,9 +64,16 @@ export default function SignInForm() {
         </div>
         <button
           type='submit'
+          disabled={isSubmitting}
           className='w-full rounded bg-black py-5 text-xs font-bold text-white transition-colors
             lg:hover:bg-grey-300'>
-          LOGIN IN
+          {isSubmitting ? (
+            <p className='flex items-center justify-center gap-5'>
+              SIGNING IN...<span className='loader'></span>
+            </p>
+          ) : (
+            'SIGN IN'
+          )}
         </button>
         <div className='flex justify-between'>
           <p className='text-sm text-grey-400'>SIGN IN WITH</p>

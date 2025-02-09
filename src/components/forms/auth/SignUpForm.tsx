@@ -15,13 +15,20 @@ import FormInput from '@/components/ui/FormInput'
 import Icon from '@/components/ui/Icon'
 
 export default function SignUpForm() {
-  const { control, handleSubmit } = useForm<SignUpType>({
+  const {
+    control,
+    watch,
+    setValue,
+    handleSubmit,
+    formState: { isSubmitting }
+  } = useForm<SignUpType>({
     resolver: zodResolver(SignUpSchema)
   })
+  const isSubscribed = watch('subscribed', true)
   const router = useRouter()
   const onSubmit: SubmitHandler<SignUpType> = async data => {
     await register(data)
-    router.back()
+    router.replace('/')
   }
 
   return (
@@ -68,15 +75,26 @@ export default function SignUpForm() {
         </div>
         <button
           type='submit'
+          disabled={isSubmitting}
           className='w-full rounded bg-black py-5 text-xs font-bold text-white transition-colors
             lg:hover:bg-grey-300'>
-          REGISTER
+          {isSubmitting ? (
+            <p className='flex items-center justify-center gap-5'>
+              SIGNING IN...<span className='loader'></span>
+            </p>
+          ) : (
+            'SIGN IN'
+          )}
         </button>
         <div className='relative flex'>
           <Checkbox.Root
             className='absolute left-0 top-1 flex size-6 items-center justify-center rounded border
               border-black'
             defaultChecked
+            checked={!!isSubscribed}
+            onCheckedChange={checked =>
+              setValue('subscribed', checked === true)
+            }
             name='subscribed'
             id='c1'>
             <Checkbox.Indicator>
