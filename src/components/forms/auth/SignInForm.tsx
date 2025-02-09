@@ -1,7 +1,9 @@
 'use client'
 
+import { login } from '@/actions'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import {
@@ -15,7 +17,11 @@ export default function SignInForm() {
   const { control, handleSubmit } = useForm<SignInType>({
     resolver: zodResolver(SignInSchema)
   })
-  const onSubmit: SubmitHandler<SignInType> = async data => {}
+  const router = useRouter()
+  const onSubmit: SubmitHandler<SignInType> = async data => {
+    await login(data)
+    router.back()
+  }
 
   return (
     <div className='w-full sm:w-[370px] xxl:w-[450px]'>

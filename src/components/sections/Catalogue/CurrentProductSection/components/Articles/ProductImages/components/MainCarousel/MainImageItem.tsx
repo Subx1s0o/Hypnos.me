@@ -50,6 +50,7 @@ export default function MainImageItem({
           alt={alt}
           width={width}
           height={height}
+          priority
           className={cn('invisible h-full rounded-lg object-cover', {
             visible: isImageLoaded
           })}
