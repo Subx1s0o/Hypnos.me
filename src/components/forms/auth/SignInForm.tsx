@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
-import { useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 
 import {
   SignInSchema,
@@ -15,7 +15,7 @@ export default function SignInForm() {
   const { control, handleSubmit } = useForm<SignInType>({
     resolver: zodResolver(SignInSchema)
   })
-  const onSubmit = () => {}
+  const onSubmit: SubmitHandler<SignInType> = async data => {}
 
   return (
     <div className='w-full sm:w-[370px] xxl:w-[450px]'>

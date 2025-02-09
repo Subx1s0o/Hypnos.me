@@ -30,7 +30,7 @@ export async function register(data: SignUpType) {
     setAuth(tokens)
     Cookie.set('isAuthenticated', 'true')
 
-    return response.data
+    return
   } catch (error) {
     throw error
   }
