@@ -5,6 +5,7 @@ import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import BlackBadge from '@/components/ui/BlackBadge'
 import Icon from '@/components/ui/Icon'
 import ImageWithFallback from '@/components/ui/ImageWithFallback'
 
@@ -62,11 +63,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
 
           {discountPercent && (
-            <span
-              className='absolute bottom-[14px] left-[14px] rounded-full bg-black px-5 py-[10px]
-                text-white'>
+            <BlackBadge className='absolute bottom-[14px] left-[14px] px-5 py-[10px]'>
               -{discountPercent}%
-            </span>
+            </BlackBadge>
           )}
         </div>
         <h3 className='mb-2 text-base-big font-medium text-black'>{title}</h3>
