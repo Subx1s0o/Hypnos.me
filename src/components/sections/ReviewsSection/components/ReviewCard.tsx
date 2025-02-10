@@ -13,8 +13,8 @@ type ReviewCardProps = {
 }
 export default function ReviewCard({ slide }: ReviewCardProps) {
   return (
-    <>
-      <div className='mb-8 h-[88px] w-[292px] overflow-hidden font-manrope text-base'>
+    <div className='w-full pr-8'>
+      <div className='mb-8 h-[88px] max-w-[292px] overflow-hidden font-manrope text-base'>
         <p className='line-clamp-4'>{slide.text}</p>
       </div>
       <Icon
@@ -34,6 +34,6 @@ export default function ReviewCard({ slide }: ReviewCardProps) {
           <p className='text-xs font-semibold text-brown'>{slide.date}</p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
