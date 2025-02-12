@@ -60,8 +60,8 @@ export default function EmblaCarousel({ slides, options }: PropType) {
         <ul className='flex'>
           {slides.map((slide, index) => (
             <li
-              className='min-w-[280px] flex-none sm:min-w-0 sm:flex-[0_0_80%] smd:flex-[0_0_50%]
-                lg:flex-[0_0_33%] xl:flex-[0_0_23%]'
+              className='lg:flex-[0_0_33 %] min-w-[280px] flex-none sm:min-w-0 sm:flex-[0_0_80%]
+                smd:flex-[0_0_50%] xl:flex-[0_0_23%]'
               key={index}>
               <ReviewCard slide={slide} />
             </li>

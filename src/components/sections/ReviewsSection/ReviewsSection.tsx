@@ -4,7 +4,6 @@ import EmblaCarousel from './components/EmblaCarousel'
 
 export default function ReviewsSection() {
   const OPTIONS: EmblaOptionsType = { slidesToScroll: 'auto' }
-  const reviewSectionTitle = 'Reviews'
   const SLIDES = [
     {
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quaerat, architecto totam obcaecati recusandae rem at ipsum consequatur soluta iste.',
@@ -67,8 +66,8 @@ export default function ReviewsSection() {
   return (
     <section className='w-full px-4 py-[120px] md:px-10'>
       <div className='relative'>
-        <h2 className='mb-7 font-cormorant text-md text-[#3C3C3C] lg:mb-6 lg:text-xl'>
-          {reviewSectionTitle}
+        <h2 className='text-grey-dark mb-7 font-cormorant text-md lg:mb-6 lg:text-xl'>
+          Reviews
         </h2>
         <hr className='mb-8 border border-[#D9CABF]' />
         <EmblaCarousel
