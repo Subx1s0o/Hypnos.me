@@ -3,7 +3,6 @@ import { EmblaOptionsType } from 'embla-carousel'
 import EmblaCarousel from './components/EmblaCarousel'
 
 export default function ReviewsSection() {
-  const OPTIONS: EmblaOptionsType = { slidesToScroll: 'auto' }
   const SLIDES = [
     {
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quaerat, architecto totam obcaecati recusandae rem at ipsum consequatur soluta iste.',
@@ -70,10 +69,7 @@ export default function ReviewsSection() {
           Reviews
         </h2>
         <hr className='mb-8 border border-[#D9CABF]' />
-        <EmblaCarousel
-          slides={SLIDES}
-          options={OPTIONS}
-        />
+        <EmblaCarousel slides={SLIDES} />
       </div>
     </section>
   )

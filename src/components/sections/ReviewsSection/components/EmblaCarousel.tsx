@@ -3,11 +3,9 @@
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 
-import {
-  NextButton,
-  PrevButton,
-  usePrevNextButtons
-} from './EmblaCarouselArrowButtons'
+import usePrevNextButtons from '@/hooks/usePrevNextButtons'
+
+import { ArrowButton } from './EmblaCarouselArrowButtons'
 import ReviewCard from './ReviewCard'
 
 type ReviewData = {
@@ -21,9 +19,8 @@ type PropType = {
   slides: ReviewData[]
   options?: EmblaOptionsType
 }
-export default function EmblaCarousel({ slides, options }: PropType) {
+export default function EmblaCarousel({ slides }: PropType) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    ...options,
     align: 'start',
     loop: true,
     dragFree: false,
@@ -42,13 +39,15 @@ export default function EmblaCarousel({ slides, options }: PropType) {
     <div className='max-w-full'>
       {/* Controls */}
       <div className='absolute right-4 top-0 z-10 flex gap-[10px]'>
-        <PrevButton
+        <ArrowButton
           onClick={onPrevButtonClick}
           disabled={prevBtnDisabled}
+          isLeft={true}
         />
-        <NextButton
+        <ArrowButton
           onClick={onNextButtonClick}
           disabled={nextBtnDisabled}
+          isLeft={false}
         />
       </div>
 
@@ -60,8 +59,8 @@ export default function EmblaCarousel({ slides, options }: PropType) {
         <ul className='flex'>
           {slides.map((slide, index) => (
             <li
-              className='lg:flex-[0_0_33 %] min-w-[280px] flex-none sm:min-w-0 sm:flex-[0_0_80%]
-                smd:flex-[0_0_50%] xl:flex-[0_0_23%]'
+              className='min-w-[280px] flex-none sm:min-w-0 sm:flex-[0_0_80%] smd:flex-[0_0_50%]
+                lg:flex-[0_0_33%] xl:flex-[0_0_23%]'
               key={index}>
               <ReviewCard slide={slide} />
             </li>
