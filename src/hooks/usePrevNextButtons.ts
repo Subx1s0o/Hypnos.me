@@ -1,11 +1,6 @@
 'use client'
 
-import React, {
-  MouseEventHandler,
-  useCallback,
-  useEffect,
-  useState
-} from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { EmblaCarouselType } from 'embla-carousel'
 
 type UsePrevNextButtonsType = {

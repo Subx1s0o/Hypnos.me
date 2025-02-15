@@ -1,5 +1,3 @@
-import { EmblaOptionsType } from 'embla-carousel'
-
 import EmblaCarousel from './components/EmblaCarousel'
 
 export default function ReviewsSection() {
