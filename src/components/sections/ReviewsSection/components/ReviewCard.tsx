@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import Icon from '@/components/ui/Icon'
 
 type ReviewData = {
@@ -24,10 +26,11 @@ export default function ReviewCard({ slide }: ReviewCardProps) {
         className='fill-transparent stroke-[#D9CABF]'
       />
       <div className='flex max-w-[200px] items-end gap-6'>
-        <img
+        <Image
           src={slide.imageUrl}
           alt={slide.altText}
-          className='size-16 rounded-full'
+          width={64}
+          height={64}
         />
         <div className='flex flex-col gap-1 font-manrope'>
           <h3 className='text-base leading-[19.2px]'>{slide.author}</h3>
