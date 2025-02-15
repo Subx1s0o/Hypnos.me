@@ -20,7 +20,7 @@ export default function ReviewCard({ slide }: ReviewCardProps) {
         <p className='line-clamp-4'>{slide.text}</p>
       </div>
       <Icon
-        id='icon-Vector-180'
+        id='icon-reviews-line'
         w={292}
         h={32}
         className='fill-transparent stroke-[#D9CABF]'
