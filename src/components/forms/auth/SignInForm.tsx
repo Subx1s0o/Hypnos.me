@@ -11,7 +11,6 @@ import {
   SignInType
 } from '@/components/forms/schema/auth-schemas'
 import FormInput from '@/components/ui/FormInput'
-import Icon from '@/components/ui/Icon'
 
 export default function SignInForm() {
   const {
@@ -75,19 +74,6 @@ export default function SignInForm() {
             'SIGN IN'
           )}
         </button>
-        <div className='flex justify-between'>
-          <p className='text-sm text-grey-400'>SIGN IN WITH</p>
-          <button
-            type='button'
-            className='rounded-full bg-brown p-[10px]'>
-            <Icon
-              id='icon-google'
-              className='text-white'
-              w={24}
-              h={24}
-            />
-          </button>
-        </div>
       </form>
     </div>
   )

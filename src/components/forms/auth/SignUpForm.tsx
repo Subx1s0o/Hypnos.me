@@ -80,10 +80,10 @@ export default function SignUpForm() {
             lg:hover:bg-grey-300'>
           {isSubmitting ? (
             <p className='flex items-center justify-center gap-5'>
-              SIGNING IN...<span className='loader'></span>
+              REGISTERING...<span className='loader'></span>
             </p>
           ) : (
-            'SIGN IN'
+            'SIGN UP'
           )}
         </button>
         <div className='relative flex'>
@@ -111,19 +111,6 @@ export default function SignUpForm() {
             htmlFor='c1'>
             I want to receive discounts and news about new products
           </label>
-        </div>
-        <div className='flex justify-between'>
-          <p className='text-sm text-grey-400'>SIGN UP WITH</p>
-          <button
-            type='button'
-            className='rounded-full bg-brown p-[10px] transition-colors lg:hover:bg-brown-active'>
-            <Icon
-              id='icon-google'
-              className='text-white'
-              w={24}
-              h={24}
-            />
-          </button>
         </div>
       </form>
     </div>
