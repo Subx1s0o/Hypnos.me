@@ -38,10 +38,11 @@ export type Product = {
   width?: number
   thickness?: number
   views?: number
-  quantity?: number
+  quantity?: number | 0
   ringDetails?: RingDetails[]
   diamondDetails?: DiamondDetails
   sizeDetails?: number[]
+  cartCount?: number
 }
 
 export type Media = {

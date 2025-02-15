@@ -18,13 +18,22 @@ export default function CartModal() {
   }
   const cartItems: Product[] = useCart(state => state.cart)
   const totalAmount: number = cartItems.reduce((totalAmount, product) => {
-    const { discountPercent, price } = product
+    const { discountPercent, price, cartCount } = product
     const finalPrice = discountPercent
       ? price - (price * discountPercent) / 100
       : price
-    totalAmount += finalPrice
+    if (product.cartCount) {
+      totalAmount += finalPrice * (cartCount ?? 0)
+    }
 
     return totalAmount
+  }, 0)
+  const totalCount = cartItems.reduce((acc, item) => {
+    if (item.cartCount) {
+      return acc + item.cartCount
+    }
+
+    return acc
   }, 0)
 
   return (
@@ -36,7 +45,7 @@ export default function CartModal() {
               text-black'>
             Your cart
           </h2>
-          <BlackBadge className='w-9'>{cartItems.length}</BlackBadge>
+          <BlackBadge className='w-9'>{totalCount}</BlackBadge>
         </div>
 
         {cartItems.length === 0 ? (

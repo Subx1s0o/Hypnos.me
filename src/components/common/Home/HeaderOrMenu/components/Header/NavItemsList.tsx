@@ -9,7 +9,15 @@ import { Tooltip } from '@/components/ui/Tooltip'
 
 const NavItemsList = () => {
   const { isModalOpen, toggleModal } = useModal()
-  const cartItems = useCart(state => state.cart.length)
+  const cartItems = useCart(state => state.cart)
+
+  const totalCount = cartItems.reduce((acc, item) => {
+    if (item.cartCount) {
+      return acc + item.cartCount
+    }
+
+    return acc
+  }, 0)
 
   return (
     <>
@@ -40,12 +48,12 @@ const NavItemsList = () => {
                 </button>
                 {showBadge && (
                   <div className='relative grid place-items-center'>
-                    {cartItems > 0 && (
+                    {cartItems.length > 0 && (
                       <div
                         className='absolute flex size-4 items-center justify-center rounded-full bg-brown
                           align-middle'>
-                        <p className='text-xxs font-manrope text-white'>
-                          {cartItems}
+                        <p className='font-manrope text-xxs text-white'>
+                          {totalCount}
                         </p>
                       </div>
                     )}
@@ -61,4 +69,3 @@ const NavItemsList = () => {
 }
 
 export default NavItemsList
-// className='text-xxs  font-manrope text-white'>

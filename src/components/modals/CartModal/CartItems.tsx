@@ -10,13 +10,21 @@ interface ProductCardProps {
   products: Product[]
 }
 export default function CartItems({ products }: ProductCardProps) {
-  const cart = useCart(state => state.cart)
   const removeFromCart = useCart(state => state.removeFromCart)
+  const increment = useCart(state => state.increaseQuantity)
+  const decrement = useCart(state => state.decreaseQuantity)
 
   return (
     <ul className='flex flex-col gap-4 overflow-y-scroll pr-4'>
       {products.map((product: Product) => {
-        const { id: itemId, title, price, media, discountPercent } = product
+        const {
+          id: itemId,
+          title,
+          price,
+          media,
+          discountPercent,
+          cartCount
+        } = product
         const { main } = media
 
         return (
@@ -60,6 +68,16 @@ export default function CartItems({ products }: ProductCardProps) {
                   <p className='font-manrope text-sm font-semibold not-italic tracking-tight text-black'>
                     {price} $
                   </p>
+                  <div className='flex border-spacing-slide-small gap-1 border-2'>
+                    <button onClick={() => decrement({ itemId })}>-</button>
+                    {cartCount}
+                    <button
+                      onClick={() => {
+                        increment({ itemId })
+                      }}>
+                      +
+                    </button>
+                  </div>
                   {discountPercent && (
                     <BlackBadge className='flex max-w-20 items-center'>
                       -{discountPercent}%
