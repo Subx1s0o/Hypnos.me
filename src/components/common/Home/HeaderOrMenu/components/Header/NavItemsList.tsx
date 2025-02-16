@@ -27,8 +27,8 @@ const NavItemsList = () => {
           <Tooltip content={label}>
             {isLink ? (
               <Link
-                className='block px-3 py-[10px]'
-                href={id}>
+                className='block p-3'
+                href={`/${id}`}>
                 <Icon
                   id={iconDefault}
                   w={18}

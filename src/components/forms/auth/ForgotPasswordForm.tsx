@@ -42,7 +42,7 @@ export default function ForgotPasswordForm() {
           type='submit'
           className='w-full rounded bg-black py-5 text-xs font-bold text-white transition-colors
             lg:hover:bg-grey-300'>
-          LOGIN IN
+          RESET PASSWORD
         </button>
       </form>
       <div className='flex justify-center'>
