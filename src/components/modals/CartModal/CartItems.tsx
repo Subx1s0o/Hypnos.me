@@ -1,4 +1,4 @@
-import useCart from '@/app/(store)/store'
+import useCart from '@/store/cart/cart'
 import { Product } from '@/types/product-type'
 import Image from 'next/image'
 
@@ -10,9 +10,7 @@ interface ProductCardProps {
   products: Product[]
 }
 export default function CartItems({ products }: ProductCardProps) {
-  const removeFromCart = useCart(state => state.removeFromCart)
-  const increment = useCart(state => state.increaseQuantity)
-  const decrement = useCart(state => state.decreaseQuantity)
+  const { removeFromCart, increaseQuantity, decreaseQuantity } = useCart()
 
   return (
     <ul className='flex flex-col gap-4 overflow-y-scroll pr-4'>
@@ -69,11 +67,13 @@ export default function CartItems({ products }: ProductCardProps) {
                     {price} $
                   </p>
                   <div className='flex border-spacing-slide-small gap-1 border-2'>
-                    <button onClick={() => decrement({ itemId })}>-</button>
+                    <button onClick={() => decreaseQuantity({ itemId })}>
+                      -
+                    </button>
                     {cartCount}
                     <button
                       onClick={() => {
-                        increment({ itemId })
+                        increaseQuantity({ itemId })
                       }}>
                       +
                     </button>

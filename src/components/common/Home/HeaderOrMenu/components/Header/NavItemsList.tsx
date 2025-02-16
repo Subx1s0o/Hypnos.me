@@ -1,11 +1,12 @@
 import React from 'react'
-import useCart from '@/app/(store)/store'
+
 import Link from 'next/link'
 
 import { navigationData as data } from '@/components/common/Home/HeaderOrMenu/components/data/navigation-data'
 import { useModal } from '@/components/helpers/ModalContext'
 import Icon from '@/components/ui/Icon'
 import { Tooltip } from '@/components/ui/Tooltip'
+import useCart from '@/store/cart/cart'
 
 const NavItemsList = () => {
   const { isModalOpen, toggleModal } = useModal()

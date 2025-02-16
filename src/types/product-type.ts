@@ -26,15 +26,15 @@ export type DiamondDetails = {
 export type Product = {
   id: string
   title: string
-  slug: string
+  slug?: string
   createdAt?: Date
   updatedAt?: Date
   media: MediaObject
   price: number
   discountPercent?: number
   isPriceForPair?: boolean
-  description: string
-  category: ProductCategories
+  description?: string
+  category?: ProductCategories
   width?: number
   thickness?: number
   views?: number

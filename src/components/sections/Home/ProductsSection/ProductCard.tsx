@@ -1,6 +1,6 @@
-
 import { cn } from '@/lib/cn'
 import { formatPrice } from '@/lib/formatPrice'
+import useCart from '@/store/cart/cart'
 import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +8,6 @@ import Link from 'next/link'
 import BlackBadge from '@/components/ui/BlackBadge'
 import Icon from '@/components/ui/Icon'
 import ImageWithFallback from '@/components/ui/ImageWithFallback'
-import useCart from '@/app/(store)/store'
 
 interface ProductCardProps {
   product: Product
@@ -22,13 +21,12 @@ export default function ProductCard({ product }: ProductCardProps) {
     discountPercent,
     price,
     category,
-    description,
     media: {
       main: { url, status }
     }
   } = product
-  const setProduct = useCart(state => state.setProduct)
-  const addItemToCart = useCart(state => state.addToCart)
+
+  const { addToCart, message } = useCart()
   const finalPrice = discountPercent
     ? price - (price * discountPercent) / 100
     : price
@@ -37,18 +35,14 @@ export default function ProductCard({ product }: ProductCardProps) {
     const newProduct: Product = {
       id,
       title,
-      slug,
       price,
-      description,
       discountPercent,
-      category,
       media: {
         main: { url, status }
-      },
+      }
     }
-    setProduct({ newProduct })
 
-    addItemToCart(newProduct)
+    addToCart(newProduct)
   }
 
   return (
@@ -94,13 +88,17 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
       </Link>
-      <button onClick={handlerProductClick}>
-        <Icon
-          w={16}
-          h={16}
-          id='icon-cart'
-        />
-      </button>
+      {message ? (
+        <div>{message}</div>
+      ) : (
+        <button onClick={handlerProductClick}>
+          <Icon
+            w={16}
+            h={16}
+            id='icon-cart'
+          />
+        </button>
+      )}
     </li>
   )
 }

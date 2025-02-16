@@ -1,8 +1,7 @@
 'use client'
 
 import React from 'react'
-import useCart from '@/app/(store)/store'
-import { Product } from '@/types/product-type'
+import useCart from '@/store/cart/cart'
 import Link from 'next/link'
 
 import { useModal } from '@/components/helpers/ModalContext'
@@ -13,11 +12,9 @@ import CartItems from './CartItems'
 
 export default function CartModal() {
   const { closeModal } = useModal()
-  const handleContinueShopping = () => {
-    closeModal('cart')
-  }
-  const cartItems: Product[] = useCart(state => state.cart)
-  const totalAmount: number = cartItems.reduce((totalAmount, product) => {
+
+  const { cart, message } = useCart()
+  const totalAmount: number = cart.reduce((totalAmount, product) => {
     const { discountPercent, price, cartCount } = product
     const finalPrice = discountPercent
       ? price - (price * discountPercent) / 100
@@ -28,7 +25,7 @@ export default function CartModal() {
 
     return totalAmount
   }, 0)
-  const totalCount = cartItems.reduce((acc, item) => {
+  const totalCount = cart.reduce((acc, item) => {
     if (item.cartCount) {
       return acc + item.cartCount
     }
@@ -45,13 +42,14 @@ export default function CartModal() {
               text-black'>
             Your cart
           </h2>
+          {message && <p>{message}</p>}
           <BlackBadge className='w-9'>{totalCount}</BlackBadge>
         </div>
 
-        {cartItems.length === 0 ? (
+        {cart.length === 0 ? (
           <p>There is nothing in your cart</p>
         ) : (
-          <CartItems products={cartItems} />
+          <CartItems products={cart} />
         )}
         <div className='flex flex-col gap-4 pb-20'>
           <div className='flex justify-between p-4'>
@@ -72,7 +70,7 @@ export default function CartModal() {
 
           <Button
             className='w-full bg-grey-light py-5 text-black'
-            onClick={handleContinueShopping}>
+            onClick={() => closeModal('cart')}>
             Continue shopping
           </Button>
         </div>
