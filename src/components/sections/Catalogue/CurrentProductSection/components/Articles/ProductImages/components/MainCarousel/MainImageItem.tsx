@@ -39,7 +39,7 @@ export default function MainImageItem({
           src='/images/products/decorative/fallback.avif'
           width={width}
           height={height}
-          className={cn('invisible rounded-lg object-cover', {
+          className={cn('invisible h-full rounded-lg object-cover', {
             visible: isImageLoaded
           })}
         />
@@ -50,7 +50,8 @@ export default function MainImageItem({
           alt={alt}
           width={width}
           height={height}
-          className={cn('invisible rounded-lg object-cover', {
+          priority
+          className={cn('invisible h-full rounded-lg object-cover', {
             visible: isImageLoaded
           })}
         />

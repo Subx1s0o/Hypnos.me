@@ -17,7 +17,7 @@ const NavItemsList = () => {
             {isLink ? (
               <Link
                 className='block p-3'
-                href={id}>
+                href={`/${id}`}>
                 <Icon
                   id={iconDefault}
                   w={18}

@@ -1,11 +1,8 @@
-import { env } from '@/lib/env'
-import axios from 'axios'
+import { api } from './api'
 
 export default async function getProductBySlug(slug: string) {
-  const base_url = `${env.NEXT_PUBLIC_API_URL}/goods`
-
   try {
-    const response = await axios.get(`${base_url}/${slug}`)
+    const response = await api.get(`/goods/${slug}`)
 
     return response.data
   } catch (error) {

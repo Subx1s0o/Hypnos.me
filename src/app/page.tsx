@@ -8,7 +8,7 @@ import ReviewsSection from '@/components/sections/ReviewsSection/ReviewsSection'
 export default function HomePage() {
   return (
     <>
-      <main className='max-w-screen-3xl mx-auto'>
+      <main className='mx-auto max-w-screen-xxl'>
         <TitleSection />
         <HeroSection />
         <ProductsSection
