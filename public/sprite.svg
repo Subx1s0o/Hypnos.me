@@ -9,6 +9,11 @@
     <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M27.453 29.333c0-5.16-5.133-9.333-11.453-9.333s-11.453 4.173-11.453 9.333"></path>
 </symbol>
 
+<symbol id="icon-profile-filled" viewBox="0 0 32 32">
+<path fill="currentColor" d="M16 2.667c-3.493 0-6.333 2.84-6.333 6.333 0 3.427 2.68 6.2 6.173 6.32 0.107-0.013 0.213-0.013 0.293 0 0.027 0 0.040 0 0.067 0 0.013 0 0.013 0 0.027 0 3.413-0.12 6.093-2.893 6.107-6.32 0-3.493-2.84-6.333-6.333-6.333z"></path>
+<path fill="currentColor" d="M22.773 18.867c-3.72-2.48-9.787-2.48-13.533 0-1.693 1.133-2.627 2.667-2.627 4.307s0.933 3.16 2.613 4.28c1.867 1.253 4.32 1.88 6.773 1.88s4.907-0.627 6.773-1.88c1.68-1.133 2.613-2.653 2.613-4.307-0.013-1.64-0.933-3.16-2.613-4.28z"></path>
+</symbol>
+
 <symbol id="icon-search" viewBox="0 0 32 32">
     <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M14.667 26.667c6.627 0 12-5.373 12-12s-5.373-12-12-12c-6.627 0-12 5.373-12 12s5.373 12 12 12z"></path>
     <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M25.24 27.586c0.707 2.133 2.32 2.347 3.56 0.48 1.133-1.707 0.387-3.107-1.667-3.107-1.52-0.013-2.373 1.173-1.893 2.627z"></path>
@@ -21,6 +26,22 @@
     <path fill="none" stroke="currentColor" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M13.013 18.667v4.733"></path>
     <path fill="none" stroke="currentColor" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M19.147 18.667v4.733"></path>
     <path fill="none" stroke="currentColor" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M4.667 13.333l1.88 11.52c0.427 2.587 1.453 4.48 5.267 4.48h8.040c4.147 0 4.76-1.813 5.24-4.32l2.24-11.68"></path>
+</symbol>
+
+<symbol id="icon-cart-filled" viewBox="0 0 32 32">
+<path fill="currentColor"  d="M25.653 7.44h-0.533l-4.507-4.507c-0.36-0.36-0.947-0.36-1.32 0-0.36 0.36-0.36 0.947 0 1.32l3.187 3.187h-12.96l3.187-3.187c0.36-0.36 0.36-0.947 0-1.32-0.36-0.36-0.947-0.36-1.32 0l-4.493 4.507h-0.533c-1.2 0-3.693 0-3.693 3.413 0 1.293 0.267 2.147 0.827 2.707 0.32 0.333 0.707 0.507 1.12 0.6 0.387 0.093 0.8 0.107 1.2 0.107h20.373c0.413 0 0.8-0.027 1.173-0.107 1.12-0.267 1.973-1.067 1.973-3.307 0-3.413-2.493-3.413-3.68-3.413z"></path>
+<path fill="currentColor"  d="M25.401 16h-18.907c-0.827 0-1.453 0.733-1.32 1.547l1.12 6.853c0.373 2.293 1.373 4.933 5.813 4.933h7.48c4.493 0 5.293-2.253 5.773-4.773l1.347-6.973c0.16-0.827-0.467-1.587-1.307-1.587zM14.148 24.6c0 0.52-0.413 0.933-0.92 0.933-0.52 0-0.933-0.413-0.933-0.933v-4.4c0-0.507 0.413-0.933 0.933-0.933 0.507 0 0.92 0.427 0.92 0.933v4.4zM19.854 24.6c0 0.52-0.413 0.933-0.933 0.933-0.507 0-0.933-0.413-0.933-0.933v-4.4c0-0.507 0.427-0.933 0.933-0.933 0.52 0 0.933 0.427 0.933 0.933v4.4z"></path>
+</symbol>
+
+<symbol id="icon-wallet" viewBox="0 0 32 32">
+<path stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M17.333 12h-8"></path>
+<path stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M29.334 14.627v2.747c0 0.733-0.587 1.333-1.333 1.36h-2.614c-1.44 0-2.76-1.053-2.88-2.493-0.080-0.84 0.24-1.627 0.8-2.173 0.493-0.507 1.173-0.8 1.92-0.8h2.773c0.747 0.027 1.333 0.627 1.333 1.36z"></path>
+<path stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M23.307 14.067c-0.56 0.547-0.88 1.333-0.8 2.173 0.12 1.44 1.44 2.493 2.88 2.493h2.613v1.933c0 4-2.667 6.667-6.667 6.667h-12c-4 0-6.667-2.667-6.667-6.667v-9.333c0-3.627 2.187-6.16 5.587-6.587 0.347-0.053 0.707-0.080 1.080-0.080h12c0.347 0 0.68 0.013 1 0.067 3.44 0.4 5.667 2.947 5.667 6.6v1.933h-2.773c-0.747 0-1.427 0.293-1.92 0.8z"></path>
+</symbol>
+
+<symbol id="icon-wallet-filled" viewBox="0 0 32 32">
+<path fill="currentColor"  d="M27.96 21.44c-0.32 3.56-2.893 5.893-6.627 5.893h-12c-3.68 0-6.667-2.987-6.667-6.667v-9.333c0-3.627 2.187-6.16 5.587-6.587 0.347-0.053 0.707-0.080 1.080-0.080h12c0.347 0 0.68 0.013 1 0.067 3.187 0.373 5.347 2.6 5.627 5.827 0.040 0.387-0.28 0.707-0.667 0.707h-2.067c-1.28 0-2.467 0.493-3.32 1.373-1.013 0.987-1.52 2.373-1.4 3.76 0.213 2.427 2.347 4.333 4.88 4.333h1.907c0.387 0 0.707 0.32 0.667 0.707z"></path>
+<path fill="currentColor"  d="M29.334 14.627v2.747c0 0.733-0.587 1.333-1.333 1.36h-2.613c-1.44 0-2.76-1.053-2.88-2.493-0.080-0.84 0.24-1.627 0.8-2.173 0.493-0.507 1.173-0.8 1.92-0.8h2.773c0.747 0.027 1.333 0.627 1.333 1.36z"></path>
 </symbol>
 
 <symbol id="icon-burger" viewBox="0 0 41 32">
