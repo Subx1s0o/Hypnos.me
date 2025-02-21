@@ -8,20 +8,17 @@ interface IProps {
   infoList: ListItem[]
 }
 
-function FooterInfoList({ title, infoList }: IProps) {
+export default function FooterInfoList({ title, infoList }: IProps) {
   return (
-    <div className='h-[400px] bg-black p-[15px] text-white'>
-      <h4
-        className='mb-slide-large text-left font-manrope text-[12px] font-semibold
-          leading-[16.39px] tracking-[0.01em] text-brown'>
+    <div className='mb-[72px] flex flex-col items-center gap-8'>
+      <h4 className='font-manrope text-xs font-semibold uppercase text-brown'>
         {title}
       </h4>
-      <ul className='flex flex-col gap-3'>
+      <ul className='flex flex-col items-center gap-3'>
         {infoList.map(({ id, text }) => (
           <li
             key={id}
-            className='gap-3 text-left font-manrope text-[16px] font-normal leading-[21.86px]
-              tracking-[0.01em]'>
+            className='font-manrope leading-[24px]'>
             {text}
           </li>
         ))}
@@ -29,5 +26,3 @@ function FooterInfoList({ title, infoList }: IProps) {
     </div>
   )
 }
-
-export default FooterInfoList

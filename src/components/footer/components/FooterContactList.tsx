@@ -1,21 +1,19 @@
-function FooterContactList() {
+export default function FooterContactList() {
   return (
-    <div className='ml-[-15px] h-[400px] bg-black text-white'>
-      <h4
-        className='mb-slide-large gap-8 text-left font-manrope text-[12px] font-semibold
-          leading-[16.39px] tracking-[0.01em] text-brown'>
+    <div className='mb-[72px] w-[308px]'>
+      <h4 className='mb-6 text-xs font-semibold uppercase text-brown lg:mb-slide-large'>
         Schedule
       </h4>
-      <div className='flex gap-16 text-[16px]'>
-        <p>Mon—Fri</p>
-        <p>10:00 — 19:00</p>
-      </div>
-      <div className='flex gap-16'>
-        <p>Sat—Sun</p>
-        <p>By appointment only</p>
-      </div>
+      <ul className='flex flex-col gap-2 text-sm font-normal leading-[19px]'>
+        <li className='flex gap-4'>
+          <p>Mon—Fri</p>
+          <p>10:00 — 19:00</p>
+        </li>
+        <li className='flex gap-4'>
+          <p>Sat—Sun</p>
+          <p>By appointment only</p>
+        </li>
+      </ul>
     </div>
   )
 }
-
-export default FooterContactList
