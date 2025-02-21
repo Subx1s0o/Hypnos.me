@@ -1,5 +1,4 @@
 import { useAuthStore } from '@/store/useAuth'
-import { useUserStore } from '@/store/userStore'
 import { Auth } from '@/types'
 import { User } from '@/types/user'
 import { AxiosResponse } from 'axios'
@@ -21,12 +20,11 @@ export async function login(data: SignInType) {
       }
     )
 
-    const { setUser } = useUserStore.getState()
     const { setAuth } = useAuthStore.getState()
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { user, ...tokens } = response.data
 
-    setUser(user)
     setAuth(tokens)
     Cookie.set('isAuthenticated', 'true')
 

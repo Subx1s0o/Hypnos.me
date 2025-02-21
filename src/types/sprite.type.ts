@@ -21,3 +21,4 @@ export type SpriteTypes =
   | 'icon-profile-filled'
   | 'icon-wallet'
   | 'icon-wallet-filled'
+  | 'icon-logout'
