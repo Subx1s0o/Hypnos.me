@@ -1,8 +1,8 @@
-import { api } from './api'
+import { apiSecure } from './api'
 
 export default async function getUser() {
   try {
-    const response = await api.get('/users/me')
+    const response = await apiSecure.get('/user')
 
     return response.data
   } catch (error) {

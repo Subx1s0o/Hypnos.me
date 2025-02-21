@@ -10,14 +10,7 @@ import UserDataSchema, { UserDataType } from '../schema/user-data-schema'
 
 export default function UserDataForm({ data }: { data: User | undefined }) {
   const { control, handleSubmit } = useForm<UserDataType>({
-    resolver: zodResolver(UserDataSchema),
-    defaultValues: {
-      firstName: data?.firstName,
-      secondName: data?.secondName,
-      email: data?.email,
-      phone: data?.phone,
-      birthday: data?.birthday ? data.birthday.toISOString().split('T')[0] : ''
-    }
+    resolver: zodResolver(UserDataSchema)
   })
 
   const onSubmit = (data: UserDataType) => {
@@ -32,27 +25,32 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
         label='FIRST NAME'
         name='firstName'
         control={control}
+        defaultValue={data?.firstName}
       />
       <FormInput
         label='SECOND NAME'
         name='secondName'
         control={control}
+        defaultValue={data?.secondName}
       />
       <FormInput
         label='EMAIL'
         name='email'
         control={control}
+        defaultValue={data?.email}
       />
       <FormInput
         label='PHONE'
         name='phone'
         control={control}
+        defaultValue={data?.phone}
       />
       <FormInput
         label='BIRTHDAY'
         name='birthday'
         type='date'
         control={control}
+        defaultValue={data?.birthday?.toISOString().split('T')[0]}
       />
     </form>
   )
