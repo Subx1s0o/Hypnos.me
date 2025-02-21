@@ -9,15 +9,18 @@ import SubscribeForm from '../forms/SubscribeForm'
 import serviceList from './components/common/data/serviceList.json'
 import FooterContactList from './components/FooterContactList'
 import FooterInfoList from './components/FooterInfoList'
+import FooterLegalLinks from './components/FooterLegalLinks'
+import FooterNavigation from './components/FooterNavigation'
+import FooterSchedule from './components/FooterSchedule'
 import FooterSubscribeList from './components/FooterSubscribeList'
 
 export default function Footer() {
   return (
     <footer className='bg-black pb-[152px] pt-14 font-manrope text-white'>
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center gap-[72px]'>
         <Link
           href='/'
-          className='pb-14'>
+          className=''>
           <Icon
             id='icon-logo'
             className='text-brown'
@@ -25,7 +28,7 @@ export default function Footer() {
             h={35}
           />
         </Link>
-        <div className='mb-[72px] flex flex-col items-center gap-[72px]'>
+        <div className='flex flex-col items-center gap-[72px]'>
           <p className='max-w-[290px] text-center text-sm text-brown'>
             Be the first to know about promotions, raffles and auctions for
             exclusive jewellery, which we hold only among the site&apos;s
@@ -33,60 +36,16 @@ export default function Footer() {
           </p>
           <SubscribeForm className='w-[311px]' />
         </div>
-        <FooterContactList />
+        <FooterSchedule />
         <FooterInfoList
           infoList={serviceList}
           title='Services'
         />
+        <FooterNavigation />
         <FooterSubscribeList />
+        <FooterContactList />
+        <FooterLegalLinks />
       </div>
-      {/* <div
-        className='mx-auto my-0 px-[43px] py-0 sm:flex sm:w-[480px] sm:flex-col sm:items-center
-          sm:justify-center xl:block xl:w-[1280px]'>
-        <div>
-          <Link
-            href='/'
-            className='mx-auto my-0 block'>
-            <Icon
-              id='icon-logo'
-              className='text-brown'
-              w={150}
-              h={35}
-            />
-          </Link>
-        </div>
-        <div
-          className='flex gap-4 bg-black p-4 sm:flex-col sm:items-center sm:justify-center
-            xl:flex-row xl:items-start xl:justify-between'>
-          <FooterContactList />
-          <FooterInfoList
-            infoList={serviceList}
-            title='Services'
-          />
-          <FooterSubscribeList />
-        </div>
-        <div
-          className='ms:py-0 mb-[24px] flex border-y border-grey-normal bg-black py-12 text-white
-            sm:flex-col sm:items-center sm:justify-center xl:flex-row xl:items-start
-            xl:justify-end'>
-          <p className='mr-8 max-w-[290px] text-left font-manrope text-[14px] leading-[21px] text-brown'>
-            Be the first to know about promotions, raffles and auctions for
-            exclusive jewellery, which we hold only among the site&apos;s
-            audience.
-          </p>
-          <SubscribeForm className='pb-16 md:col-start-2' />
-        </div>
-        <div className='sm:flex sm:flex-col sm:items-center sm:justify-center xl:block'>
-          <span className='mr-[52px] text-[12px]'>Credentials</span>
-          <span className='mr-[52px] text-[12px]'>Customer Agreement</span>
-          <span className='mr-[170px] text-[12px]'>Data processing policy</span>
-
-          <span className='mr-[24px] text-[12px] text-brown'>
-            2024 © Hypnos
-          </span>
-          <span className='text-[12px] text-brown'>All rights reserved</span>
-        </div>
-      </div> */}
     </footer>
   )
 }
