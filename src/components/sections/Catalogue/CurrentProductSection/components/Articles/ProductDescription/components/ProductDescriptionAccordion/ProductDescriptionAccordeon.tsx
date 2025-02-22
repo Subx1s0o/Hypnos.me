@@ -24,13 +24,13 @@ export default function ProductDescriptionAccordion({
             <div>
               <h3 className='mb-1 text-sm text-grey-400'>Quantity</h3>
               <p className='text-base-big'>
-                {product?.diamondDetails.quantity}
+                {product?.diamondDetails?.quantity}
               </p>
             </div>
             <div>
               <h3 className='mb-1 text-sm text-grey-400'>Total weight</h3>
               <p className='text-base-big'>
-                {product?.diamondDetails.weight} ct
+                {product?.diamondDetails?.weight} ct
               </p>
             </div>
           </div>
@@ -38,12 +38,12 @@ export default function ProductDescriptionAccordion({
             <div>
               <h3 className='mb-1 text-sm text-grey-400'>Diameter</h3>
               <p className='text-base-big'>
-                {product?.diamondDetails.diameter} mm
+                {product?.diamondDetails?.diameter} mm
               </p>
             </div>
             <div>
               <h3 className='mb-1 text-sm text-grey-400'>Сolor</h3>
-              <p className='text-base-big'>{product?.diamondDetails.color}</p>
+              <p className='text-base-big'>{product?.diamondDetails?.color}</p>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function ProductDescriptionAccordion({
                   <div
                     key={index}
                     className='mb-4'>
-                    <h3 className='text-base-big mb-3 text-grey-400'>
+                    <h3 className='mb-3 text-base-big text-grey-400'>
                       {detail.purityValue} purity
                     </h3>
                     <div className='mb-1 flex flex-col gap-1'>
@@ -98,7 +98,7 @@ export default function ProductDescriptionAccordion({
                   <div
                     key={index}
                     className='mb-4'>
-                    <h3 className='text-base-big mb-3 text-grey-400'>
+                    <h3 className='mb-3 text-base-big text-grey-400'>
                       {detail.purityValue} purity
                     </h3>
                     <div className='mb-1 flex flex-col gap-1'>

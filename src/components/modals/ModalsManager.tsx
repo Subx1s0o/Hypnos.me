@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import { animated, useTransition } from '@react-spring/web'
 import { usePathname } from 'next/navigation'
 
+import { useModal } from '@/components/context/ModalContext'
 import { Media, MediaContextProvider } from '@/components/helpers/Media'
-import { useModal } from '@/components/helpers/ModalContext'
 
 import BurgerModal from './BurgerModal/BurgerModal'
 import CartModal from './CartModal/CartModal'
