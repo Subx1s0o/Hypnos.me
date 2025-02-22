@@ -22,7 +22,8 @@ export default function ProductMainComponent({
     totalPages: number
   }>({
     queryKey: ['products', category],
-    queryFn: async () => getProducts({ category })
+    queryFn: async () => getProducts({ category }),
+    staleTime: 1000 * 60 * 60 * 24 * 3
   })
 
   if (isError) {

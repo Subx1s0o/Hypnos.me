@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useModal } from '@/components/helpers/ModalContext'
+import { useModal } from '@/components/context/ModalContext'
 import Icon from '@/components/ui/Icon'
 
 import NavItemsList from './Header/NavItemsList'

@@ -4,7 +4,7 @@ import React from 'react'
 import useCart from '@/store/cart/cart'
 import Link from 'next/link'
 
-import { useModal } from '@/components/helpers/ModalContext'
+import { useModal } from '@/components/context/ModalContext'
 import BlackBadge from '@/components/ui/BlackBadge'
 import Button from '@/components/ui/Button'
 
