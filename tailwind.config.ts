@@ -110,6 +110,13 @@ export default {
             fontWeight: 500,
             lineHeight: '16px'
           }
+        ],
+        xxs: [
+          '10px',
+          {
+            fontWeight: 700,
+            lineHeight: '13.66px'
+          }
         ]
       }
     }
