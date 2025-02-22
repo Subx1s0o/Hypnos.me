@@ -31,7 +31,9 @@ export default function ProductCard({ product }: ProductCardProps) {
     ? price - (price * discountPercent) / 100
     : price
 
-  const handlerProductClick = () => {
+  const handlerProductClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    // e.stopPropagation()
     const newProduct: Product = {
       id,
       title,
@@ -74,31 +76,35 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
         <h3 className='mb-2 text-base-big font-medium text-black'>{title}</h3>
-        <div className='flex gap-2'>
-          <p
-            className={cn('text-sm text-brown', {
-              'text-sm text-grey-200 line-through': discountPercent
-            })}>
-            ${formatPrice(price)}
-          </p>
-          {discountPercent && (
-            <p className='text-sm font-semibold text-brown'>
-              ${formatPrice(finalPrice)}
+        <div className='flex justify-between'>
+          <div className='flex gap-2'>
+            <p
+              className={cn('text-sm text-brown', {
+                'text-sm text-grey-200 line-through': discountPercent
+              })}>
+              ${formatPrice(price)}
             </p>
-          )}
+            {discountPercent && (
+              <p className='text-sm font-semibold text-brown'>
+                ${formatPrice(finalPrice)}
+              </p>
+            )}
+          </div>
+          <div className='px-2'>
+            {message ? (
+              <p>{message}</p>
+            ) : (
+              <button onClick={handlerProductClick}>
+                <Icon
+                  w={16}
+                  h={16}
+                  id='icon-cart'
+                />
+              </button>
+            )}
+          </div>
         </div>
       </Link>
-      {message ? (
-        <div>{message}</div>
-      ) : (
-        <button onClick={handlerProductClick}>
-          <Icon
-            w={16}
-            h={16}
-            id='icon-cart'
-          />
-        </button>
-      )}
     </li>
   )
 }

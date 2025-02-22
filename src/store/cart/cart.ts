@@ -105,8 +105,7 @@ const useCart = create<CartState>()(
           const newCart = state.cart.filter(product => product.id !== itemId)
 
           return {
-            cart: newCart,
-            message: newCart.length === 0 ? 'Cart is empty.' : ''
+            cart: newCart
           }
         })
       }
