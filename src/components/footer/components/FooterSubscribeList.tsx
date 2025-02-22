@@ -9,8 +9,16 @@ type socialLinks = {
 }
 
 const socialLinks: socialLinks[] = [
-  { href: '#', label: 'Instagram', icon: 'icon-instagram' },
-  { href: '#', label: 'FaceBook', icon: 'icon-facebook' }
+  {
+    href: 'https://www.instagram.com/',
+    label: 'Instagram',
+    icon: 'icon-instagram'
+  },
+  {
+    href: 'https://www.facebook.com/',
+    label: 'FaceBook',
+    icon: 'icon-facebook'
+  }
 ]
 
 function FooterContactList() {
@@ -19,7 +27,7 @@ function FooterContactList() {
       <h4 className='mb-6 text-xs font-semibold uppercase text-brown'>
         Subscribe
       </h4>
-      <ul className='flex gap-4 lg:flex-col'>
+      <ul className='flex gap-4 md:flex-col md:gap-3'>
         {socialLinks.map((item, index) => {
           return (
             <li
@@ -27,14 +35,16 @@ function FooterContactList() {
               className='flex items-center gap-3'>
               <a
                 href={item.href}
-                className='flex items-center'>
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center md:gap-3'>
                 <Icon
                   id={item.icon}
                   w={13}
                   h={13}
                   className='flex size-8 items-center justify-center rounded-full bg-[#2E2826]'
                 />
-                <span className='hidden text-[16px] text-white lg:block'>
+                <span className='hidden text-[16px] text-white md:block lg:block'>
                   {item.label}
                 </span>
               </a>
