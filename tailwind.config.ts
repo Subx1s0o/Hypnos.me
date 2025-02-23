@@ -37,7 +37,8 @@ export default {
           '200': '#E8E6E5',
           normal: '#555555',
           '300': '#393939',
-          '400': '#4E453E'
+          '400': '#4E453E',
+          dark: '#3C3C3C'
         },
         black: '#1B1716',
         cream: '#E5DCD4',
@@ -109,6 +110,13 @@ export default {
           {
             fontWeight: 500,
             lineHeight: '16px'
+          }
+        ],
+        xxs: [
+          '10px',
+          {
+            fontWeight: 700,
+            lineHeight: '13.66px'
           }
         ]
       }
