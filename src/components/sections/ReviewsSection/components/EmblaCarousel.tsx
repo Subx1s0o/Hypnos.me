@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 
@@ -19,13 +20,17 @@ type PropType = {
   slides: ReviewData[]
   options?: EmblaOptionsType
 }
+
 export default function EmblaCarousel({ slides }: PropType) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'start',
     loop: true,
     dragFree: false,
     skipSnaps: false,
-    slidesToScroll: 1
+    breakpoints: {
+      '(max-width: 1023px)': { slidesToScroll: 1 },
+      '(min-width: 1024px)': { slidesToScroll: 'auto', dragFree: true }
+    }
   })
 
   const {
