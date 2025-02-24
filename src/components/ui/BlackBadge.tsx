@@ -7,8 +7,8 @@ interface SpanBtnProps {
 const BlackBadge: React.FC<SpanBtnProps> = ({ children, className = '' }) => {
   return (
     <div
-      className={`flex items-center justify-center rounded-full bg-black p-6 font-manrope text-xs
-        uppercase text-white ${className}`}>
+      className={`flex max-h-9 items-center justify-center rounded-full bg-black p-2 font-manrope
+        text-xs uppercase text-white ${className}`}>
       {children}
     </div>
   )

@@ -1,10 +1,12 @@
 import { cn } from '@/lib/cn'
 import { formatPrice } from '@/lib/formatPrice'
+import useCart from '@/store/cart/cart'
 import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import BlackBadge from '@/components/ui/BlackBadge'
+import Icon from '@/components/ui/Icon'
 import ImageWithFallback from '@/components/ui/ImageWithFallback'
 
 interface ProductCardProps {
@@ -13,6 +15,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const {
+    id,
     title,
     slug,
     discountPercent,
@@ -23,9 +26,26 @@ export default function ProductCard({ product }: ProductCardProps) {
     }
   } = product
 
+  const { addToCart, message } = useCart()
   const finalPrice = discountPercent
     ? price - (price * discountPercent) / 100
     : price
+
+  const handlerProductClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    // e.stopPropagation()
+    const newProduct: Product = {
+      id,
+      title,
+      price,
+      discountPercent,
+      media: {
+        main: { url, status }
+      }
+    }
+
+    addToCart(newProduct)
+  }
 
   return (
     <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
@@ -56,18 +76,33 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
         <h3 className='mb-2 text-base-big font-medium text-black'>{title}</h3>
-        <div className='flex gap-2'>
-          <p
-            className={cn('text-sm text-brown', {
-              'text-sm text-grey-200 line-through': discountPercent
-            })}>
-            ${formatPrice(price)}
-          </p>
-          {discountPercent && (
-            <p className='text-sm font-semibold text-brown'>
-              ${formatPrice(finalPrice)}
+        <div className='flex justify-between'>
+          <div className='flex gap-2'>
+            <p
+              className={cn('text-sm text-brown', {
+                'text-sm text-grey-200 line-through': discountPercent
+              })}>
+              ${formatPrice(price)}
             </p>
-          )}
+            {discountPercent && (
+              <p className='text-sm font-semibold text-brown'>
+                ${formatPrice(finalPrice)}
+              </p>
+            )}
+          </div>
+          <div className='px-2'>
+            {message ? (
+              <p>{message}</p>
+            ) : (
+              <button onClick={handlerProductClick}>
+                <Icon
+                  w={16}
+                  h={16}
+                  id='icon-cart'
+                />
+              </button>
+            )}
+          </div>
         </div>
       </Link>
     </li>
