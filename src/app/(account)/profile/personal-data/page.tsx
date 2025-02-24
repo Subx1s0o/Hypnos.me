@@ -6,7 +6,7 @@ import {
   QueryClient
 } from '@tanstack/react-query'
 
-import PersonalData from '@/components/sections/Profile/Pages/PersonalData'
+import PersonalData from '@/components/sections/Profile/ProfilePages/PersonalData'
 
 export default function PersonalDataPage() {
   const queryClient = new QueryClient()

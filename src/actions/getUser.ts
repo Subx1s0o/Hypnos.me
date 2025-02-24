@@ -1,4 +1,4 @@
-import { apiSecure } from './api'
+import { apiSecure } from './apiSecure'
 
 export default async function getUser() {
   try {

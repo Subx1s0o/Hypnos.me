@@ -15,6 +15,9 @@ export function middleware(request: NextRequest) {
     }
   } else {
     if (url.pathname === '/profile') {
+      console.log('unnaccessible to profile - redirect to sign-in')
+      console.log(isAuthenticated)
+
       return NextResponse.redirect(new URL('/sign-in', request.url))
     }
   }

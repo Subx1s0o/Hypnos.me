@@ -1,8 +1,8 @@
 'use client'
 
+import { logout } from '@/actions/logout'
 import { cn } from '@/lib/cn'
 import { SpriteTypes } from '@/types'
-import Cookies from 'js-cookie'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 
@@ -77,7 +77,7 @@ export default function ProfileNavigation() {
       <button
         className='mb-16 flex items-center justify-center gap-3'
         onClick={() => {
-          Cookies.remove('isAuthenticated')
+          logout()
           router.replace('/')
         }}>
         <div className='rounded-full bg-grey-light p-[7px] text-black'>

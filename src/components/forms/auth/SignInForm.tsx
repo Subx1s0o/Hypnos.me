@@ -22,7 +22,14 @@ export default function SignInForm() {
   })
   const router = useRouter()
   const onSubmit: SubmitHandler<SignInType> = async data => {
-    await login(data)
+    const loginRes = await login(data)
+
+    if (loginRes.error) {
+      alert(loginRes.error.message)
+
+      return
+    }
+
     router.replace('/')
   }
 
