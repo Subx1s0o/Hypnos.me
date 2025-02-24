@@ -29,23 +29,25 @@ export default function Footer() {
         </Link>
         <div
           className='flex flex-col items-center gap-[72px] md:order-4 md:mb-16 md:w-full md:flex-row
-            md:items-start md:gap-0 xl:ml-[50%] xl:w-[50%]'>
-          <div className='md:w-[50%]'>
+            md:items-start md:gap-0 xl:ml-[50%] xl:w-1/2'>
+          <div className='md:w-1/2'>
             <p className='max-w-[290px] text-center text-sm text-brown md:text-start'>
               Be the first to know about promotions, raffles and auctions for
               exclusive jewellery, which we hold only among the site&apos;s
               audience.
             </p>
           </div>
-          <div className='w-[311px] md:w-[50%]'>
+          <div className='w-[311px] md:w-1/2'>
             <SubscribeForm className='w-full' />
           </div>
         </div>
-        <div className='flex w-full flex-col gap-[72px] md:order-2 md:mb-16 md:flex-row md:gap-0'>
-          <div className='w-full md:w-[50%]'>
+        <div
+          className='flex w-[311px] flex-col gap-[72px] md:order-2 md:mb-16 md:w-full md:flex-row
+            md:gap-0'>
+          <div className='md:w-1/2'>
             <FooterSchedule />
           </div>
-          <div className='md:w-[25%] md:self-start'>
+          <div className='md:w-1/4 md:self-start'>
             <FooterInfoList
               infoList={serviceList}
               title='Services'
@@ -54,16 +56,16 @@ export default function Footer() {
           <div className='md:hidden'>
             <FooterNavigation />
           </div>
-          <div className='self-center md:w-[25%] md:self-start'>
+          <div className='self-center md:w-1/4 md:self-start'>
             <FooterSubscribeList />
           </div>
         </div>
-        <hr className='hidden w-full border border-[#2B2724] md:order-3 md:mb-16 md:block' />
+        <hr className='border-brown-dark hidden w-full border md:order-3 md:mb-16 md:block' />
 
         <div className='md:hidden'>
           <FooterContactList />
         </div>
-        <hr className='hidden w-full border border-[#2B2724] md:order-5 md:mb-6 md:block' />
+        <hr className='border-brown-dark hidden w-full border md:order-5 md:mb-6 md:block' />
 
         <div className='last:gap-0 md:order-6 md:w-full'>
           <FooterLegalLinks />

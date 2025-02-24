@@ -45,6 +45,7 @@ export default {
         brown: '#B99376',
         'brown-active': '#a68b77',
         'brown-light': '#C3AD9C',
+        'brown-dark': '#2B2724',
         error: '#bf2313'
       },
       fontSize: {

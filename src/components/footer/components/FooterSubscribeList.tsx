@@ -2,13 +2,13 @@ import { SpriteTypes } from '@/types'
 
 import Icon from '@/components/ui/Icon'
 
-type socialLinks = {
+type SocialLinks = {
   href: string
   label: string
   icon: SpriteTypes
 }
 
-const socialLinks: socialLinks[] = [
+const socialLinks: SocialLinks[] = [
   {
     href: 'https://www.instagram.com/',
     label: 'Instagram',
