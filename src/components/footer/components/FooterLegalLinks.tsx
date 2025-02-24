@@ -5,13 +5,28 @@ export default function FooterLegalLinks() {
         className='flex flex-col items-center gap-3 text-[18px] leading-[24px] md:w-[50%]
           md:flex-row md:items-start md:text-xs lg:gap-[54px]'>
         <li>
-          <a href=''>Credentials</a>
+          <a
+            href=''
+            target='_blank'
+            rel='noopener noreferrer'>
+            Credentials
+          </a>
         </li>
         <li>
-          <a href=''>Customer Agreement</a>
+          <a
+            href=''
+            target='_blank'
+            rel='noopener noreferrer'>
+            Customer Agreement
+          </a>
         </li>
         <li>
-          <a href=''>Data processing policy</a>
+          <a
+            href=''
+            target='_blank'
+            rel='noopener noreferrer'>
+            Data processing policy
+          </a>
         </li>
       </ul>
       <div

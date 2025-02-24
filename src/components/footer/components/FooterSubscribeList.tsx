@@ -24,7 +24,7 @@ const socialLinks: socialLinks[] = [
 function FooterContactList() {
   return (
     <div>
-      <h4 className='mb-6 text-xs font-semibold uppercase text-brown'>
+      <h4 className='mb-6 text-center text-xs font-semibold uppercase text-brown md:text-left'>
         Subscribe
       </h4>
       <ul className='flex gap-4 md:flex-col md:gap-3'>
@@ -37,12 +37,13 @@ function FooterContactList() {
                 href={item.href}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center md:gap-3'>
+                className='group flex items-center md:gap-3'>
                 <Icon
                   id={item.icon}
-                  w={13}
-                  h={13}
-                  className='flex size-8 items-center justify-center rounded-full bg-[#2E2826]'
+                  w={14}
+                  h={14}
+                  className='text-brown-light flex size-8 items-center justify-center rounded-full
+                    bg-[#2E2826] transition-colors group-hover:bg-brown group-hover:text-white'
                 />
                 <span className='hidden text-[16px] text-white md:block lg:block'>
                   {item.label}
