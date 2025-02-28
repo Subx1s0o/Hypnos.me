@@ -4,7 +4,9 @@ export default function FooterLegalLinks() {
       <ul
         className='flex flex-col items-center gap-3 text-[18px] leading-6 md:w-1/2 md:flex-row
           md:items-start md:text-xs lg:gap-[54px]'>
-        <li>
+        <li
+          className='transition-[underline] hover:underline hover:decoration-1
+            hover:underline-offset-2'>
           <a
             href=''
             target='_blank'
@@ -12,7 +14,9 @@ export default function FooterLegalLinks() {
             Credentials
           </a>
         </li>
-        <li>
+        <li
+          className='transition-[underline] hover:underline hover:decoration-1
+            hover:underline-offset-2'>
           <a
             href=''
             target='_blank'
@@ -20,7 +24,9 @@ export default function FooterLegalLinks() {
             Customer Agreement
           </a>
         </li>
-        <li>
+        <li
+          className='transition-[underline] hover:underline hover:decoration-1
+            hover:underline-offset-2'>
           <a
             href=''
             target='_blank'

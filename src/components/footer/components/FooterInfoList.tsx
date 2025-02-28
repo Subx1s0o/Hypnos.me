@@ -19,7 +19,8 @@ export default function FooterInfoList({ title, infoList }: IProps) {
         {infoList.map(({ id, text, link }) => (
           <li
             key={id}
-            className='text-[18px] leading-[24px] md:text-[16px] md:leading-[21px]'>
+            className='text-[18px] leading-[24px] transition-[underline] hover:underline
+              hover:decoration-1 hover:underline-offset-2 md:text-[16px] md:leading-[21px]'>
             <Link href={`/customer-service/${link}`}>{text}</Link>
           </li>
         ))}
