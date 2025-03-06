@@ -10,7 +10,7 @@ type FormInputProps = ComponentProps<'input'> & {
   label?: string
   name: string
   isPasswordField?: boolean
-  showPassword?: boolean
+  isPasswordShown?: boolean
   toggleShowPassword?: () => void
 }
 export default function FormInput({
@@ -19,7 +19,7 @@ export default function FormInput({
   label,
   className,
   isPasswordField = false,
-  showPassword,
+  isPasswordShown,
   toggleShowPassword,
   ...inputProps
 }: FormInputProps) {
@@ -51,7 +51,7 @@ export default function FormInput({
             onClick={toggleShowPassword}
             className='absolute right-[12px] top-[14px]'>
             <Icon
-              id={showPassword ? 'icon-eye' : 'icon-eye-off'}
+              id={isPasswordShown ? 'icon-eye' : 'icon-eye-off'}
               w={20}
               h={20}
               className='text-[#4E453E]'

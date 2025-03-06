@@ -22,7 +22,7 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
       className='flex flex-col gap-8'
       onSubmit={handleSubmit(onSubmit)}>
       <div className='flex flex-col gap-8 xxl:w-full xxl:flex-row xxl:gap-4'>
-        <div className='xxl:w1/2 w-full'>
+        <div className='w-full xxl:w-1/2'>
           <FormInput
             label='FIRST NAME'
             name='firstName'
@@ -30,7 +30,7 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
             defaultValue={data?.firstName}
           />
         </div>
-        <div className='xxl:w1/2 w-full'>
+        <div className='w-full xxl:w-1/2'>
           <FormInput
             label='SECOND NAME'
             name='secondName'

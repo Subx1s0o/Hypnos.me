@@ -8,7 +8,7 @@ import UserDataForm from '@/components/forms/Profile/UserDataForm'
 import Icon from '@/components/ui/Icon'
 
 export default function PersonalData() {
-  const { data, error } = useQuery({
+  const { data } = useQuery({
     queryKey: ['user'],
     queryFn: getUser,
     staleTime: 1000 * 60 * 60
@@ -33,7 +33,7 @@ export default function PersonalData() {
       <div className='flex flex-col'>
         <UserDataForm data={data} />
       </div>
-      <hr className='text- my-16 w-full md:my-12' />
+      <hr className='my-16 w-full md:my-12' />
 
       <div className='mb-8 flex flex-col items-center gap-2 md:flex-row md:gap-4'>
         <span className='flex size-8 items-center justify-center rounded-full bg-grey-light'>
