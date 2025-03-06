@@ -8,8 +8,8 @@ export default function ProfileTitle() {
   const router = useRouter()
 
   return (
-    <div className='relative flex flex-col items-center justify-center'>
-      <div className='my-14 md:my-12'>
+    <div className='relative'>
+      <div className='flex flex-col items-center justify-center py-14 md:py-12'>
         <button onClick={() => router.replace('/')}>
           <Icon
             id='icon-arrow'

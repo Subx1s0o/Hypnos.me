@@ -5,7 +5,7 @@ import ProfileTitle from './components/ProfileTitle'
 
 export default function ProfileSection({ children }: PropsWithChildren) {
   return (
-    <section className='mx-auto max-w-screen-xxl px-4 md:px-10'>
+    <section className='mx-auto mb-[160px] max-w-screen-xxl px-4 md:px-10'>
       <ProfileTitle />
       <div className='smd:grid smd:grid-cols-2'>
         <ProfileNavigation />

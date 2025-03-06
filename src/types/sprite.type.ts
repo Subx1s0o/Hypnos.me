@@ -23,3 +23,6 @@ export type SpriteTypes =
   | 'icon-wallet-filled'
   | 'icon-logout'
   | 'icon-review'
+  | 'icon-lock-password'
+  | 'icon-eye'
+  | 'icon-eye-off'

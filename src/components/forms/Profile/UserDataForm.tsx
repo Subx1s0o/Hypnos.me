@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form'
 
 import FormInput from '@/components/ui/FormInput'
 
-import UserDataSchema, { UserDataType } from '../schema/user-data-schema'
+import { UserDataSchema, UserDataType } from '../schema/user-data-schema'
 
 export default function UserDataForm({ data }: { data: User | undefined }) {
   const { control, handleSubmit } = useForm<UserDataType>({
@@ -21,18 +21,24 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
     <form
       className='flex flex-col gap-8'
       onSubmit={handleSubmit(onSubmit)}>
-      <FormInput
-        label='FIRST NAME'
-        name='firstName'
-        control={control}
-        defaultValue={data?.firstName}
-      />
-      <FormInput
-        label='SECOND NAME'
-        name='secondName'
-        control={control}
-        defaultValue={data?.secondName}
-      />
+      <div className='flex flex-col gap-8 xxl:w-full xxl:flex-row xxl:gap-4'>
+        <div className='xxl:w1/2 w-full'>
+          <FormInput
+            label='FIRST NAME'
+            name='firstName'
+            control={control}
+            defaultValue={data?.firstName}
+          />
+        </div>
+        <div className='xxl:w1/2 w-full'>
+          <FormInput
+            label='SECOND NAME'
+            name='secondName'
+            control={control}
+            defaultValue={data?.secondName}
+          />
+        </div>
+      </div>
       <FormInput
         label='EMAIL'
         name='email'

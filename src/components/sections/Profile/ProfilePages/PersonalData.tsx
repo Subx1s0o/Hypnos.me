@@ -3,6 +3,7 @@
 import getUser from '@/actions/getUser'
 import { useQuery } from '@tanstack/react-query'
 
+import ChangePasswordForm from '@/components/forms/Profile/ChangePasswordForm'
 import UserDataForm from '@/components/forms/Profile/UserDataForm'
 import Icon from '@/components/ui/Icon'
 
@@ -15,19 +16,39 @@ export default function PersonalData() {
 
   return (
     <section>
-      <span className='mb-2 inline-block rounded-full bg-grey-light p-[7px]'>
-        <Icon
-          id='icon-profile-filled'
-          w={16}
-          h={16}
-          className='text-black'
-        />
-      </span>
-      <h2 className='mb-8 text-base-big'>Your Information</h2>
+      <div className='mb-8 flex flex-col items-center gap-2 md:flex-row md:gap-4'>
+        <span className='flex size-8 items-center justify-center rounded-full bg-grey-light'>
+          <Icon
+            id='icon-profile-filled'
+            w={16}
+            h={16}
+            className='text-black'
+          />
+        </span>
+        <h2 className='text-base-big xxl:font-semibold xxl:leading-[32px]'>
+          Your Information
+        </h2>
+      </div>
 
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col'>
         <UserDataForm data={data} />
       </div>
+      <hr className='text- my-16 w-full md:my-12' />
+
+      <div className='mb-8 flex flex-col items-center gap-2 md:flex-row md:gap-4'>
+        <span className='flex size-8 items-center justify-center rounded-full bg-grey-light'>
+          <Icon
+            id='icon-lock-password'
+            w={16}
+            h={16}
+            className='text-black'
+          />
+        </span>
+        <h2 className='text-base-big xxl:font-semibold xxl:leading-[32px]'>
+          Change Password
+        </h2>
+      </div>
+      <ChangePasswordForm />
     </section>
   )
 }
