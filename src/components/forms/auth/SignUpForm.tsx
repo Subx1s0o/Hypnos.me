@@ -27,7 +27,14 @@ export default function SignUpForm() {
   const isSubscribed = watch('subscribed', true)
   const router = useRouter()
   const onSubmit: SubmitHandler<SignUpType> = async data => {
-    await register(data)
+    const registerRes = await register(data)
+
+    if (registerRes.error) {
+      alert(registerRes.error.message)
+
+      return
+    }
+
     router.replace('/')
   }
 

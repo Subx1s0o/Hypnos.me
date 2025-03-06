@@ -5,9 +5,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import * as Checkbox from '@radix-ui/react-checkbox'
 import { useForm } from 'react-hook-form'
 
-import FormInput from '../ui/FormInput'
-import Icon from '../ui/Icon'
-import { SubscribeSchema, SubscribeType } from './schema/subscribe-schema'
+import FormInput from '@/components/ui/FormInput'
+import Icon from '@/components/ui/Icon'
+
+import { SubscribeSchema, SubscribeType } from '../schema/subscribe-schema'
 
 export default function SubscribeForm() {
   const {

@@ -29,8 +29,8 @@ export default function AuthSection({ children }: PropsWithChildren) {
         </Media>
       </MediaContextProvider>
       <div
-        className='mx-auto flex h-full max-w-[1500px] items-center justify-center px-4 lg:px-10
-          xl:grid xl:grid-cols-2 xl:items-center'>
+        className='mx-auto flex size-full max-w-screen-xxl items-center justify-center px-4
+          lg:px-10 xl:grid xl:grid-cols-2 xl:items-center xl:gap-10'>
         <div className='flex justify-center'>
           <MediaContextProvider>
             <Media greaterThanOrEqual='xl'>
@@ -62,7 +62,9 @@ export default function AuthSection({ children }: PropsWithChildren) {
             </Media>
           </MediaContextProvider>
         </div>
-        <div className='flex xl:justify-end'>{children}</div>
+        <div className='flex w-full justify-center xl:justify-end'>
+          {children}
+        </div>
       </div>
     </section>
   )

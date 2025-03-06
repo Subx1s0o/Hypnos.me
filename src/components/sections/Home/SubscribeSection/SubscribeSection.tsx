@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SubscribeForm from '@/components/forms/SubscribeForm'
+import SubscribeForm from '@/components/forms/Subscribe/SubscribeForm'
 import Icon from '@/components/ui/Icon'
 
 export default function SubscribeSection() {

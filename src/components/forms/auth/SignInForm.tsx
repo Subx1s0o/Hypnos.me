@@ -22,12 +22,19 @@ export default function SignInForm() {
   })
   const router = useRouter()
   const onSubmit: SubmitHandler<SignInType> = async data => {
-    await login(data)
+    const loginRes = await login(data)
+
+    if (loginRes.error) {
+      alert(loginRes.error.message)
+
+      return
+    }
+
     router.replace('/')
   }
 
   return (
-    <div className='w-full sm:w-[370px] xxl:w-[450px]'>
+    <div className='w-full sm:w-[370px] xl:w-[450px]'>
       <h1 className='mb-5 text-center font-cormorant text-smd font-bold'>
         SIGN IN
       </h1>
@@ -49,7 +56,7 @@ export default function SignInForm() {
             type='password'
           />
         </div>
-        <div className='mb-5 flex justify-between'>
+        <div className='mb-5 flex flex-col justify-between gap-2 sm:flex-row'>
           <Link
             href='/sign-up'
             className='text-xs font-bold underline'>
