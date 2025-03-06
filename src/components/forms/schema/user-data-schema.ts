@@ -5,7 +5,21 @@ export const UserDataSchema = z.object({
   secondName: z.string().min(1, "This field can't be empty"),
   email: z.string().email('Invalid email address'),
   phone: z.string().min(1, "This field can't be empty"),
-  birthday: z.string().min(1, "This field can't be empty")
+  birthday: z
+    .string()
+    .min(1, "This field can't be empty")
+    .refine(
+      date => {
+        const selectedDate = new Date(date)
+        const today = new Date()
+        today.setHours(0, 0, 0, 0)
+
+        return selectedDate < today
+      },
+      {
+        message: 'Birthday must be in the past'
+      }
+    )
 })
 
 export const NewPasswordSchema = z

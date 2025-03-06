@@ -42,7 +42,7 @@ export default function ChangePasswordForm() {
               control={control}
               type={showRepeatPassword ? 'text' : 'password'}
               isPasswordField={true}
-              showPassword={showRepeatPassword}
+              isPasswordShown={showRepeatPassword}
               toggleShowPassword={() =>
                 setShowRepeatPassword(!showRepeatPassword)
               }
