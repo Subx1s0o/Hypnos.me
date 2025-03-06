@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
 import FormInput from '@/components/ui/FormInput'
+import Icon from '@/components/ui/Icon'
 
 import { UserDataSchema, UserDataType } from '../schema/user-data-schema'
 
@@ -58,6 +59,20 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
         control={control}
         defaultValue={data?.birthday?.toISOString().split('T')[0]}
       />
+      <button
+        type='submit'
+        className='flex w-full items-center rounded-[3px] bg-black px-4 py-[19px] text-xs
+          font-extrabold uppercase text-white xxl:w-1/2'>
+        <span className='grow text-center'>Save changes</span>
+        <span className='ml-2 flex size-6 items-center justify-center rounded-full bg-white'>
+          <Icon
+            id='icon-arrow'
+            w={9}
+            h={9}
+            className='rotate-90 stroke-none text-black'
+          />
+        </span>
+      </button>
     </form>
   )
 }
