@@ -30,24 +30,24 @@ export default function Footer() {
         <div
           className='flex flex-col items-center gap-[72px] smd:order-4 smd:mb-16 smd:w-full
             smd:flex-row smd:items-start smd:gap-0 xl:ml-[50%] xl:w-1/2'>
-          <div className='smd:w-[60%] lg:w-1/2'>
+          <div className='smd:w-3/5 lg:w-1/2'>
             <p className='max-w-[290px] text-center text-sm text-brown smd:text-start'>
               Be the first to know about promotions, raffles and auctions for
               exclusive jewellery, which we hold only among the site&apos;s
               audience.
             </p>
           </div>
-          <div className='w-[311px] smd:w-[40%] xxl:w-1/2'>
+          <div className='w-[311px] smd:w-2/5 xxl:w-1/2'>
             <SubscribeForm className='w-full' />
           </div>
         </div>
         <div
           className='flex w-[311px] flex-col gap-[72px] smd:order-2 smd:mb-16 smd:w-full smd:flex-row
             smd:flex-wrap smd:gap-0 lg:flex-nowrap'>
-          <div className='smd:w-[60%] lg:w-1/2'>
+          <div className='smd:w-3/5 lg:w-1/2'>
             <FooterSchedule />
           </div>
-          <div className='smd:w-[40%] lg:w-1/4 lg:self-start'>
+          <div className='smd:w-2/5 lg:w-1/4 lg:self-start'>
             <FooterInfoList
               infoList={serviceList}
               title='Services'
