@@ -24,10 +24,10 @@ const socialLinks: SocialLinks[] = [
 function FooterContactList() {
   return (
     <div>
-      <h4 className='mb-6 text-center text-xs font-semibold uppercase text-brown md:text-left'>
+      <h4 className='s mb-6 text-center text-xs font-semibold uppercase text-brown md:text-left'>
         Subscribe
       </h4>
-      <ul className='flex gap-4 md:flex-col md:gap-3'>
+      <ul className='s s flex gap-4 md:flex-col md:gap-3'>
         {socialLinks.map((item, index) => {
           return (
             <li
@@ -37,15 +37,15 @@ function FooterContactList() {
                 href={item.href}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='group flex items-center md:gap-3'>
+                className='s group flex items-center md:gap-3'>
                 <Icon
                   id={item.icon}
                   w={14}
                   h={14}
                   className='text-brown-light flex size-8 items-center justify-center rounded-full
-                    bg-[#2E2826] transition-colors group-hover:bg-brown group-hover:text-white'
+                    bg-[#2E2826] transition-colors lg:group-hover:bg-brown lg:group-hover:text-white'
                 />
-                <span className='hidden text-[16px] text-white md:block lg:block'>
+                <span className='s hidden text-[16px] text-white md:block lg:block'>
                   {item.label}
                 </span>
               </a>
