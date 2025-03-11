@@ -22,7 +22,7 @@ export default function Footer() {
           className='md:order-1 md:mx-auto md:mb-16'>
           <Icon
             id='icon-logo'
-            className='text-brown'
+            className=''
             w={150}
             h={35}
           />
@@ -30,24 +30,24 @@ export default function Footer() {
         <div
           className='flex flex-col items-center gap-[72px] md:order-4 md:mb-16 md:w-full md:flex-row
             md:items-start md:gap-0 xl:ml-[50%] xl:w-1/2'>
-          <div className='md:w-1/2'>
+          <div className='md:w-[60%] lg:w-1/2'>
             <p className='max-w-[290px] text-center text-sm text-brown md:text-start'>
               Be the first to know about promotions, raffles and auctions for
               exclusive jewellery, which we hold only among the site&apos;s
               audience.
             </p>
           </div>
-          <div className='w-[311px] md:w-1/2'>
+          <div className='w-[311px] md:w-[40%] xxl:w-1/2'>
             <SubscribeForm className='w-full' />
           </div>
         </div>
         <div
           className='flex w-[311px] flex-col gap-[72px] md:order-2 md:mb-16 md:w-full md:flex-row
-            md:gap-0'>
-          <div className='md:w-1/2'>
+            md:flex-wrap md:gap-0 lg:flex-nowrap'>
+          <div className='md:w-[60%] lg:w-1/2'>
             <FooterSchedule />
           </div>
-          <div className='md:w-1/4 md:self-start'>
+          <div className='md:w-[40%] lg:w-1/4 lg:self-start'>
             <FooterInfoList
               infoList={serviceList}
               title='Services'
@@ -56,7 +56,7 @@ export default function Footer() {
           <div className='md:hidden'>
             <FooterNavigation />
           </div>
-          <div className='self-center md:w-1/4 md:self-start'>
+          <div className='self-center lg:w-1/4 lg:self-start'>
             <FooterSubscribeList />
           </div>
         </div>

@@ -2,8 +2,8 @@ export default function FooterLegalLinks() {
   return (
     <div className='flex flex-col gap-[72px] md:flex-row md:gap-0'>
       <ul
-        className='flex flex-col items-center gap-3 text-[18px] leading-6 md:w-1/2 md:flex-row
-          md:items-start md:text-xs lg:gap-[54px]'>
+        className='flex flex-col items-center gap-3 text-[18px] leading-6 md:w-[60%] md:flex-row
+          md:items-start md:text-xs lg:w-1/2 lg:gap-[54px]'>
         <li
           className='transition-[underline] hover:underline hover:decoration-1
             hover:underline-offset-2'>
@@ -36,8 +36,8 @@ export default function FooterLegalLinks() {
         </li>
       </ul>
       <div
-        className='text-brown-light flex flex-col items-center gap-3 text-[18px] leading-6 md:w-1/2
-          md:flex-row md:items-start md:text-xs lg:gap-8'>
+        className='text-brown-light flex flex-col items-center gap-3 text-[18px] leading-6
+          md:w-[40%] md:flex-row md:items-start md:text-xs lg:w-1/2 lg:gap-8'>
         <span>All rights reserved</span>
         <span>2024 © Hypnos</span>
       </div>

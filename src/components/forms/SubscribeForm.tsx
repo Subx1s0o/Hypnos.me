@@ -32,7 +32,7 @@ export default function SubscribeForm({ className }: IProps) {
     <form
       onSubmit={handleSubmit(onSubmit)}
       className={className}>
-      <div className='w-[311px] md:w-[308px]'>
+      <div className='w-full'>
         <div className='mb-5'>
           <FormInput
             type='email'
@@ -40,8 +40,8 @@ export default function SubscribeForm({ className }: IProps) {
             autoComplete='email'
             control={control}
             placeholder='EMAIL'
-            className='placeholder:text-brown-light w-[308px] rounded border-transparent bg-grey-400
-              p-3 text-white transition-colors focus-visible:border focus-visible:border-brown'
+            className='placeholder:text-brown-light rounded border-transparent bg-grey-400 p-3
+              text-white transition-colors focus-visible:border focus-visible:border-brown'
           />
         </div>
 
