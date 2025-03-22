@@ -9,19 +9,13 @@ import ImageWithFallback from '@/components/ui/ImageWithFallback'
 interface ProductCardProps {
   products: Product[]
 }
-export default function WishlistItem({ products }: ProductCardProps) {
+export default function Wishlist({ products }: ProductCardProps) {
   const { removeFromWishlist } = useWishlist()
 
   return (
-    <ul className='flex flex-col gap-4 overflow-y-scroll pr-4'>
+    <ul className='flex max-h-96 grow flex-col gap-4 overflow-y-scroll pr-4'>
       {products.map((product: Product) => {
-        const {
-          id,
-          title,
-          price,
-          media,
-          discountPercent,
-        } = product
+        const { id, title, price, media, discountPercent } = product
         const { main } = media
 
         return (
@@ -52,7 +46,7 @@ export default function WishlistItem({ products }: ProductCardProps) {
                   className='align-middle font-manrope text-sm font-semibold not-italic tracking-tight
                     text-black'>
                   {title}
-                  <button onClick={() => removeFromWishlist({id})}>
+                  <button onClick={() => removeFromWishlist({ id })}>
                     <Icon
                       className='absolute right-0 top-0'
                       id='icon-x-altx-alt'

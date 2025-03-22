@@ -12,7 +12,7 @@ const NavItemsList = () => {
   const { isModalOpen, toggleModal } = useModal()
   const cartItems = useCart(state => state.cart)
   const wishlistItems = useWishlist(state => state.wishlist)
-  console.log(wishlistItems, wishlistItems.length)
+
 
   const totalCount = cartItems.reduce((acc, item) => {
     if (item.cartCount) {
@@ -51,7 +51,7 @@ const NavItemsList = () => {
                 </button>
                 {showBadge && id === 'cart' && (
                   <div className='relative grid place-items-center'>
-                    {cartItems.length > 0 && (
+                    {totalCount > 0 && (
                       <div
                         className='absolute flex size-4 items-center justify-center rounded-full bg-brown
                           align-middle'>

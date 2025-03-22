@@ -35,7 +35,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const isLiked: boolean = wishlist.some(item => item.id === id)
   const handlerProductClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    // e.stopPropagation()
+
     const newProduct: Product = {
       id,
       title,
@@ -137,9 +137,9 @@ export default function ProductCard({ product }: ProductCardProps) {
             className='rounded-sm bg-black px-4 py-3 text-white'>
             {isLiked ? (
               <Icon
-                className='stroke-brown stroke-2 text-smd text-brown'
+                className='stroke-brown text-smd text-brown'
                 w={16}
-                h={13}
+                h={16}
                 id='icon-heart-filled'
               />
             ) : (

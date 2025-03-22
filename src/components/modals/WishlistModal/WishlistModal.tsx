@@ -8,7 +8,7 @@ import { useModal } from '@/components/context/ModalContext'
 import BlackBadge from '@/components/ui/BlackBadge'
 import Button from '@/components/ui/Button'
 
-import WishlistItem from './WishlistItem'
+import Wishlist from './Wishlist'
 
 export default function WishlistModal() {
   const { closeModal } = useModal()
@@ -18,7 +18,7 @@ export default function WishlistModal() {
 
   return (
     <>
-      <div className='flex max-h-svh flex-col justify-between gap-12 py-8 md:gap-20'>
+      <div className='flex min-h-screen flex-col justify-between gap-12 py-8 md:gap-20'>
         <div className='flex flex-col items-center'>
           <h2
             className='text-center font-cormorant text-2xl font-bold uppercase leading-normal
@@ -30,9 +30,13 @@ export default function WishlistModal() {
         </div>
 
         {wishlist.length === 0 ? (
-          <p>There is nothing in your wishlist</p>
+          <div className='flex grow justify-center'>
+            <p className='text-grey-normal'>
+              There is nothing in your wishlist
+            </p>
+          </div>
         ) : (
-          <WishlistItem products={wishlist} />
+          <Wishlist products={wishlist} />
         )}
         <div className='flex flex-col gap-4 pb-20'>
           <Link
