@@ -9,6 +9,7 @@ import './globals.css'
 
 
 import HeaderOrMenu from '@/components/common/Home/HeaderOrMenu/HeaderOrMenu'
+import Footer from '@/components/footer/Footer'
 
 const CormorantFont = Cormorant({
   variable: '--font-cormorant',
@@ -43,6 +44,7 @@ export default function RootLayout({
           <HeaderOrMenu />
           {children}
         </Providers>
+        <Footer />
       </body>
     </html>
   )
