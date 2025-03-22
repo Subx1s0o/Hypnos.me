@@ -5,12 +5,20 @@ interface IconProps {
   w: number
   h: number
   className?: string
+  classNameIcon?: string
 }
 
-export default function Icon({ id, w, h, className }: IconProps) {
+export default function Icon({
+  id,
+  w,
+  h,
+  className,
+  classNameIcon
+}: IconProps) {
   return (
     <div className={className || ''}>
       <svg
+        className={classNameIcon || ''}
         width={w}
         height={h}>
         <use href={`/sprite.svg#${id}`} />

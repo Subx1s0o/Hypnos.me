@@ -17,4 +17,6 @@ export type SpriteTypes =
   | 'icon-medal-star'
   | 'icon-diamant'
   | 'icon-email'
+  | 'icon-heart-filled'
   | 'icon-review'
+
