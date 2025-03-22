@@ -22,7 +22,7 @@ export default function ImageLinkCard({
     <Link
       href={to}
       className='relative aspect-[4/5] sm:aspect-[3/2]'>
-      <picture>
+      <picture className='relative block h-full'>
         <source
           srcSet={imageSrcSet}
           media='(min-width: 480px)'

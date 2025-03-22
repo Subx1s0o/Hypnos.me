@@ -9,7 +9,6 @@ export type SpriteTypes =
   | 'icon-facebook'
   | 'icon-instagram'
   | 'icon-x-altx-alt'
-  | 'icon-x-altx-alt'
   | 'icon-crystal'
   | 'icon-google'
   | 'icon-check'
@@ -18,3 +17,4 @@ export type SpriteTypes =
   | 'icon-medal-star'
   | 'icon-diamant'
   | 'icon-email'
+  | 'icon-review'
