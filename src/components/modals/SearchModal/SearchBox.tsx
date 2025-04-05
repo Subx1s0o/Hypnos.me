@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Product } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
 
 import Icon from '@/components/ui/Icon'
 import Loader from '@/components/ui/Loader'
