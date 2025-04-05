@@ -14,8 +14,8 @@ export default function BurgerModalSocialLinks() {
           <Icon
             className='rounded-full bg-white p-3 text-grey-400'
             id='icon-instagram'
-            w={40}
-            h={40}
+            w={16}
+            h={16}
           />
         </Link>
       </li>
@@ -28,8 +28,8 @@ export default function BurgerModalSocialLinks() {
           <Icon
             className='rounded-full bg-white p-3 text-grey-400'
             id='icon-facebook'
-            w={40}
-            h={40}
+            w={16}
+            h={16}
           />
         </Link>
       </li>

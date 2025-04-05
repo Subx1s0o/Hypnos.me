@@ -1,65 +1,60 @@
 import { useState } from 'react'
+import { Product } from '@/types'
 import { useQuery } from '@tanstack/react-query'
-import Image from 'next/image'
+import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
-import BlackBadge from '@/components/ui/BlackBadge'
 import Icon from '@/components/ui/Icon'
+import Loader from '@/components/ui/Loader'
 
 import useDebounce from '@/hooks/useDebounce'
 
-interface Product {
-  id: string
-  title: string
-  description: string
-  price: number
-  discountPercentage?: number
-  images: string[]
-}
+import ItemInModal from '../ItemInModal/ItemInModal'
 
 interface SearchResultProps {
   isLoading: boolean
-  data: Product[]
+  data: Product[] | null
 }
 
 function SearchResult({ isLoading, data }: SearchResultProps) {
-  
   return (
-    <ul className='flex flex-col gap-4'>
-      {isLoading && <div className='text-white'>Loading...</div>}
-      {data &&
-        data.map(item => (
-          <li
-            key={item.id}
-            className='border-b-2 border-grey-200'>
-            <div className='relative flex pb-4'>
-              <Image
-                src={item.images[0]}
-                alt={item.title}
-                width={100}
-                height={100}
-              />
-
-              <div className='flex w-full flex-col justify-between pl-4'>
-                <h3
-                  className='align-middle font-manrope text-sm font-semibold not-italic tracking-tight
-                    text-black'>
-                  {item.title}
-                </h3>
-                <div className='flex justify-between'>
-                  <p className='font-manrope text-sm font-semibold not-italic tracking-tight text-black'>
-                    {item.price} $
-                  </p>
-                  {item.discountPercentage && (
-                    <BlackBadge className='w-12'>
-                      -{item.discountPercentage}%
-                    </BlackBadge>
-                  )}
-                </div>
-              </div>
-            </div>
-          </li>
-        ))}
-    </ul>
+    <div className='z-10 bg-white md:absolute md:left-0 md:top-[200px] md:w-full'>
+      {isLoading && <Loader />}
+      <ul className='mb-6 flex flex-col gap-4'>
+        {data &&
+          data.length > 0 &&
+          data.slice(0, 3).map(item => {
+            return (
+              <li key={item.id}>
+                <Link href={`catalogue/${item.category}/${item.slug}`}>
+                  <ItemInModal
+                    id={item.id}
+                    title={item.title}
+                    media={item.media}
+                    price={item.price}
+                    discountPercent={item.discountPercent}
+                  />
+                </Link>
+              </li>
+            )
+          })}
+      </ul>
+      {data && data.length > 0 && (
+        <Link
+          href='/search'
+          className='m-auto block pb-10 text-center font-manrope text-xs font-bold uppercase
+            leading-normal text-black underline'>
+          ALL results ({data.length})
+        </Link>
+      )}
+      {data && data.length === 0 && (
+        <p
+          className='m-auto pb-10 text-center font-manrope text-xs font-bold uppercase leading-normal
+            text-black'>
+          No results
+        </p>
+      )}
+    </div>
   )
 }
 
@@ -68,26 +63,32 @@ export default function SearchBox() {
 
   const debouncedSearchTerm = useDebounce(search, 200)
 
-  const { data, isLoading } = useQuery({
+  const { data = [], isLoading } = useQuery({
     queryKey: ['search', debouncedSearchTerm],
-    queryFn: () => {
+    queryFn: async () => {
       if (debouncedSearchTerm) {
-        return fetch(
-          `https://dummyjson.com/products/search?q=${debouncedSearchTerm}`
-        ).then(res => res.json())
-      }
-      console.log(data)
+        const response = await fetch(
+          `https://hypnos.koyeb.app/goods?search=${debouncedSearchTerm}`
+        )
+        const result = await response.json()
 
-      return { products: [] }
+        return result || []
+      }
+
+      return []
     }
   })
 
+  const clearSearch = () => {
+    setSearch('')
+  }
+
   return (
-    <div>
-      <form className='relative m-auto flex w-full lg:w-96'>
+    <>
+      <form className='relative mb-6 flex w-full md:m-auto md:mb-4 md:w-[490px]'>
         <input
-          className='h-[48px] w-full rounded-[4px] border border-grey-200 bg-white py-4 pl-8 pr-2
-            text-sm outline-none focus-visible:border-black'
+          className='h-[48px] w-full rounded-[4px] border border-grey-200 bg-white pl-12 text-sm
+            outline-none focus-visible:border-black'
           type='search'
           value={search}
           onChange={e => setSearch(e.target.value)}
@@ -95,19 +96,30 @@ export default function SearchBox() {
         />
 
         <Icon
-          className='pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-black/60'
+          className='pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-grey-400'
           id='icon-search'
           w={18}
           h={18}
         />
+        {search && (
+          <button
+            type='button'
+            className='absolute right-0 top-1/2 -translate-y-1/2 rounded-[4px] bg-black p-3 text-white'
+            onClick={clearSearch}>
+            <Icon
+              id='icon-x-altx-alt'
+              w={24}
+              h={24}
+            />
+          </button>
+        )}
       </form>
-
-      {data?.products.length > 0 && (
+      {data && data.data && data.data.length > 0 && (
         <SearchResult
+          data={data.data}
           isLoading={isLoading}
-          data={data.products}
         />
       )}
-    </div>
+    </>
   )
 }
