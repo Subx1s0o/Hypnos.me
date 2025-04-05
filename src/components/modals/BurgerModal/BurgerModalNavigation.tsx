@@ -12,7 +12,7 @@ export default function BurgerModalNavigation() {
           <li key={index}>
             <Link
               href={item.to}
-              className='font-cormorant text-2xl uppercase not-italic tracking-wider'>
+              className='font-cormorant text-[20px] uppercase not-italic tracking-wider'>
               {item.title}
             </Link>
           </li>
