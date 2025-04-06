@@ -5,7 +5,7 @@ import Icon from '../ui/Icon'
 const StarEmptyIcon: React.FC = () => {
   return (
     <Icon
-      className='size-fit stroke-gray-300 stroke-2 hover:stroke-brown-light'
+      className='size-5 stroke-grey-200 hover:stroke-brown-light'
       id='icon-star'
       h={16}
       w={16}
@@ -16,7 +16,7 @@ const StarEmptyIcon: React.FC = () => {
 const StarFilledIcon: React.FC = () => {
   return (
     <Icon
-      className='text-brown-details size-fit hover:text-brown-light'
+      className='text-brown-details size-5 hover:text-brown-light'
       id='icon-star-full'
       h={16}
       w={16}
@@ -48,7 +48,7 @@ const Rating: React.FC<RatingProps> = ({
           <button
             key={index}
             onClick={() => handleStarClick(index + 1)}
-            className={` ${isFull ? 'text-brown-details' : ''} focus:outline-none`}>
+            className={`size-5 ${isFull ? 'text-brown-details' : ''} focus:outline-none`}>
             {isFull ? <StarFilledIcon /> : <StarEmptyIcon />}
           </button>
         )
