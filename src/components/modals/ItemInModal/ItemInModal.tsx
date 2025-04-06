@@ -4,6 +4,8 @@ import Image from 'next/image'
 import BlackBadge from '@/components/ui/BlackBadge'
 import ImageWithFallback from '@/components/ui/ImageWithFallback'
 
+import Rating from "../Raiting"
+
 export default function ItemInModal({
   title,
   media,
@@ -30,8 +32,8 @@ export default function ItemInModal({
             alt={title}
             src='/images/products/decorative/fallback.avif'
             className='object-cover'
-            width={100}
-            height={100}
+            width={102}
+            height={102}
           />
         )}
 
@@ -41,7 +43,7 @@ export default function ItemInModal({
               text-black'>
             {title}
           </h3>
-          <h3>raiting</h3>
+          <Rating initialRating={2} />
           <div className='flex items-center justify-between'>
             {discountPercent ? (
               <div className='flex items-center'>

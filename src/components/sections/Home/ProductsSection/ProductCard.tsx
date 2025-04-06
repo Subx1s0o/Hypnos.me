@@ -54,6 +54,8 @@ export default function ProductCard({ product }: ProductCardProps) {
       id,
       title,
       price,
+      category,
+      slug,
       discountPercent,
       media: {
         main: { url, status }
