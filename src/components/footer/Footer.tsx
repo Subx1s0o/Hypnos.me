@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import Icon from '@/components/ui/Icon'
 
-import SubscribeForm from '../forms/SubscribeForm'
+import SubscribeForm from '../forms/Subscribe/SubscribeForm'
 import serviceList from './components/common/data/serviceList.json'
 import FooterContactList from './components/FooterContactList'
 import FooterInfoList from './components/FooterInfoList'
@@ -60,12 +60,12 @@ export default function Footer() {
             <FooterSubscribeList />
           </div>
         </div>
-        <hr className='border-brown-dark hidden w-full border smd:order-3 smd:mb-16 smd:block' />
+        <hr className='hidden w-full border border-brown-dark smd:order-3 smd:mb-16 smd:block' />
 
         <div className='smd:hidden'>
           <FooterContactList />
         </div>
-        <hr className='border-brown-dark hidden w-full border smd:order-5 smd:mb-6 smd:block' />
+        <hr className='hidden w-full border border-brown-dark smd:order-5 smd:mb-6 smd:block' />
 
         <div className='last:gap-0 smd:order-6 smd:w-full'>
           <FooterLegalLinks />
