@@ -22,13 +22,13 @@ export const navigationData: NavItem[] = [
     isLink: false
   },
   {
-    id: 'favorites',
-    label: 'Your Favourites',
+    id: 'wishlist',
+    label: 'Your wishlist',
     iconDefault: 'icon-heart',
-    iconActive: 'icon-heart',
+    iconActive: 'icon-heart-filled',
     showBadge: true,
     getBadgeValue: (itemCount: number) => itemCount,
-    isLink: true
+    isLink: false
   },
   {
     id: 'profile',

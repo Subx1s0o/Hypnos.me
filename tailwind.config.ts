@@ -41,10 +41,13 @@ export default {
           dark: '#3C3C3C'
         },
         black: '#1B1716',
+        'black-hover': '#2F2D2A',
         cream: '#E5DCD4',
         primary: '#CCC0B180',
         brown: '#B99376',
         'brown-active': '#a68b77',
+        'brown-light': '#C3AD9C',
+        'brown-dark': '#2B2724',
         error: '#bf2313'
       },
       fontSize: {
