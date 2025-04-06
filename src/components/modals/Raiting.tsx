@@ -5,7 +5,7 @@ import Icon from '../ui/Icon'
 const StarEmptyIcon: React.FC = () => {
   return (
     <Icon
-      className='size-4 h-fit w-fit stroke-gray-300 stroke-2 hover:stroke-brown-light'
+      className='size-fit stroke-gray-300 stroke-2 hover:stroke-brown-light'
       id='icon-star'
       h={16}
       w={16}
@@ -16,7 +16,7 @@ const StarEmptyIcon: React.FC = () => {
 const StarFilledIcon: React.FC = () => {
   return (
     <Icon
-      className='text-brown-details h-fit w-fit hover:text-brown-light'
+      className='text-brown-details size-fit hover:text-brown-light'
       id='icon-star-full'
       h={16}
       w={16}

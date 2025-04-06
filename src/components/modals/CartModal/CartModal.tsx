@@ -13,7 +13,7 @@ import CartItems from './CartItems'
 export default function CartModal() {
   const { closeModal } = useModal()
 
-  const { cart, message } = useCart()
+  const { cart } = useCart()
   const totalAmount: number = cart.reduce((totalAmount, product) => {
     const { discountPercent, price, cartCount } = product
     const finalPrice = discountPercent
