@@ -8,7 +8,6 @@ export default {
   theme: {
     extend: {
       screens: {
-        '3xl': '1920px',
         xxl: '1440px',
         xl: '1280px',
         lg: '1024px',
@@ -39,16 +38,17 @@ export default {
           '200': '#E8E6E5',
           normal: '#555555',
           '300': '#393939',
-          '400': '#4E453E'
+          '400': '#4E453E',
+          dark: '#3C3C3C'
         },
         black: '#1B1716',
+        'black-hover': '#2F2D2A',
         cream: '#E5DCD4',
         primary: '#CCC0B180',
         brown: '#B99376',
         'brown-active': '#a68b77',
-        'brown-hover': '#3A312A',
-        'brown-light': '#D9AF7C',
-        'brown-accent': '#E7BF8E',
+        'brown-light': '#C3AD9C',
+        'brown-dark': '#2B2724',
         error: '#bf2313'
       },
       fontSize: {
@@ -114,6 +114,13 @@ export default {
           {
             fontWeight: 500,
             lineHeight: '16px'
+          }
+        ],
+        xxs: [
+          '10px',
+          {
+            fontWeight: 700,
+            lineHeight: '13.66px'
           }
         ]
       }

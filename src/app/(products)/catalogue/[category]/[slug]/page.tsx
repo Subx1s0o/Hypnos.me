@@ -20,6 +20,7 @@ export default async function CataloguePage({
     queryFn: async () => await getProductBySlug(slug)
   })
 
+
   return (
     <main className='mx-auto max-w-screen-xxl'>
       <HydrationBoundary state={dehydrate(queryClient)}>

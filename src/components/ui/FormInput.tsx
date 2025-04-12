@@ -25,6 +25,7 @@ export default function FormInput({
         <label className='mb-4 text-xs font-bold uppercase'>{label}</label>
       )}
       <input
+        autoComplete='on'
         {...control.register(name)}
         {...inputProps}
         className={cn(
@@ -36,7 +37,9 @@ export default function FormInput({
         )}
       />
       {errors[name] && (
-        <p className='text-sm text-error'>{errors[name].message?.toString()}</p>
+        <p className='mt-1 text-sm text-error'>
+          {errors[name].message?.toString()}
+        </p>
       )}
     </div>
   )
