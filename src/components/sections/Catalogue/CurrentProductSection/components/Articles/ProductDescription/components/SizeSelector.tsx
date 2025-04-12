@@ -1,3 +1,5 @@
+'use client'
+
 import RadioButton from '@/components/ui/RadioButton'
 
 type RingSizeProps = {
@@ -12,29 +14,34 @@ export default function RingSizeSelector({
 }: RingSizeProps) {
   return (
     <div className='mb-3'>
-      <div className='flex justify-between'>
+      <div className='mb-[14px] flex justify-between'>
         <h4 className='font-manrope text-sm'>Choose size:</h4>
-        <p className='font-manrope text-sm text-brown'> What is my size? </p>
+        <p className='font-manrope text-sm text-brown underline'>
+          What is my size?
+        </p>
       </div>
-      <div className='flex gap-2 overflow-hidden'>
+      <ul className='flex gap-2 overflow-hidden'>
         {sizes.map(size => {
-          const sizeS=size.toString()
+          const sizeS = size.toString()
 
           return (
-          <RadioButton
-            classNameLabel={`relative inline-flex shrink-0 text-black h-8 w-10 items-center justify-center border-brown-accent rounded-sm border-2 text-sm
-            hover:bg-brown-accent/50 ${selectedSize === sizeS && ' bg-brown-accent '} `}
-            key={sizeS}
-            value={sizeS}
-            name='size'
-            selected={selectedSize}
-            onChange={handleSizeChange}
-            classNameInput='absolute inset-0 cursor-pointer opacity-0'>
-            <span>{sizeS}</span>
-          </RadioButton>
-        )})}
-      </div>
-      <p className='font-manrope text-sm'>Choosed size: {selectedSize}</p>
+            <li key={sizeS}>
+              <RadioButton
+                classNameLabel={`relative inline-flex shrink-0 text-black h-8 w-10 items-center justify-center border-brown-accent rounded-sm border text-sm
+              `}
+                key={sizeS}
+                value={sizeS}
+                name='size'
+                selected={selectedSize}
+                onChange={handleSizeChange}
+                classNameInput='absolute inset-0 cursor-pointer opacity-0'>
+                <span>{sizeS}</span>
+              </RadioButton>
+            </li>
+          )
+        })}
+      </ul>
+      {/* <p className='font-manrope text-sm'>Choosed size: {selectedSize}</p> */}
     </div>
   )
 }

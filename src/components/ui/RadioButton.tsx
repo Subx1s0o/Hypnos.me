@@ -23,7 +23,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   return (
     <label
       className={`cursor-pointer items-center justify-center transition-all duration-200
-        ${classNameLabel}`}>
+        ${classNameLabel} ${selected === value ? 'bg-brown-accent/50' : ''} `}>
       <input
         type='radio'
         name={name}

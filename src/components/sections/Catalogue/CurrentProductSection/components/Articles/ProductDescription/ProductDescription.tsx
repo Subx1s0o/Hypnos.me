@@ -1,28 +1,37 @@
 'use client'
 
+import { useState } from 'react'
 import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
-
-import { useLocalStorage } from '@/hooks/useLocalStorage'
+import { notFound } from 'next/navigation'
 
 import ButtonsBlock from './components/ButtonsBlock'
 import ProductDescriptionAccordion from './components/ProductDescriptionAccordion/ProductDescriptionAccordeon'
 import RadioBtnGroup from './components/RadioBtnGroup'
+import ReviewsBlock from './components/ReviewsBlock'
 import SizeSelector from './components/SizeSelector'
 
-export default function ProductDescription({ product }: { product?: Product }) {
+export default function ProductDescription({
+  product,
+  reviews,
+  isReviewsLoading,
+  isReviewsError
+}: {
+  product?: Product
+  reviews?: any[]
+  isReviewsLoading: boolean
+  isReviewsError: boolean
+}) {
   const defaultSize: string =
-    product?.sizeDetails[0].toString() ?? 'The item is out of stock'
-  const [selectedSize, setSelectedSize] = useLocalStorage(
-    'selectedSize',
-    defaultSize
-  )
+    product?.sizeDetails?.[0]?.toString() ?? 'The item is out of stock'
+  const [selectedSize, setSelectedSize] = useState(defaultSize)
 
-  if (!product) return null
+  if (!product) return notFound()
+
   const finalPrice = product.discountPercent
     ? product.price - (product.price * product.discountPercent) / 100
     : product.price
-  const sizes = product.sizeDetails
+  const sizes = product.sizeDetails ?? []
 
   const handleSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedSize(event.target.value)
@@ -55,6 +64,11 @@ export default function ProductDescription({ product }: { product?: Product }) {
       />
       <ButtonsBlock />
       <ProductDescriptionAccordion product={product} />
+      <ReviewsBlock
+        reviews={reviews}
+        isReviewsLoading={isReviewsLoading}
+        isReviewsError={isReviewsError}
+      />
     </div>
   )
 }

@@ -10,9 +10,9 @@ export default function ButtonsBlock() {
   }
 
   return (
-    <div className='flex gap-1 py-3'>
+    <div className='flex flex-col gap-1 py-3 md:flex-row'>
       <SquareButton
-        className='flex w-60 justify-center gap-2 rounded-sm bg-black py-4 text-white
+        className='flex w-full justify-center gap-2 rounded-sm bg-black py-4 text-white
           hover:bg-grey-400'
         onClick={handlerAddToCard}
         type='button'>
@@ -28,8 +28,8 @@ export default function ButtonsBlock() {
       </SquareButton>
 
       <SquareButton
-        className='flex w-60 justify-center gap-2 rounded-sm border-2 border-solid
-          border-brown-accent bg-white py-4 hover:bg-brown-accent'
+        className='border-brown-accent hover:bg-brown-accent flex w-full justify-center gap-2
+          rounded-sm border-2 border-solid bg-white py-4'
         onClick={handlerAddToWishlist}
         type='button'>
         <Icon
@@ -45,4 +45,3 @@ export default function ButtonsBlock() {
     </div>
   )
 }
-

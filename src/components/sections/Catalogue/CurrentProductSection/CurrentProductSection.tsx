@@ -1,6 +1,7 @@
 'use client'
 
 import getProductBySlug from '@/actions/getProductBySlug'
+import getReviewsByProductSlug from '@/actions/getReviewsByProductSlug'
 import { Product } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import { notFound } from 'next/navigation'
@@ -24,6 +25,16 @@ export default function CurrentProductSection({
     queryKey: ['products', slug],
     staleTime: 1000 * 60 * 60 * 24 * 3,
     queryFn: async () => await getProductBySlug(slug)
+  })
+
+  const {
+    data: reviews,
+    isLoading: isReviewsLoading,
+    error: reviewsError
+  } = useQuery<any[]>({
+    queryKey: ['reviews', slug],
+    staleTime: 1000 * 60 * 60 * 24 * 3,
+    queryFn: async () => await getReviewsByProductSlug(data?.slug ?? '')
   })
 
   if (error) notFound()
@@ -62,7 +73,12 @@ export default function CurrentProductSection({
           </MediaContextProvider>
           <ProductImages media={data?.media} />
         </div>
-        <ProductDescription product={data} />
+        <ProductDescription
+          product={data}
+          reviews={reviews?.data}
+          isReviewsLoading={isReviewsLoading}
+          isReviewsError={!!reviewsError}
+        />
       </div>
     </section>
   )
