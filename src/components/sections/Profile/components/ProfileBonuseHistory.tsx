@@ -7,8 +7,10 @@ export default function ProfileBonuseHistory({
 }: {
   userData: User | undefined
 }) {
+  console.log(userData)
+
   //use userData?.bonusesHistory after it is done on Back-end
-  
+
   const bonusesHistory = [
     {
       amount: 1234,

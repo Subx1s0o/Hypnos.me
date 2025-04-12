@@ -7,8 +7,10 @@ export default function ProfileOrderItem({ data }: { data: Order[] }) {
     if (order.discountPercent) {
       const finalPrice: number =
         order.price - (order.price * order.discountPercent) / 100
+
       return formatPrice(finalPrice)
     }
+
     return formatPrice(order.price)
   }
 
@@ -25,7 +27,7 @@ export default function ProfileOrderItem({ data }: { data: Order[] }) {
                 alt={order.title}
                 width={68}
                 height={104}
-                className='h-full w-full rounded-[2px] object-cover'
+                className='size-full rounded-[2px] object-cover'
               />
             </div>
             <div className='flex flex-col justify-between'>

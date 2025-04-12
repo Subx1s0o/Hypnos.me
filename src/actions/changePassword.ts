@@ -1,4 +1,3 @@
-import { ChangePasswordType } from '@/types/user'
 import { AxiosError, AxiosResponse } from 'axios'
 
 import { NewPasswordType } from '@/components/forms/schema/user-data-schema'
