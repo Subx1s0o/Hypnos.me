@@ -38,3 +38,8 @@ type CartItemCleaned = {
     media?: { main: { url: string } }
   }
 }
+
+export type ChangePasswordType = {
+  oldPassword: string
+  newPassword: string
+}

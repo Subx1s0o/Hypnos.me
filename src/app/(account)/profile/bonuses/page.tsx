@@ -6,7 +6,7 @@ import {
   QueryClient
 } from '@tanstack/react-query'
 
-import BonusesPage from '@/components/sections/Profile/ProfilePages/Bonuses'
+import BonusesPage from '@/components/sections/Profile/ProfilePages/BonusesPage'
 
 export default function Bonuses() {
   const queryClient = new QueryClient()

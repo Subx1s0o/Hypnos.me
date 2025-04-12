@@ -35,6 +35,7 @@ export default {
         grey: {
           light: '#F3F1EF',
           '200': '#E8E6E5',
+          '250': '#6F6F6F',
           normal: '#555555',
           '300': '#393939',
           '400': '#4E453E',

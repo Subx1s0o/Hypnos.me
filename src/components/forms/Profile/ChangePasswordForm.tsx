@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { changePassword } from '@/actions/changePassword'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
@@ -15,7 +16,17 @@ export default function ChangePasswordForm() {
   })
   const [showPassword, setShowPassword] = useState(false)
   const [showRepeatPassword, setShowRepeatPassword] = useState(false)
-  const onSubmit = () => {}
+
+  const onSubmit = async (data: NewPasswordType) => {
+    const passwordRes = await changePassword(data)
+    console.log(data)
+
+    if (passwordRes.error) {
+      alert(passwordRes.error.message)
+
+      return
+    }
+  }
 
   return (
     <>
@@ -26,7 +37,7 @@ export default function ChangePasswordForm() {
           <div className='w-full xxl:w-1/2'>
             <FormInput
               label='NEW PASSWORD'
-              name='newPassword'
+              name='oldPassword'
               control={control}
               type={showPassword ? 'text' : 'password'}
               isPasswordField={true}
@@ -38,7 +49,7 @@ export default function ChangePasswordForm() {
           <div className='w-full xxl:w-1/2'>
             <FormInput
               label='REPEAT NEW PASSWORD'
-              name='repeatNewPassword'
+              name='newPassword'
               control={control}
               type={showRepeatPassword ? 'text' : 'password'}
               isPasswordField={true}
