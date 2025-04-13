@@ -10,7 +10,7 @@ export default function ImagesArticle({ media }: { media?: MediaObject }) {
     useEmblaCarouselWithThumbs()
 
   return (
-    <div className='size-full overflow-hidden rounded-md border p-2 lg:max-w-screen-sm'>
+    <div className='size-full overflow-hidden rounded-md border p-2'>
       <div
         className='mb-4 overflow-hidden'
         ref={emblaMainRef}>

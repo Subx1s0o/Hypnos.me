@@ -5,25 +5,12 @@ import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
 import { notFound } from 'next/navigation'
 
-import { Media, MediaContextProvider } from '@/components/helpers/Media'
-
 import ButtonsBlock from './components/ButtonsBlock'
 import ProductDescriptionAccordion from './components/ProductDescriptionAccordion/ProductDescriptionAccordeon'
 import RadioBtnGroup from './components/RadioBtnGroup'
-import ReviewsBlock from './components/ReviewsBlock'
 import SizeSelector from './components/SizeSelector'
 
-export default function ProductDescription({
-  product,
-  reviews,
-  isReviewsLoading,
-  isReviewsError
-}: {
-  product?: Product
-  reviews?: any[]
-  isReviewsLoading: boolean
-  isReviewsError: boolean
-}) {
+export default function ProductDescription({ product }: { product?: Product }) {
   const defaultSize: string =
     product?.sizeDetails?.[0]?.toString() ?? 'The item is out of stock'
   const [selectedSize, setSelectedSize] = useState(defaultSize)
@@ -66,15 +53,6 @@ export default function ProductDescription({
       />
       <ButtonsBlock />
       <ProductDescriptionAccordion product={product} />
-      <MediaContextProvider>
-        <Media lessThan='md'>
-          <ReviewsBlock
-            reviews={reviews}
-            isReviewsLoading={isReviewsLoading}
-            isReviewsError={isReviewsError}
-          />
-        </Media>
-      </MediaContextProvider>
     </div>
   )
 }

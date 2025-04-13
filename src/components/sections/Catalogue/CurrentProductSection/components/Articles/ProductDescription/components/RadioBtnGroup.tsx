@@ -42,9 +42,9 @@ export default function RadioBtnGroup() {
                   className={`absolute z-10 size-3 shrink-0 rounded-full
                   ${selectedSample === sample ? 'bg-brown-light' : 'bg-white'}`}></div>
               </RadioButton>
-              <div className='flex items-center'>
+              <div className='flex items-center text-sm text-grey-300'>
                 <p className='mx-1'>{sample}</p>
-                <Media greaterThanOrEqual='md'>
+                <Media greaterThanOrEqual='xmd'>
                   <p>sample</p>
                 </Media>
               </div>

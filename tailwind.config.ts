@@ -39,17 +39,21 @@ export default {
           normal: '#555555',
           '300': '#393939',
           '400': '#4E453E',
-          dark: '#3C3C3C'
+          dark: '#3C3C3C',
+          hover: '#3A312A80'
         },
         black: '#1B1716',
         'black-hover': '#2F2D2A',
         cream: '#E5DCD4',
         primary: '#CCC0B180',
-        brown: '#B99376',
-        'brown-active': '#a68b77',
-        'brown-accent': '#E7BF8E',
-        'brown-light': '#C3AD9C',
-        'brown-dark': '#2B2724',
+        brown: {
+          DEFAULT: '#B99376',
+          active: '#a68b77',
+          accent: '#E7BF8E',
+          light: '#C3AD9C',
+          dark: '#2B2724',
+          hover: '#D9AF7C'
+        },
         error: '#bf2313'
       },
       fontSize: {
