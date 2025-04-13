@@ -5,6 +5,8 @@ import { formatPrice } from '@/lib/formatPrice'
 import { Product } from '@/types'
 import { notFound } from 'next/navigation'
 
+import { Media, MediaContextProvider } from '@/components/helpers/Media'
+
 import ButtonsBlock from './components/ButtonsBlock'
 import ProductDescriptionAccordion from './components/ProductDescriptionAccordion/ProductDescriptionAccordeon'
 import RadioBtnGroup from './components/RadioBtnGroup'
@@ -64,11 +66,15 @@ export default function ProductDescription({
       />
       <ButtonsBlock />
       <ProductDescriptionAccordion product={product} />
-      <ReviewsBlock
-        reviews={reviews}
-        isReviewsLoading={isReviewsLoading}
-        isReviewsError={isReviewsError}
-      />
+      <MediaContextProvider>
+        <Media lessThan='md'>
+          <ReviewsBlock
+            reviews={reviews}
+            isReviewsLoading={isReviewsLoading}
+            isReviewsError={isReviewsError}
+          />
+        </Media>
+      </MediaContextProvider>
     </div>
   )
 }
