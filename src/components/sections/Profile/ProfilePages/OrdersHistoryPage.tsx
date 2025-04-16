@@ -37,10 +37,24 @@ export default function OrdersHistoryPage() {
       price: 25000,
       purchaseDate: '01.07.2024',
       discountPercent: 10,
-      isPriceForPair: false,
+      isPriceForPair: true,
       media: {
         main: {
-          url: 'https://labanque.com.ua/image/cache/catalog/Photos/Chaumet/085184-054/2048/085184-054_2-280x392.jpg',
+          url: 'https://roelaviatelier.com/cdn/shop/products/IMG_0712_b630274f-f72b-4c75-839a-0172f583fe02.jpg?v=1638687684',
+          status: 'fulfilled'
+        }
+      }
+    },
+    {
+      id: '12345',
+      title: 'Super Awesome Stages of Love',
+      price: 25000,
+      purchaseDate: '10.07.2024',
+      isPriceForPair: false,
+      discountPercent: 5,
+      media: {
+        main: {
+          url: 'https://www.mouawad.com/dw/image/v2/BJJG_PRD/on/demandware.static/-/Library-Sites-MouawadSharedLibrary/default/dw8e549b86/M-CLASSIQUE/m-classique-2.png',
           status: 'fulfilled'
         }
       }
@@ -49,18 +63,20 @@ export default function OrdersHistoryPage() {
 
   return (
     <section>
-      <div className='mb-16 flex flex-col gap-2 font-manrope md:flex-row md:items-center md:gap-4'>
-        <span className='flex size-8 items-center justify-center rounded-full bg-grey-light'>
-          <Icon
-            id='icon-cart'
-            w={16}
-            h={16}
-            className='text-black'
-          />
-        </span>
-        <h2 className='mb-6 text-base-big xxl:font-semibold xxl:leading-[32px]'>
-          Order History
-        </h2>
+      <div className='mb-16 flex flex-col gap-8 font-manrope'>
+        <div className='flex flex-col gap-2 md:flex-row md:items-center md:gap-4'>
+          <span className='flex size-8 items-center justify-center rounded-full bg-grey-light'>
+            <Icon
+              id='icon-cart-filled'
+              w={16}
+              h={16}
+              className='text-black'
+            />
+          </span>
+          <h2 className='text-base-big xxl:font-semibold xxl:leading-[32px]'>
+            Order History
+          </h2>
+        </div>
         <ul className='flex flex-col gap-3'>
           {data && <ProfileOrderItem data={data} />}
         </ul>

@@ -30,24 +30,26 @@ export default function ProfileBonuseHistory({
   ]
 
   return (
-    <div className='flex flex-col gap-2 font-manrope md:flex-row md:items-center md:gap-4'>
-      <span className='flex size-8 items-center justify-center rounded-full bg-grey-light'>
-        <Icon
-          id='icon-wallet-filled'
-          w={16}
-          h={16}
-          className='text-black'
-        />
-      </span>
-      <h2 className='mb-6 text-base-big xxl:font-semibold xxl:leading-[32px]'>
-        Order Bonus History
-      </h2>
+    <div className='flex flex-col gap-8 font-manrope'>
+      <div className='flex flex-col gap-2 md:flex-row md:items-center md:gap-4'>
+        <span className='flex size-8 items-center justify-center rounded-full bg-grey-light'>
+          <Icon
+            id='icon-wallet-filled'
+            w={16}
+            h={16}
+            className='text-black'
+          />
+        </span>
+        <h2 className='text-base-big xxl:font-semibold xxl:leading-[32px]'>
+          Order Bonus History
+        </h2>
+      </div>
       {bonusesHistory && bonusesHistory.length > 0 ? (
-        <ul className='flex flex-col gap-8 text-base md:gap-[14px]'>
+        <ul className='mb-16 flex flex-col gap-8 text-base md:mb-[47px] xmd:gap-[14px]'>
           {bonusesHistory.map((item, index) => (
             <li
               key={index}
-              className='flex flex-col gap-2 md:flex-row md:items-stretch md:gap-0'>
+              className='flex flex-col gap-2 xmd:flex-row xmd:items-stretch xmd:gap-0'>
               <p>+{item.amount}</p>
               <p>{item.description}</p>
               <p>{item.receivedDate}</p>

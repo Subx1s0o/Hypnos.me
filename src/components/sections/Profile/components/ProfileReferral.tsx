@@ -26,43 +26,48 @@ export default function ProfileReferral({
   }
 
   return (
-    <div className='flex flex-col gap-2 font-manrope md:flex-row md:items-center md:gap-4'>
-      <span className='flex size-8 items-center justify-center rounded-full bg-grey-light'>
-        <Icon
-          id='icon-wallet-filled'
-          w={16}
-          h={16}
-          className='text-black'
-        />
-      </span>
-      <h2 className='mb-6 text-base-big xxl:font-semibold xxl:leading-[32px]'>
-        Referral Link
-      </h2>
-      <div
-        className='text-grey-250 w-full rounded-[3px] bg-grey-light p-[21px] text-base
-          font-semibold leading-[100%]'>
-        <p>{linkText}</p>
+    <div className='flex flex-col gap-8 font-manrope'>
+      <div className='flex flex-col gap-2 md:flex-row md:gap-4'>
+        <span className='flex size-8 items-center justify-center rounded-full bg-grey-light'>
+          <Icon
+            id='icon-wallet-filled'
+            w={16}
+            h={16}
+            className='text-black'
+          />
+        </span>
+        <h2 className='text-base-big xxl:font-semibold xxl:leading-[32px]'>
+          Referral Link
+        </h2>
       </div>
-      <button
-        type='button'
-        onClick={handleCopy}
-        className='mb-6 flex items-center gap-1 text-left text-xs font-extrabold uppercase'>
-        {copied ? (
-          <>
-            <Icon
-              id='icon-check'
-              w={16}
-              h={16}
-              className='text-green-500'
-            />
-            <span>Copied!</span>
-          </>
-        ) : (
-          <>
-            <span>Copy</span>
-          </>
-        )}
-      </button>
+      <div className='flex flex-col gap-2 md:flex-row md:gap-0'>
+        <div
+          className='text-grey-250 w-full rounded-[3px] bg-grey-light p-[21px] text-base
+            font-semibold leading-[100%] md:rounded-br-none md:rounded-tr-none'>
+          <p>{linkText}</p>
+        </div>
+        <button
+          type='button'
+          onClick={handleCopy}
+          className='flex items-center gap-1 p-6 text-left text-xs font-extrabold uppercase
+            md:rounded-br-[3px] md:rounded-tr-[3px] md:bg-grey-light'>
+          {copied ? (
+            <>
+              <Icon
+                id='icon-check'
+                w={16}
+                h={16}
+                className='text-green-500'
+              />
+              <span>Copied!</span>
+            </>
+          ) : (
+            <>
+              <span>Copy</span>
+            </>
+          )}
+        </button>
+      </div>
       <p className='text-grey-250 text-sm'>
         Send a referral link to your friend. This will earn you and him 30
         points for registering on the site, which can be used within 30 days.
