@@ -50,7 +50,7 @@ export default function BonusesPage() {
             </tr>
           </tbody>
         </table>
-        <div className='gap- flex flex-col gap-2 md:flex-row md:gap-4'>
+        <div className='flex flex-col gap-2 md:flex-row md:gap-4'>
           <div className='rounded-[3px] bg-grey-light p-[18px]'>
             <p className='mb-[26px] text-base-big font-semibold'>20%</p>
             <p className='text-sm'>Of order can be payed by bonuses</p>

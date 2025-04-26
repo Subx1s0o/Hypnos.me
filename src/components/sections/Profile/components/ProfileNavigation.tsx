@@ -72,7 +72,7 @@ export default function ProfileNavigation() {
         ))}
       </ul>
 
-      <hr className='mb-6 hidden max-w-[308px] smd:block smd:w-[80%] md:w-full' />
+      <hr className='mb-6 hidden max-w-[308px] smd:block smd:w-4/5 md:w-full' />
 
       <button
         className='mb-16 flex items-center justify-center gap-3'

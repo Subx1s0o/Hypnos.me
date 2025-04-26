@@ -42,15 +42,15 @@ export default function ProfileReferral({
       </div>
       <div className='flex flex-col gap-2 md:flex-row md:gap-0'>
         <div
-          className='text-grey-250 w-full rounded-[3px] bg-grey-light p-[21px] text-base
-            font-semibold leading-[100%] md:rounded-br-none md:rounded-tr-none'>
+          className='w-full rounded-[3px] bg-grey-light p-[21px] text-base font-semibold
+            leading-[100%] text-grey-250 md:rounded-r-none'>
           <p>{linkText}</p>
         </div>
         <button
           type='button'
           onClick={handleCopy}
           className='flex items-center gap-1 p-6 text-left text-xs font-extrabold uppercase
-            md:rounded-br-[3px] md:rounded-tr-[3px] md:bg-grey-light'>
+            md:rounded-r-[3px] md:bg-grey-light'>
           {copied ? (
             <>
               <Icon
@@ -68,7 +68,7 @@ export default function ProfileReferral({
           )}
         </button>
       </div>
-      <p className='text-grey-250 text-sm'>
+      <p className='text-sm text-grey-250'>
         Send a referral link to your friend. This will earn you and him 30
         points for registering on the site, which can be used within 30 days.
       </p>

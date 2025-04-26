@@ -14,8 +14,8 @@ export default function ChangePasswordForm() {
   const { control, handleSubmit } = useForm<NewPasswordType>({
     resolver: zodResolver(NewPasswordSchema)
   })
-  const [showPassword, setShowPassword] = useState(false)
-  const [showRepeatPassword, setShowRepeatPassword] = useState(false)
+  const [showOldPassword, setShowOldPassword] = useState(false)
+  const [showNewPassword, setShowNewPassword] = useState(false)
 
   const onSubmit = async (data: NewPasswordType) => {
     const passwordRes = await changePassword(data)
@@ -25,6 +25,10 @@ export default function ChangePasswordForm() {
       alert(passwordRes.error.message)
 
       return
+    }
+
+    if (passwordRes.success) {
+      alert('Password changed successfully')
     }
   }
 
@@ -36,27 +40,25 @@ export default function ChangePasswordForm() {
         <div className='flex flex-col gap-8 xxl:flex-row xxl:gap-4'>
           <div className='w-full xxl:w-1/2'>
             <FormInput
-              label='NEW PASSWORD'
+              label='OLD PASSWORD'
               name='oldPassword'
               control={control}
-              type={showPassword ? 'text' : 'password'}
+              type={showOldPassword ? 'text' : 'password'}
               isPasswordField={true}
-              isPasswordShown={showPassword}
-              toggleShowPassword={() => setShowPassword(!showPassword)}
+              isPasswordShown={showOldPassword}
+              toggleShowPassword={() => setShowOldPassword(!showOldPassword)}
             />
           </div>
 
           <div className='w-full xxl:w-1/2'>
             <FormInput
-              label='REPEAT NEW PASSWORD'
+              label='NEW PASSWORD'
               name='newPassword'
               control={control}
-              type={showRepeatPassword ? 'text' : 'password'}
+              type={showNewPassword ? 'text' : 'password'}
               isPasswordField={true}
-              isPasswordShown={showRepeatPassword}
-              toggleShowPassword={() =>
-                setShowRepeatPassword(!showRepeatPassword)
-              }
+              isPasswordShown={showNewPassword}
+              toggleShowPassword={() => setShowNewPassword(!showNewPassword)}
             />
           </div>
         </div>
