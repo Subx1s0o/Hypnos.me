@@ -7,12 +7,14 @@ type FormInputProps = ComponentProps<'input'> & {
   control: Control<any>
   label?: string
   name: string
+  placeholder?: string
 }
 export default function FormInput({
   control,
   name,
   label,
   className,
+  placeholder,
   ...inputProps
 }: FormInputProps) {
   const {
@@ -26,6 +28,7 @@ export default function FormInput({
       )}
       <input
         autoComplete='on'
+        placeholder={placeholder}
         {...control.register(name)}
         {...inputProps}
         className={cn(

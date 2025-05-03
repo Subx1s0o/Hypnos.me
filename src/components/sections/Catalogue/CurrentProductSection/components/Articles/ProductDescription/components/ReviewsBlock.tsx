@@ -45,7 +45,7 @@ export default function ReviewsBlock({
   const reviewsLength = reviews?.length ?? 0
 
   return (
-    <div className='grid'>
+    <div className='grid w-full'>
       <div className='mb-4 flex items-center justify-between'>
         <h3 className='text-base-big'>Reviews</h3>
         <p className='text-base'>{reviewsLength} review</p>
@@ -55,7 +55,7 @@ export default function ReviewsBlock({
         <div className='flex h-[154px] w-full items-center justify-center'>
           <p>loading...</p>
         </div>
-      ) : (
+      ) : reviewsLength > 0 ? (
         <>
           <div
             ref={emblaRef}
@@ -90,30 +90,30 @@ export default function ReviewsBlock({
             </ul>
           </div>
 
-          <div className='mb-4 flex h-6 justify-center gap-2'>
-            {reviews?.map((_, index) => (
-              <div
-                key={index}
-                className='size-3'>
-                <button
-                  className={`size-2 rounded-full
-                    ${selectedIndex === index ? 'bg-brown-hover' : 'bg-grey-hover'}`}
-                  onClick={() => emblaApi?.scrollTo(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              </div>
-            ))}
-          </div>
+          {reviewsLength > 1 && (
+            <ul className='mb-4 flex h-6 justify-center gap-2'>
+              {reviews?.map((_, index) => (
+                <li
+                  key={index}
+                  className='size-3'>
+                  <button
+                    className={`size-2 rounded-full
+                      ${selectedIndex === index ? 'bg-brown-hover' : 'bg-grey-hover'}`}
+                    onClick={() => emblaApi?.scrollTo(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                </li>
+              ))}
+            </ul>
+          )}
         </>
-      )}
-
-      {reviewsLength === 0 && (
-        <div className='flex items-center justify-center'>
+      ) : (
+        <div className='flex h-[154px] items-center justify-center'>
           <p className='text-sm text-grey-400'>No reviews yet</p>
         </div>
       )}
 
-      <div className='bg-grey-200 p-4'>
+      <div className='mb-5 bg-grey-light p-4'>
         <h3 className='text-base'>Leave a review</h3>
         <LeaveReviewForm />
       </div>

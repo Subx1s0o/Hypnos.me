@@ -19,7 +19,6 @@ export default function RadioBtnGroup() {
 
   const handleVariantChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedSample(event.target.value)
-    console.log('selected sample:', event.target.value)
   }
 
   return (

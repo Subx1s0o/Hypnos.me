@@ -85,7 +85,9 @@ export default function CurrentProductSection({
             </div>
           </div>
           <ProductDescription product={data} />
-          <Media lessThan='md'>
+          <Media
+            lessThan='md'
+            className='w-full'>
             <ReviewsBlock
               reviews={reviews?.data}
               isReviewsLoading={isReviewsLoading}
