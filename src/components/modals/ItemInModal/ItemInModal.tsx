@@ -43,7 +43,7 @@ export default function ItemInModal({
               text-black'>
             {title}
           </h3>
-          <Rating initialRating={2} />
+          <Rating  />
           <div className='flex items-center justify-between'>
             {discountPercent ? (
               <div className='flex items-center'>

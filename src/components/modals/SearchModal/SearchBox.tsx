@@ -14,7 +14,18 @@ interface SearchResultProps {
   isLoading: boolean
   data: Product[] | null
 }
-
+function SearchSkeleton() {
+  return (
+    <div className='flex flex-col gap-2'>
+      {[...Array(3)].map((_, idx) => (
+        <div
+          key={idx}
+          className='h-24 w-full animate-pulse rounded-md bg-gray-200'
+        />
+      ))}
+    </div>
+  )
+}
 function SearchResult({ isLoading, data }: SearchResultProps) {
   return (
     <div className='z-10 bg-white md:absolute md:left-0 md:top-[200px] md:w-full'>
@@ -84,7 +95,9 @@ export default function SearchBox() {
 
   return (
     <>
-      <form className='relative mb-6 flex w-full md:m-auto md:mb-4 md:w-[490px]'>
+      <form
+        className='relative mb-6 flex w-full md:m-auto md:mb-4 md:w-[490px]'
+        onSubmit={e => e.preventDefault()}>
         <input
           className='h-[48px] w-full rounded-[4px] border border-grey-200 bg-white pl-12 text-sm
             outline-none focus-visible:border-black'
@@ -113,11 +126,17 @@ export default function SearchBox() {
           </button>
         )}
       </form>
-      {data && data.data && data.data.length > 0 && (
-        <SearchResult
-          data={data.data}
-          isLoading={isLoading}
-        />
+      {isLoading ? (
+        <SearchSkeleton />
+      ) : (
+        data &&
+        data.data &&
+        data.data.length > 0 && (
+          <SearchResult
+            data={data.data}
+            isLoading={isLoading}
+          />
+        )
       )}
     </>
   )

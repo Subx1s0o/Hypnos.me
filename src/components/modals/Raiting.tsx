@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Icon from '../ui/Icon'
 
@@ -16,7 +16,7 @@ const StarEmptyIcon: React.FC = () => {
 const StarFilledIcon: React.FC = () => {
   return (
     <Icon
-      className='text-brown-details size-5 hover:text-brown-light'
+      className='size-5 text-brown-details hover:text-brown-light'
       id='icon-star-full'
       h={16}
       w={16}
@@ -25,32 +25,22 @@ const StarFilledIcon: React.FC = () => {
 }
 
 interface RatingProps {
-  initialRating?: number
+  rating?: number
   maxRating?: number
 }
 
-const Rating: React.FC<RatingProps> = ({
-  initialRating = 0,
-  maxRating = 5
-}) => {
-  const [rating, setRating] = useState<number>(initialRating)
-
-  const handleStarClick = (index: number) => {
-    setRating(index)
-  }
-
+const Rating: React.FC<RatingProps> = ({ rating = 3, maxRating = 5 }) => {
   return (
     <div className='flex space-x-0.5'>
       {[...Array(maxRating)].map((_, index) => {
         const isFull = index < rating
 
         return (
-          <button
+          <div
             key={index}
-            onClick={() => handleStarClick(index + 1)}
             className={`size-5 ${isFull ? 'text-brown-details' : ''} focus:outline-none`}>
             {isFull ? <StarFilledIcon /> : <StarEmptyIcon />}
-          </button>
+          </div>
         )
       })}
     </div>
