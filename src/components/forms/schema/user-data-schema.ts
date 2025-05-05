@@ -20,6 +20,20 @@ export const UserDataSchema = z.object({
         message: 'Birthday must be in the past'
       }
     )
+    .refine(
+      date => {
+        const selectedDate = new Date(date)
+        const today = new Date()
+
+        const ageInMs = today.getTime() - selectedDate.getTime()
+        const ageInYears = ageInMs / (1000 * 60 * 60 * 24 * 365.25)
+
+        return ageInYears < 100
+      },
+      {
+        message: 'Age must be less than 100 years'
+      }
+    )
 })
 
 export const NewPasswordSchema = z.object({

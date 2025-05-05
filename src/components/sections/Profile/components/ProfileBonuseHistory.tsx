@@ -3,12 +3,11 @@ import { User } from '@/types/user'
 import Icon from '@/components/ui/Icon'
 
 export default function ProfileBonuseHistory({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   userData
 }: {
   userData: User | undefined
 }) {
-  console.log(userData)
-
   //use userData?.bonusesHistory after it is done on Back-end
 
   const bonusesHistory = [

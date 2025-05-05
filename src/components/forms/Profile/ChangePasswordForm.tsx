@@ -19,7 +19,6 @@ export default function ChangePasswordForm() {
 
   const onSubmit = async (data: NewPasswordType) => {
     const passwordRes = await changePassword(data)
-    console.log(data)
 
     if (passwordRes.error) {
       alert(passwordRes.error.message)

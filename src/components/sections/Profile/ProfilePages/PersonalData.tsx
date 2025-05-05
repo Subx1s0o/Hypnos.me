@@ -14,8 +14,6 @@ export default function PersonalData() {
     staleTime: 1000 * 60 * 60
   })
 
-  console.log(data)
-
   return (
     <section>
       <div className='mb-8 flex flex-col gap-2 md:flex-row md:items-center md:gap-4'>

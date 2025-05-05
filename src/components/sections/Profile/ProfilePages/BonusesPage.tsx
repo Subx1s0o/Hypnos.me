@@ -16,8 +16,6 @@ export default function BonusesPage() {
     staleTime: 1000 * 60 * 60
   })
 
-  // console.log(userData)
-
   return (
     <section>
       <div className='mb-16 flex flex-col gap-8 font-manrope smd:mb-12'>
