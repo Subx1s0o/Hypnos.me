@@ -62,7 +62,8 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
       <button
         type='submit'
         className='flex w-full items-center rounded-[3px] bg-black px-4 py-[19px] text-xs
-          font-extrabold uppercase text-white xxl:w-1/2'>
+          font-extrabold uppercase text-white transition-colors hover:bg-black-hover
+          focus:bg-black-hover xxl:w-1/2'>
         <span className='grow text-center'>Save changes</span>
         <span className='ml-2 flex size-6 items-center justify-center rounded-full bg-white'>
           <Icon

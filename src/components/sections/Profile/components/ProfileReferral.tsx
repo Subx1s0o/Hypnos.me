@@ -42,8 +42,8 @@ export default function ProfileReferral({
       </div>
       <div className='flex flex-col gap-2 md:flex-row md:gap-0'>
         <div
-          className='w-full rounded-[3px] bg-grey-light p-[21px] text-base font-semibold
-            leading-[100%] text-grey-250 md:rounded-r-none'>
+          className='flex w-full items-center rounded-[3px] bg-grey-light p-[21px] text-base
+            font-semibold leading-[100%] text-grey-250 md:rounded-r-none md:p-0 md:pl-[21px]'>
           <p>{linkText}</p>
         </div>
         <button

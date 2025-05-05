@@ -34,22 +34,23 @@ export default function BonusesPage() {
             Bonuses
           </h2>
         </div>
-        <table className='w-full'>
-          <thead>
-            <tr className='p-0 text-left'>
-              <th className='text-sm text-grey-normal'>Your bonuses</th>
-              <th className=''></th>
-              <th className='text-sm text-grey-normal'>100 bonuses = 1 $</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className='p-0 text-left text-smd xxs:text-[48px] smd:text-lg smd:font-normal'>
-              <td className='p-0'>{userData?.bonuses}</td>
-              <td className='p-0 px-2'>=</td>
-              <td className='p-0'>{userData?.bonuses} $</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className='flex w-full gap-4'>
+          <div>
+            <p className='text-sm text-grey-normal'>Your bonuses</p>
+            <p className='p-0 text-left text-smd xxs:text-[48px] smd:text-lg smd:font-normal'>
+              {userData?.bonuses}
+            </p>
+          </div>
+          <div className='self-end p-0 text-left text-smd xxs:text-[48px] smd:text-lg smd:font-normal'>
+            =
+          </div>
+          <div>
+            <p className='text-sm text-grey-normal'>100 bonuses = 1 $</p>
+            <p className='p-0 text-left text-smd xxs:text-[48px] smd:text-lg smd:font-normal'>
+              {userData?.bonuses} $
+            </p>
+          </div>
+        </div>
         <div className='flex flex-col gap-2 md:flex-row md:gap-4'>
           <div className='rounded-[3px] bg-grey-light p-[18px]'>
             <p className='mb-[26px] text-base-big font-semibold'>20%</p>
