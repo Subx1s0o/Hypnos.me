@@ -5,7 +5,7 @@ import { Provider as TooltipProvider } from '@radix-ui/react-tooltip'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
-import { ModalProvider } from '@/components/helpers/ModalContext'
+import { ModalProvider } from '@/components/context/ModalContext'
 
 export default function Providers({ children }: PropsWithChildren) {
   const queryClient = new QueryClient()

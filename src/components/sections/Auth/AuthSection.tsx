@@ -11,7 +11,9 @@ export default function AuthSection({ children }: PropsWithChildren) {
   const router = useRouter()
 
   return (
-    <section className='relative h-[calc(100vh-140px)] gap-[50px] xl:pl-[105px] xl:pr-[155px]'>
+    <section
+      className='relative mx-auto h-[calc(100vh-140px)] max-w-screen-xxl gap-[50px] xl:pl-[105px]
+        xl:pr-[155px]'>
       <MediaContextProvider>
         <Media greaterThanOrEqual='sm'>
           <button

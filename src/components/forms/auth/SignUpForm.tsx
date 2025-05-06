@@ -1,19 +1,35 @@
 'use client'
 
-import { SignUpSchema, SignUpType } from '@/schema/auth-schemas'
+import { register } from '@/actions'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as Checkbox from '@radix-ui/react-checkbox'
 import Link from 'next/link'
-import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/navigation'
+import { SubmitHandler, useForm } from 'react-hook-form'
 
+import {
+  SignUpSchema,
+  SignUpType
+} from '@/components/forms/schema/auth-schemas'
 import FormInput from '@/components/ui/FormInput'
 import Icon from '@/components/ui/Icon'
 
 export default function SignUpForm() {
-  const { control, handleSubmit } = useForm<SignUpType>({
+  const {
+    control,
+    watch,
+    setValue,
+    handleSubmit,
+    formState: { isSubmitting }
+  } = useForm<SignUpType>({
     resolver: zodResolver(SignUpSchema)
   })
-  const onSubmit = () => {}
+  const isSubscribed = watch('subscribed', true)
+  const router = useRouter()
+  const onSubmit: SubmitHandler<SignUpType> = async data => {
+    await register(data)
+    router.replace('/')
+  }
 
   return (
     <div className='w-full sm:w-[370px] xxl:w-[450px]'>
@@ -26,9 +42,15 @@ export default function SignUpForm() {
         <div className='flex flex-col gap-4'>
           <FormInput
             control={control}
-            label='name'
+            label='First name'
             placeholder='John Conan'
-            name='name'
+            name='firstName'
+          />
+          <FormInput
+            control={control}
+            label='Second name'
+            placeholder='John Conan'
+            name='secondName'
           />
           <FormInput
             control={control}
@@ -53,15 +75,26 @@ export default function SignUpForm() {
         </div>
         <button
           type='submit'
+          disabled={isSubmitting}
           className='w-full rounded bg-black py-5 text-xs font-bold text-white transition-colors
             lg:hover:bg-grey-300'>
-          REGISTER
+          {isSubmitting ? (
+            <p className='flex items-center justify-center gap-5'>
+              REGISTERING...<span className='loader'></span>
+            </p>
+          ) : (
+            'SIGN UP'
+          )}
         </button>
         <div className='relative flex'>
           <Checkbox.Root
             className='absolute left-0 top-1 flex size-6 items-center justify-center rounded border
               border-black'
             defaultChecked
+            checked={!!isSubscribed}
+            onCheckedChange={checked =>
+              setValue('subscribed', checked === true)
+            }
             name='subscribed'
             id='c1'>
             <Checkbox.Indicator>
@@ -78,19 +111,6 @@ export default function SignUpForm() {
             htmlFor='c1'>
             I want to receive discounts and news about new products
           </label>
-        </div>
-        <div className='flex justify-between'>
-          <p className='text-sm text-grey-400'>SIGN UP WITH</p>
-          <button
-            type='button'
-            className='rounded-full bg-brown p-[10px] transition-colors lg:hover:bg-brown-active'>
-            <Icon
-              id='icon-google'
-              className='text-white'
-              w={24}
-              h={24}
-            />
-          </button>
         </div>
       </form>
     </div>
