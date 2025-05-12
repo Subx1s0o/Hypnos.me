@@ -15,9 +15,9 @@ export default function NotFound() {
         alt='404'
         height={140}
         width={305}
-        className='mb-6'
+        className='mb-16 md:h-auto md:w-[366px]'
       />
-      <p className='mb-[236px] text-center text-sm md:mb-[100px]'>
+      <p className='mb-[236px] text-center text-smd md:mb-[100px]'>
         Page not found
       </p>
       <button
@@ -37,15 +37,6 @@ export default function NotFound() {
         </div>
       </button>
       <div className='hidden h-[200px] md:block'></div>
-      <div className='absolute bottom-0 hidden max-h-full max-w-full overflow-hidden md:block'>
-        <Image
-          src='/images/NotFound/405.png'
-          width={1701}
-          height={781}
-          alt='404'
-          className=''
-        />
-      </div>
     </div>
   )
 }
