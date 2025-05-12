@@ -1,18 +1,40 @@
 'use client'
 
+import { useEffect } from 'react'
 import { User } from '@/types/user'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
+import DateInput from '@/components/ui/DateInput'
 import FormInput from '@/components/ui/FormInput'
 import Icon from '@/components/ui/Icon'
 
 import { UserDataSchema, UserDataType } from '../schema/user-data-schema'
 
 export default function UserDataForm({ data }: { data: User | undefined }) {
-  const { control, handleSubmit } = useForm<UserDataType>({
-    resolver: zodResolver(UserDataSchema)
+  const { control, handleSubmit, reset } = useForm<UserDataType>({
+    resolver: zodResolver(UserDataSchema),
+    defaultValues: {
+      firstName: '',
+      secondName: '',
+      email: '',
+      phone: '',
+      birthday: ''
+    },
+    mode: 'onSubmit'
   })
+
+  useEffect(() => {
+    if (data) {
+      reset({
+        firstName: data.firstName || '',
+        secondName: data.secondName || '',
+        email: data.email || '',
+        phone: data.phone || '',
+        birthday: data.birthday ? data.birthday.toISOString().split('T')[0] : ''
+      })
+    }
+  }, [data, reset])
 
   const onSubmit = (data: UserDataType) => {
     console.log('Form submitted:', data)
@@ -28,7 +50,6 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
             label='FIRST NAME'
             name='firstName'
             control={control}
-            defaultValue={data?.firstName}
           />
         </div>
         <div className='w-full xxl:w-1/2'>
@@ -36,7 +57,6 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
             label='SECOND NAME'
             name='secondName'
             control={control}
-            defaultValue={data?.secondName}
           />
         </div>
       </div>
@@ -44,20 +64,18 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
         label='EMAIL'
         name='email'
         control={control}
-        defaultValue={data?.email}
       />
       <FormInput
         label='PHONE'
         name='phone'
         control={control}
-        defaultValue={data?.phone}
+        className='xxl:w-1/2'
       />
-      <FormInput
+
+      <DateInput
         label='BIRTHDAY'
         name='birthday'
-        type='date'
         control={control}
-        defaultValue={data?.birthday?.toISOString().split('T')[0]}
       />
       <button
         type='submit'
