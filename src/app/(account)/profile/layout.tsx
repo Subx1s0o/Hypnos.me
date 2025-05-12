@@ -11,5 +11,11 @@ export default function ProfilePage({ children }: PropsWithChildren) {
     return redirect('/sign-up')
   }
 
-  return <ProfileSection>{children}</ProfileSection>
+  return (
+    <div className='flex min-h-screen w-full flex-col'>
+      <ProfileSection>
+        <div className='min-h-[calc(100vh-300px)] grow'>{children}</div>
+      </ProfileSection>
+    </div>
+  )
 }
