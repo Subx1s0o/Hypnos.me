@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import updateUserInfo from '@/actions/updateUserInfo'
 import { User } from '@/types/user'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -31,13 +32,23 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
         secondName: data.secondName || '',
         email: data.email || '',
         phone: data.phone || '',
-        birthday: data.birthday ? data.birthday.toISOString().split('T')[0] : ''
+        birthday: data.birthday ? String(data.birthday) : ''
       })
     }
   }, [data, reset])
 
-  const onSubmit = (data: UserDataType) => {
-    console.log('Form submitted:', data)
+  const onSubmit = async (data: UserDataType) => {
+    const updateRes = await updateUserInfo(data)
+
+    if (updateRes.error) {
+      alert(updateRes.error.message)
+
+      return
+    }
+
+    if (updateRes.success) {
+      alert('User info updated successfully')
+    }
   }
 
   return (
@@ -73,6 +84,7 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
       />
 
       <DateInput
+        defaultValue={data?.birthday}
         label='BIRTHDAY'
         name='birthday'
         control={control}

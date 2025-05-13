@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { cn } from '@/lib/cn'
 import DatePicker from 'react-datepicker'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
+import coerceDate from '@/lib/coerceDate'
 import { useController } from 'react-hook-form'
 
 interface DateInputProps {
@@ -15,9 +16,11 @@ interface DateInputProps {
   control: any
   dateFormat?: string
   className?: string
+  defaultValue: string | Date | null | undefined
 }
 
 export default function DateInput({
+  defaultValue,
   label,
   name,
   control,
@@ -29,11 +32,27 @@ export default function DateInput({
   } = useController({ control, name })
 
   const { field } = useController({ name, control })
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  const [selectedDate, setSelectedDate] = useState<Date | null>(
+    coerceDate(defaultValue)
+  )
+
+  useEffect(() => {
+    setSelectedDate(coerceDate(defaultValue))
+  }, [defaultValue])
 
   const handleDateChange = (date: Date | null) => {
     setSelectedDate(date)
-    field.onChange(date ? date.toISOString().split('T')[0] : '')
+    if (date && date instanceof Date) {
+      // Format as YYYY-MM-DD string to avoid timezone issues
+      const year = date.getFullYear()
+      const month = String(date.getMonth() + 1).padStart(2, '0')
+      const day = String(date.getDate()).padStart(2, '0')
+      const formattedDate = `${year}-${month}-${day}T00:00:00+00:00`
+
+      field.onChange(formattedDate)
+    } else {
+      field.onChange('')
+    }
   }
 
   return (
@@ -45,6 +64,9 @@ export default function DateInput({
         <DatePicker
           id={name}
           selected={selectedDate}
+          showYearDropdown
+          yearDropdownItemNumber={100}
+          scrollableYearDropdown
           onChange={handleDateChange}
           dateFormat={dateFormat}
           className={cn(
