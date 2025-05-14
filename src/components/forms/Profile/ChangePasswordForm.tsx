@@ -11,7 +11,12 @@ import Icon from '@/components/ui/Icon'
 import { NewPasswordSchema, NewPasswordType } from '../schema/user-data-schema'
 
 export default function ChangePasswordForm() {
-  const { control, handleSubmit } = useForm<NewPasswordType>({
+  const {
+    control,
+    reset,
+    handleSubmit,
+    formState: { isSubmitting }
+  } = useForm<NewPasswordType>({
     resolver: zodResolver(NewPasswordSchema)
   })
   const [showOldPassword, setShowOldPassword] = useState(false)
@@ -29,6 +34,7 @@ export default function ChangePasswordForm() {
     if (passwordRes.success) {
       alert('Password changed successfully')
     }
+    reset({ oldPassword: '', newPassword: '' })
   }
 
   return (
@@ -67,15 +73,21 @@ export default function ChangePasswordForm() {
           className='flex w-full items-center rounded-[3px] bg-black px-4 py-[19px] text-xs
             font-extrabold uppercase text-white transition-colors hover:bg-black-hover
             focus:bg-black-hover xxl:w-1/2'>
-          <span className='grow text-center'>Change Password</span>
-          <span className='ml-2 flex size-6 items-center justify-center rounded-full bg-white'>
+          {isSubmitting ? (
+            <p className='grow text-center'>
+              Changing...<span className='loader'></span>
+            </p>
+          ) : (
+            <p className='grow text-center'>Change Password</p>
+          )}
+          <div className='ml-2 flex size-6 items-center justify-center rounded-full bg-white'>
             <Icon
               id='icon-arrow'
               w={9}
               h={9}
               className='rotate-90 stroke-none text-black'
             />
-          </span>
+          </div>
         </button>
       </form>
     </>

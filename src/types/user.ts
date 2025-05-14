@@ -1,3 +1,5 @@
+import { UserDataType } from '@/components/forms/schema/user-data-schema'
+
 import { Role } from './role'
 
 export type User = {
@@ -42,4 +44,8 @@ type CartItemCleaned = {
 export type ChangePasswordType = {
   oldPassword: string
   newPassword: string
+}
+
+export type UserDataBackendType = Omit<UserDataType, 'birthday'> & {
+  birthday?: string | null | undefined
 }

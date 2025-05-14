@@ -5,6 +5,7 @@ import { cn } from '@/lib/cn'
 import DatePicker from 'react-datepicker'
 
 import 'react-datepicker/dist/react-datepicker.css'
+import './styles/DateInput.css'
 
 import coerceDate from '@/lib/coerceDate'
 import { useController } from 'react-hook-form'
@@ -17,9 +18,11 @@ interface DateInputProps {
   dateFormat?: string
   className?: string
   defaultValue: string | Date | null | undefined
+  placeholder?: string
 }
 
 export default function DateInput({
+  placeholder,
   defaultValue,
   label,
   name,
@@ -62,6 +65,8 @@ export default function DateInput({
       )}
       <div className='relative w-full *:w-full xxl:*:w-1/2'>
         <DatePicker
+          calendarClassName='custom-datepicker'
+          placeholderText={placeholder}
           id={name}
           selected={selectedDate}
           showYearDropdown

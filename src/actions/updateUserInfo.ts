@@ -1,8 +1,8 @@
-import { UserDataType } from '@/components/forms/schema/user-data-schema'
+import { UserDataBackendType } from '@/types/user'
 
 import { apiSecure } from './apiSecure'
 
-export default async function updateUserInfo(data: UserDataType) {
+export default async function updateUserInfo(data: UserDataBackendType) {
   try {
     const response = await apiSecure.put('/user', {
       ...data

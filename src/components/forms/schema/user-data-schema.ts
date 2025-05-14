@@ -7,9 +7,12 @@ export const UserDataSchema = z.object({
   phone: z.string(),
   birthday: z
     .string()
-    .min(1, "This field can't be empty")
+    .optional()
     .refine(
       date => {
+        // If no date is provided (undefined), validation passes
+        if (!date) return true
+
         const selectedDate = new Date(date)
         const today = new Date()
         today.setHours(0, 0, 0, 0)
@@ -22,6 +25,9 @@ export const UserDataSchema = z.object({
     )
     .refine(
       date => {
+        // If no date is provided (undefined), validation passes
+        if (!date) return true
+
         const selectedDate = new Date(date)
         const today = new Date()
 
