@@ -13,7 +13,7 @@ import CartItems from './CartItems'
 export default function CartModal() {
   const { closeModal } = useModal()
 
-  const { cart, message } = useCart()
+  const { cart } = useCart()
   const totalAmount: number = cart.reduce((totalAmount, product) => {
     const { discountPercent, price, cartCount } = product
     const finalPrice = discountPercent
@@ -35,31 +35,36 @@ export default function CartModal() {
 
   return (
     <>
-      <div className='flex max-h-svh flex-col justify-between gap-12 py-8 md:gap-20'>
+      <div className='flex min-h-screen flex-col justify-between'>
         <div className='flex flex-col items-center'>
           <h2
             className='text-center font-cormorant text-2xl font-bold uppercase leading-normal
               text-black'>
             Your cart
           </h2>
-          {message && <p>{message}</p>}
+
           <BlackBadge className='w-9'>{totalCount}</BlackBadge>
         </div>
 
         {cart.length === 0 ? (
-          <p>There is nothing in your cart</p>
+          <div className='flex grow justify-center'>
+            <p className='text-grey-normal'>There is nothing in your cart</p>
+          </div>
         ) : (
           <CartItems products={cart} />
         )}
         <div className='flex flex-col gap-4 pb-20'>
-          <div className='flex justify-between p-4'>
-            <h3
-              className='text-center font-cormorant text-base font-bold uppercase leading-normal
-                text-black'>
-              Total amount
-            </h3>
-            <p>{totalAmount} $</p>
-          </div>
+          {cart.length > 0 && (
+            <div className='flex justify-between p-4'>
+              <h3
+                className='text-center font-cormorant text-base font-bold uppercase leading-normal
+                  text-black'>
+                Total amount
+              </h3>
+              <p>{totalAmount} $</p>
+            </div>
+          )}
+
           <Link
             href='/cart'
             passHref>

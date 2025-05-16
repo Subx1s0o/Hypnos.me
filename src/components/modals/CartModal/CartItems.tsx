@@ -13,7 +13,8 @@ export default function CartItems({ products }: ProductCardProps) {
   const { removeFromCart, increaseQuantity, decreaseQuantity } = useCart()
 
   return (
-    <ul className='flex flex-col gap-4 overflow-y-scroll pr-4'>
+    // <div className='h-[348x]'>
+    <ul className='flex flex-col gap-4 overflow-y-scroll'>
       {products.map((product: Product) => {
         const {
           id: itemId,
@@ -24,35 +25,40 @@ export default function CartItems({ products }: ProductCardProps) {
           cartCount
         } = product
         const { main } = media
+        const finalPrice = discountPercent
+          ? price - (price * discountPercent) / 100
+          : price
 
         return (
           <li
             key={itemId}
-            className='border-b-2 border-grey-200'>
-            <div className='relative flex pb-4'>
+            className='h-max w-full rounded-sm border border-grey-200'>
+            <div className='relative flex h-[104px]'>
               {main.status !== 'rejected' && main.url ? (
                 <ImageWithFallback
                   alt={title}
                   src={main.url}
-                  className='object-cover'
-                  width={100}
-                  height={100}
+                  className='bg-grey-200 object-cover'
+                  width={102}
+                  height={102}
                 />
               ) : (
                 <Image
                   alt={title}
                   src='/images/products/decorative/fallback.avif'
-                  className='object-cover'
-                  width={100}
-                  height={100}
+                  className='bg-grey-200 object-cover'
+                  width={102}
+                  height={102}
                 />
               )}
 
-              <div className='flex w-full flex-col justify-between'>
-                <h3
-                  className='align-middle font-manrope text-sm font-semibold not-italic tracking-tight
-                    text-black'>
-                  {title}
+              <div className='flex w-full flex-col justify-between p-4'>
+                <div>
+                  <h3
+                    className='align-middle font-manrope text-sm font-semibold not-italic tracking-tight
+                      text-black'>
+                    {title}{' '}
+                  </h3>
                   <button onClick={() => removeFromCart({ itemId })}>
                     <Icon
                       className='absolute right-0 top-0'
@@ -61,28 +67,43 @@ export default function CartItems({ products }: ProductCardProps) {
                       w={12}
                     />
                   </button>
-                </h3>
+                </div>
                 <div className='flex justify-between'>
-                  <p className='font-manrope text-sm font-semibold not-italic tracking-tight text-black'>
-                    {price} $
-                  </p>
-                  <div className='flex border-spacing-slide-small gap-1 border-2'>
-                    <button onClick={() => decreaseQuantity({ itemId })}>
-                      -
-                    </button>
-                    {cartCount}
-                    <button
-                      onClick={() => {
-                        increaseQuantity({ itemId })
-                      }}>
-                      +
-                    </button>
+                  <div className='flex items-center justify-between'>
+                    {discountPercent ? (
+                      <div className='flex items-center'>
+                        <p
+                          className='mr-2 font-manrope text-xs font-semibold not-italic tracking-tight
+                            text-grey-400/55 line-through'>
+                          ${price}
+                        </p>
+                        <h2 className='font-manrope text-sm font-semibold not-italic tracking-tight text-black'>
+                          ${finalPrice}
+                        </h2>
+                      </div>
+                    ) : (
+                      <p className='font-manrope text-sm font-semibold not-italic tracking-tight text-black'>
+                        ${price}
+                      </p>
+                    )}
+                    <div className='flex border-spacing-slide-small gap-1 border-2'>
+                      <button onClick={() => decreaseQuantity({ itemId })}>
+                        -
+                      </button>
+                      {cartCount}
+                      <button
+                        onClick={() => {
+                          increaseQuantity({ itemId })
+                        }}>
+                        +
+                      </button>
+                    </div>
+                    {discountPercent && (
+                      <BlackBadge className='flex max-w-20 items-center px-3 py-0.5'>
+                        -{discountPercent}%
+                      </BlackBadge>
+                    )}
                   </div>
-                  {discountPercent && (
-                    <BlackBadge className='flex max-w-20 items-center'>
-                      -{discountPercent}%
-                    </BlackBadge>
-                  )}
                 </div>
               </div>
             </div>

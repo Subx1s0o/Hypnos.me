@@ -1,3 +1,5 @@
+import type { AxiosError } from 'axios'
+
 import { env } from '@/lib/env'
 import { useAuthStore } from '@/store/useAuth'
 import axios from 'axios'
@@ -44,11 +46,19 @@ apiSecure.interceptors.response.use(
           refreshToken: newRefreshToken,
           ...dates
         })
-      } catch (error) {
-        return Promise.reject(error)
-      }
 
-      return apiSecure(originalRequest)
+        return apiSecure(originalRequest)
+      } catch (refreshError) {
+        const axiosError = refreshError as AxiosError<{ message: string }>
+        const errorMessage =
+          axiosError.response?.data?.message || axiosError.message || ''
+
+        if (errorMessage.includes('JWT_EXPIRED')) {
+          useAuthStore.getState().logout()
+        }
+
+        return Promise.reject(axiosError)
+      }
     }
 
     return Promise.reject(error)

@@ -31,9 +31,10 @@ const modals = [
   {
     name: 'search',
     className:
-      'relative w-96 bg-white  shadow-lg lg:h-[320px]  h-full lg:w-full',
+      'relative w-[487px]  bg-white  shadow-lg md:h-[320px]  h-full md:w-full ',
+
     backdrop:
-      'fixed inset-0 z-50 flex justify-end bg-grey-400/75  lg:mt-[130px] bottom-26 md:bottom-0'
+      'fixed inset-0 z-50 flex justify-end bg-grey-400/75  md:mt-[150px] bottom-26 md:bottom-0'
   }
 ]
 
