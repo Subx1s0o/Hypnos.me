@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Product } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
@@ -20,8 +20,21 @@ function SearchSkeleton() {
       {[...Array(3)].map((_, idx) => (
         <div
           key={idx}
-          className='h-24 w-full animate-pulse rounded-md bg-gray-200'
-        />
+          className='h-max w-full rounded-sm border border-grey-200 md:m-auto md:w-[490px]'>
+          <div className='relative flex'>
+            <div className='h-[102px] min-w-[102px] animate-pulse bg-gray-200' />
+
+            <div className='flex w-full flex-col justify-between p-3'>
+              <div className='mb-2 h-4 w-3/5 animate-pulse rounded bg-gray-200' />
+              <div className='mb-4 h-3 w-1/4 animate-pulse rounded bg-gray-200' />
+
+              <div className='flex items-center justify-between'>
+                <div className='h-4 w-1/3 animate-pulse rounded bg-gray-200' />
+                <div className='h-5 w-10 animate-pulse rounded bg-gray-200' />
+              </div>
+            </div>
+          </div>
+        </div>
       ))}
     </div>
   )
@@ -70,24 +83,32 @@ function SearchResult({ isLoading, data }: SearchResultProps) {
 
 export default function SearchBox() {
   const [search, setSearch] = useState('')
-
-  const debouncedSearchTerm = useDebounce(search, 200)
+  const [showSkeleton, setShowSkeleton] = useState(false)
+  const debouncedSearchTerm = useDebounce(search, 400)
 
   const { data = [], isLoading } = useQuery({
     queryKey: ['search', debouncedSearchTerm],
     queryFn: async () => {
-      if (debouncedSearchTerm) {
-        const response = await fetch(
-          `https://hypnos.koyeb.app/goods?search=${debouncedSearchTerm}`
-        )
-        const result = await response.json()
+      const response = await fetch(
+        `https://hypnos.koyeb.app/goods?search=${debouncedSearchTerm}`
+      )
+      const result = await response.json()
 
-        return result || []
-      }
-
-      return []
-    }
+      return result || []
+    },
+    enabled: debouncedSearchTerm.length >= 4
   })
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>
+
+    if (isLoading && debouncedSearchTerm.length >= 4) {
+      timer = setTimeout(() => setShowSkeleton(true), 150) // задержка 150ms
+    } else {
+      setShowSkeleton(false)
+    }
+
+    return () => clearTimeout(timer)
+  }, [isLoading, debouncedSearchTerm])
 
   const clearSearch = () => {
     setSearch('')
@@ -126,7 +147,8 @@ export default function SearchBox() {
           </button>
         )}
       </form>
-      {isLoading ? (
+
+      {showSkeleton ? (
         <SearchSkeleton />
       ) : (
         data &&
