@@ -43,7 +43,8 @@ export default function ProfileReferral({
       <div className='flex flex-col gap-2 md:flex-row md:gap-0'>
         <div
           className='flex w-full items-center rounded-[3px] bg-grey-light p-[21px] text-base
-            font-semibold leading-[100%] text-grey-250 md:rounded-r-none md:p-0 md:pl-[21px]'>
+            font-semibold leading-[100%] text-grey-normal md:rounded-r-none md:p-0
+            md:pl-[21px]'>
           <p>{linkText}</p>
         </div>
         <button
@@ -68,7 +69,7 @@ export default function ProfileReferral({
           )}
         </button>
       </div>
-      <p className='text-sm text-grey-250'>
+      <p className='text-sm text-grey-normal'>
         Send a referral link to your friend. This will earn you and him 30
         points for registering on the site, which can be used within 30 days.
       </p>

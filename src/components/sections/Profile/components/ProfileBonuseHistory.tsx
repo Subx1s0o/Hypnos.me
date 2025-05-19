@@ -48,8 +48,8 @@ export default function ProfileBonuseHistory({
           {bonusesHistory.map((item, index) => (
             <li
               key={index}
-              className='flex flex-col gap-2 xmd:flex-row xmd:items-stretch xmd:gap-0'>
-              <p>+{item.amount}</p>
+              className='flex flex-col gap-2 xmd:flex-row xmd:items-stretch xmd:justify-around xmd:gap-0'>
+              <p className='min-w-[46px]'>+{item.amount}</p>
               <p>{item.description}</p>
               <p>{item.receivedDate}</p>
             </li>
