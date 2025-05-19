@@ -70,7 +70,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
             </h2>
           </div>
         )}
-        <button className='flex items-center justify-center'>
+        <button className='flex h-11 w-12 shrink-0 items-center justify-center'>
           <div className='relative h-6 w-7'>
             <Icon
               id='icon-message-chat'
@@ -85,7 +85,9 @@ export default function ProductDescription({ product }: { product?: Product }) {
             </p>
           </div>
         </button>
-        <RatingStars rating={product?.rating} />
+        <div className='w-full grow'>
+          <RatingStars rating={product?.rating} />
+        </div>
       </div>
       <p className='mb-1 text-sm text-grey-400'>{product.description}</p>
       <RadioBtnGroup />
@@ -94,7 +96,7 @@ export default function ProductDescription({ product }: { product?: Product }) {
         handleSizeChange={handleSizeChange}
         selectedSize={selectedSize}
       />
-      <ButtonsBlock />
+      <ButtonsBlock product={product} />
       <ProductDescriptionAccordion product={product} />
     </div>
   )
