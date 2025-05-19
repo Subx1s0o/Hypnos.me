@@ -106,13 +106,15 @@ export default function UserDataForm({ data }: { data: User | undefined }) {
         control={control}
       />
       <button
+        disabled={isSubmitting}
         type='submit'
-        className='flex w-full items-center rounded-[3px] bg-black px-4 py-[19px] text-xs
-          font-extrabold uppercase text-white transition-colors hover:bg-black-hover
-          focus:bg-black-hover xxl:w-1/2'>
+        className='flex w-full items-center justify-between rounded-[3px] bg-black px-4 py-[19px]
+          text-xs font-extrabold uppercase text-white transition-colors
+          hover:bg-black-hover focus:bg-black-hover xxl:w-1/2'>
         {isSubmitting ? (
-          <p className='grow text-center'>
-            Saving...<span className='loader'></span>
+          <p className='flex grow items-center justify-center gap-4 text-center'>
+            <span>Saving... </span>
+            <span className='loader'></span>
           </p>
         ) : (
           <p className='grow text-center'>Save changes</p>

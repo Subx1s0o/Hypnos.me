@@ -120,7 +120,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             className='grow rounded-sm bg-black px-6 py-3 text-white hover:bg-black-hover'
             onClick={handlerProductClick}>
             {inCart ? (
-              <span className='flex justify-center gap-2'>
+              <span className='flex items-center justify-center gap-2'>
                 <Icon
                   w={16}
                   h={16}
