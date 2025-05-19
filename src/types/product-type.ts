@@ -43,6 +43,7 @@ export type Product = {
   diamondDetails?: DiamondDetails
   sizeDetails?: number[]
   cartCount?: number
+  rating?: number
 }
 
 export type Media = {

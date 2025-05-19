@@ -14,7 +14,7 @@ export default function ProductDescriptionAccordion({
       type='single'
       collapsible
       defaultValue='item-1'
-      className='flex flex-col gap-3'>
+      className='mb-8 flex flex-col gap-3'>
       <AccordionItem
         value='item-1'
         iconId='icon-diamant'
