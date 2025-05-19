@@ -21,3 +21,4 @@ export type SpriteTypes =
   | 'icon-review'
   | 'icon-star'
   | 'icon-star-full'
+  | 'icon-message-chat'

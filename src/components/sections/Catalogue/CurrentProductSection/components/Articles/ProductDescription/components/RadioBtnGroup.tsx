@@ -22,7 +22,7 @@ export default function RadioBtnGroup() {
   }
 
   return (
-    <div className='mb-6'>
+    <div className='mb-1'>
       <div className='flex items-center justify-between gap-10'>
         <MediaContextProvider>
           {samples.map(({ id, sample }) => (
@@ -31,15 +31,16 @@ export default function RadioBtnGroup() {
               className='flex items-center'>
               <RadioButton
                 classNameLabel={`shrink-0 flex relative size-5 rounded-full items-center justify-center border-2
-            text-sm ${selectedSample === sample ? 'border-brown-light ' : 'border-grey-normal'} `}
+            text-sm ${selectedSample === sample ? 'border-brown-hover ' : 'border-grey-hover'} `}
                 value={sample}
                 selected={selectedSample}
+                selectedBgColor='bg-white'
                 name='sample'
                 onChange={handleVariantChange}
                 classNameInput='absolute inset-0 cursor-pointer opacity-0'>
                 <div
                   className={`absolute z-10 size-3 shrink-0 rounded-full
-                  ${selectedSample === sample ? 'bg-brown-light' : 'bg-white'}`}></div>
+                  ${selectedSample === sample ? 'bg-brown-hover' : 'bg-white'}`}></div>
               </RadioButton>
               <div className='flex items-center text-sm text-grey-300'>
                 <p className='mx-1'>{sample}</p>

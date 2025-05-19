@@ -6,6 +6,7 @@ interface RadioButtonProps {
   name: string
 
   selected: string | number
+  selectedBgColor?: string
   classNameLabel?: string
   classNameInput?: string
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
@@ -15,6 +16,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   children,
   value,
   selected,
+  selectedBgColor,
   name,
   onChange,
   classNameLabel,
@@ -23,7 +25,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   return (
     <label
       className={`cursor-pointer items-center justify-center transition-all duration-200
-        ${classNameLabel} ${selected === value ? 'bg-brown-accent/50' : ''} `}>
+        ${classNameLabel} ${selected === value ? `${selectedBgColor}` : ''} `}>
       <input
         type='radio'
         name={name}

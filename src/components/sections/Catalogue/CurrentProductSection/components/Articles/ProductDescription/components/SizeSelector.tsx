@@ -14,7 +14,7 @@ export default function RingSizeSelector({
 }: RingSizeProps) {
   return (
     <div className='mb-3'>
-      <div className='mb-[14px] flex justify-between'>
+      <div className='mb-3 flex justify-between'>
         <h4 className='font-manrope text-sm'>Choose size:</h4>
         <p className='font-manrope text-sm text-brown underline'>
           What is my size?
@@ -27,12 +27,13 @@ export default function RingSizeSelector({
           return (
             <li key={sizeS}>
               <RadioButton
-                classNameLabel={`relative inline-flex shrink-0 text-black h-8 w-10 items-center justify-center border-brown-accent rounded-sm border text-sm
+                classNameLabel={`hover:bg-[#FAF2E8] relative inline-flex shrink-0 text-black h-8 w-10 items-center justify-center border-brown-accent rounded-[2px] border text-sm
               `}
                 key={sizeS}
                 value={sizeS}
                 name='size'
                 selected={selectedSize}
+                selectedBgColor='bg-brown-accent'
                 onChange={handleSizeChange}
                 classNameInput='absolute inset-0 cursor-pointer opacity-0'>
                 <span>{sizeS}</span>
@@ -41,7 +42,6 @@ export default function RingSizeSelector({
           )
         })}
       </ul>
-      {/* <p className='font-manrope text-sm'>Choosed size: {selectedSize}</p> */}
     </div>
   )
 }

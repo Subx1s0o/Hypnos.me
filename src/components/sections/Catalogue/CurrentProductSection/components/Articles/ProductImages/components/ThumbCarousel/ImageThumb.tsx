@@ -39,7 +39,7 @@ export default function ImageThumb({
             {
               'cursor-pointer rounded-lg border-2 border-gray-300 bg-white':
                 isImageLoaded,
-              'border-brown': isImageLoaded && isSelected,
+              'border-brown-accent': isImageLoaded && isSelected,
               'lg:hover:bg-gray-50': isImageLoaded && !isSelected
             }
           )}>
@@ -76,7 +76,7 @@ export default function ImageThumb({
           className={cn(
             'h-1 w-[calc(100%-8px)] rounded-lg bg-gray-300 transition-colors',
             {
-              'bg-brown': isSelected
+              'bg-brown-accent': isSelected
             }
           )}
         />

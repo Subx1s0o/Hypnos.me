@@ -10,10 +10,10 @@ export default function ButtonsBlock() {
   }
 
   return (
-    <div className='flex flex-col gap-1 py-3 md:flex-row'>
+    <div className='flex flex-col gap-3 md:flex-row'>
       <SquareButton
         className='flex w-full justify-center gap-2 rounded-sm bg-black py-4 text-white
-          hover:bg-grey-400'
+          hover:bg-black-hover'
         onClick={handlerAddToCard}
         type='button'>
         <Icon
