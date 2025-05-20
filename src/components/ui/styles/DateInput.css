@@ -1,0 +1,39 @@
+/* Style the header */
+.custom-datepicker .react-datepicker__header {
+  background-color: #f3f1ef;
+  border-bottom: 1px solid #ccc;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* Style the selected day */
+.custom-datepicker .react-datepicker__day--selected,
+.custom-datepicker .react-datepicker__day--keyboard-selected {
+  background-color: #b99376 !important; /* Use !important to override default styles if needed */
+  color: white !important;
+  border-radius: 0.3rem;
+}
+
+/* Style the background of the calendar */
+.custom-datepicker {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the navigation arrows of the calendar */
+.custom-datepicker .react-datepicker__navigation-icon::before {
+  border-right-color: #b99376;
+  border-top-color: #b99376;
+}
+
+.custom-datepicker .react-datepicker__year-read-view--down-arrow {
+  border-right-color: #b99376;
+  border-top-color: #b99376;
+}
+
+/* Style the background of the calendar year dropdown */
+.custom-datepicker .react-datepicker__year-dropdown {
+  background-color: #f3f1ef !important;
+}
