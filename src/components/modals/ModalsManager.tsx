@@ -8,10 +8,16 @@ import { Media, MediaContextProvider } from '@/components/helpers/Media'
 import BurgerModal from './BurgerModal/BurgerModal'
 import CartModal from './CartModal/CartModal'
 import SearchModal from './SearchModal/SearchModal'
+import WishlistModal from './WishlistModal/WishlistModal'
 
 const modals = [
   {
     name: 'cart',
+    className: 'relative size-full bg-white p-6 shadow-lg md:w-[30rem]',
+    backdrop: 'fixed inset-0 z-20 flex items-center justify-end bg-grey-400/75'
+  },
+  {
+    name: 'wishlist',
     className: 'relative size-full bg-white p-6 shadow-lg md:w-[30rem]',
     backdrop: 'fixed inset-0 z-20 flex items-center justify-end bg-grey-400/75'
   },
@@ -88,6 +94,7 @@ export default function ModalManager() {
                   style={style}
                   className={modal.className}>
                   {modal.name === 'cart' && <CartModal />}
+                  {modal.name === 'wishlist' && <WishlistModal />}
                   {modal.name === 'search' && <SearchModal />}
                 </animated.div>
               </div>
@@ -106,6 +113,7 @@ export default function ModalManager() {
                 className={modal.className}>
                 {modal.name === 'burger' && <BurgerModal />}
                 {modal.name === 'cart' && <CartModal />}
+                {modal.name === 'wishlist' && <WishlistModal />}
                 {modal.name === 'search' && <SearchModal />}
               </animated.div>
             </div>

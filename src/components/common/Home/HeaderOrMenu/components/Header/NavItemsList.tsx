@@ -1,5 +1,6 @@
 import React from 'react'
 import useCart from '@/store/cart/cart'
+import useWishlist from '@/store/wishlist/wishlist'
 import Link from 'next/link'
 
 import { navigationData as data } from '@/components/common/Home/HeaderOrMenu/components/data/navigation-data'
@@ -10,6 +11,8 @@ import { Tooltip } from '@/components/ui/Tooltip'
 const NavItemsList = () => {
   const { isModalOpen, toggleModal } = useModal()
   const cartItems = useCart(state => state.cart)
+  const wishlistItems = useWishlist(state => state.wishlist)
+
 
   const totalCount = cartItems.reduce((acc, item) => {
     if (item.cartCount) {
@@ -46,14 +49,27 @@ const NavItemsList = () => {
                     h={18}
                   />
                 </button>
-                {showBadge && (
+                {showBadge && id === 'cart' && (
                   <div className='relative grid place-items-center'>
-                    {cartItems.length > 0 && (
+                    {totalCount > 0 && (
                       <div
                         className='absolute flex size-4 items-center justify-center rounded-full bg-brown
                           align-middle'>
                         <p className='font-manrope text-xxs text-white'>
                           {totalCount}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
+                {showBadge && id === 'wishlist' && (
+                  <div className='relative grid place-items-center'>
+                    {wishlistItems.length > 0 && (
+                      <div
+                        className='absolute flex size-4 items-center justify-center rounded-full bg-brown
+                          align-middle'>
+                        <p className='font-manrope text-xxs text-white'>
+                          {wishlistItems.length}
                         </p>
                       </div>
                     )}
