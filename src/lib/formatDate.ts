@@ -13,6 +13,6 @@ export default function formatDate(isoString: string): string {
 
     return `${day}.${month}.${year}`
   } catch (error) {
-    return ''
+    throw error
   }
 }

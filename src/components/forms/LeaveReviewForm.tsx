@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import postReviewsByProductSlug from '@/actions/postReviewsByProductSlug'
 import { cn } from '@/lib/cn'
 import { ReviewFormValues } from '@/types/review'
