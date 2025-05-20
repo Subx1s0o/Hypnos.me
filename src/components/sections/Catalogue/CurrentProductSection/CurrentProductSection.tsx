@@ -15,6 +15,7 @@ import BannerSection from './BannerSection'
 import ReviewsBlock from './components/Articles/ProductDescription/components/ReviewsBlock'
 import ProductDescription from './components/Articles/ProductDescription/ProductDescription'
 import ProductImages from './components/Articles/ProductImages/ProductImages'
+import OffersSwiper from './components/Articles/UniqueOffers/OffersSwiper'
 
 interface CurrentProductSectionProps {
   slug: string
@@ -77,6 +78,8 @@ export default function CurrentProductSection({
               <ProductImages media={data?.media} />
               <Media greaterThanOrEqual='md'>
                 <ReviewsBlock
+                  slug={slug}
+                  id='reviewsBlock'
                   reviews={reviews?.data}
                   isReviewsLoading={isReviewsLoading}
                   isReviewsError={!!reviewsError}
@@ -84,15 +87,21 @@ export default function CurrentProductSection({
               </Media>
             </div>
           </div>
-          <ProductDescription product={data} />
+          <ProductDescription
+            product={data}
+            reviews={reviews?.data.length}
+          />
           <Media
             lessThan='md'
             className='w-full'>
             <ReviewsBlock
+              slug={slug}
+              id='reviewsBlock'
               reviews={reviews?.data}
               isReviewsLoading={isReviewsLoading}
               isReviewsError={!!reviewsError}
             />
+            <OffersSwiper />
           </Media>
         </div>
       </MediaContextProvider>

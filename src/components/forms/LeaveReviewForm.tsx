@@ -1,30 +1,31 @@
 import React, { useEffect, useState } from 'react'
+import postReviewsByProductSlug from '@/actions/postReviewsByProductSlug'
 import { cn } from '@/lib/cn'
+import { ReviewFormValues } from '@/types/review'
 import { useForm } from 'react-hook-form'
 
 import FormInput from '../ui/FormInput'
 import Icon from '../ui/Icon'
 
-type FormValues = {
-  name: string
-  email: string
-  comment: string
-}
-
-export default function LeaveReviewForm() {
-  const [rate, setRate] = useState(0)
+export default function LeaveReviewForm({ slug }: { slug: string }) {
   const {
     control,
     handleSubmit,
     watch,
     register,
     reset,
+    setValue,
     formState: { isSubmitSuccessful }
-  } = useForm<FormValues>()
+  } = useForm<ReviewFormValues>({
+    defaultValues: {
+      rate: 0
+    }
+  })
 
   const name = watch('name')
   const email = watch('email')
   const comment = watch('comment')
+  const rate = watch('rate')
 
   const isDisabled = !name || !email || !comment || rate === 0
 
@@ -32,32 +33,37 @@ export default function LeaveReviewForm() {
     if (isSubmitSuccessful) {
       const timer = setTimeout(() => {
         reset()
-        setRate(0)
       }, 1500)
 
       return () => clearTimeout(timer)
     }
   }, [isSubmitSuccessful, reset])
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data)
+  const onSubmit = (data: ReviewFormValues) => {
+    const submissionDate = new Date().toISOString()
+    const reviewData = {
+      ...data,
+      date: submissionDate
+    }
+    postReviewsByProductSlug(slug, reviewData)
+    console.log(reviewData)
   }
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='flex flex-col gap-4'>
+      className='flex flex-col gap-3'>
       <div className='mt-3 flex gap-2'>
         {Array.from({ length: 5 }).map((_, index) => (
           <button
             key={index}
             type='button'
-            onClick={() => setRate(index + 1)}>
+            onClick={() => setValue('rate', index + 1)}>
             <Icon
               id={index < rate ? 'icon-star-full' : 'icon-star'}
-              w={24}
-              h={24}
-              className='stroke-2 text-brown-accent'
+              w={20}
+              h={20}
+              className='text-brown-accent stroke-2'
             />
           </button>
         ))}

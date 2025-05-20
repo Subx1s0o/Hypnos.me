@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import formatDate from '@/lib/formatDate'
 import { Review } from '@/types/review'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
@@ -8,11 +9,17 @@ import useEmblaCarousel from 'embla-carousel-react'
 import LeaveReviewForm from '@/components/forms/LeaveReviewForm'
 import Icon from '@/components/ui/Icon'
 
+import RatingStars from './RatingStars'
+
 export default function ReviewsBlock({
+  slug,
+  id,
   reviews,
   isReviewsLoading,
   isReviewsError
 }: {
+  slug: string
+  id: string
   reviews?: Review[]
   isReviewsLoading: boolean
   isReviewsError: boolean
@@ -44,10 +51,14 @@ export default function ReviewsBlock({
 
   const reviewsLength = reviews?.length ?? 0
 
+  console.log(reviews)
+
   return (
-    <div className='grid w-full'>
+    <div
+      id={id}
+      className='mb-[120px] grid w-full'>
       <div className='mb-4 flex items-center justify-between'>
-        <h3 className='text-base-big'>Reviews</h3>
+        <h2 className='text-base-big'>Reviews</h2>
         <p className='text-base'>{reviewsLength} review</p>
       </div>
 
@@ -63,25 +74,19 @@ export default function ReviewsBlock({
             <ul className='mb-2 flex gap-2'>
               {reviews?.map(review => (
                 <li
-                  className='h-[154px] flex-1 border p-4 md:h-[118px]'
+                  className='flex h-[186px] flex-1 flex-col gap-[6px] rounded-[2px] border border-grey-200
+                    p-4 md:h-[118px]'
                   key={review.id}>
-                  <div className='mb-[6px] flex w-full items-center justify-between'>
+                  <div className='flex w-full items-center justify-between'>
                     <h4 className='text-base text-grey-300'>{review.name}</h4>
-                    <div className='flex gap-1'>
+                    <div className='flex gap-2'>
                       <span className='text-xs text-grey-300'>
-                        {review.date}
+                        {formatDate(review.date)}
                       </span>
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <Icon
-                          key={index}
-                          id={
-                            index < review.rate ? 'icon-star-full' : 'icon-star'
-                          }
-                          w={18}
-                          h={18}
-                          className='stroke-2 text-brown-accent'
-                        />
-                      ))}
+                      <RatingStars
+                        rating={review.rate}
+                        starSize={16}
+                      />
                     </div>
                   </div>
                   <p className='text-sm text-grey-400'>{review.comment}</p>
@@ -108,14 +113,26 @@ export default function ReviewsBlock({
           )}
         </>
       ) : (
-        <div className='flex h-[154px] items-center justify-center'>
-          <p className='text-sm text-grey-400'>No reviews yet</p>
+        <div
+          className='mb-4 flex h-[100px] flex-col items-center justify-center gap-3 rounded-[2px]
+            border border-grey-200 py-4'>
+          <p className='text-sm leading-[18px] text-grey-400'>
+            No reviews yet, be the first!
+          </p>
+          <div className='bg-brown-hover flex size-8 items-center justify-center rounded-full'>
+            <Icon
+              className='rotate-180 text-white'
+              id='icon-arrow'
+              w={11}
+              h={11}
+            />
+          </div>
         </div>
       )}
 
-      <div className='mb-5 bg-grey-light p-4'>
+      <div className='bg-grey-light p-4'>
         <h3 className='text-base'>Leave a review</h3>
-        <LeaveReviewForm />
+        <LeaveReviewForm slug={slug} />
       </div>
     </div>
   )

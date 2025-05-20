@@ -5,3 +5,12 @@ export interface Review {
   rate: number
   comment: string
 }
+
+
+export interface ReviewFormValues {
+  name: string
+  email: string
+  comment: string
+  rate: number
+  date: string
+}

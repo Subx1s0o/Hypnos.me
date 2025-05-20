@@ -107,6 +107,75 @@
 <symbol id="icon-star-full" viewBox="0 0 32 32">
 <path fill='currentColor' d='M11.661 5.957c1.931-3.462 2.895-5.193 4.338-5.193s2.408 1.731 4.338 5.193l0.5 0.896c0.549 0.984 0.823 1.477 1.25 1.801s0.96 0.445 2.027 0.686l0.969 0.219c3.749 0.849 5.622 1.272 6.068 2.706 0.445 1.432-0.832 2.927-3.387 5.915l-0.661 0.773c-0.726 0.849-1.090 1.274-1.253 1.798-0.163 0.526-0.108 1.093 0.001 2.225l0.101 1.032c0.386 3.988 0.579 5.981-0.588 6.866s-2.923 0.078-6.431-1.537l-0.91-0.418c-0.997-0.46-1.495-0.689-2.024-0.689s-1.027 0.229-2.024 0.689l-0.908 0.418c-3.509 1.615-5.265 2.423-6.43 1.539-1.169-0.887-0.975-2.88-0.59-6.868l0.101-1.030c0.11-1.134 0.165-1.701 0-2.225-0.162-0.526-0.526-0.951-1.251-1.798l-0.661-0.774c-2.555-2.987-3.832-4.482-3.387-5.915s2.321-1.859 6.069-2.706l0.969-0.219c1.065-0.241 1.597-0.361 2.025-0.686s0.701-0.817 1.249-1.801l0.5-0.896z'></path>
 </symbol>
+
+<symbol id="icon-vector-engraving" viewBox="0 0 56 56">
+
+<foreignObject x="-10" y="-10" width="76" height="76"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(5px);clip-path:url(#bgblur_0_5916_7588_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="10">
+<mask id="path-1-inside-1_5916_7588" fill="white">
+<path d="M0 56V0H56V56H0Z"/>
+</mask>
+<path d="M0 56V0H56V56H0Z" stroke="url(#paint0_linear_5916_7588)" stroke-width="2" mask="url(#path-1-inside-1_5916_7588)"/>
+</g>
+<foreignObject x="4" y="4" width="48" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(5px);clip-path:url(#bgblur_1_5916_7588_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="10">
+<mask id="path-2-inside-2_5916_7588" fill="white">
+<path d="M14 42V14H42V42H14Z"/>
+</mask>
+<path d="M41.6464 13.6464L13.6464 41.6464L14.3536 42.3536L42.3536 14.3536L41.6464 13.6464ZM14 14V13H13V14H14ZM14 42H13V43H14V42ZM42 42V43H43V42H42ZM42 14H43V13H42V14ZM13 14V42H15V14H13ZM14 43H42V41H14V43ZM43 42V14H41V42H43ZM42 13H14V15H42V13Z" fill="url(#paint1_linear_5916_7588)" mask="url(#path-2-inside-2_5916_7588)"/>
+</g>
+<defs>
+<clipPath id="bgblur_0_5916_7588_clip_path" transform="translate(10 10)"><path d="M0 56V0H56V56H0Z"/>
+</clipPath><clipPath id="bgblur_1_5916_7588_clip_path" transform="translate(-4 -4)"><path d="M14 42V14H42V42H14Z"/>
+</clipPath><linearGradient id="paint0_linear_5916_7588" x1="12.32" y1="-10.5" x2="63.4195" y2="1.81696" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B99376"/>
+<stop offset="1" stop-color="#F1CCAE"/>
+</linearGradient>
+<linearGradient id="paint1_linear_5916_7588" x1="20.16" y1="8.75" x2="45.7097" y2="14.9085" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B99376"/>
+<stop offset="1" stop-color="#F1CCAE"/>
+</linearGradient>
+</defs>
+
+</symbol>
+<symbol id="icon-vector-polishing" viewBox="0 0 56 56">
+
+<foreignObject x="-10" y="-10" width="76" height="76"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(5px);clip-path:url(#bgblur_0_5916_7578_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="10">
+<mask id="path-1-inside-1_5916_7578" fill="white">
+<path d="M0 56V0H56V56H0Z"/>
+</mask>
+<path d="M0 56V0H56V56H0Z" stroke="url(#paint0_linear_5916_7578)" stroke-width="2" mask="url(#path-1-inside-1_5916_7578)"/>
+</g>
+<foreignObject x="-10" y="-10" width="76" height="76"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(5px);clip-path:url(#bgblur_1_5916_7578_clip_path);height:100%;width:100%"></div></foreignObject><circle data-figma-bg-blur-radius="10" cx="28" cy="28" r="27.5" stroke="url(#paint1_linear_5916_7578)"/>
+<defs>
+<clipPath id="bgblur_0_5916_7578_clip_path" transform="translate(10 10)"><path d="M0 56V0H56V56H0Z"/>
+</clipPath><clipPath id="bgblur_1_5916_7578_clip_path" transform="translate(10 10)"><circle cx="28" cy="28" r="27.5"/>
+</clipPath><linearGradient id="paint0_linear_5916_7578" x1="12.32" y1="-10.5" x2="63.4195" y2="1.81696" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B99376"/>
+<stop offset="1" stop-color="#F1CCAE"/>
+</linearGradient>
+<linearGradient id="paint1_linear_5916_7578" x1="12.32" y1="-10.5" x2="63.4195" y2="1.81696" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B99376"/>
+<stop offset="1" stop-color="#F1CCAE"/>
+</linearGradient>
+</defs>
+
+</symbol>
+<symbol id="icon-vector-samples" viewBox="0 0 56 56">
+
+<foreignObject x="-10" y="-10" width="76" height="76"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(5px);clip-path:url(#bgblur_0_5916_7572_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="10">
+<mask id="path-1-inside-1_5916_7572" fill="white">
+<path d="M0 56V0H28H56V28V56H28H0Z"/>
+</mask>
+<path d="M56 28L56.3536 28.3536L56.7071 28L56.3536 27.6464L56 28ZM28 28L28.3536 28.3536L28.7071 28L28.3536 27.6464L28 28ZM27.6464 0.353553L55.6464 28.3536L56.3536 27.6464L28.3536 -0.353553L27.6464 0.353553ZM55.6464 27.6464L27.6464 55.6464L28.3536 56.3536L56.3536 28.3536L55.6464 27.6464ZM0.353553 56.3536L28.3536 28.3536L27.6464 27.6464L-0.353553 55.6464L0.353553 56.3536ZM28.3536 27.6464L0.353553 -0.353553L-0.353553 0.353553L27.6464 28.3536L28.3536 27.6464ZM0 0V-1H-1V0H0ZM0 56H-1V57H0V56ZM56 0H57V-1H56V0ZM56 56V57H57V56H56ZM-1 0V56H1V0H-1ZM56 -1H28V1H56V-1ZM28 -1H0V1H28V-1ZM57 56V28H55V56H57ZM57 28V0H55V28H57ZM0 57H28V55H0V57ZM28 57H56V55H28V57Z" fill="url(#paint0_linear_5916_7572)" mask="url(#path-1-inside-1_5916_7572)"/>
+</g>
+<defs>
+<clipPath id="bgblur_0_5916_7572_clip_path" transform="translate(10 10)"><path d="M0 56V0H28H56V28V56H28H0Z"/>
+</clipPath><linearGradient id="paint0_linear_5916_7572" x1="12.32" y1="-10.5" x2="63.4195" y2="1.81696" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B99376"/>
+<stop offset="1" stop-color="#F1CCAE"/>
+</linearGradient>
+</defs>
+
+</symbol>
 </svg>
 
 

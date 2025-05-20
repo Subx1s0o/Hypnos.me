@@ -22,3 +22,6 @@ export type SpriteTypes =
   | 'icon-star'
   | 'icon-star-full'
   | 'icon-message-chat'
+  | 'icon-vector-samples'
+  | 'icon-vector-engraving'
+  | 'icon-vector-polishing'

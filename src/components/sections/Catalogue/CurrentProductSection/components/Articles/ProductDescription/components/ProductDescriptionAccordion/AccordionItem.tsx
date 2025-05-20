@@ -20,8 +20,10 @@ export default function AccordionItem({
   return (
     <Accordion.Item value={value}>
       <Accordion.Trigger
-        className={'flex w-full items-center gap-3 border-b bg-grey-200 p-4'}>
-        <div className='rounded-full bg-brown p-[7px]'>
+        className={
+          'flex w-full items-center gap-3 border-b border-grey-200 bg-grey-light p-[22px]'
+        }>
+        <div className='bg-brown-hover flex size-8 items-center justify-center rounded-full'>
           <Icon
             w={18}
             h={18}
@@ -29,7 +31,7 @@ export default function AccordionItem({
             className='text-white'
           />
         </div>
-        <p className='text-base'>{title}</p>
+        <p className='text-base font-semibold'>{title}</p>
       </Accordion.Trigger>
       <Accordion.Content>{children}</Accordion.Content>
     </Accordion.Item>

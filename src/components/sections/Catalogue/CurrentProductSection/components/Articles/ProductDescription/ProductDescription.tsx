@@ -13,7 +13,13 @@ import RadioBtnGroup from './components/RadioBtnGroup'
 import RatingStars from './components/RatingStars'
 import SizeSelector from './components/SizeSelector'
 
-export default function ProductDescription({ product }: { product?: Product }) {
+export default function ProductDescription({
+  product,
+  reviews
+}: {
+  product?: Product
+  reviews: number | undefined
+}) {
   const defaultSize: string =
     product?.sizeDetails?.[0]?.toString() ?? 'The item is out of stock'
   const [selectedSize, setSelectedSize] = useState(defaultSize)
@@ -28,6 +34,13 @@ export default function ProductDescription({ product }: { product?: Product }) {
 
   const handleSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedSize(event.target.value)
+  }
+
+  const scrollToReviews = () => {
+    const reviewsSection = document.getElementById('reviewsBlock')
+    if (reviewsSection) {
+      reviewsSection.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
@@ -70,7 +83,9 @@ export default function ProductDescription({ product }: { product?: Product }) {
             </h2>
           </div>
         )}
-        <button className='flex h-11 w-12 shrink-0 items-center justify-center'>
+        <button
+          onClick={scrollToReviews}
+          className='flex h-11 w-12 shrink-0 items-center justify-center'>
           <div className='relative h-6 w-7'>
             <Icon
               id='icon-message-chat'
@@ -81,12 +96,15 @@ export default function ProductDescription({ product }: { product?: Product }) {
             <p
               className='absolute right-0 top-0 flex size-2 items-center justify-center rounded-full
                 bg-grey-400 text-[5px] font-bold text-white'>
-              3
+              {reviews ? reviews : 0}
             </p>
           </div>
         </button>
         <div className='w-full grow'>
-          <RatingStars rating={product?.rating} />
+          <RatingStars
+            rating={product?.rating}
+            starSize={24}
+          />
         </div>
       </div>
       <p className='mb-1 text-sm text-grey-400'>{product.description}</p>
