@@ -8,8 +8,8 @@ import OfferSlide from './OfferSlide'
 
 export default function OffersSwiper() {
   return (
-    <div className='mb-[120px]'>
-      <h2 className='mb-8 text-center font-cormorant text-md leading-[85%]'>
+    <div className='mb-[120px] md:mb-[116px]'>
+      <h2 className='mb-8 text-center font-cormorant text-md leading-[85%] md:hidden'>
         Unique offers
       </h2>
       <Swiper
@@ -22,7 +22,17 @@ export default function OffersSwiper() {
         modules={[Autoplay, Mousewheel]}
         spaceBetween={12}
         mousewheel={true}
-        slidesPerView={1.15}>
+        slidesPerView={1.15}
+        breakpoints={{
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 0
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 0
+          }
+        }}>
         <SwiperSlide>
           <OfferSlide
             iconId='icon-vector-samples'

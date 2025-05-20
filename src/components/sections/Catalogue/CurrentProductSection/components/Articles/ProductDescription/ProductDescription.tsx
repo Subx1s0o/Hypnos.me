@@ -44,7 +44,7 @@ export default function ProductDescription({
   }
 
   return (
-    <div className='flex flex-col gap-3'>
+    <div className='flex flex-col gap-3 md:gap-2'>
       <ul className='mb-1 flex gap-2'>
         {product.discountPercent && (
           <li className='rounded-[100px] bg-black px-3 py-[6px] text-sm font-extrabold text-white'>
@@ -64,17 +64,19 @@ export default function ProductDescription({
           </li>
         )}
       </ul>
-      <h1 className='font-cormorant text-base-big sm:text-smd lg:text-md xxl:text-lg'>
+      <h1
+        className='font-cormorant text-base-big sm:text-smd smd:font-bold smd:leading-[40px]
+          lg:text-md xxl:text-lg'>
         {product.title}
       </h1>
       <hr className='border-brown-accent mb-1' />
-      <div className='flex flex-wrap gap-y-3'>
+      <div className='flex flex-wrap gap-y-3 lg:flex-nowrap lg:items-center lg:justify-between'>
         {!product.discountPercent ? (
-          <h2 className='grow text-smd font-medium text-black'>
+          <h2 className='grow text-smd font-medium text-black lg:order-1 lg:grow-0'>
             &#36; {formatPrice(product.price)}
           </h2>
         ) : (
-          <div className='flex grow items-center gap-3'>
+          <div className='flex grow items-center gap-3 lg:order-1 lg:grow-0'>
             <h3 className='text-grey-hover text-base-big line-through'>
               &#36;{formatPrice(product.price)}
             </h3>
@@ -85,22 +87,22 @@ export default function ProductDescription({
         )}
         <button
           onClick={scrollToReviews}
-          className='flex h-11 w-12 shrink-0 items-center justify-center'>
-          <div className='relative h-6 w-7'>
+          className='flex h-11 w-12 shrink-0 items-center justify-center lg:order-3'>
+          <div className='relative flex h-6 w-7 items-center justify-center'>
             <Icon
               id='icon-message-chat'
-              w={24}
-              h={24}
+              w={30}
+              h={30}
               className=''
             />
             <p
-              className='absolute right-0 top-0 flex size-2 items-center justify-center rounded-full
+              className='absolute -right-1 -top-1 flex size-3 items-center justify-center rounded-full
                 bg-grey-400 text-[5px] font-bold text-white'>
               {reviews ? reviews : 0}
             </p>
           </div>
         </button>
-        <div className='w-full grow'>
+        <div className='w-full grow lg:order-2 lg:w-[120px] lg:grow-0'>
           <RatingStars
             rating={product?.rating}
             starSize={24}

@@ -68,13 +68,16 @@ export default function ButtonsBlock({ product }: { product: Product }) {
   }
 
   return (
-    <div className='flex flex-col gap-3 md:flex-row'>
+    <div className='flex flex-col gap-3 md:mb-6 md:flex-row'>
       <SquareButton
-        className='flex w-full rounded-sm bg-black py-4 text-base text-white hover:bg-black-hover'
+        className='flex w-full rounded-sm bg-black py-4 text-base text-white
+          lg:hover:bg-black-hover'
         onClick={handlerAddToCard}
         type='button'>
         {inCart ? (
-          <div className='flex justify-center gap-2 font-manrope text-base font-semibold tracking-wide'>
+          <div
+            className='flex items-center justify-center gap-2 font-manrope text-base font-semibold
+              tracking-wide'>
             <Icon
               w={16}
               h={16}
@@ -83,7 +86,9 @@ export default function ButtonsBlock({ product }: { product: Product }) {
             In Cart
           </div>
         ) : (
-          <div className='flex justify-center gap-2 font-manrope text-base font-semibold tracking-wide'>
+          <div
+            className='flex items-center justify-center gap-2 font-manrope text-base font-semibold
+              tracking-wide'>
             <Icon
               className=''
               id='icon-cart'
@@ -96,12 +101,14 @@ export default function ButtonsBlock({ product }: { product: Product }) {
       </SquareButton>
 
       <SquareButton
-        className='border-brown-accent hover:bg-brown-accent flex w-full justify-center rounded-sm
-          border-2 border-solid bg-white py-4 text-base'
+        className='border-brown-accent lg:hover:bg-brown-accent flex w-full justify-center
+          rounded-sm border-2 border-solid bg-white py-4 text-base'
         onClick={handlerAddToWishlist}
         type='button'>
         {isLiked ? (
-          <div className='flex justify-center gap-2 font-manrope font-semibold tracking-wide text-grey-300'>
+          <div
+            className='flex items-center justify-center gap-2 bg-transparent font-manrope font-semibold
+              tracking-wide text-grey-300'>
             <Icon
               className='text-brown-accent'
               id='icon-heart-filled'
@@ -111,7 +118,9 @@ export default function ButtonsBlock({ product }: { product: Product }) {
             In Wishlist
           </div>
         ) : (
-          <div className='flex justify-center gap-2 font-manrope font-semibold tracking-wide text-grey-300'>
+          <div
+            className='flex items-center justify-center gap-2 font-manrope font-semibold tracking-wide
+              text-grey-300'>
             <Icon
               className='text-grey-400'
               id='icon-heart'

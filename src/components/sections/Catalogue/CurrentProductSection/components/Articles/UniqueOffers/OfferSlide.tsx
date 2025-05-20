@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import { SpriteTypes } from '@/types'
 
 import Icon from '@/components/ui/Icon'
@@ -17,21 +20,40 @@ export default function OfferSlide({
   iconId,
   className
 }: OfferSlideProps) {
+  const [isTablet, setIsTablet] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const iconSize = isTablet ? 40 : 56
+
   return (
     <div
       className={`flex h-[495px] w-full flex-col items-center gap-10 rounded-[2px] border
-        border-grey-200 px-10 py-12 font-manrope ${className}`}>
+        border-grey-200 px-10 py-12 font-manrope md:h-[218px] md:gap-4 md:py-6
+        ${className}`}>
       <Icon
         id={iconId}
-        w={56}
-        h={56}
+        w={iconSize}
+        h={iconSize}
         className='fill-none'
       />
 
-      <h3 className='text-center font-cormorant text-smd font-bold'>{title}</h3>
+      <h3
+        className='text-center font-cormorant text-smd font-bold md:text-base-big md:font-bold
+          md:leading-[28px]'>
+        {title}
+      </h3>
       <div
         className='mx-auto mb-[60px] rounded-[100px] border border-grey-200 px-[50px] py-3 text-xs
-          font-semibold'>
+          font-semibold md:hidden'>
         {buttonText}
       </div>
       <p className='text-center text-sm leading-[22px] text-grey-400'>{text}</p>

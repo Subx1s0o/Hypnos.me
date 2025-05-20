@@ -10,9 +10,11 @@ export default function ImagesArticle({ media }: { media?: MediaObject }) {
     useEmblaCarouselWithThumbs()
 
   return (
-    <div className='size-full overflow-hidden rounded-[2px] border p-2'>
+    <div
+      className='flex w-full flex-col items-stretch justify-between overflow-hidden rounded-[2px]
+        border p-2 md:min-h-[506px]'>
       <div
-        className='mb-4 overflow-hidden'
+        className='overflow-hidden'
         ref={emblaMainRef}>
         {media && <MainImageList media={media} />}
       </div>

@@ -27,7 +27,7 @@ export default function RingSizeSelector({
           return (
             <li key={sizeS}>
               <RadioButton
-                classNameLabel={`hover:bg-[#FAF2E8] relative inline-flex shrink-0 text-black h-8 w-10 items-center justify-center border-brown-accent rounded-[2px] border text-sm
+                classNameLabel={`lg:hover:bg-[#FAF2E8] relative inline-flex shrink-0 text-black h-8 w-10 items-center justify-center border-brown-accent rounded-[2px] border text-sm
               `}
                 key={sizeS}
                 value={sizeS}

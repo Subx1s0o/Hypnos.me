@@ -56,14 +56,14 @@ export default function ReviewsBlock({
   return (
     <div
       id={id}
-      className='mb-[120px] grid w-full'>
+      className='mb-[120px] grid w-full md:mb-6'>
       <div className='mb-4 flex items-center justify-between'>
         <h2 className='text-base-big'>Reviews</h2>
         <p className='text-base'>{reviewsLength} review</p>
       </div>
 
       {isReviewsLoading ? (
-        <div className='flex h-[154px] w-full items-center justify-center'>
+        <div className='flex h-[118px] w-full items-center justify-center md:h-[186px]'>
           <p>loading...</p>
         </div>
       ) : reviewsLength > 0 ? (
@@ -74,8 +74,8 @@ export default function ReviewsBlock({
             <ul className='mb-2 flex gap-2'>
               {reviews?.map(review => (
                 <li
-                  className='flex h-[186px] flex-1 flex-col gap-[6px] rounded-[2px] border border-grey-200
-                    p-4 md:h-[118px]'
+                  className='flex h-[118px] flex-1 flex-col gap-[6px] overflow-hidden rounded-[2px] border
+                    border-grey-200 p-4 md:h-[186px]'
                   key={review.id}>
                   <div className='flex w-full items-center justify-between'>
                     <h4 className='text-base text-grey-300'>{review.name}</h4>
@@ -114,8 +114,8 @@ export default function ReviewsBlock({
         </>
       ) : (
         <div
-          className='mb-4 flex h-[100px] flex-col items-center justify-center gap-3 rounded-[2px]
-            border border-grey-200 py-4'>
+          className='mb-4 flex h-[118px] flex-col items-center justify-center gap-3 rounded-[2px]
+            border border-grey-200 py-4 md:h-[186px]'>
           <p className='text-sm leading-[18px] text-grey-400'>
             No reviews yet, be the first!
           </p>

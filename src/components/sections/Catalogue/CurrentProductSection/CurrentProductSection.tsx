@@ -74,7 +74,7 @@ export default function CurrentProductSection({
               <Breadcrumb />
             </Media>
 
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-4 md:gap-8'>
               <ProductImages media={data?.media} />
               <Media greaterThanOrEqual='md'>
                 <ReviewsBlock
@@ -91,6 +91,7 @@ export default function CurrentProductSection({
             product={data}
             reviews={reviews?.data.length}
           />
+          <OffersSwiper />
           <Media
             lessThan='md'
             className='w-full'>
