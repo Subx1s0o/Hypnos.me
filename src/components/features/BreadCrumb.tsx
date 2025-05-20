@@ -26,9 +26,8 @@ export default function Breadcrumb() {
       <ul className='flex items-center gap-3'>
         <li className='relative'>
           <Link
-            className='duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px]
-              after:w-0 after:-translate-x-1/2 after:bg-grey-400 after:duration-300
-              lg:hover:after:w-full'
+            className='after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0
+              after:-translate-x-1/2 after:bg-grey-400'
             href={'/'}>
             <Icon
               id='icon-home'
@@ -44,7 +43,7 @@ export default function Breadcrumb() {
           const itemClasses =
             paths === href
               ? '!font-bold whitespace-nowrap text-xs lg:text-sm'
-              : 'relative text-xs lg:text-sm duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-grey-400 after:duration-300 lg:hover:after:w-full'
+              : 'relative text-xs lg:text-sm  after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-grey-400  lg:hover:after:w-full'
           const itemLink = selectPathName(link)
 
           return (
