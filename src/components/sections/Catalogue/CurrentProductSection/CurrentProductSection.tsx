@@ -77,13 +77,16 @@ export default function CurrentProductSection({
             <div className='flex flex-col gap-4 md:gap-8'>
               <ProductImages media={data?.media} />
               <Media greaterThanOrEqual='md'>
-                <ReviewsBlock
-                  slug={slug}
-                  id='reviewsBlock'
-                  reviews={reviews?.data}
-                  isReviewsLoading={isReviewsLoading}
-                  isReviewsError={!!reviewsError}
-                />
+                <div className='flex w-full flex-col'>
+                  <ReviewsBlock
+                    slug={slug}
+                    id='reviewsBlock'
+                    reviews={reviews?.data}
+                    isReviewsLoading={isReviewsLoading}
+                    isReviewsError={!!reviewsError}
+                  />
+                  <OffersSwiper />
+                </div>
               </Media>
             </div>
           </div>
@@ -91,7 +94,6 @@ export default function CurrentProductSection({
             product={data}
             reviews={reviews?.data.length}
           />
-          <OffersSwiper />
           <Media
             lessThan='md'
             className='w-full'>

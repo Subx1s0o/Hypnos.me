@@ -1,5 +1,6 @@
 'use client'
 
+import { useModal } from '@/components/context/ModalContext'
 import RadioButton from '@/components/ui/RadioButton'
 
 type RingSizeProps = {
@@ -12,13 +13,18 @@ export default function RingSizeSelector({
   handleSizeChange,
   selectedSize
 }: RingSizeProps) {
+  const { toggleModal } = useModal()
+
   return (
     <div className='mb-3'>
       <div className='mb-3 flex justify-between'>
         <h4 className='font-manrope text-sm'>Choose size:</h4>
-        <p className='font-manrope text-sm text-brown underline'>
+        <button
+          type='button'
+          onClick={() => toggleModal('ringSize')}
+          className='font-manrope text-sm text-brown underline'>
           What is my size?
-        </p>
+        </button>
       </div>
       <ul className='flex gap-2 overflow-hidden'>
         {sizes.map(size => {

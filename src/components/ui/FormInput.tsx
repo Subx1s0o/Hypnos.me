@@ -19,7 +19,6 @@ export default function FormInput({
   name,
   label,
   className,
-  placeholder,
   isPasswordField = false,
   isPasswordShown,
   toggleShowPassword,
