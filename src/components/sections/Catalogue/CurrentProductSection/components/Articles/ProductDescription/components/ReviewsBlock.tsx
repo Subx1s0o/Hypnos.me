@@ -63,7 +63,7 @@ export default function ReviewsBlock({
       </div>
 
       {isReviewsLoading ? (
-        <div className='flex h-[118px] w-full items-center justify-center md:h-[186px]'>
+        <div className='flex h-[186px] w-full items-center justify-center md:h-[218px] lg:h-[182px]'>
           <p>loading...</p>
         </div>
       ) : reviewsLength > 0 ? (
@@ -74,22 +74,24 @@ export default function ReviewsBlock({
             <ul className='mb-2 flex gap-2'>
               {reviews?.map(review => (
                 <li
-                  className='flex h-[118px] flex-1 flex-col gap-[6px] overflow-hidden rounded-[2px] border
-                    border-grey-200 p-4 md:h-[186px]'
+                  className='flex h-[186px] flex-1 rounded-[2px] border border-grey-200 p-4 md:h-[218px]
+                    lg:h-[182px]'
                   key={review.id}>
-                  <div className='flex w-full items-center justify-between'>
-                    <h4 className='text-base text-grey-300'>{review.name}</h4>
-                    <div className='flex gap-2'>
-                      <span className='text-xs text-grey-300'>
-                        {formatDate(review.date)}
-                      </span>
-                      <RatingStars
-                        rating={review.rate}
-                        starSize={16}
-                      />
+                  <div className='flex flex-col gap-[6px] overflow-y-auto'>
+                    <div className='flex w-full items-center justify-between'>
+                      <h4 className='text-base text-grey-300'>{review.name}</h4>
+                      <div className='flex gap-2'>
+                        <span className='text-xs text-grey-300'>
+                          {formatDate(review.date)}
+                        </span>
+                        <RatingStars
+                          rating={review.rate}
+                          starSize={16}
+                        />
+                      </div>
                     </div>
+                    <p className='text-sm text-grey-400'>{review.comment}</p>
                   </div>
-                  <p className='text-sm text-grey-400'>{review.comment}</p>
                 </li>
               ))}
             </ul>
@@ -119,7 +121,7 @@ export default function ReviewsBlock({
           <p className='text-sm leading-[18px] text-grey-400'>
             No reviews yet, be the first!
           </p>
-          <div className='bg-brown-hover flex size-8 items-center justify-center rounded-full'>
+          <div className='flex size-8 items-center justify-center rounded-full bg-brown-hover'>
             <Icon
               className='rotate-180 text-white'
               id='icon-arrow'
