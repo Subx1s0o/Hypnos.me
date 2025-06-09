@@ -13,7 +13,6 @@ import Breadcrumb from '@/components/features/BreadCrumb'
 import { Media, MediaContextProvider } from '@/components/helpers/Media'
 import Loader from '@/components/ui/Loader'
 
-import BannerSection from './BannerSection'
 import PreviouslyWhatchedSection from './components/Articles/PreviouslyWatched/PreviouslyWhatchedSection'
 import ReviewsBlock from './components/Articles/ProductDescription/components/ReviewsBlock'
 import ProductDescription from './components/Articles/ProductDescription/ProductDescription'
@@ -139,7 +138,7 @@ export default function CurrentProductSection({
         </div>
 
         {/* The row felow columns */}
-        
+
         <div>
           <PreviouslyWhatchedSection products={previouslyWatched} />
         </div>

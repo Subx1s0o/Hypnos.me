@@ -9,8 +9,6 @@ export default function ProductDescriptionAccordion({
 }: {
   product: Product
 }) {
-  // console.log(product)
-
   const termsOfOrderAndDelivery = [
     'Free delivery for ready-made rings.',
     'Production starts from 7 days; standard models take 14 days.',

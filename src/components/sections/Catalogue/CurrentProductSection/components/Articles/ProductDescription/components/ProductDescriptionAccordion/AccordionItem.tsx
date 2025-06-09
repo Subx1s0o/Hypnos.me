@@ -1,4 +1,3 @@
-import React from 'react'
 import { SpriteTypes } from '@/types'
 import * as Accordion from '@radix-ui/react-accordion'
 
@@ -23,7 +22,7 @@ export default function AccordionItem({
         className={
           'flex w-full items-center gap-3 border-b border-grey-200 bg-grey-light p-[22px]'
         }>
-        <div className='bg-brown-hover flex size-8 items-center justify-center rounded-full'>
+        <div className='flex size-8 items-center justify-center rounded-full bg-brown-hover'>
           <Icon
             w={18}
             h={18}
@@ -33,7 +32,13 @@ export default function AccordionItem({
         </div>
         <p className='text-base font-semibold'>{title}</p>
       </Accordion.Trigger>
-      <Accordion.Content>{children}</Accordion.Content>
+      <Accordion.Content
+        className={
+          `data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp
+          overflow-hidden text-sm` // Apply custom content class here
+        }>
+        {children}
+      </Accordion.Content>
     </Accordion.Item>
   )
 }

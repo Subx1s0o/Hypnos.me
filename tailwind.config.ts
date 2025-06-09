@@ -128,6 +128,24 @@ export default {
             lineHeight: '13.66px'
           }
         ]
+      },
+      keyframes: {
+        slideDown: {
+          from: { height: '0px', opacity: '0' }, // Start from height 0 and opacity 0
+          to: { height: 'var(--radix-accordion-content-height)', opacity: '1' } // Go to full height and opacity 1
+        },
+        slideUp: {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+            opacity: '1'
+          }, // Start from full height and opacity 1
+          to: { height: '0px', opacity: '0' } // Go to height 0 and opacity 0
+        }
+      },
+      animation: {
+        // You can adjust the duration (e.g., 300ms, 400ms) and easing function
+        slideDown: 'slideDown 400ms cubic-bezier(0.87, 0, 0.13, 1)', // Example: ease-out
+        slideUp: 'slideUp 400ms cubic-bezier(0.87, 0, 0.13, 1)' // Example: ease-in
       }
     }
   },
