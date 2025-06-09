@@ -8,7 +8,7 @@ import OfferSlide from './OfferSlide'
 
 export default function OffersSwiper() {
   return (
-    <div className='mb-[120px] w-full md:mb-[116px] md:max-w-[334px]'>
+    <div className='w-full'>
       <h2 className='mb-8 text-center font-cormorant text-md leading-[85%] md:hidden'>
         Unique offers
       </h2>
