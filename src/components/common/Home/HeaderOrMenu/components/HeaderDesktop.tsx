@@ -1,8 +1,8 @@
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import Breadcrumb from '@/components/features/BreadCrumb'
-import Icon from '@/components/ui/Icon'
+import Logo from '@/customisations/logo/Logo'
+
 
 import HeaderPageNavigation from './Header/HeaderPageNavigation'
 import HeaderUserNavigation from './Header/HeaderUserNavigation'
@@ -15,16 +15,7 @@ export default function HeaderDesktop() {
     <>
       <header className='mx-auto max-w-screen-xxl px-10'>
         <div className='flex items-center justify-between border-b border-b-grey-200 py-5'>
-          <Link
-            href='/'
-            className=''>
-            <Icon
-              id='icon-logo'
-              className='text-brown'
-              w={150}
-              h={35}
-            />
-          </Link>
+          <Logo />
           <HeaderUserNavigation />
 
           <address className='relative flex flex-col gap-1 text-xs not-italic lg:flex-row lg:gap-6'>
