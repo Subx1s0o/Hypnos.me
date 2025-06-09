@@ -12,9 +12,13 @@ import ImageWithFallback from '@/components/ui/ImageWithFallback'
 
 interface ProductCardProps {
   product: Product
+  wrapperClassName?: string
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({
+  product,
+  wrapperClassName
+}: ProductCardProps) {
   const {
     id,
     title,
@@ -68,7 +72,9 @@ export default function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <li className='md:flex-1/3 aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
+    <li
+      className={`aspect-square flex-1 pl-4 sm:flex-1/2 md:flex-1/3 lg:flex-1/4
+        ${wrapperClassName}`}>
       <Link href={`catalogue/${category}/${slug}`}>
         <div className='relative mb-3 max-h-[460px] bg-grey-light'>
           <div className='relative aspect-[1]'>

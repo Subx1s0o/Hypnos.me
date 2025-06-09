@@ -1,7 +1,9 @@
 'use client'
 
+import { useEffect } from 'react'
 import getProductBySlug from '@/actions/getProductBySlug'
 import getReviewsByProductSlug from '@/actions/getReviewsByProductSlug'
+import usePreviouslyWatched from '@/store/previouslyWatched/previouslyWatched'
 import { Product } from '@/types'
 import { Review } from '@/types/review'
 import { useQuery } from '@tanstack/react-query'
@@ -12,6 +14,7 @@ import { Media, MediaContextProvider } from '@/components/helpers/Media'
 import Loader from '@/components/ui/Loader'
 
 import BannerSection from './BannerSection'
+import PreviouslyWhatchedSection from './components/Articles/PreviouslyWatched/PreviouslyWhatchedSection'
 import ReviewsBlock from './components/Articles/ProductDescription/components/ReviewsBlock'
 import ProductDescription from './components/Articles/ProductDescription/ProductDescription'
 import ProductImages from './components/Articles/ProductImages/ProductImages'
@@ -39,6 +42,14 @@ export default function CurrentProductSection({
     staleTime: 1000 * 60 * 60 * 24 * 3,
     queryFn: async () => await getReviewsByProductSlug(data?.slug ?? '')
   })
+
+  const { addToPreviouslyWatched, previouslyWatched } = usePreviouslyWatched()
+
+  useEffect(() => {
+    if (data) {
+      addToPreviouslyWatched(data)
+    }
+  }, [data, addToPreviouslyWatched])
 
   if (error) notFound()
   if (isLoading) return <Loader />
@@ -106,6 +117,9 @@ export default function CurrentProductSection({
             />
             <OffersSwiper />
           </Media>
+        </div>
+        <div>
+          <PreviouslyWhatchedSection products={previouslyWatched} />
         </div>
       </MediaContextProvider>
     </section>
