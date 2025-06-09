@@ -39,7 +39,7 @@ export default function ButtonsBlock({ product }: { product: Product }) {
       }
     }
 
-    console.log('Add to card', newProduct)
+    // console.log('Add to card', newProduct)
 
     addToCart(newProduct)
   }
@@ -59,10 +59,10 @@ export default function ButtonsBlock({ product }: { product: Product }) {
     }
 
     if (isLiked) {
-      console.log('removed from Wishlist')
+      // console.log('removed from Wishlist')
       removeFromWishlist({ id: newProduct.id })
     } else {
-      console.log('Added to Wishlist')
+      // console.log('Added to Wishlist')
       addToWishlist(newProduct)
     }
   }
@@ -101,8 +101,8 @@ export default function ButtonsBlock({ product }: { product: Product }) {
       </SquareButton>
 
       <SquareButton
-        className='border-brown-accent lg:hover:bg-brown-accent flex w-full justify-center
-          rounded-sm border-2 border-solid bg-white py-4 text-base'
+        className='flex w-full justify-center rounded-sm border-2 border-solid border-brown-accent
+          bg-white py-4 text-base lg:hover:bg-brown-accent'
         onClick={handlerAddToWishlist}
         type='button'>
         {isLiked ? (

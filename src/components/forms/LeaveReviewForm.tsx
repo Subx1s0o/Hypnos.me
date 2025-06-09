@@ -46,7 +46,7 @@ export default function LeaveReviewForm({ slug }: { slug: string }) {
       date: submissionDate
     }
     postReviewsByProductSlug(slug, reviewData)
-    console.log(reviewData)
+    // console.log(reviewData)
   }
 
   return (
@@ -63,7 +63,7 @@ export default function LeaveReviewForm({ slug }: { slug: string }) {
               id={index < rate ? 'icon-star-full' : 'icon-star'}
               w={20}
               h={20}
-              className='text-brown-accent stroke-2'
+              className='stroke-2 text-brown-accent'
             />
           </button>
         ))}

@@ -23,7 +23,6 @@ export default function ProductDescription({
   const defaultSize: string =
     product?.sizeDetails?.[0]?.toString() ?? 'The item is out of stock'
   const [selectedSize, setSelectedSize] = useState(defaultSize)
-  // console.log(product)
 
   if (!product) return notFound()
 
@@ -69,7 +68,7 @@ export default function ProductDescription({
           lg:text-md xxl:text-lg'>
         {product.title}
       </h1>
-      <hr className='border-brown-accent mb-1' />
+      <hr className='mb-1 border-brown-accent' />
       <div className='flex flex-wrap gap-y-3 lg:flex-nowrap lg:items-center lg:justify-between'>
         {!product.discountPercent ? (
           <h2 className='grow text-smd font-medium text-black lg:order-1 lg:grow-0'>
@@ -77,7 +76,7 @@ export default function ProductDescription({
           </h2>
         ) : (
           <div className='flex grow items-center gap-3 lg:order-1 lg:grow-0'>
-            <h3 className='text-grey-hover text-base-big line-through'>
+            <h3 className='text-base-big text-grey-hover line-through'>
               &#36;{formatPrice(product.price)}
             </h3>
             <h2 className='text-smd font-medium text-black'>

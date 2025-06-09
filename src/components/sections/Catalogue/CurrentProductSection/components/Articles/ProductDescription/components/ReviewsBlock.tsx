@@ -51,7 +51,7 @@ export default function ReviewsBlock({
 
   const reviewsLength = reviews?.length ?? 0
 
-  console.log(reviews)
+  // console.log(reviews)
 
   return (
     <div
