@@ -35,7 +35,7 @@ export default function OffersSwiper() {
         }}>
         <SwiperSlide>
           <OfferSlide
-            iconId='icon-vector-samples'
+            iconSrc='/images/products/decorative/decorative-arrow.avif'
             title='Samples of rings in silver'
             buttonText='Free'
             text='Try on and wear sample rings for up to 7 days'
@@ -43,7 +43,7 @@ export default function OffersSwiper() {
         </SwiperSlide>
         <SwiperSlide>
           <OfferSlide
-            iconId='icon-vector-polishing'
+            iconSrc='/images/products/decorative/decorative-circle.avif'
             title='Polishing and Cleaning'
             buttonText='Indefinitely'
             text='With your purchase, you get a certificate for service'
@@ -52,7 +52,7 @@ export default function OffersSwiper() {
         </SwiperSlide>
         <SwiperSlide>
           <OfferSlide
-            iconId='icon-vector-engraving'
+            iconSrc='/images/products/decorative/decorative-square.avif'
             title='Engraving'
             buttonText='Flawless'
             text='Take advantage of our online font selection service'
