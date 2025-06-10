@@ -29,6 +29,7 @@ export default {
       flex: {
         '1': '0 0 100%',
         '1/2': '0 0 50%',
+        '1/3': '0 0 33%',
         '1/4': '0 0 25%'
       },
       colors: {
@@ -38,16 +39,21 @@ export default {
           normal: '#555555',
           '300': '#393939',
           '400': '#4E453E',
-          dark: '#3C3C3C'
+          dark: '#3C3C3C',
+          hover: '#3A312A80'
         },
         black: '#1B1716',
         'black-hover': '#2F2D2A',
         cream: '#E5DCD4',
         primary: '#CCC0B180',
-        brown: '#B99376',
-        'brown-active': '#a68b77',
-        'brown-light': '#C3AD9C',
-        'brown-dark': '#2B2724',
+        brown: {
+          DEFAULT: '#B99376',
+          active: '#a68b77',
+          accent: '#E7BF8E',
+          light: '#C3AD9C',
+          dark: '#2B2724',
+          hover: '#D9AF7C'
+        },
         error: '#bf2313'
       },
       fontSize: {
@@ -122,6 +128,24 @@ export default {
             lineHeight: '13.66px'
           }
         ]
+      },
+      keyframes: {
+        slideDown: {
+          from: { height: '0px', opacity: '0' }, // Start from height 0 and opacity 0
+          to: { height: 'var(--radix-accordion-content-height)', opacity: '1' } // Go to full height and opacity 1
+        },
+        slideUp: {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+            opacity: '1'
+          }, // Start from full height and opacity 1
+          to: { height: '0px', opacity: '0' } // Go to height 0 and opacity 0
+        }
+      },
+      animation: {
+        // You can adjust the duration (e.g., 300ms, 400ms) and easing function
+        slideDown: 'slideDown 400ms cubic-bezier(0.87, 0, 0.13, 1)', // Example: ease-out
+        slideUp: 'slideUp 400ms cubic-bezier(0.87, 0, 0.13, 1)' // Example: ease-in
       }
     }
   },

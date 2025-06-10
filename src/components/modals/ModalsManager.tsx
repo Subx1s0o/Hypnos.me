@@ -7,6 +7,7 @@ import { Media, MediaContextProvider } from '@/components/helpers/Media'
 
 import BurgerModal from './BurgerModal/BurgerModal'
 import CartModal from './CartModal/CartModal'
+import RingSizeModal from './RingSizeModal/RingSizeModal'
 import SearchModal from './SearchModal/SearchModal'
 import WishlistModal from './WishlistModal/WishlistModal'
 
@@ -34,6 +35,13 @@ const modals = [
       'relative w-96 bg-white  shadow-lg lg:h-[320px]  h-full lg:w-full',
     backdrop:
       'fixed inset-0 z-50 flex justify-end bg-grey-400/75  lg:mt-[130px] bottom-26 md:bottom-0'
+  },
+  {
+    name: 'ringSize',
+    className:
+      'relative x-full y-[200px] bg-white p-3 md:p-6 shadow-lg md:w-[30rem]',
+    backdrop:
+      'fixed inset-0 z-20 flex items-center justify-center bg-grey-400/75'
   }
 ]
 
@@ -96,6 +104,7 @@ export default function ModalManager() {
                   {modal.name === 'cart' && <CartModal />}
                   {modal.name === 'wishlist' && <WishlistModal />}
                   {modal.name === 'search' && <SearchModal />}
+                  {modal.name === 'ringSize' && <RingSizeModal />}
                 </animated.div>
               </div>
             </>
@@ -115,6 +124,7 @@ export default function ModalManager() {
                 {modal.name === 'cart' && <CartModal />}
                 {modal.name === 'wishlist' && <WishlistModal />}
                 {modal.name === 'search' && <SearchModal />}
+                {modal.name === 'ringSize' && <RingSizeModal />}
               </animated.div>
             </div>
           ))}

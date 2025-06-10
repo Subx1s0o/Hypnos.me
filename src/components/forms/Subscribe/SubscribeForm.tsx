@@ -41,8 +41,8 @@ export default function SubscribeForm({ className }: IProps) {
             autoComplete='email'
             control={control}
             placeholder='EMAIL'
-            className='placeholder:text-brown-light rounded border-transparent bg-grey-400 p-3
-              text-white transition-colors focus-visible:border focus-visible:border-brown'
+            className='rounded border-transparent bg-grey-400 p-3 text-white transition-colors
+              placeholder:text-brown-light focus-visible:border focus-visible:border-brown'
           />
         </div>
 

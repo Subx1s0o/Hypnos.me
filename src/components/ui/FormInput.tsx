@@ -9,6 +9,7 @@ type FormInputProps = ComponentProps<'input'> & {
   control: Control<any>
   label?: string
   name: string
+  placeholder?: string
   isPasswordField?: boolean
   isPasswordShown?: boolean
   toggleShowPassword?: () => void

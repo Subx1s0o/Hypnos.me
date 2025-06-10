@@ -7,7 +7,7 @@ import ImageWithFallback from '@/components/ui/ImageWithFallback'
 
 interface ProductListProps {
   products: Product[] | undefined
-  category: ProductCategories
+  category?: ProductCategories
 }
 
 export default function ProductList({ products, category }: ProductListProps) {
@@ -22,7 +22,7 @@ export default function ProductList({ products, category }: ProductListProps) {
 
   return (
     <div
-      className='space-x-4 overflow-hidden px-4 md:px-10'
+      className='space-x-4 overflow-hidden'
       ref={emblaRef}>
       <ul className='-ml-4 flex'>
         {products?.map((product: Product) => (
@@ -31,7 +31,7 @@ export default function ProductList({ products, category }: ProductListProps) {
             product={product}
           />
         ))}
-        <li className='aspect-square flex-1 pl-4 sm:flex-1/2 lg:flex-1/4'>
+        <li className='aspect-square flex-1 pl-4 sm:flex-1/2 md:flex-1/3 lg:flex-1/4'>
           <Link href={`catalogue/${category}`}>
             <div className='relative mb-3 max-h-[460px] bg-grey-light'>
               <div className='relative aspect-[1] bg-grey-200'>

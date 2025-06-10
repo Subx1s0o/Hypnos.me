@@ -21,10 +21,9 @@ export default function Breadcrumb() {
   return (
     <nav
       aria-label='Breadcrumb'
-      className='overflow-x-auto'>
-      <ul
-        className='flex items-center gap-3 md:max-w-[270px] xmd:max-w-[400px] lg:max-w-[500px]
-          xl:max-w-[400px]'>
+      className='max-w-[calc(100dvw-24px)] overflow-x-auto md:max-w-[270px] xmd:max-w-[400px]
+        lg:max-w-[500px] xl:max-w-[400px]'>
+      <ul className='flex items-center gap-3'>
         <li className='relative'>
           <Link
             className='after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0

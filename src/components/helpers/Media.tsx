@@ -7,6 +7,7 @@ const AppMedia = createMedia({
     zero: 0,
     sm: 480,
     md: 768,
+    xmd: 900,
     lg: 1024,
     xl: 1280
   }
