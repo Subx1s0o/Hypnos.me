@@ -17,7 +17,7 @@ export default function ThumbnailList({
   onThumbClick
 }: ThumbnailListProps) {
   return (
-    <ul className='flex flex-1 justify-start smd:justify-center md:justify-start'>
+    <ul className='flex flex-1 justify-start gap-2 md:h-full md:gap-[6px] lg:gap-[10px]'>
       {Object.entries(media).map(([key, value], index) => {
         if (value.status !== 'not_uploaded')
           return (

@@ -11,16 +11,16 @@ export default function ImagesArticle({ media }: { media?: MediaObject }) {
 
   return (
     <div
-      className='flex w-full flex-col items-stretch justify-between overflow-hidden rounded-[2px]
-        border p-2 md:min-h-[506px]'>
+      className='flex w-full flex-col gap-2 overflow-hidden rounded-[2px] border p-2
+        md:min-h-[506px] md:justify-between'>
       <div
-        className='overflow-hidden'
+        className='grow overflow-hidden md:grow-[3]'
         ref={emblaMainRef}>
         {media && <MainImageList media={media} />}
       </div>
 
       <div
-        className='flex overflow-hidden'
+        className='flex h-full grow items-end overflow-hidden'
         ref={emblaThumbsRef}>
         {media && (
           <ThumbnailList

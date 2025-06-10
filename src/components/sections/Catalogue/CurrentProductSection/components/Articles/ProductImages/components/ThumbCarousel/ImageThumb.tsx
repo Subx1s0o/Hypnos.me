@@ -22,20 +22,21 @@ export default function ImageThumb({
   const [isImageLoaded, setIsImageLoaded] = useState(false)
 
   return (
-    <li className='relative flex aspect-square flex-col items-center'>
+    <li
+      className='relative flex aspect-square w-full flex-[0_0_30%] flex-col items-center
+        justify-end md:flex-[0_0_35%] xmd:md:flex-[0_0_25%]'>
       {!isImageLoaded && (
         <SkeletonLoader
           count={1}
-          className='absolute inset-0 z-50 size-full px-1'
+          className='absolute inset-0 z-50 size-full'
         />
       )}
-      <div className={'mb-2 flex w-full flex-[0_0_23%] px-1 md:flex-[0_0_30%]'}>
+      <div className={'mb-2 flex size-full'}>
         <button
           onClick={onClick}
           type='button'
           className={cn(
-            `relative h-16 w-full cursor-not-allowed bg-grey-200 transition-colors xxs:h-20
-            sm:h-24 smd:h-[107px] md:h-24 lg:h-28`,
+            'relative w-full cursor-not-allowed bg-grey-200 transition-colors',
             {
               'cursor-pointer rounded-lg border-2 border-gray-300 bg-white':
                 isImageLoaded,
